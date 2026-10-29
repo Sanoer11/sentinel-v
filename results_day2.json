@@ -1,0 +1,1262 @@
+{
+  "table": {
+    "20dB_plain": {
+      "raw": 16,
+      "norm": 17,
+      "total": 20
+    },
+    "20dB_context": {
+      "raw": 16,
+      "norm": 20,
+      "total": 20
+    },
+    "10dB_plain": {
+      "raw": 14,
+      "norm": 16,
+      "total": 20
+    },
+    "10dB_context": {
+      "raw": 15,
+      "norm": 18,
+      "total": 20
+    },
+    "5dB_plain": {
+      "raw": 11,
+      "norm": 13,
+      "total": 20
+    },
+    "5dB_context": {
+      "raw": 15,
+      "norm": 17,
+      "total": 20
+    },
+    "0dB_plain": {
+      "raw": 9,
+      "norm": 10,
+      "total": 20
+    },
+    "0dB_context": {
+      "raw": 10,
+      "norm": 11,
+      "total": 20
+    }
+  },
+  "rows": [
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "I fly 6053 runway 27, cleared to land wind 270 degrees 12 north.",
+      "normalized": "IFLY 6053 runway 27, cleared to land wind 270 degrees 12 north.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "I fly 6053, runway 27, cleared to land, wind 270 degrees, 12 knots.",
+      "normalized": "IFLY 6053, runway 27, cleared to land, wind 270 degrees, 12 knots.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Airplane 6053, runway 27, cleared to land, wind 270, degree 12 north.",
+      "normalized": "Airplane 6053, runway 27, cleared to land, wind 270, degree 12 north.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Ifly 6053, runway 27, cleared to land, wind 270 degree 12 north.",
+      "normalized": "IFLY 6053, runway 27, cleared to land, wind 270 degree 12 north.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Airplane 6053, runway 27, cleared to land, wind 270 degrees 12 north.",
+      "normalized": "Airplane 6053, runway 27, cleared to land, wind 270 degrees 12 north.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "IFLY 6053, runway 27, cleared to land. Wind 270 degrees, 12 knock.",
+      "normalized": "IFLY 6053, runway 27, cleared to land. Wind 270 degrees, 12 knock.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Airplane 6053 runway 27 cleared to land wind 270 degrees 12 now.",
+      "normalized": "Airplane 6053 runway 27 cleared to land wind 270 degrees 12 now.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 1,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "IFLY 6053, runway 27, cleared to land, wind 270 degrees, 130.",
+      "normalized": "IFLY 6053, runway 27, cleared to land, wind 270 degrees, 130.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Cleared to land runway 27, I flee 6053.",
+      "normalized": "Cleared to land runway 27, I flee 6053.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Cleared to land, runway 27, IFLY 6053.",
+      "normalized": "Cleared to land, runway 27, IFLY 6053.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Clear to land runway 27 I please 6053.",
+      "normalized": "Clear to land runway 27 I please 6053.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Cleared to land, runway 27. I fly 6053.",
+      "normalized": "Cleared to land, runway 27. IFLY 6053.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Clear to land runway 27 I 36053.",
+      "normalized": "Clear to land runway 27 I 36053.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Cleared to land, runway 27. I36053.",
+      "normalized": "Cleared to land, runway 27. I 36053.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Clear to land runway 37 I please 6053.",
+      "normalized": "Clear to land runway 37 I please 6053.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "raw": "Cleared to land, runway 37. I fly 605P.",
+      "normalized": "Cleared to land, runway 37. IFLY 605 P.",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, line up and wait, runway 27.",
+      "normalized": "Air India 657, line up and wait, runway 27.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, line up and wait, runway 27.",
+      "normalized": "Air India 657, line up and wait, runway 27.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, line up and wait, runway 37.",
+      "normalized": "Air India 657, line up and wait, runway 37.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, line up and wait, runway 37.",
+      "normalized": "Air India 657, line up and wait, runway 37.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657 line up and wait runway 37.",
+      "normalized": "Air India 657 line up and wait runway 37.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, line up and wait runway 27.",
+      "normalized": "Air India 657, line up and wait runway 27.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, line up and wait on the gate, he said.",
+      "normalized": "Air India 657, line up and wait on the gate, he said.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, line up and wait runway in service.",
+      "normalized": "Air India 657, line up and wait runway in service.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Line up and wait, runway 27, Air India 657.",
+      "normalized": "Line up and wait, runway 27, Air India 657.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Line up and wait, runway 27, Air India 657.",
+      "normalized": "Line up and wait, runway 27, Air India 657.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Line up and wait, runway 27, Air India 657.",
+      "normalized": "Line up and wait, runway 27, Air India 657.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Line up and wait, runway 27, Air India 657.",
+      "normalized": "Line up and wait, runway 27, Air India 657.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Line up and wait, runway 27, Air India 657.",
+      "normalized": "Line up and wait, runway 27, Air India 657.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Line up and wait, runway 27, Air India 657.",
+      "normalized": "Line up and wait, runway 27, Air India 657.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Lineup and weight: Runway 37, Air India 657.",
+      "normalized": "Lineup and weight: Runway 37, Air India 657.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Line up and wait, runway 37, Air India 657.",
+      "normalized": "Line up and wait, runway 37, Air India 657.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657 runway 27 cleared for take off.",
+      "normalized": "Air India 657 runway 27 cleared for take off.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, runway 27, cleared for takeoff.",
+      "normalized": "Air India 657, runway 27, cleared for takeoff.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657 runway 27 cleared for take off.",
+      "normalized": "Air India 657 runway 27 cleared for take off.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, runway 27, cleared for takeoff.",
+      "normalized": "Air India 657, runway 27, cleared for takeoff.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657 runway 27 cleared for takeoff.",
+      "normalized": "Air India 657 runway 27 cleared for takeoff.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, runway 27, cleared for takeoff.",
+      "normalized": "Air India 657, runway 27, cleared for takeoff.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657 runway 37 cleared for takeoff.",
+      "normalized": "Air India 657 runway 37 cleared for takeoff.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "raw": "Air India 657, runway 37, cleared for takeoff.",
+      "normalized": "Air India 657, runway 37, cleared for takeoff.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara 926, cross runway 2, 9 right, report vacated.",
+      "normalized": "Vistara 926, cross runway 2, 9R, report vacated.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara 926, cross runway 29 right, report vacated.",
+      "normalized": "Vistara 926, cross runway 29R, report vacated.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara Nayana 26 cross runway 2 Nayana right report vacated.",
+      "normalized": "Vistara Nayana 26 cross runway 2 Nayana right report vacated.",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara 926, cross runway 2, 9 right, report vacated.",
+      "normalized": "Vistara 926, cross runway 2, 9R, report vacated.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara liner 26 cross runway 3 liner right, report vacated.",
+      "normalized": "Vistara liner 26 cross runway 3 liner right, report vacated.",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara 926, cross runway 3, 9 right, report vacated.",
+      "normalized": "Vistara 926, cross runway 3, 9R, report vacated.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara Minor 26 cross runway 2 Minor right report vehicle.",
+      "normalized": "Vistara Minor 26 cross runway 2 Minor right report vehicle.",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Vistara 926, cross runway 2, 9 right, report vacated.",
+      "normalized": "Vistara 926, cross runway 2, 9R, report vacated.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 29, right Vistara 926.",
+      "normalized": "Crossing runway 29, right Vistara 926.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 29 right, Vistara 926.",
+      "normalized": "Crossing runway 29R, Vistara 926.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 29, right Vistara 926.",
+      "normalized": "Crossing runway 29, right Vistara 926.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 29 right, Vistara 926.",
+      "normalized": "Crossing runway 29R, Vistara 926.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 298 right, Vistara 9826.",
+      "normalized": "Crossing runway 298R, Vistara 9826.",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 29 right, Vistara 926.",
+      "normalized": "Crossing runway 29R, Vistara 926.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 298, right, Vistara 9826.",
+      "normalized": "Crossing runway 298, right, Vistara 9826.",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "raw": "Crossing runway 29 right, Vistara 926.",
+      "normalized": "Crossing runway 29R, Vistara 926.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725 runway 29R, right cleared for take off.",
+      "normalized": "Vistara 725 runway 29R, right cleared for take off.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725, runway 29R, right, cleared for takeoff.",
+      "normalized": "Vistara 725, runway 29R, right, cleared for takeoff.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725 runway 29R right cleared for takeoff.",
+      "normalized": "Vistara 725 runway 29R cleared for takeoff.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725, runway 29R, right, cleared for takeoff.",
+      "normalized": "Vistara 725, runway 29R, right, cleared for takeoff.",
+      "raw_caught": 2,
+      "norm_caught": 2
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725 runway 29 right cleared for takeoff.",
+      "normalized": "Vistara 725 runway 29R cleared for takeoff.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725, runway 29, right, cleared for takeoff.",
+      "normalized": "Vistara 725, runway 29, right, cleared for takeoff.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725 runway 29 right cleared for takeoff.",
+      "normalized": "Vistara 725 runway 29R cleared for takeoff.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "raw": "Vistara 725, runway 29, right, cleared for takeoff.",
+      "normalized": "Vistara 725, runway 29, right, cleared for takeoff.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff, runway 29 left, Vistara 725.",
+      "normalized": "Cleared for takeoff, runway 29L, Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff, runway 29 left. Vistara 725.",
+      "normalized": "Cleared for takeoff, runway 29L. Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff runway 29 left, Vistara 725.",
+      "normalized": "Cleared for takeoff runway 29L, Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff, runway 29 left. Vistara 725.",
+      "normalized": "Cleared for takeoff, runway 29L. Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff runway 29 left, Vistara 725.",
+      "normalized": "Cleared for takeoff runway 29L, Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff, runway 29 left. Vistara 725.",
+      "normalized": "Cleared for takeoff, runway 29L. Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 2
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff runway 39 left Vistara 725.",
+      "normalized": "Cleared for takeoff runway 39L Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "raw": "Cleared for takeoff, runway 39 left. Vistara 725.",
+      "normalized": "Cleared for takeoff, runway 39L. Vistara 725.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower, follow me 1 runway 2734 check के लिए enter कर रहा हूँ permission चाहिए।",
+      "normalized": "Tower, Follow Me 1 runway 2734 check के लिए enter कर रहा हूँ permission चाहिए।",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "टावर, फॉलो मी वन रनवे टू सेवन पी फॉर चेक के लिए एंटर कर रहा हूँ, परमिशन चाहिए।",
+      "normalized": "टावर, Follow Me 1 runway 27 पी फॉर चेक के लिए एंटर कर रहा हूँ, परमिशन चाहिए।",
+      "raw_caught": 0,
+      "norm_caught": 1
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower, follow me 1 runway 27B for check के लिए enter कर रहा हूँ, permission चाहिए।",
+      "normalized": "Tower, Follow Me 1 runway 27 B for check के लिए enter कर रहा हूँ, permission चाहिए।",
+      "raw_caught": 0,
+      "norm_caught": 1
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower, follow me. 1 runway 27B, FOD check के लिए enter कर रहा हूँ, permission चाहिए।",
+      "normalized": "Tower, Follow Me. 1 runway 27 B, FOD check के लिए enter कर रहा हूँ, permission चाहिए।",
+      "raw_caught": 0,
+      "norm_caught": 1
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower, follow me 1 runway 2734 check के लिए enter कर रहा हूँ permission चाहिए।",
+      "normalized": "Tower, Follow Me 1 runway 2734 check के लिए enter कर रहा हूँ permission चाहिए।",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower, follow me. 1 runway 27 P, FOD check के लिए enter कर रहा हूँ, permission चाहिए।",
+      "normalized": "Tower, Follow Me. 1 runway 27 P, FOD check के लिए enter कर रहा हूँ, permission चाहिए।",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower, follow me 1, runway 2734 check के लिए enter कर रहा हूँ।",
+      "normalized": "Tower, Follow Me 1, runway 2734 check के लिए enter कर रहा हूँ।",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower, follow me. 1 runway 273, FOD taxiway enter para 1 for mission 5.",
+      "normalized": "Tower, Follow Me. 1 runway 273, FOD taxiway enter para 1 for mission 5.",
+      "raw_caught": 0,
+      "norm_caught": 0
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 20,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower Bird Chester 2 runway 27 जवळ पक्षी आहेत, मी taxiway Bravo वर थांबलोय.",
+      "normalized": "Tower Bird Chester 2 runway 27 जवळ पक्षी आहेत, मी taxiway Bravo वर थांबलोय.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 20,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "tower bird chaser 2, runway 27 जवळ पक्षी आहेत. मी taxiway bravo वर थांबलोय.",
+      "normalized": "tower Bird Chaser 2, runway 27 जवळ पक्षी आहेत. मी taxiway bravo वर थांबलोय.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 10,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower Bird Chester 2 runway 27 जवळ पक्षी आहेत, मी taxiway Bravo वर थांबलोय.",
+      "normalized": "Tower Bird Chester 2 runway 27 जवळ पक्षी आहेत, मी taxiway Bravo वर थांबलोय.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 10,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "tower bird chaser 2, runway 27 जवळ पक्षी आहेत. मी taxiway bravo वर थांबलोय.",
+      "normalized": "tower Bird Chaser 2, runway 27 जवळ पक्षी आहेत. मी taxiway bravo वर थांबलोय.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 5,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower Bird केसर 2 runway 27 जवळ पक्षी आहेत. मी taxi च्या braver वर थांबलो आहे.",
+      "normalized": "Tower Bird केसर 2 runway 27 जवळ पक्षी आहेत. मी taxi च्या braver वर थांबलो आहे.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 5,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "tower bird chaser 2, runway 27 जवळ पक्षी आहे. मी taxiway bravo वर थांबलोय.",
+      "normalized": "tower Bird Chaser 2, runway 27 जवळ पक्षी आहे. मी taxiway bravo वर थांबलोय.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 0,
+      "mode": "plain",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "Tower Bird स्टेशन टू runway 27 जवळ पक्षी आहेत, मी taxiway Bravo वर थांबलो.",
+      "normalized": "Tower Bird स्टेशन 2 runway 27 जवळ पक्षी आहेत, मी taxiway Bravo वर थांबलो.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "snr": 0,
+      "mode": "context",
+      "must_catch": [
+        "27"
+      ],
+      "raw": "tower bird chaser 2, runway 27 जवळ पक्षी आहे. मी taxiway bravo वर थांबलो आहे.",
+      "normalized": "tower Bird Chaser 2, runway 27 जवळ पक्षी आहे. मी taxiway bravo वर थांबलो आहे.",
+      "raw_caught": 1,
+      "norm_caught": 1
+    }
+  ]
+}

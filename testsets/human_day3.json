@@ -1,0 +1,176 @@
+{
+ "name": "human_day3",
+ "kind": "human_practice",
+ "seed": 0,
+ "items": [
+  {
+   "id": "h001a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "",
+   "voice": "",
+   "tts_model": "",
+   "tts_lang": "",
+   "text": "Air India two eight one seven, runway two eight, cleared to land.",
+   "ideal": "Air India 2817, runway 28, cleared to land.",
+   "truth": {
+    "runway": "28",
+    "callsign": "AIC2817"
+   },
+   "traffic": [
+    "AIC2817",
+    "AIC2871",
+    "AKJ1123",
+    "FOLLOWME3",
+    "IGO5134"
+   ],
+   "traps": [
+    "seen_in_day3"
+   ]
+  },
+  {
+   "id": "h003a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "",
+   "voice": "",
+   "tts_model": "",
+   "tts_lang": "",
+   "text": "Air India two eight seven one, line up and wait runway two niner left.",
+   "ideal": "Air India 2871, line up and wait runway 29 left.",
+   "truth": {
+    "runway": "29L",
+    "callsign": "AIC2871"
+   },
+   "traffic": [
+    "AIC2817",
+    "AIC2871",
+    "AKJ1123",
+    "FOLLOWME3",
+    "IGO5134"
+   ],
+   "traps": [
+    "seen_in_day3"
+   ]
+  },
+  {
+   "id": "h005a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "",
+   "voice": "",
+   "tts_model": "",
+   "tts_lang": "",
+   "text": "IFLY five one three four, cross runway two niner right at Bravo, report vacated.",
+   "ideal": "IFLY 5134, cross runway 29 right at Bravo, report vacated.",
+   "truth": {
+    "runway": "29R",
+    "callsign": "IGO5134"
+   },
+   "traffic": [
+    "AIC2817",
+    "AIC2871",
+    "AKJ1123",
+    "FOLLOWME3",
+    "IGO5134"
+   ],
+   "traps": [
+    "seen_in_day3"
+   ]
+  },
+  {
+   "id": "h009a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "",
+   "voice": "",
+   "tts_model": "",
+   "tts_lang": "",
+   "text": "IFLY five one three four, runway two seven, cleared to land.",
+   "ideal": "IFLY 5134, runway 27, cleared to land.",
+   "truth": {
+    "runway": "27",
+    "callsign": "IGO5134"
+   },
+   "traffic": [
+    "AIC2817",
+    "AIC2871",
+    "AKJ1123",
+    "FOLLOWME3",
+    "IGO5134"
+   ],
+   "traps": [
+    "seen_in_day3"
+   ]
+  },
+  {
+   "id": "h010a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "",
+   "voice": "",
+   "tts_model": "",
+   "tts_lang": "",
+   "text": "IFLY two two four one, runway one zero, cleared for takeoff.",
+   "ideal": "IFLY 2241, runway 10, cleared for takeoff.",
+   "truth": {
+    "runway": "10",
+    "callsign": "IGO2241"
+   },
+   "traffic": [
+    "AIC947",
+    "IGO2241"
+   ],
+   "traps": [
+    "seen_in_day3"
+   ]
+  },
+  {
+   "id": "h011a",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "",
+   "voice": "",
+   "tts_model": "",
+   "tts_lang": "",
+   "text": "Runway one zero, cleared for takeoff, IFLY two two four one.",
+   "ideal": "Runway 10, cleared for takeoff, IFLY 2241.",
+   "truth": {
+    "runway": "10",
+    "callsign": "IGO2241"
+   },
+   "traffic": [
+    "AIC947",
+    "IGO2241"
+   ],
+   "traps": [
+    "seen_in_day3"
+   ]
+  },
+  {
+   "id": "h015a",
+   "channel": "airside",
+   "airport": "VIDP",
+   "action": "",
+   "voice": "",
+   "tts_model": "",
+   "tts_lang": "",
+   "text": "Tower, Follow Me three, runway two nine right cross karna hai, holding point Bravo par hoon.",
+   "ideal": "Tower, Follow Me 3, runway 29 right cross karna hai.",
+   "truth": {
+    "runway": "29R",
+    "callsign": "FOLLOWME3"
+   },
+   "traffic": [
+    "AIC2817",
+    "AIC2871",
+    "AKJ1123",
+    "FOLLOWME3",
+    "IGO5134"
+   ],
+   "traps": [
+    "seen_in_day3"
+   ]
+  }
+ ]
+}

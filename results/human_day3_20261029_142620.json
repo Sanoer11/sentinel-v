@@ -1,0 +1,219 @@
+{
+ "testset": "human_day3",
+ "git": null,
+ "dirty": true,
+ "parser": "a0b782869627",
+ "dry_run": false,
+ "human": true,
+ "results": [
+  {
+   "id": "h001a",
+   "cond": "as recorded (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "Air India two eight one seven, runway two eight, cleared to land.",
+   "heard": "Air India 2817, runway 28, cleared to land.",
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AIC2817",
+    []
+   ]
+  },
+  {
+   "id": "h001a",
+   "cond": "radio 10dB (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "Air India two eight one seven, runway two eight, cleared to land.",
+   "heard": "Air India 2817, runway 2808 to land.",
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "AIC2817",
+    [
+     "no runway heard"
+    ]
+   ]
+  },
+  {
+   "id": "h003a",
+   "cond": "as recorded (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "Air India two eight seven one, line up and wait runway two niner left.",
+   "heard": "Air India 2871, line up and wait. Runway 29 left.",
+   "outcome": "OK",
+   "parsed": [
+    "29L",
+    "AIC2871",
+    []
+   ]
+  },
+  {
+   "id": "h003a",
+   "cond": "radio 10dB (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "Air India two eight seven one, line up and wait runway two niner left.",
+   "heard": "Air India 2871, line up and wait, runway 29 left.",
+   "outcome": "OK",
+   "parsed": [
+    "29L",
+    "AIC2871",
+    []
+   ]
+  },
+  {
+   "id": "h005a",
+   "cond": "as recorded (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "IFLY five one three four, cross runway two niner right at Bravo, report vacated.",
+   "heard": "I fly 5134, cross runway 290, writer Bravo report vacated.",
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "IGO5134",
+    [
+     "no runway heard"
+    ]
+   ]
+  },
+  {
+   "id": "h005a",
+   "cond": "radio 10dB (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "IFLY five one three four, cross runway two niner right at Bravo, report vacated.",
+   "heard": "Air fly 5134, cross runway 299, right at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "h009a",
+   "cond": "as recorded (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "IFLY five one three four, runway two seven, cleared to land.",
+   "heard": "I fly 5134, runway 27, cleared to land.",
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "IGO5134",
+    []
+   ]
+  },
+  {
+   "id": "h009a",
+   "cond": "radio 10dB (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "IFLY five one three four, runway two seven, cleared to land.",
+   "heard": "Air France 5134, runway 27, near to land.",
+   "outcome": "FLAG",
+   "parsed": [
+    "27",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "h010a",
+   "cond": "as recorded (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "IFLY two two four one, runway one zero, cleared for takeoff.",
+   "heard": "I fly at 2241, runway 10, cleared for takeoff.",
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "h010a",
+   "cond": "radio 10dB (sanoer)",
+   "channel": "tower",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "IFLY two two four one, runway one zero, cleared for takeoff.",
+   "heard": "Reply 2241, runway 10, cleared for takeoff.",
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "h011a",
+   "cond": "as recorded (sanoer)",
+   "channel": "pilot",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "Runway one zero, cleared for takeoff, IFLY two two four one.",
+   "heard": "Tower, follow me. 3 runway 29 right cross karna hai. Holding point Bravo par hoon.",
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "FOLLOWME3",
+    [
+     "runway 29R does not exist at Pune"
+    ]
+   ]
+  },
+  {
+   "id": "h011a",
+   "cond": "radio 10dB (sanoer)",
+   "channel": "pilot",
+   "traps": [
+    "seen_in_day3"
+   ],
+   "said": "Runway one zero, cleared for takeoff, IFLY two two four one.",
+   "heard": "Tower, follow me. 3 runway 29, right cross runway, holding point Bravo for me.",
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "FOLLOWME3",
+    [
+     "runway 29R does not exist at Pune"
+    ]
+   ]
+  }
+ ]
+}

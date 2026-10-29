@@ -1,0 +1,12 @@
+.env
+audio/
+audio_radio/
+audio_day3/
+audio_eval/
+my_voice/
+noise/
+__pycache__/
+.pytest_cache/
+.vscode/
+*.wav
+*.m4a

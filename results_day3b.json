@@ -1,0 +1,838 @@
+[
+  {
+    "id": 1,
+    "snr": 20,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Air India 2817, runway 28, cleared to land.",
+    "denoised": "Air India 2817, runway 28, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 1,
+    "snr": 10,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Air India 2817, runway 28, cleared to land.",
+    "denoised": "Air India 2817, runway 28, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 1,
+    "snr": 5,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Air India 2817, runway 28, cleared to land.",
+    "denoised": "Air India 2817, runway 28, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 1,
+    "snr": 0,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Air India 2817, runway 283, at July.",
+    "denoised": "Air India 2817, runway 283 at July.",
+    "hinted": null
+  },
+  {
+    "id": 2,
+    "snr": 20,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Cleared to land, runway 28, Air India 2817.",
+    "denoised": "Cleared to land, runway 28, Air India 2817.",
+    "hinted": "Cleared to land, runway 28, Air India 2817."
+  },
+  {
+    "id": 2,
+    "snr": 10,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Cleared to land, runway 28, Air India 2817.",
+    "denoised": "Cleared to land, runway 28, Air India 2817.",
+    "hinted": "Cleared to land, runway 28, Air India 2817."
+  },
+  {
+    "id": 2,
+    "snr": 5,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Cleared to land runway 28, Air India 2817.",
+    "denoised": "Cleared to land, runway 28, Air India 2817.",
+    "hinted": "Cleared to land, runway 28, Air India 2817."
+  },
+  {
+    "id": 2,
+    "snr": 0,
+    "truth": [
+      "28",
+      "AIC2817"
+    ],
+    "raw": "Cleared to land, runway 28, Air India 2817.",
+    "denoised": "Cleared to land. Runway 28, Air India 2817.",
+    "hinted": "Cleared to land, runway 28, Air India 2817."
+  },
+  {
+    "id": 3,
+    "snr": 20,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Air India 2871, line up and wait, runway 29 left.",
+    "denoised": "Air India 2871, line up and wait, runway 29 left.",
+    "hinted": null
+  },
+  {
+    "id": 3,
+    "snr": 10,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Air India 2871, line up and wait, runway 29 left.",
+    "denoised": "Air India 2871, line up and wait, runway 29 left.",
+    "hinted": null
+  },
+  {
+    "id": 3,
+    "snr": 5,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Air India 2871, line up and wait runway 29 left.",
+    "denoised": "Air India 2871, line up and wait, runway 29 left.",
+    "hinted": null
+  },
+  {
+    "id": 3,
+    "snr": 0,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Air India 2871, line up and wait runway 29 left.",
+    "denoised": "Air India 2871, line up and wait. Runway 291.",
+    "hinted": null
+  },
+  {
+    "id": 4,
+    "snr": 20,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait, runway 29 left. Air India 2871.",
+    "denoised": "Line up and wait, runway 29 left. Air India 2871.",
+    "hinted": "Line up and wait. Runway 2, niner left. Air India 2871."
+  },
+  {
+    "id": 4,
+    "snr": 10,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait. Runway 29 left, Air India 2871.",
+    "denoised": "Line up and wait, runway 29 left. Air India 2871.",
+    "hinted": "Line up and wait. Runway 2, niner left. Air India 2871."
+  },
+  {
+    "id": 4,
+    "snr": 5,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait, runway 29 left. Air India 2871.",
+    "denoised": "Line up and wait, runway 29 left. Air India 2871.",
+    "hinted": "Line up and wait. Runway 2, niner left. Air India 2871."
+  },
+  {
+    "id": 4,
+    "snr": 0,
+    "truth": [
+      "29L",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait, runway 298, Air India 2871.",
+    "denoised": "Line up and wait, runway 298, Air India 2871.",
+    "hinted": "Line up and wait, runway 29 left, Air India 2871."
+  },
+  {
+    "id": 5,
+    "snr": 20,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "I fly 5134, cross runway 290, right at Bravo. Report vacated.",
+    "denoised": "IFLY 5134, cross runway 29er, right at Bravo, report vacated.",
+    "hinted": null
+  },
+  {
+    "id": 5,
+    "snr": 10,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "IFF 5134, cross runway 290, right at Bravo, report vacated.",
+    "denoised": "IFLY 5134, cross runway 290, right at Bravo, report vacated.",
+    "hinted": null
+  },
+  {
+    "id": 5,
+    "snr": 5,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "I fly 5134, cross runway 29er, right at Bravo. Report vacated.",
+    "denoised": "I fly 5134, cross runway 29er, right at Bravo. Report vacated.",
+    "hinted": null
+  },
+  {
+    "id": 5,
+    "snr": 0,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "Air fly 5124, cross runway 299, Air India reported.",
+    "denoised": "Air fly 5124, cross runway 290 right of Bravo, report vacated.",
+    "hinted": null
+  },
+  {
+    "id": 6,
+    "snr": 20,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "Crossing runway 29 right, IFL Y 5134.",
+    "denoised": "Crossing runway 29 right, IFLY 5134.",
+    "hinted": "Crossing runway two niner right, IFLY 5134."
+  },
+  {
+    "id": 6,
+    "snr": 10,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "Crossing runway 29 right, IFLY 5134.",
+    "denoised": "Crossing runway 29 right, IFLY 5134.",
+    "hinted": "Crossing runway 2 niner right, IFLY 5134."
+  },
+  {
+    "id": 6,
+    "snr": 5,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "Crossing runway 29 right, IFL Y 5124.",
+    "denoised": "Crossing runway 29 right, IFLY 5124.",
+    "hinted": "Crossing runway 2 niner right, IFLY 5134."
+  },
+  {
+    "id": 6,
+    "snr": 0,
+    "truth": [
+      "29R",
+      "IGO5134"
+    ],
+    "raw": "Crossing runway 29 right, IFL Y 5134.",
+    "denoised": "Crossing runway 29 right, IFL Y 5134.",
+    "hinted": "Crossing runway 2 niner right, IFLY 5134."
+  },
+  {
+    "id": 7,
+    "snr": 20,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+    "denoised": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 7,
+    "snr": 10,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+    "denoised": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 7,
+    "snr": 5,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Akasa Air 1142, runway 11 left, cleared for takeoff.",
+    "denoised": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 7,
+    "snr": 0,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Akasa Air 1122, runway 11 left, cleared for takeoff.",
+    "denoised": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 8,
+    "snr": 20,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+    "denoised": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+    "hinted": "Runway 11 left, cleared for takeoff, Akasa Air 1123."
+  },
+  {
+    "id": 8,
+    "snr": 10,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+    "denoised": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+    "hinted": "Runway 11 left, cleared for takeoff, Akasa Air 1123."
+  },
+  {
+    "id": 8,
+    "snr": 5,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+    "denoised": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+    "hinted": "Runway 11 left, cleared for takeoff, Akasa Air 1123."
+  },
+  {
+    "id": 8,
+    "snr": 0,
+    "truth": [
+      "11L",
+      "AKJ1123"
+    ],
+    "raw": "Runway 11 left, cleared for takeoff, Akasa Air 11 Tuesday.",
+    "denoised": "Runway 11 left, cleared for takeoff, Akasa Air 1126.",
+    "hinted": "Runway 11 left, cleared for takeoff, Akasa Air 1123."
+  },
+  {
+    "id": 9,
+    "snr": 20,
+    "truth": [
+      "27",
+      "IGO5134"
+    ],
+    "raw": "I fly 5134, runway 27, cleared to land.",
+    "denoised": "I fly 5134, runway 27, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 9,
+    "snr": 10,
+    "truth": [
+      "27",
+      "IGO5134"
+    ],
+    "raw": "I fly 5134, runway 27, cleared to land.",
+    "denoised": "I fly 5134, runway 27, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 9,
+    "snr": 5,
+    "truth": [
+      "27",
+      "IGO5134"
+    ],
+    "raw": "I fly 5124, runway 27, cleared to land.",
+    "denoised": "I fly 5124, runway 27, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 9,
+    "snr": 0,
+    "truth": [
+      "27",
+      "IGO5134"
+    ],
+    "raw": "I fly 5124, runway 27, cleared to land.",
+    "denoised": "I fly 5134, runway 27, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 10,
+    "snr": 20,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "IFLY 2241, runway 10, cleared for takeoff.",
+    "denoised": "IFL Y 2241, runway 10, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 10,
+    "snr": 10,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "IFLY 2241, runway 10, cleared for takeoff.",
+    "denoised": "IFLY 2241, runway 10, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 10,
+    "snr": 5,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "IFLY 2241, runway 10, cleared for takeoff.",
+    "denoised": "IFLY 2241, runway 10, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 10,
+    "snr": 0,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "IFLY 2241, runway 10, cleared for takeoff.",
+    "denoised": "IFLY 2241, runway 10, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 11,
+    "snr": 20,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "Runway 10, cleared for takeoff, I fly 2241.",
+    "denoised": "Runway 10, cleared for takeoff, I fly 2241.",
+    "hinted": "Runway 10, cleared for takeoff, IFLY 2241."
+  },
+  {
+    "id": 11,
+    "snr": 10,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "Runway 10, cleared for takeoff, I fly 2241.",
+    "denoised": "Runway 10, cleared for takeoff, I fly 2241.",
+    "hinted": "Runway 10, cleared for takeoff, IFLY 2241."
+  },
+  {
+    "id": 11,
+    "snr": 5,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "Runway 10, cleared for takeoff, I fly 2241.",
+    "denoised": "Runway 10, cleared for takeoff. I fly 2241.",
+    "hinted": "Runway 10, cleared for takeoff, IFLY 2241."
+  },
+  {
+    "id": 11,
+    "snr": 0,
+    "truth": [
+      "10",
+      "IGO2241"
+    ],
+    "raw": "Runway 10, cleared for takeoff. I fly 2241.",
+    "denoised": "Runway 10, cleared for takeoff. I fly 2341.",
+    "hinted": "Runway 10, cleared for takeoff, IFLY 2241."
+  },
+  {
+    "id": 12,
+    "snr": 20,
+    "truth": [
+      "28",
+      "AIC947"
+    ],
+    "raw": "Air India 947, runway 28, cleared to land.",
+    "denoised": "Air India 947, runway 28, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 12,
+    "snr": 10,
+    "truth": [
+      "28",
+      "AIC947"
+    ],
+    "raw": "Air India 947, runway 28, cleared to land.",
+    "denoised": "Air India 947, runway 28, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 12,
+    "snr": 5,
+    "truth": [
+      "28",
+      "AIC947"
+    ],
+    "raw": "Air India 947, runway 28, cleared to land.",
+    "denoised": "Air India 9047, runway 28, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 12,
+    "snr": 0,
+    "truth": [
+      "28",
+      "AIC947"
+    ],
+    "raw": "Air India 9047, runway 28, cleared to land.",
+    "denoised": "Air India 9047, runway 28, cleared for takeoff.",
+    "hinted": null
+  },
+  {
+    "id": 13,
+    "snr": 20,
+    "truth": [
+      "14",
+      "AKJ1402"
+    ],
+    "raw": "Akasa Air 1402, runway 14, cleared to land.",
+    "denoised": "Akasa Air 1402, runway 14, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 13,
+    "snr": 10,
+    "truth": [
+      "14",
+      "AKJ1402"
+    ],
+    "raw": "Akasa Air 1402, runway 14, cleared to land.",
+    "denoised": "Akasa Air 1402, runway 14, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 13,
+    "snr": 5,
+    "truth": [
+      "14",
+      "AKJ1402"
+    ],
+    "raw": "Akasa Air 1402, runway 14, cleared to land.",
+    "denoised": "Akasa Air 1402, runway 14, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 13,
+    "snr": 0,
+    "truth": [
+      "14",
+      "AKJ1402"
+    ],
+    "raw": "Akasa Air 1402, runway 14, cleared to land.",
+    "denoised": "Akasa Air 1402, runway 14, cleared to land.",
+    "hinted": null
+  },
+  {
+    "id": 14,
+    "snr": 20,
+    "truth": [
+      "32",
+      "IGO6318"
+    ],
+    "raw": "I fly 6318, hold short, runway 32.",
+    "denoised": "I fly 6318, hold short, runway 32.",
+    "hinted": null
+  },
+  {
+    "id": 14,
+    "snr": 10,
+    "truth": [
+      "32",
+      "IGO6318"
+    ],
+    "raw": "I fly 6318, hold short, runway 32.",
+    "denoised": "I fly 6318, hold short, runway 32.",
+    "hinted": null
+  },
+  {
+    "id": 14,
+    "snr": 5,
+    "truth": [
+      "32",
+      "IGO6318"
+    ],
+    "raw": "I fly 6318, hold short, runway 32.",
+    "denoised": "I fly 6318, hold short, runway 32.",
+    "hinted": null
+  },
+  {
+    "id": 14,
+    "snr": 0,
+    "truth": [
+      "32",
+      "IGO6318"
+    ],
+    "raw": "I fly 6318, hold short, runway 32.",
+    "denoised": "I fly 6318, hold short, runway 32.",
+    "hinted": null
+  },
+  {
+    "id": 15,
+    "snr": 20,
+    "truth": [
+      "29R",
+      "FOLLOWME3"
+    ],
+    "raw": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर हूँ।",
+    "denoised": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर हूँ।",
+    "hinted": null
+  },
+  {
+    "id": 15,
+    "snr": 10,
+    "truth": [
+      "29R",
+      "FOLLOWME3"
+    ],
+    "raw": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर।",
+    "denoised": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर।",
+    "hinted": null
+  },
+  {
+    "id": 15,
+    "snr": 5,
+    "truth": [
+      "29R",
+      "FOLLOWME3"
+    ],
+    "raw": "Tower, follow me 3, runway 29 right cross करना है, holding point Bravo पर।",
+    "denoised": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर।",
+    "hinted": null
+  },
+  {
+    "id": 15,
+    "snr": 0,
+    "truth": [
+      "29R",
+      "FOLLOWME3"
+    ],
+    "raw": "Tower, follow me please. Runway 29 right cross runway, holding point Bravo 1.",
+    "denoised": "Tower, follow me please. Runway 29 right cross करना है, holding point Bravo पर।",
+    "hinted": null
+  },
+  {
+    "id": 16,
+    "snr": 20,
+    "truth": [
+      "32",
+      "BIRDCHASER1"
+    ],
+    "raw": "tower bird chaser 1, runway 32 वर पक्षी आहेत, मी taxiway Charlie जवळ थांबलोय.",
+    "denoised": "tower bird chaser 1, runway 32 वर पक्षी आहेत. मी taxiway Charlie जवळ थांबलो.",
+    "hinted": null
+  },
+  {
+    "id": 16,
+    "snr": 10,
+    "truth": [
+      "32",
+      "BIRDCHASER1"
+    ],
+    "raw": "Tower Bird Chaser 1, runway 32 वर पक्षी आहे. मी taxiway Charlie वर थांबलो आहे.",
+    "denoised": "Tower Bird Chaser 1, runway 32 वर पक्षी आहे. मी taxiway Charlie वर थांबलोय.",
+    "hinted": null
+  },
+  {
+    "id": 16,
+    "snr": 5,
+    "truth": [
+      "32",
+      "BIRDCHASER1"
+    ],
+    "raw": "tower bird chaser 1 runway 32 वर पक्की आहे, मी taxiway Charlie वर थांबलो.",
+    "denoised": "Tower Bird Chaser 1, runway 32 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+    "hinted": null
+  },
+  {
+    "id": 16,
+    "snr": 0,
+    "truth": [
+      "32",
+      "BIRDCHASER1"
+    ],
+    "raw": "Tower Bird Chaser वर runway 32 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+    "denoised": "tower bird chaser बन runway 32 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+    "hinted": null
+  },
+  {
+    "id": 17,
+    "snr": 20,
+    "truth": [
+      "29R",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait, runway 29 right. Air India 2871.",
+    "denoised": "Line up and wait, runway 29 right. Air India 2871.",
+    "hinted": "Line up and wait, runway 2 niner. Right, Air India 2871."
+  },
+  {
+    "id": 17,
+    "snr": 10,
+    "truth": [
+      "29R",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait, runway 29, rise. Air India 2871.",
+    "denoised": "Line up and wait, runway 2. Niner right, Air India 2871.",
+    "hinted": "Line up and wait, runway 2 niner. Rise Air India 2871."
+  },
+  {
+    "id": 17,
+    "snr": 5,
+    "truth": [
+      "29R",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait, runway 29, right. Air India 2871.",
+    "denoised": "Line up and wait, runway 29 right. Air India 2871.",
+    "hinted": "Line up and wait, runway 2 niner. Rise, Air India 2871."
+  },
+  {
+    "id": 17,
+    "snr": 0,
+    "truth": [
+      "29R",
+      "AIC2871"
+    ],
+    "raw": "Line up and wait, runway 29 right. Air India 2871.",
+    "denoised": "Line up and wait, runway 29 right. Air India 2871.",
+    "hinted": "Line up and wait, runway 2 niner. Right, Air India 2871."
+  },
+  {
+    "id": 18,
+    "snr": 20,
+    "truth": [
+      "28",
+      "IGO5134"
+    ],
+    "raw": "Cleared to land, runway 28, I fly 5134.",
+    "denoised": "Cleared to land, runway 28, I fly 5134.",
+    "hinted": "Cleared to land, runway 28, IFLY 5134."
+  },
+  {
+    "id": 18,
+    "snr": 10,
+    "truth": [
+      "28",
+      "IGO5134"
+    ],
+    "raw": "Cleared to land, runway 28. IFLY 5134.",
+    "denoised": "Cleared to land, runway 28. IFLY 5134.",
+    "hinted": "Cleared to land, runway 28, IFLY 5134."
+  },
+  {
+    "id": 18,
+    "snr": 5,
+    "truth": [
+      "28",
+      "IGO5134"
+    ],
+    "raw": "Cleared to land, runway 28, I fly 5134.",
+    "denoised": "Cleared to land, runway 28, I fly 5134.",
+    "hinted": "Cleared to land, runway 28, IFLY 5134."
+  },
+  {
+    "id": 18,
+    "snr": 0,
+    "truth": [
+      "28",
+      "IGO5134"
+    ],
+    "raw": "Cleared to land, runway 28, I fly 512.",
+    "denoised": "Cleared to land, runway 28, I fly 512.",
+    "hinted": "Cleared to land, runway 28, IFLY 512."
+  },
+  {
+    "id": 19,
+    "snr": 20,
+    "truth": [
+      "27",
+      "IGO5124"
+    ],
+    "raw": "Cleared to land, runway 27. IFLY 5124.",
+    "denoised": "Cleared to land, runway 27. IFLY 5124.",
+    "hinted": "Cleared to land runway 27, IFLY 5124."
+  },
+  {
+    "id": 19,
+    "snr": 10,
+    "truth": [
+      "27",
+      "IGO5124"
+    ],
+    "raw": "Cleared to land, runway 27. IFLY 5124.",
+    "denoised": "Cleared to land, runway 27. IFLY 5124.",
+    "hinted": "Cleared to land runway 27, IFLY 5124."
+  },
+  {
+    "id": 19,
+    "snr": 5,
+    "truth": [
+      "27",
+      "IGO5124"
+    ],
+    "raw": "Clear to land, runway 27. I fly 5124.",
+    "denoised": "Clear to land, runway 27. IFLY 5124.",
+    "hinted": "Cleared to land, runway 27. IFLY 5124."
+  },
+  {
+    "id": 19,
+    "snr": 0,
+    "truth": [
+      "27",
+      "IGO5124"
+    ],
+    "raw": "Cleared to land, runway 27. I feel 5124.",
+    "denoised": "Cleared to land, runway 27. I fly 5124.",
+    "hinted": "Cleared to land runway 27, IFLY 5134."
+  }
+]

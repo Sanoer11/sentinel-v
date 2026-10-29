@@ -1,0 +1,218 @@
+{
+  "score": {
+    "plain": 19,
+    "context": 18,
+    "total": 20
+  },
+  "lines": [
+    {
+      "id": 1,
+      "channel": "tower",
+      "voice": "Avinash",
+      "text": "IFLY six zero five three, runway two seven, cleared to land, wind two seven zero degrees one two knots.",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "plain": "I fly 6053 runway 27 cleared to land while in 270 degrees 12 knots.",
+      "context": "IFLY 6053, runway 27, cleared to land, wind 270 degrees 12 knots.",
+      "plain_caught": [
+        "6053",
+        "27"
+      ],
+      "context_caught": [
+        "6053",
+        "27"
+      ]
+    },
+    {
+      "id": 2,
+      "channel": "pilot",
+      "voice": "Riyaa",
+      "text": "Cleared to land runway two seven, IFLY six zero five three.",
+      "must_catch": [
+        "6053",
+        "27"
+      ],
+      "plain": "Clear to land runway 27 I fly 6053.",
+      "context": "Cleared to land runway 27, IFLY 6053.",
+      "plain_caught": [
+        "6053",
+        "27"
+      ],
+      "context_caught": [
+        "6053",
+        "27"
+      ]
+    },
+    {
+      "id": 3,
+      "channel": "tower",
+      "voice": "Avinash",
+      "text": "Air India six five seven, line up and wait runway two seven.",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "plain": "Air India 657 line up and wait runway 27.",
+      "context": "Air India 657, line up and wait runway 27.",
+      "plain_caught": [
+        "657",
+        "27"
+      ],
+      "context_caught": [
+        "657",
+        "27"
+      ]
+    },
+    {
+      "id": 4,
+      "channel": "pilot",
+      "voice": "Harshad",
+      "text": "Line up and wait runway two seven, Air India six five seven.",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "plain": "Line up and wait, runway 27, Air India 657.",
+      "context": "Line up and wait, runway 27, Air India 657.",
+      "plain_caught": [
+        "657",
+        "27"
+      ],
+      "context_caught": [
+        "657",
+        "27"
+      ]
+    },
+    {
+      "id": 5,
+      "channel": "tower",
+      "voice": "Avinash",
+      "text": "Air India six five seven, runway two seven, cleared for takeoff.",
+      "must_catch": [
+        "657",
+        "27"
+      ],
+      "plain": "Air India 657 runway 27 cleared for takeoff.",
+      "context": "Air India 657 runway 27 cleared for takeoff.",
+      "plain_caught": [
+        "657",
+        "27"
+      ],
+      "context_caught": [
+        "657",
+        "27"
+      ]
+    },
+    {
+      "id": 6,
+      "channel": "tower",
+      "voice": "Prakash",
+      "text": "Vistara niner two six, cross runway two niner right, report vacated.",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "plain": "Vistara 926, cross runway 29 right, report vacated.",
+      "context": "Vistara niner two six cross runway two niner right report vacated.",
+      "plain_caught": [
+        "926",
+        "29r"
+      ],
+      "context_caught": []
+    },
+    {
+      "id": 7,
+      "channel": "pilot",
+      "voice": "Devansh",
+      "text": "Crossing runway two niner right, Vistara niner two six.",
+      "must_catch": [
+        "926",
+        "29r"
+      ],
+      "plain": "Crossing runway 29 right Vistara 926.",
+      "context": "Crossing runway 29 right Vistara 926.",
+      "plain_caught": [
+        "926",
+        "29r"
+      ],
+      "context_caught": [
+        "926",
+        "29r"
+      ]
+    },
+    {
+      "id": 8,
+      "channel": "tower",
+      "voice": "Prakash",
+      "text": "Vistara seven two five, runway two niner right, cleared for takeoff.",
+      "must_catch": [
+        "725",
+        "29r"
+      ],
+      "plain": "Vistara 725 runway 29R right cleared for takeoff.",
+      "context": "Vistara 725, runway 29R, cleared for takeoff.",
+      "plain_caught": [
+        "725",
+        "29r"
+      ],
+      "context_caught": [
+        "725",
+        "29r"
+      ]
+    },
+    {
+      "id": 9,
+      "channel": "pilot",
+      "voice": "Shubham",
+      "text": "Cleared for takeoff runway two niner left, Vistara seven two five.",
+      "must_catch": [
+        "725",
+        "29l"
+      ],
+      "plain": "Cleared for takeoff runway 29 left Vistara 725.",
+      "context": "Cleared for takeoff runway 29 left, Vistara 725.",
+      "plain_caught": [
+        "725",
+        "29l"
+      ],
+      "context_caught": [
+        "725",
+        "29l"
+      ]
+    },
+    {
+      "id": 10,
+      "channel": "airside",
+      "voice": "Poorvi",
+      "text": "Tower, Follow Me One, runway two seven pe FOD check ke liye enter kar raha hoon, permission chahiye.",
+      "must_catch": [
+        "27"
+      ],
+      "plain": "टावर, फॉलो मी 1 runway 27P4 चेक के लिए एंटर कर रहा हूँ परमिशन चाहिए।",
+      "context": "टावर, फॉलो मी वन रनवे 27P फॉर चेक के लिए एंटर कर रहा हूँ, परमिशन चाहिए।",
+      "plain_caught": [
+        "27"
+      ],
+      "context_caught": [
+        "27"
+      ]
+    },
+    {
+      "id": 11,
+      "channel": "airside",
+      "voice": "Ishaan",
+      "text": "टॉवर, बर्ड चेसर टू, रनवे टू सेव्हन जवळ पक्षी आहेत, मी टॅक्सीवे ब्राव्होवर थांबलोय.",
+      "must_catch": [
+        "27"
+      ],
+      "plain": "टॉवरबर्ड चेसर टू रनवे टू सेव्हन जवळ पक्षी आहेत, मी टॅक्सीवे ब्राव्होवर थांबलोय.",
+      "context": "टॉवर Bird Chaser 2 Runway 27 जवळ पक्षी आहेत, मी टॅक्सीवे Bravo वर थांबलोय.",
+      "plain_caught": [],
+      "context_caught": [
+        "27"
+      ]
+    }
+  ]
+}

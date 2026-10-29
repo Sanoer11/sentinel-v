@@ -1,0 +1,1649 @@
+{
+  "parser_fingerprint": "7b41b05354c8",
+  "rows": [
+    {
+      "id": 1,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Air India 2817, runway 28, cleared to land.",
+      "v25": "air india 2817 runway 28 cleared to land",
+      "v30_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 1,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Air India 2817, runway 28, cleared to land.",
+      "v25": "air india 2817 runway 28 cleared to land",
+      "v30_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 1,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Air India 2817, runway 28, cleared to land.",
+      "v25": "air india 2817 runway 28 cleared to land",
+      "v30_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 1,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Air India 2817, runway 283, at July.",
+      "v25": "air india 2817 runway 28 clear to land",
+      "v30_parsed": [
+        null,
+        "AIC2817",
+        [
+          "no runway heard"
+        ]
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 2,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Cleared to land, runway 28, Air India 2817.",
+      "v25": "clear to land runway 28 air india 2817",
+      "v30_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 2,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Cleared to land, runway 28, Air India 2817.",
+      "v25": "clear to land runway 28 air india 2817",
+      "v30_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 2,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Cleared to land runway 28, Air India 2817.",
+      "v25": "here to land runway 28 air india 2817",
+      "v30_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 2,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "28",
+        "AIC2817"
+      ],
+      "v30": "Cleared to land, runway 28, Air India 2817.",
+      "v25": "here to land runway 28 air india 2815",
+      "v30_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC2817",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 3,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Air India 2871, line up and wait, runway 29 left.",
+      "v25": "air india 2871 line up and wait runway two niner left",
+      "v30_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "v25_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 3,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Air India 2871, line up and wait, runway 29 left.",
+      "v25": "air india 2871 lineup and wait runway two niner left",
+      "v30_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "v25_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 3,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Air India 2871, line up and wait runway 29 left.",
+      "v25": "air india 2871 lineup and wait runway two niner left",
+      "v30_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "v25_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 3,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Air India 2871, line up and wait runway 29 left.",
+      "v25": "air india 2871 lineup and wait runway two niner left",
+      "v30_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "v25_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 4,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Line up and wait, runway 29 left. Air India 2871.",
+      "v25": "line up and wait runway two niner left air india 2871",
+      "v30_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "v25_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 4,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Line up and wait. Runway 29 left, Air India 2871.",
+      "v25": "line up and wait runway two niner left air india 2871",
+      "v30_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "v25_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 4,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Line up and wait, runway 29 left. Air India 2871.",
+      "v25": "line up and wait runway 2911 air india 2871",
+      "v30_parsed": [
+        "29L",
+        "AIC2871",
+        []
+      ],
+      "v25_parsed": [
+        null,
+        "AIC2871",
+        [
+          "no runway heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 4,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "29L",
+        "AIC2871"
+      ],
+      "v30": "Line up and wait, runway 298, Air India 2871.",
+      "v25": "line up emirate runway 02:09 eight air india 2871",
+      "v30_parsed": [
+        null,
+        "AIC2871",
+        [
+          "no runway heard"
+        ]
+      ],
+      "v25_parsed": [
+        null,
+        "AIC2871",
+        [
+          "runway 02 does not exist at Delhi"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 5,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "I fly 5134, cross runway 29er, right at Bravo. Report vacated.",
+      "v25": "i fly 5134 cross runway two niner right at bravo report vacated",
+      "v30_parsed": [
+        null,
+        "IGO5134",
+        [
+          "runway 29 does not exist at Delhi"
+        ]
+      ],
+      "v25_parsed": [
+        "29R",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 5,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "IFF 5134, cross runway 290, right at Bravo, report vacated.",
+      "v25": "i fly 5134 cross runway two niner right at bravo report vacated",
+      "v30_parsed": [
+        null,
+        null,
+        [
+          "no runway heard",
+          "no callsign heard"
+        ]
+      ],
+      "v25_parsed": [
+        "29R",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 5,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "I fly 5134, cross runway 29er, right at Bravo. Report vacated.",
+      "v25": "i fly 5134 crossed runway two liner right at bravo report vacated",
+      "v30_parsed": [
+        null,
+        "IGO5134",
+        [
+          "runway 29 does not exist at Delhi"
+        ]
+      ],
+      "v25_parsed": [
+        "29R",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 5,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "Air fly 5124, cross runway 299, Air India reported.",
+      "v25": "i fly 5124 cross runway three liner right at bravo report page",
+      "v30_parsed": [
+        null,
+        null,
+        [
+          "no runway heard",
+          "no callsign heard"
+        ]
+      ],
+      "v25_parsed": [
+        null,
+        "IGO5134",
+        [
+          "runway 39R does not exist at Delhi"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 6,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "Crossing runway 29 right, IFL Y 5134.",
+      "v25": "crossing runway two niner right ifly 5134",
+      "v30_parsed": [
+        "29R",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "v25_parsed": [
+        "29R",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 6,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "Crossing runway 29 right, IFLY 5134.",
+      "v25": "crossing runway two niner right ifly 5134",
+      "v30_parsed": [
+        "29R",
+        "IGO5134",
+        []
+      ],
+      "v25_parsed": [
+        "29R",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 6,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "Crossing runway 29 right, IFL Y 5124.",
+      "v25": "crossing runway two liner right ifly 5134",
+      "v30_parsed": [
+        "29R",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "v25_parsed": [
+        "29R",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 6,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "IGO5134"
+      ],
+      "v30": "Crossing runway 29 right, IFL Y 5134.",
+      "v25": "crossing runway two niner right isl y 5134",
+      "v30_parsed": [
+        "29R",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "v25_parsed": [
+        "29R",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 7,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+      "v25": "akasa air 1123 runway 11 left cleared for take off",
+      "v30_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 7,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Akasa Air 1123, runway 11 left, cleared for takeoff.",
+      "v25": "akasa air 1123 runway 11 left cleared for take off",
+      "v30_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 7,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Akasa Air 1142, runway 11 left, cleared for takeoff.",
+      "v25": "akasa air 1123 runway 11 left cleared for take off",
+      "v30_parsed": [
+        "11L",
+        null,
+        [
+          "callsign AKJ1142 not expected on frequency"
+        ]
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 7,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Akasa Air 1122, runway 11 left, cleared for takeoff.",
+      "v25": "akasa air 1123 runway 11 left cleared for take off",
+      "v30_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": true,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 8,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+      "v25": "runway 11 left cleared for take off akasa air 1123",
+      "v30_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 8,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+      "v25": "runway 11 left cleared for take off akasa air 1123",
+      "v30_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 8,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Runway 11 left, cleared for takeoff, Akasa Air 1123.",
+      "v25": "runway 11 left cleared for take off akasa air 1123",
+      "v30_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 8,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "11L",
+        "AKJ1123"
+      ],
+      "v30": "Runway 11 left, cleared for takeoff, Akasa Air 11 Tuesday.",
+      "v25": "runway 11 left geared for take off akasa air 1123",
+      "v30_parsed": [
+        "11L",
+        null,
+        [
+          "callsign AKJ11 not expected on frequency"
+        ]
+      ],
+      "v25_parsed": [
+        "11L",
+        "AKJ1123",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "FLAG",
+      "voted": "FLAG"
+    },
+    {
+      "id": 9,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "27",
+        "IGO5134"
+      ],
+      "v30": "I fly 5134, runway 27, cleared to land.",
+      "v25": "i fly 5134 runway 27 cleared to land",
+      "v30_parsed": [
+        "27",
+        "IGO5134",
+        []
+      ],
+      "v25_parsed": [
+        "27",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 9,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "27",
+        "IGO5134"
+      ],
+      "v30": "I fly 5134, runway 27, cleared to land.",
+      "v25": "i fly 5134 runway 27 cleared to land",
+      "v30_parsed": [
+        "27",
+        "IGO5134",
+        []
+      ],
+      "v25_parsed": [
+        "27",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 9,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "27",
+        "IGO5134"
+      ],
+      "v30": "I fly 5124, runway 27, cleared to land.",
+      "v25": "i flight 5124 runway 27 cleared to land",
+      "v30_parsed": [
+        "27",
+        "IGO5134",
+        []
+      ],
+      "v25_parsed": [
+        "27",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": true,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 9,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "27",
+        "IGO5134"
+      ],
+      "v30": "I fly 5124, runway 27, cleared to land.",
+      "v25": "i fly 5124 runway 27 clear to line",
+      "v30_parsed": [
+        "27",
+        "IGO5134",
+        []
+      ],
+      "v25_parsed": [
+        "27",
+        "IGO5134",
+        []
+      ],
+      "corrected_callsign": true,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 10,
+      "cond": "20dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "IFLY 2241, runway 10, cleared for takeoff.",
+      "v25": "ifly 2241 runway 10 cleared for take off",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 10,
+      "cond": "10dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "IFLY 2241, runway 10, cleared for takeoff.",
+      "v25": "ifly 2241 runway 10 cleared for take off",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 10,
+      "cond": "5dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "IFLY 2241, runway 10, cleared for takeoff.",
+      "v25": "isly 2241 runway 10 cleared for take off",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 10,
+      "cond": "0dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "IFLY 2241, runway 10, cleared for takeoff.",
+      "v25": "ifly 2241 runway 10 cleared for take off",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 11,
+      "cond": "20dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "Runway 10, cleared for takeoff, I fly 2241.",
+      "v25": "runway 10 cleared for take off i fleet 2241",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 11,
+      "cond": "10dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "Runway 10, cleared for takeoff, I fly 2241.",
+      "v25": "runway 10 cleared for take off i fleet 2241",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 11,
+      "cond": "5dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "Runway 10, cleared for takeoff, I fly 2241.",
+      "v25": "runway 10 cleared for take off i fleet 2241",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 11,
+      "cond": "0dB",
+      "airport": "VAPO",
+      "truth": [
+        "10",
+        "IGO2241"
+      ],
+      "v30": "Runway 10, cleared for takeoff. I fly 2241.",
+      "v25": "runway 10 cleared for take off ic 3241",
+      "v30_parsed": [
+        "10",
+        "IGO2241",
+        []
+      ],
+      "v25_parsed": [
+        "10",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 12,
+      "cond": "20dB",
+      "airport": "VAPO",
+      "truth": [
+        "28",
+        "AIC947"
+      ],
+      "v30": "Air India 947, runway 28, cleared to land.",
+      "v25": "air india niner 47 runway 28 cleared to land",
+      "v30_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 12,
+      "cond": "10dB",
+      "airport": "VAPO",
+      "truth": [
+        "28",
+        "AIC947"
+      ],
+      "v30": "Air India 947, runway 28, cleared to land.",
+      "v25": "air india niner 47 runway 28 cleared to land",
+      "v30_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 12,
+      "cond": "5dB",
+      "airport": "VAPO",
+      "truth": [
+        "28",
+        "AIC947"
+      ],
+      "v30": "Air India 947, runway 28, cleared to land.",
+      "v25": "air india niner 47 runway 28 cleared to land",
+      "v30_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 12,
+      "cond": "0dB",
+      "airport": "VAPO",
+      "truth": [
+        "28",
+        "AIC947"
+      ],
+      "v30": "Air India 9047, runway 28, cleared to land.",
+      "v25": "air india niner 47 runway 28 shares demand",
+      "v30_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "v25_parsed": [
+        "28",
+        "AIC947",
+        []
+      ],
+      "corrected_callsign": true,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 13,
+      "cond": "20dB",
+      "airport": "VABB",
+      "truth": [
+        "14",
+        "AKJ1402"
+      ],
+      "v30": "Akasa Air 1402, runway 14, cleared to land.",
+      "v25": "agasa air 1402 runway 14 cleared to land",
+      "v30_parsed": [
+        "14",
+        "AKJ1402",
+        []
+      ],
+      "v25_parsed": [
+        "14",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 13,
+      "cond": "10dB",
+      "airport": "VABB",
+      "truth": [
+        "14",
+        "AKJ1402"
+      ],
+      "v30": "Akasa Air 1402, runway 14, cleared to land.",
+      "v25": "agasa air 1402 runway 14 cleared to land",
+      "v30_parsed": [
+        "14",
+        "AKJ1402",
+        []
+      ],
+      "v25_parsed": [
+        "14",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 13,
+      "cond": "5dB",
+      "airport": "VABB",
+      "truth": [
+        "14",
+        "AKJ1402"
+      ],
+      "v30": "Akasa Air 1402, runway 14, cleared to land.",
+      "v25": "agasa air 1402 runway 14 cleared to land",
+      "v30_parsed": [
+        "14",
+        "AKJ1402",
+        []
+      ],
+      "v25_parsed": [
+        "14",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 13,
+      "cond": "0dB",
+      "airport": "VABB",
+      "truth": [
+        "14",
+        "AKJ1402"
+      ],
+      "v30": "Akasa Air 1402, runway 14, cleared to land.",
+      "v25": "agasa air 1402 runway 14 cleared to land",
+      "v30_parsed": [
+        "14",
+        "AKJ1402",
+        []
+      ],
+      "v25_parsed": [
+        "14",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 14,
+      "cond": "20dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "IGO6318"
+      ],
+      "v30": "I fly 6318, hold short, runway 32.",
+      "v25": "i fly 6318 hold short runway 32",
+      "v30_parsed": [
+        "32",
+        "IGO6318",
+        []
+      ],
+      "v25_parsed": [
+        "32",
+        "IGO6318",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 14,
+      "cond": "10dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "IGO6318"
+      ],
+      "v30": "I fly 6318, hold short, runway 32.",
+      "v25": "i fly 6318 hole short runway 32",
+      "v30_parsed": [
+        "32",
+        "IGO6318",
+        []
+      ],
+      "v25_parsed": [
+        "32",
+        "IGO6318",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 14,
+      "cond": "5dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "IGO6318"
+      ],
+      "v30": "I fly 6318, hold short, runway 32.",
+      "v25": "i fly 63184 short runway 32",
+      "v30_parsed": [
+        "32",
+        "IGO6318",
+        []
+      ],
+      "v25_parsed": [
+        "32",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 14,
+      "cond": "0dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "IGO6318"
+      ],
+      "v30": "I fly 6318, hold short, runway 32.",
+      "v25": "i fly 6318 goal short runway 32",
+      "v30_parsed": [
+        "32",
+        "IGO6318",
+        []
+      ],
+      "v25_parsed": [
+        "32",
+        "IGO6318",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 15,
+      "cond": "20dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "FOLLOWME3"
+      ],
+      "v30": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर हूँ।",
+      "v25": "टावर फॉलो मी थ्री, रनवे 29 राइट क्रॉस करना है, होल्डिंग प्वाइंट ब्रावो पर हूँ।",
+      "v30_parsed": [
+        "29R",
+        "FOLLOWME3",
+        []
+      ],
+      "v25_parsed": [
+        "29R",
+        "FOLLOWME3",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 15,
+      "cond": "10dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "FOLLOWME3"
+      ],
+      "v30": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर।",
+      "v25": "टावर फॉलो मी थ्री, रनवे 29 राइट क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर।",
+      "v30_parsed": [
+        "29R",
+        "FOLLOWME3",
+        []
+      ],
+      "v25_parsed": [
+        "29R",
+        "FOLLOWME3",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 15,
+      "cond": "5dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "FOLLOWME3"
+      ],
+      "v30": "Tower, follow me 3. Runway 29 right cross करना है, holding point Bravo पर।",
+      "v25": "टावर फॉलो मी थ्री, रनवे 29 राइट क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर।",
+      "v30_parsed": [
+        "29R",
+        "FOLLOWME3",
+        []
+      ],
+      "v25_parsed": [
+        "29R",
+        "FOLLOWME3",
+        []
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 15,
+      "cond": "0dB",
+      "airport": "VIDP",
+      "truth": [
+        "29R",
+        "FOLLOWME3"
+      ],
+      "v30": "Tower, follow me please. Runway 29 right cross runway, holding point Bravo 1.",
+      "v25": "टावर कॉलोनी थ्री, रनवे 29 राइट क्रॉस करना, होल्डिंग पॉइंट ब्रावो पर।",
+      "v30_parsed": [
+        "29R",
+        "FOLLOWME",
+        []
+      ],
+      "v25_parsed": [
+        "29R",
+        null,
+        [
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "WRONG",
+      "voted": "WRONG"
+    },
+    {
+      "id": 16,
+      "cond": "20dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "BIRDCHASER1"
+      ],
+      "v30": "tower bird chaser 1, runway 32 वर पक्षी आहेत, मी taxiway Charlie जवळ थांबलोय.",
+      "v25": "टॉवरबर्ड चेसर वन रनवे थ्री टूवर पक्षी आहे मी टॅक्सीवे चालीसवर थांबलोय",
+      "v30_parsed": [
+        "32",
+        "BIRDCHASER1",
+        []
+      ],
+      "v25_parsed": [
+        null,
+        "BIRDCHASER1",
+        [
+          "runway 03 does not exist at Mumbai"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 16,
+      "cond": "10dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "BIRDCHASER1"
+      ],
+      "v30": "Tower bird chaser 1, runway 32 वर पक्षी आहे. मी taxiway Charlie वर थांबलो आहे.",
+      "v25": "टॉवरबर्ड चेसर वन रनवे सीटूवर पक्षी आहे मी टॅक्सीच्या चालूवर थांबलो",
+      "v30_parsed": [
+        "32",
+        "BIRDCHASER1",
+        []
+      ],
+      "v25_parsed": [
+        null,
+        "BIRDCHASER1",
+        [
+          "no runway heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 16,
+      "cond": "5dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "BIRDCHASER1"
+      ],
+      "v30": "tower bird chaser 1 runway 32 वर पक्की आहे, मी taxiway Charlie वर थांबलो.",
+      "v25": "टॉवरबर्ड चे सर्व रनवे सीटूवर पक्षी आहे मी टॅक्सीच्या चार्लीवर थांबलो",
+      "v30_parsed": [
+        "32",
+        "BIRDCHASER1",
+        []
+      ],
+      "v25_parsed": [
+        null,
+        null,
+        [
+          "no runway heard",
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "OK",
+      "voted": "OK"
+    },
+    {
+      "id": 16,
+      "cond": "0dB",
+      "airport": "VABB",
+      "truth": [
+        "32",
+        "BIRDCHASER1"
+      ],
+      "v30": "Tower Bird Chaser वर runway 32 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+      "v25": "टॉवरगड खेसरगड रनवे स्ट्रीटवर पक्षी आ मी टॅक्सी व चालीवर थांबलो",
+      "v30_parsed": [
+        "32",
+        "BIRDCHASER",
+        []
+      ],
+      "v25_parsed": [
+        null,
+        null,
+        [
+          "no runway heard",
+          "no callsign heard"
+        ]
+      ],
+      "corrected_callsign": false,
+      "single": "WRONG",
+      "voted": "WRONG"
+    }
+  ],
+  "tally": {
+    "tts_20_single": {
+      "OK": 14,
+      "FLAG": 2,
+      "WRONG": 0
+    },
+    "tts_20_vote": {
+      "OK": 14,
+      "FLAG": 2,
+      "WRONG": 0
+    },
+    "tts_10_single": {
+      "OK": 15,
+      "FLAG": 1,
+      "WRONG": 0
+    },
+    "tts_10_vote": {
+      "OK": 15,
+      "FLAG": 1,
+      "WRONG": 0
+    },
+    "tts_5_single": {
+      "OK": 13,
+      "FLAG": 3,
+      "WRONG": 0
+    },
+    "tts_5_vote": {
+      "OK": 13,
+      "FLAG": 3,
+      "WRONG": 0
+    },
+    "tts_0_single": {
+      "OK": 9,
+      "FLAG": 5,
+      "WRONG": 2
+    },
+    "tts_0_vote": {
+      "OK": 9,
+      "FLAG": 5,
+      "WRONG": 2
+    }
+  }
+}

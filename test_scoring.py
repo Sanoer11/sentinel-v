@@ -208,13 +208,42 @@ def test_marathi_five_spelling():
     assert o == "OK"
 
 
-# ---- candidate Fix N (off until A3 passes) ----
+# ---- Fix N: niner glued inside a flight number (real A3 transcripts) ----
 
-def test_fix_n_is_off_by_default():
-    from sentinel_parse import extract, callsign_second_listen
-    T = {"IGO9714", "AIC2817"}
-    r = extract("I fly 90714, hold short, runway 14.", "VABB", T)
-    assert callsign_second_listen(r, "I fly niner seven one four, hold short, runway one four.", "VABB", T)["status"] == "FLAGGED"
+def _n(first, second, truth_cs, airport="VIDP", rwy="28"):
+    T = {truth_cs, "AIC2817", "IGO3790"}
+    return judge(first, airport, T, rwy, truth_cs, second_text=second)
+
+
+def test_fix_n_rescues_niner_glue_as_amber():
+    o, r = _n("I'm on short runway 28, I fly 90602.", "I'm on short runway two eight. I fly niner six zero two.", "IGO9602")
+    assert o == "AMBER" and r["callsign"] == "IGO9602" and "second listen" in r["amber"][-1]
+
+
+def test_fix_n_refuses_when_verbatim_also_hears_nine_eight():
+    # "98714": verbatim says "nine eight seven one four" -> a real mishearing, not glue
+    o, r = _n("Fly 98714, hold short, runway 14.", "Fly nine eight seven one four, hold short, runway one four.",
+              "IGO9714", rwy="14")
+    assert o == "FLAG" and r["callsign"] is None
+
+
+def test_fix_n_refuses_lost_digit():
+    # "ight niner niner five": the eight was lost -> 995, cannot come from 89995 by undoing glue
+    o, _ = _n("Akasa Air 89995, runway 11 right, cleared for takeoff.",
+              "Akasa Air ight niner niner five, runway one one, right, cleared for takeoff.", "AKJ8995", rwy="11R")
+    assert o == "FLAG"
+
+
+def test_fix_n_refuses_if_runway_differs():
+    o, _ = _n("I fly 90602, hold short, runway 28.", "I fly niner six zero two, hold short, runway two seven.", "IGO9602")
+    assert o == "FLAG"
+
+
+def test_fix_n_never_picks_a_flight_not_on_frequency():
+    # wrong readback 9118 (not on frequency) must stay flagged
+    o, _ = judge("Holding short runway 32, Air India 91112.", "VABB", {"AIC9158"}, "32", "AIC9118",
+                 second_text="Holding short runway three two, Air India nine one one two.")
+    assert o == "OK"
 
 
 def test_fix_n_only_removes_niner_glue():

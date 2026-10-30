@@ -1,0 +1,154 @@
+[
+ {
+  "id": "d002b",
+  "cond": "5dB",
+  "heard": "Holding short runway 32, Air India 91112.",
+  "heard2": "Holding short runway three two, Air India nine one one two.",
+  "before": "OK",
+  "after": "OK"
+ },
+ {
+  "id": "d010b",
+  "cond": "clean",
+  "heard": "Crossing runway 28, I fly 37982.",
+  "heard2": "Crossing runway two eight, I fly three seven niner two.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d010b",
+  "cond": "5dB",
+  "heard": "Crossing runway 28, I fly 37982.",
+  "heard2": "Crossing runway two eight, I fly three seven, niner two.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d013b",
+  "cond": "5dB",
+  "heard": "Taking short runway 10, IFL Y 90404.",
+  "heard2": "Taking short runway one zero, IFL Y nine one four zero four.",
+  "before": "OK",
+  "after": "OK"
+ },
+ {
+  "id": "d016a",
+  "cond": "10dB",
+  "heard": "Fly 90602, hold short, runway 28.",
+  "heard2": "Fly niner six zero two, hold short, runway two eight.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d016b",
+  "cond": "5dB",
+  "heard": "I'm on short runway 28, I fly 90602.",
+  "heard2": "I'm on short runway two eight. I fly niner six zero two.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d018a",
+  "cond": "clean",
+  "heard": "I fly 90714, hold short, runway 14.",
+  "heard2": "I fly, niner seven one four, hold short, runway one four.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d018a",
+  "cond": "20dB",
+  "heard": "I fly 90714, hold short, runway 14.",
+  "heard2": "I fly Niner seven one four, hold short, runway one four.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d018a",
+  "cond": "10dB",
+  "heard": "Fly 98714, hold short, runway 14.",
+  "heard2": "Fly nine eight seven one four, hold short, runway one four.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d018a",
+  "cond": "5dB",
+  "heard": "Fly 98714, hold short, runway 14.",
+  "heard2": "Fly nine eight seven one four, hold short, runway one four.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d018a",
+  "cond": "0dB",
+  "heard": "Fly 98714, hold short, runway 14.",
+  "heard2": "Fly niner seven one four, hold short, runway one four.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d018b",
+  "cond": "10dB",
+  "heard": "Starting short runway 14, IFLY 90714.",
+  "heard2": "Heading short runway one four, IFLY Niner seven one four.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d018b",
+  "cond": "5dB",
+  "heard": "Taking short runway 14, I fly 90714.",
+  "heard2": "Taking short runway one four, I fly niner seven one four.",
+  "before": "FLAG",
+  "after": "AMBER"
+ },
+ {
+  "id": "d018b",
+  "cond": "0dB",
+  "heard": "Hold short, runway 14. I39714.",
+  "heard2": "Hold short, runway one four. I three niner seven one four.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d020a",
+  "cond": "20dB",
+  "heard": "Akasa Air 89995, runway 11 right, cleared for takeoff.",
+  "heard2": "Akasa Air ight niner niner five, runway one one, right, cleared for takeoff.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d020a",
+  "cond": "10dB",
+  "heard": "Casa Air 89995, runway 11, right, cleared for takeoff.",
+  "heard2": "Casa Air ight niner niner five, runway one one, right cleared for takeoff.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d020a",
+  "cond": "5dB",
+  "heard": "Casa Air 89995, runway 11, right, cleared for takeoff.",
+  "heard2": "Casa Air ight niner niner five, runway one one, right cleared for takeoff.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d020a",
+  "cond": "0dB",
+  "heard": "Akasa Air 89995, runway 11 right, cleared for takeoff.",
+  "heard2": "Akasa Air ight nine nine nine five, runway one one, right, cleared for takeoff.",
+  "before": "FLAG",
+  "after": "FLAG"
+ },
+ {
+  "id": "d020b",
+  "cond": "10dB",
+  "heard": "Air runway 11 left, cleared for takeoff. Akasa Air 89995.",
+  "heard2": "Air runway one one left, cleared for takeoff. Akasa Air eight niner nine five.",
+  "before": "FLAG",
+  "after": "AMBER"
+ }
+]

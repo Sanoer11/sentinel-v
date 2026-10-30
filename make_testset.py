@@ -16,6 +16,7 @@ Every line stores:
 
 Usage:
   python make_testset.py dev
+  python make_testset.py dev2     (fresh sentences, same voices: checks fixes made on dev)
   python make_testset.py locked
   python make_testset.py human
 """
@@ -221,6 +222,13 @@ def main():
     os.makedirs("testsets", exist_ok=True)
     if kind == "dev":
         seed, items, name = 1, build("dev", 1, 24, 12), "dev"
+    elif kind == "dev2":
+        # fresh sentences, same dev voices: checks fixes made on dev without touching the locked set.
+        # Seed 25 = first seed (counting up from 2) that has all 5 trap kinds AND 10+ "niner" lines,
+        # chosen from the sentence content only, before any audio was made.
+        seed, items, name = 25, build("dev", 25, 24, 12), "dev2"
+        for it in items:
+            it["id"] = "e" + it["id"][1:]
     elif kind == "locked":
         seed = secrets.randbits(32)
         items, name = build("locked", seed, 60, 30), f"locked_{seed:08x}"

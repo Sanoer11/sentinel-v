@@ -289,14 +289,14 @@ def second_listen(r1, second_text, airport, expected_traffic):
 
 
 # ---------------------------------------------------------------------------
-# CANDIDATE Fix N (NOT live until Experiment A3 passes): "niner" glued inside a FLIGHT number
+# Fix N (LIVE: passed Experiment A3 on 31 Oct - 11 clips / 6 lines rescued, 0 WRONG): niner glue in FLIGHT numbers
 # ---------------------------------------------------------------------------
 # Dev run 31 Oct: "IFLY niner seven one four" came out as 90714 / 98714, "eight niner niner fife"
 # as 89995 - the same "niner -> two digits" glue as runway 290. Flight numbers have at most
 # 4 digits, so a 5+ digit number is impossible. Ask the same audio again in verbatim and accept
 # its callsign only if it is the glued number with digits removed RIGHT AFTER a 9, the flight
 # is on frequency, and the runway agrees in both listens. Always AMBER.
-NINER_GLUE_FIX = False
+NINER_GLUE_FIX = True
 
 
 def _niner_deletions(num):

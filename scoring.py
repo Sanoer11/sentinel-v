@@ -12,14 +12,15 @@ Outcomes:
   WRONG : the system showed something as fine that was NOT what was said (dangerous)
 """
 import math
-from sentinel_parse import extract, second_listen, callsign_second_listen
+from sentinel_parse import extract, second_listen, callsign_second_listen, vehicle_second_listen
 
 
 def judge(text, airport, traffic, true_runway, true_callsign, second_text=None):
     r = extract(text, airport, set(traffic))
     if second_text is not None:
         r = second_listen(r, second_text, airport, set(traffic))
-        r = callsign_second_listen(r, second_text, airport, set(traffic))   # no-op while NINER_GLUE_FIX is False
+        r = callsign_second_listen(r, second_text, airport, set(traffic))
+        r = vehicle_second_listen(r, second_text, airport, set(traffic))
     return outcome_of(r, traffic, true_runway, true_callsign), r
 
 

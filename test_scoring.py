@@ -257,3 +257,42 @@ def test_fix_n_only_removes_niner_glue():
     from sentinel_parse import _niner_deletions
     assert _niner_deletions("90714") == {"9714"}
     assert _niner_deletions("12345") == set()
+
+
+# ---- vehicle check: second listen must agree on the one-digit vehicle number (real A4 transcripts) ----
+
+BC = {"AIC3745", "BIRDCHASER2", "BIRDCHASER3", "BIRDCHASER4", "BIRDCHASER5"}
+
+
+def test_vehicle_slip_onto_active_vehicle_is_flagged():
+    # e000v: "four" heard as "2" while Bird Chaser 2 is active. Runway made fine here on purpose:
+    # without the check this exact call would be a silent WRONG.
+    o, r = judge("Tower bird chaser 2, runway 10. Taxiway Charlie.", "VAPO", BC, "10", "BIRDCHASER4",
+                 second_text="Tower bird chaser four, runway one zero. Were first here, meet taxiway Charlie.")
+    assert o == "FLAG" and r["callsign"] is None and "BIRDCHASER2 and BIRDCHASER4" in r["problems"][-1]
+    o0, _ = judge("Tower bird chaser 2, runway 10. Taxiway Charlie.", "VAPO", BC, "10", "BIRDCHASER4")
+    assert o0 == "WRONG"          # proves the danger was real
+
+
+def test_vehicle_second_listen_without_number_is_amber():
+    o, r = judge("Tower Bird Chaser 1, मला runway 10 ओलांडायचा आहे", "VAPO", {"BIRDCHASER1", "BIRDCHASER2"}, "10", "BIRDCHASER1",
+                 second_text="टावर बर्ड चेसर, मला रनवे वन झिरो ओलांडायचा आहे")
+    assert o == "AMBER" and "not double-checked" in r["amber"][-1]
+
+
+def test_vehicle_second_listen_error_is_amber_not_green():
+    o, r = judge("Tower Bird Chaser 1, runway 28 पर FOD check", "VAPO", {"BIRDCHASER1", "BIRDCHASER2"}, "28", "BIRDCHASER1",
+                 second_text="<error 502>")
+    assert o == "AMBER" and "unavailable" in r["amber"][-1]
+
+
+def test_vehicle_agreeing_listens_stay_green():
+    o, _ = judge("Tower Bird Chaser 4, runway 10 वर पक्षी आहे", "VAPO", BC, "10", "BIRDCHASER4",
+                 second_text="टावर बर्ड चेसर फोर, रनवे वन झिरो वर पक्षी आहे")
+    assert o == "OK"
+
+
+def test_single_active_vehicle_needs_no_second_listen():
+    from sentinel_parse import extract, needs_vehicle_second_listen
+    T = {"BIRDCHASER4", "IGO4749"}
+    assert not needs_vehicle_second_listen(extract("Tower Bird Chaser 4, runway 27", "VIDP", T), T)

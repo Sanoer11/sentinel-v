@@ -136,7 +136,7 @@ def main():
     tts_calls = 0 if a.human else len(items)
     if not a.dry_run:
         print(f"This run makes {calls} STT + {tts_calls} TTS calls, about Rs {COST_PER_CALL * (calls + tts_calls):.0f}."
-              "\n  (+ 1 extra STT call for each glued runway like '290', seen in 4 of 18 (A1) and 5 of 48 (A2) calls)")
+              "\n  (+ 1 extra STT call per glued runway/flight number, and per vehicle call when a same-kind vehicle is active)")
         if not a.yes and input("Continue? [y/N] ").strip().lower() != "y":
             return
 
@@ -170,8 +170,9 @@ def main():
         # second listen (verbatim) ONLY when the runway number came out glued, e.g. "290"
         text2 = None
         first = None if a.dry_run else sentinel_parse.extract(text, it["airport"], set(it["traffic"]))
-        if first and (sentinel_parse.needs_second_listen(first) or (
-                sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))):
+        if first and (sentinel_parse.needs_second_listen(first)
+                      or (sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))
+                      or sentinel_parse.needs_vehicle_second_listen(first, set(it["traffic"]))):
             text2 = stt(path, it["channel"], fmt="verbatim")
         outcome, parsed = judge(text, it["airport"], it["traffic"],
                                 it["truth"]["runway"], it["truth"]["callsign"], second_text=text2)

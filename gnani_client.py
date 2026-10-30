@@ -37,9 +37,10 @@ def _post(url, **kw):
     r = None
     for attempt in range(6):
         r = requests.post(url, headers=headers, timeout=60, **kw)
-        if r.status_code != 429:
+        if r.status_code != 429 and r.status_code < 500:
             return r
-        print(f"  [429 rate-limited, retry {attempt + 1}]")
+        # 429 = rate limit, 5xx = server hiccup (A4 got one 502): wait and try again
+        print(f"  [{r.status_code} from server, retry {attempt + 1}]")
         time.sleep(1.5 * (attempt + 1))
     return r
 

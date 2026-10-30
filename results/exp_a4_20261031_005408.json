@@ -1,0 +1,841 @@
+{
+ "part1": [
+  {
+   "id": "d000b",
+   "cond": "5dB",
+   "with_tail": "Taxiway runway 09, Air India 203.",
+   "no_tail": "Taxiway runway 09, Air India 2031.",
+   "full": true
+  },
+  {
+   "id": "d004b",
+   "cond": "0dB",
+   "with_tail": "Cleared to land, runway 10, Air India 909.",
+   "no_tail": "Cleared to land, runway 10, Air India 909.",
+   "full": false
+  },
+  {
+   "id": "d009b",
+   "cond": "0dB",
+   "with_tail": "I love and wait runway 28, Akasa Air 492.",
+   "no_tail": "I love and wait runway 28, Akasa Air 4924.",
+   "full": true
+  },
+  {
+   "id": "d010b",
+   "cond": "20dB",
+   "with_tail": "Crossing runway 28, I fly 379 or 2.",
+   "no_tail": "Crossing runway 28, I fly 379 or 2.",
+   "full": false
+  },
+  {
+   "id": "d010b",
+   "cond": "10dB",
+   "with_tail": "Sing runway 28, I fly 379 or 2.",
+   "no_tail": "Sing runway 28, I fly 379 or 2.",
+   "full": false
+  },
+  {
+   "id": "d017b",
+   "cond": "5dB",
+   "with_tail": "To land runway 14, Akasa Air 134.",
+   "no_tail": "To land runway 14, Akasa Air once replayed.",
+   "full": false
+  },
+  {
+   "id": "d017b",
+   "cond": "0dB",
+   "with_tail": "Air India land runway 14, Akasa Air 134.",
+   "no_tail": "Air India land runway 14; Akasa Air 134.",
+   "full": false
+  },
+  {
+   "id": "d023b",
+   "cond": "0dB",
+   "with_tail": "In up and wait, runway 09, Akasa Air 542.",
+   "no_tail": "In up and wait, runway 09, Akasa Air 542.",
+   "full": false
+  },
+  {
+   "id": "e003b",
+   "cond": "10dB",
+   "with_tail": "Runway 29 left, cleared for takeoff. Air India 836.",
+   "no_tail": "Runway 29 left, cleared for takeoff. Air India 8369.",
+   "full": true
+  },
+  {
+   "id": "e003b",
+   "cond": "5dB",
+   "with_tail": "Taxiway 29 left, cleared for takeoff. Air India 836.",
+   "no_tail": "Taxiway 29 left, cleared for takeoff. Air India 836.",
+   "full": false
+  },
+  {
+   "id": "e007b",
+   "cond": "0dB",
+   "with_tail": "Search to land runway 111, Akasa Air 539.",
+   "no_tail": "Search to land runway 111, Akasa Air 539.",
+   "full": false
+  },
+  {
+   "id": "e010b",
+   "cond": "10dB",
+   "with_tail": "In runway 32, Air India 524.",
+   "no_tail": "In runway 32, Air India 524.",
+   "full": false
+  },
+  {
+   "id": "e010b",
+   "cond": "5dB",
+   "with_tail": "Taxiway runway 3C, Air India 524.",
+   "no_tail": "Taxiway runway 3C, Air India 524.",
+   "full": false
+  },
+  {
+   "id": "e010b",
+   "cond": "0dB",
+   "with_tail": "3 runways in 2, Air India 524.",
+   "no_tail": "3 runways in 2, Air India 524.",
+   "full": false
+  },
+  {
+   "id": "e012b",
+   "cond": "5dB",
+   "with_tail": "To land runway 14, IFLY 798.",
+   "no_tail": "To land runway 14, IFLY 7981.",
+   "full": true
+  },
+  {
+   "id": "e013b",
+   "cond": "0dB",
+   "with_tail": "Taking runway 10, IFLY 134.",
+   "no_tail": "Taking runway 10, IFLY 134.",
+   "full": false
+  },
+  {
+   "id": "e016b",
+   "cond": "0dB",
+   "with_tail": "Please, short runway 09, Air India 695.",
+   "no_tail": "Please, short runway 09, Air India 695.",
+   "full": false
+  },
+  {
+   "id": "e018b",
+   "cond": "0dB",
+   "with_tail": "Taxi short runway 10, CASA Air 664.",
+   "no_tail": "Taxi short runway 10, CASA Air 664.",
+   "full": false
+  },
+  {
+   "id": "e022b",
+   "cond": "0dB",
+   "with_tail": "Holding short runway 2 is Akasa Air 522.",
+   "no_tail": "Holding short runway 2 is Akasa Air 522.",
+   "full": false
+  }
+ ],
+ "part2": [
+  {
+   "id": "d000v",
+   "cond": "clean",
+   "heard": "टावर बर्ड चेसर, 5 runway 09 पर एफओडी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": "टावर बर्ड चेसर फाइव, रनवे ज़ीरो नाइन पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER5",
+   "second": "BIRDCHASER5",
+   "truth": "BIRDCHASER5"
+  },
+  {
+   "id": "d000v",
+   "cond": "20dB",
+   "heard": "सर, बर्ड चेसर फाइव, रनवे 09 पर एफओडी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": "सर बर्ड चेसर फाइव, रनवे ज़ीरो नाइन पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER5",
+   "second": "BIRDCHASER5",
+   "truth": "BIRDCHASER5"
+  },
+  {
+   "id": "d001v",
+   "cond": "clean",
+   "heard": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी टू रनवे वन ज़ीरो क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d001v",
+   "cond": "20dB",
+   "heard": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी टू रनवे वन ज़ीरो क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d001v",
+   "cond": "10dB",
+   "heard": "ओवर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+   "heard2": "ओवर, फॉलो मी टू रनवे वन ज़ीरो क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d001v",
+   "cond": "5dB",
+   "heard": "टावर, फॉलो मी टू रनवे 10 cross थाना है, Bravo पे hold short है।",
+   "heard2": "टावर, फॉलो मी टू रनवे वन ज़ीरो क्रॉस थाना है, ब्रावो पे होल्ड करना है।",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d002v",
+   "cond": "clean",
+   "heard": "टावर बर्ड चेसर टू, रनवे 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": "टावर बर्ड चेसर टू, रनवे थ्री टू पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d002v",
+   "cond": "20dB",
+   "heard": "Power Bird Chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": "पावर बर्ड चेसर टू रनवे थ्री टू पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d002v",
+   "cond": "10dB",
+   "heard": "Airport Bird Chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": "फॉर बर्ड चेसर टू, रनवे थ्री टू पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d002v",
+   "cond": "5dB",
+   "heard": "4 Bird Chaser 2, runway 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": "वो बर्ड चेसर टू, रनवे थ्री टू पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d003v",
+   "cond": "clean",
+   "heard": "टॉवर follow me 3, runway 14 वर पक्षी आहेत, मी taxiway Charlie's वर थांबलोय.",
+   "heard2": "टॉवर फॉलो मी थ्री, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "first": "FOLLOWME3",
+   "second": "FOLLOWME3",
+   "truth": "FOLLOWME3"
+  },
+  {
+   "id": "d003v",
+   "cond": "20dB",
+   "heard": "पॉवर फॉलो मी, 3 runway 14 वर पक्षी आहेत, मी taxiway Charlie वर थांबलोय.",
+   "heard2": "टॉवर फॉलो मी थ्री, रनवे वन फोर वर पक्की आहे, मी टॅक्सीवे चार्लीज वर थांबलोय.",
+   "first": "FOLLOWME3",
+   "second": "FOLLOWME3",
+   "truth": "FOLLOWME3"
+  },
+  {
+   "id": "d004v",
+   "cond": "clean",
+   "heard": "टावर, Bird Chaser 2 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+   "heard2": "टावर, बर्ड चेसर टू रनवे टू एट क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d004v",
+   "cond": "20dB",
+   "heard": "tower bird chaser 2 runway 28 cross करना है, bravo पे hold कर रहा हूँ।",
+   "heard2": "पावर बर्ड चेसर टू रनवे टू एट क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d004v",
+   "cond": "10dB",
+   "heard": "Tower, Bird Chaser 2 runway 28 cross करना है। Bravo पे hold कर रहा हूँ।",
+   "heard2": "टावर, बर्ड चेसर टू रनवे टू एट क्रॉस करना है। ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d004v",
+   "cond": "5dB",
+   "heard": "Our bird chaser to runway 28 cross करना है, Bravo पे hold कर रहे हैं।",
+   "heard2": "पावर बर्ड चेसर टू रनवे टू एट क्रॉस करना है, ब्रावो पे होल्ड कर रहे हैं।",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d005v",
+   "cond": "clean",
+   "heard": "टॉवर बर्ड चेसर, तू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "heard2": "टॉवर बर्ड चेसर टू, रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER2",
+   "truth": "BIRDCHASER2"
+  },
+  {
+   "id": "d006v",
+   "cond": "clean",
+   "heard": "टावर, follow me 5, runway 10P FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे वन ज़ीरो पी फ़ॉड चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d006v",
+   "cond": "20dB",
+   "heard": "Tower, follow me 5, runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे वन ज़ीरो पे फ़ॉड चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d006v",
+   "cond": "10dB",
+   "heard": "Tower, follow me. 5 runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": "टावर फॉलो मी फाइव रनवे वन ज़ीरो पे, फ़ॉड चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d006v",
+   "cond": "5dB",
+   "heard": "ओ follow me, 5 runway 10 के for takeoff के लिए enter करना है, permission चाहिए।",
+   "heard2": "ओर फॉलो मी फाइव, रनवे वन ज़ीरो थ्री, फ़ॉर्ज टेक के लिए एंटर करना है। परमिशन चाहिए।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d006v",
+   "cond": "0dB",
+   "heard": "power follow me 5 runway 103, 4th पर से वो enter कर रहा है, 235।",
+   "heard2": "पावर फॉलो मी फाइव, रनवे वन ज़ीरो टू फॉरवर्ड करके वो एंटर कर रहे हैं।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d007v",
+   "cond": "clean",
+   "heard": "टावर, Bird Chaser 4, runway 28B for check के लिए enter करना है, permission चाहिए।",
+   "heard2": "टावर, बर्ड चेसर फोर, रनवे टू एट बी फॉर चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "d007v",
+   "cond": "20dB",
+   "heard": "Tower Bird Chaser 4, runway 28B, FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": "टावर बर्ड चेसर फोर, रनवे टू एट पी, फॉड चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "d007v",
+   "cond": "10dB",
+   "heard": "Tower, bird chaser 4 runway 28, we caught taxiway enter. Permission cleared.",
+   "heard2": "Tower, Bird Chaser Four runway to eight. We found taxiway enter, and I have permission for you.",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "d007v",
+   "cond": "5dB",
+   "heard": "Our bird chaser 4 runway 28, we got successfully enter command permission, Charlie.",
+   "heard2": "Our bird chaser four runway two eight, we got successfully enter terminal permission.",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "d008v",
+   "cond": "clean",
+   "heard": "टॉवर follow me 5, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "टॉवर फॉलो मी फाइव्ह, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d008v",
+   "cond": "20dB",
+   "heard": "पॉवर फॉलो मी फाइव्ह, मला रनवे 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "पॉवर फॉलो मी फाइव्ह, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d008v",
+   "cond": "10dB",
+   "heard": "One follow me, five. मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "ओर फॉलो मी फाइव्ह, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d009v",
+   "cond": "clean",
+   "heard": "टावर, फॉलो मी 5, रनवे 29 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे टू नाइन राइट क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d009v",
+   "cond": "20dB",
+   "heard": "टावर, फॉलो मी 5, रनवे 29 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे टू नाइन राइट क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d009v",
+   "cond": "10dB",
+   "heard": "और follow me, 5 runway 29 right cross करना है, Bravo पे hold करना है।",
+   "heard2": "और फॉलो मी फाइव, रनवे टू नाइन राइट क्रॉस करना है, ब्रावो पे होल्ड करना है।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d009v",
+   "cond": "5dB",
+   "heard": "Tower, follow me. 5 runway 29 right cross करना है, Bravo पे hold short.",
+   "heard2": "टावर, फॉलो मी। फाइव रनवे टू नाइन राइट क्रॉस करना है, ब्रावो पे होल्ड शॉर्ट।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d009v",
+   "cond": "0dB",
+   "heard": "Air, follow me. 5 runway 39, right cross runway. Bravo, take off!",
+   "heard2": "Air, follow me. Five runway three nine, right cross runway. Bravo, take off.",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "d010v",
+   "cond": "clean",
+   "heard": "टावर follow me 2, runway 32 cross करना है, holding point Bravo पर हूँ।",
+   "heard2": "टावर फॉलो मी टू रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d010v",
+   "cond": "20dB",
+   "heard": "पावर फॉलो मी टू रनवे 32 क्रॉस करना है, होल्डिंग पॉइंट Bravo पर हूँ।",
+   "heard2": "पावर फॉलो मी टू रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d010v",
+   "cond": "10dB",
+   "heard": "For follow me to runway 32 cross karna hai, holding point bravo पर है।",
+   "heard2": "फॉर फॉलो मी टू रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर है।",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d010v",
+   "cond": "5dB",
+   "heard": "For follow me to runway 32 cross runway, holding point Bravo 40.",
+   "heard2": "For follow me to runway three two cross runway, holding point bravo forty.",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "d011v",
+   "cond": "clean",
+   "heard": "टॉवर बर्ड चेसर, 3. मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "टॉवर बर्ड चेसर थ्री, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "first": "BIRDCHASER3",
+   "second": "BIRDCHASER3",
+   "truth": "BIRDCHASER3"
+  },
+  {
+   "id": "e000v",
+   "cond": "clean",
+   "heard": "टॉवर बर्ड चेसर फोर, रनवे 10 वर पक्षी आहेत, मी टॅक्सीवे चार्ली जवळ थांबलोय.",
+   "heard2": "टॉवर बर्ड चेसर फोर, रनवे वन झिरो वर पक्षी आहेत, मी टॅक्सीवे चार्ली जवळ थांबलोय.",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e000v",
+   "cond": "20dB",
+   "heard": "Tower Bird Chaser 4, runway 10 वर पक्षी आहे. मी taxiway Charlie वर थांबलोय.",
+   "heard2": "टावर बर्ड चेसर स्पोर्ट रनवे वन झिरो वर पक्षी आहे, मी टॅक्सीवे चार्लीज वर थांबलोय.",
+   "first": "BIRDCHASER4",
+   "second": null,
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e000v",
+   "cond": "10dB",
+   "heard": "Tower bird chaser 2, runway 101. Taxiway Charlie 100.",
+   "heard2": "Tower bird chaser four, runway one zero. Were first here, meet taxiway Charlie bird, humbler.",
+   "first": "BIRDCHASER2",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e001v",
+   "cond": "clean",
+   "heard": "टावर follow me 5, runway 27 cross करना है, holding point Bravo पर हूँ।",
+   "heard2": "टावर फॉलो मी फाइव, रनवे टू सेवन क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e001v",
+   "cond": "20dB",
+   "heard": "और follow me, 5 runway 27 cross करना है, holding point Bravo पर हूँ।",
+   "heard2": "ओवर फॉलो मी फाइव, रनवे टू सेवन क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e001v",
+   "cond": "10dB",
+   "heard": "और follow me 5 runway 27 क्रॉस करना है, holding point Bravo पर था।",
+   "heard2": "और फॉलो मी फाइव रनवे टू सेवन क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर था।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e002v",
+   "cond": "clean",
+   "heard": "टावर बर्ड चेसर, 1 runway 28 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": "टावर बर्ड चेसर, वन रनवे टू एट पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER1",
+   "second": "BIRDCHASER1",
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e002v",
+   "cond": "20dB",
+   "heard": "Tower Bird Chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": "<error 502>",
+   "first": "BIRDCHASER1",
+   "second": null,
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e002v",
+   "cond": "10dB",
+   "heard": "Our bird chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": "पावर बर्ड चेसर वन, रनवे टू एट पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER1",
+   "second": "BIRDCHASER1",
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e002v",
+   "cond": "5dB",
+   "heard": "ओ bird chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": "ओ बर्ड चेसर, वन रनवे टू एट पर एफ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "first": "BIRDCHASER1",
+   "second": "BIRDCHASER1",
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e003v",
+   "cond": "clean",
+   "heard": "टावर, फॉलो मी 5, रनवे 14 पे FOD चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे वन फोर पे फ़ॉड चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e003v",
+   "cond": "20dB",
+   "heard": "Tower, follow me. 5 runway 14 पे FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": "टावर फॉलो मी फाइव, रनवे वन फोर पे फ़ॉड चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e003v",
+   "cond": "5dB",
+   "heard": "First, follow me 5, runway 14, before check के लिए enter करना है pollution side।",
+   "heard2": "फर्स्ट, फॉलो मी फाइव, रनवे वन फोर, से फॉर टेक के लिए एंटर करना है। पॉल्यूशन साइलेंस।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e003v",
+   "cond": "0dB",
+   "heard": "Air India, follow me. 5, runway 14, takeoff. Just to be entertaining, position 5.",
+   "heard2": "Air, follow me. Five, runway one four. Report vacated. Entertainment permission cancelled.",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e004v",
+   "cond": "10dB",
+   "heard": "Tower Bird Chaser 4, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "टावर बर्ड चेसल फोर, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "first": "BIRDCHASER4",
+   "second": null,
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e005v",
+   "cond": "clean",
+   "heard": "टॉवर, फॉलो मी टू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "heard2": "टॉवर फॉलो मी टू रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "e005v",
+   "cond": "20dB",
+   "heard": "टावर, फॉलो मी टू रनवे 09 वर पक्षी आहे, मी टॅक्सीवे Charlie वर थांबलोय.",
+   "heard2": "टावर फॉलो मी टू रनवे झिरो नाइन वर पक्षी आहे, मी टॅक्सीवे चार्लीवर थांबलो.",
+   "first": "FOLLOWME2",
+   "second": "FOLLOWME2",
+   "truth": "FOLLOWME2"
+  },
+  {
+   "id": "e006v",
+   "cond": "clean",
+   "heard": "टावर, follow me 5, runway 28B, FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे टू एट पी फॉरड चेक के लिए एंटर करना है, परमिशन चाहिए।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e006v",
+   "cond": "20dB",
+   "heard": "Tower, follow me. 5 runway 283, FOD check के लिए enter करना है permission time.",
+   "heard2": "टावर फॉलो मी फाइव, रनवे टू एट थ्री, फॉड चेक के लिए एंटर करना है, परमिशन टाइम।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e006v",
+   "cond": "10dB",
+   "heard": "Tower, follow me 5 runway 280, FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": "वर, फॉलो मी फाइव रनवे टू एटी, फ़ोर्ड चेक के लिए एंटर करना है, परमिशन साइन।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e006v",
+   "cond": "0dB",
+   "heard": "Tower, follow me. 5 runway 283, cost check के लिए enter करना है, तो listen करना है।",
+   "heard2": "Tower, follow me. Five runway two eight three, for step three, enter terminal. Position five.",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e007v",
+   "cond": "clean",
+   "heard": "टावर, फॉलो मी 5, रनवे 28 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे टू एट क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e007v",
+   "cond": "20dB",
+   "heard": "टावर, फॉलो मी 5, रनवे 28 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी फाइव, रनवे टू एट क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e007v",
+   "cond": "5dB",
+   "heard": "Follow me, 5 runway 28 cross करना है, Bravo पे hold short जाना है।",
+   "heard2": "सर, फॉलो मी। फाइव रनवे टू एट क्रॉस करना है, ब्रावो पे होल्ड शॉर्ट करना है।",
+   "first": "FOLLOWME5",
+   "second": "FOLLOWME5",
+   "truth": "FOLLOWME5"
+  },
+  {
+   "id": "e008v",
+   "cond": "clean",
+   "heard": "टावर बर्ड चेसर 4, रनवे 11 लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट Bravo पर हूँ।",
+   "heard2": "टावर बर्ड चेसर फोर रनवे वन वन लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e008v",
+   "cond": "20dB",
+   "heard": "ओवर Bird Chaser 4, runway 11 left cross करना है, holding point Bravo पर हूँ।",
+   "heard2": "ओवर बर्ड चेसर फोर, रनवे वन वन लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e008v",
+   "cond": "10dB",
+   "heard": "ओवर Bird Chaser 4, रनवे 11 लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट Bravo पर।",
+   "heard2": "ओवर बर्ड चेसर फोर, रनवे वन वन लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर है।",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e008v",
+   "cond": "5dB",
+   "heard": "For Bird Chaser 4, runway 11 left cross runway, holding point Bravo 1.",
+   "heard2": "For Bird Chaser four, runway one one left cross runway, holding point Bravo one.",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e008v",
+   "cond": "0dB",
+   "heard": "Our bird chaser 4, runway 11 left cross runway, holding point Bravo 1.",
+   "heard2": "Our bird chaser four, runway one one left cross runway, holding point Bravo one.",
+   "first": "BIRDCHASER4",
+   "second": "BIRDCHASER4",
+   "truth": "BIRDCHASER4"
+  },
+  {
+   "id": "e009v",
+   "cond": "clean",
+   "heard": "Tower Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "टॉवर बर्ड चेसर वन, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "first": "BIRDCHASER1",
+   "second": "BIRDCHASER1",
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e009v",
+   "cond": "20dB",
+   "heard": "टावर बर्ड चेसर वन, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "टावर बर्ड चेसर वन, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "first": "BIRDCHASER1",
+   "second": "BIRDCHASER1",
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e009v",
+   "cond": "10dB",
+   "heard": "Tower Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "टावर बर्ड चेसर वन, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "first": "BIRDCHASER1",
+   "second": "BIRDCHASER1",
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e009v",
+   "cond": "5dB",
+   "heard": "Tower Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": "टावर बर्ड चेसर, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+   "first": "BIRDCHASER1",
+   "second": null,
+   "truth": "BIRDCHASER1"
+  },
+  {
+   "id": "e010v",
+   "cond": "20dB",
+   "heard": "और follow me, 1 runway 10 cross करना है, holding point Bravo पर।",
+   "heard2": "और फॉलो मी, वन रनवे वन ज़ीरो क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर।",
+   "first": "FOLLOWME1",
+   "second": "FOLLOWME1",
+   "truth": "FOLLOWME1"
+  },
+  {
+   "id": "e010v",
+   "cond": "10dB",
+   "heard": "Our follow me 1 runway 10 cross करना है, holding point Bravo पर है।",
+   "heard2": "Our follow me one runway one zero cross करना है, holding point bravo पर है।",
+   "first": "FOLLOWME1",
+   "second": "FOLLOWME1",
+   "truth": "FOLLOWME1"
+  },
+  {
+   "id": "e010v",
+   "cond": "5dB",
+   "heard": "Our follow me, 1 runway 10 cross runway, holding point Bravo 4.",
+   "heard2": "Our follow me one runway one zero cross runway holding point bravo पर।",
+   "first": "FOLLOWME1",
+   "second": "FOLLOWME1",
+   "truth": "FOLLOWME1"
+  },
+  {
+   "id": "e011v",
+   "cond": "clean",
+   "heard": "टावर, follow me, 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी थ्री, रनवे ज़ीरो नाइन क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME3",
+   "second": "FOLLOWME3",
+   "truth": "FOLLOWME3"
+  },
+  {
+   "id": "e011v",
+   "cond": "20dB",
+   "heard": "टावर, फॉलो मी, 3 runway 09 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी थ्री, रनवे ज़ीरो नाइन क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME3",
+   "second": "FOLLOWME3",
+   "truth": "FOLLOWME3"
+  },
+  {
+   "id": "e011v",
+   "cond": "10dB",
+   "heard": "टावर, follow me, 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+   "heard2": "टावर, फॉलो मी थ्री, रनवे ज़ीरो नाइन क्रॉस करना है, ब्रावो पे होल्ड कर रहा हूँ।",
+   "first": "FOLLOWME3",
+   "second": "FOLLOWME3",
+   "truth": "FOLLOWME3"
+  }
+ ]
+}

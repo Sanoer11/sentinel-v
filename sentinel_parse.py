@@ -338,3 +338,40 @@ def callsign_second_listen(r1, second_text, airport, expected_traffic, force=Fal
     out = dict(r1, callsign=cs, problems=[], status="PROBABLE")
     out["amber"] = r1["amber"] + r2["amber"] + [f"flight number from second listen: first heard {runs[0]}, second heard {cs}"]
     return out
+
+
+# ---------------------------------------------------------------------------
+# Vehicle check (LIVE: passed Experiment A4 part 2 on 31 Oct - caught the only wrong vehicle,
+# 0 missed, 3 of 76 right calls not confirmed + 1 API error)
+# ---------------------------------------------------------------------------
+# Vehicle numbers are ONE digit. If another vehicle of the same kind is active, a single slip
+# ("four" heard as "2") lands on a real vehicle and passes every other check (dev2 e000v).
+# So the same audio is heard again in verbatim:
+#   same vehicle number      -> unchanged
+#   a DIFFERENT number       -> FLAG "heard Bird Chaser 2 and Bird Chaser 4 - say again"
+#   no number / error        -> AMBER "second listen could not confirm" (never green)
+
+def needs_vehicle_second_listen(r, expected_traffic):
+    cs = r["callsign"]
+    if not cs or cs[:3] in AIRLINES.values():
+        return False
+    kind = cs.rstrip("0123456789")
+    return any(t != cs and t.rstrip("0123456789") == kind for t in expected_traffic)
+
+
+def vehicle_second_listen(r1, second_text, airport, expected_traffic):
+    if not needs_vehicle_second_listen(r1, expected_traffic):
+        return r1
+    r2 = extract(second_text, airport, expected_traffic)
+    cs1, cs2 = r1["callsign"], r2["callsign"]
+    if cs2 == cs1:
+        return r1
+    out = dict(r1, amber=list(r1["amber"]), problems=list(r1["problems"]))
+    if cs2 and cs2.rstrip("0123456789") == cs1.rstrip("0123456789"):
+        out["callsign"] = None
+        out["problems"].append(f"vehicle number unclear: heard {cs1} and {cs2} - say again")
+    else:
+        why = "unavailable" if second_text.startswith("<error") else "could not confirm the vehicle number"
+        out["amber"].append(f"second listen {why}: {cs1} not double-checked")
+    out["status"] = "FLAGGED" if out["problems"] else "PROBABLE"
+    return out

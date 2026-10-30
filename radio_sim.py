@@ -53,7 +53,7 @@ def _background(rng, length):
     return y[start:start + length]
 
 
-def radio(x, sr, snr_db, seed, return_clean=False, clip=True):
+def radio(x, sr, snr_db, seed, return_clean=False, clip=True, squelch_tail=True):
     rng = np.random.default_rng(seed)
     if x.ndim > 1:
         x = x.mean(axis=1)
@@ -84,8 +84,11 @@ def radio(x, sr, snr_db, seed, return_clean=False, clip=True):
     y = x + noise + crackle
 
     # 3. squelch tail: 120-250 ms of loud static at the end
-    tail = int(rng.uniform(0.12, 0.25) * SR)
-    y = np.concatenate([y, sosfilt(BAND, rng.normal(size=tail)) * 0.3])
+    tail = int(rng.uniform(0.12, 0.25) * SR)       # always drawn, so everything before is identical on/off
+    if squelch_tail:
+        y = np.concatenate([y, sosfilt(BAND, rng.normal(size=tail)) * 0.3])
+    else:
+        tail = 0
 
     out = _mulaw(np.clip(y, -0.9, 0.9))
     if return_clean:

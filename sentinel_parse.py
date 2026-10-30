@@ -27,7 +27,8 @@ VEHICLES = {"FOLLOW ME": "FOLLOWME", "BIRD CHASER": "BIRDCHASER"}
 DIGIT_WORDS = {
     "zero": "0", "one": "1", "two": "2", "three": "3", "tree": "3", "four": "4",
     "fower": "4", "five": "5", "fife": "5", "six": "6", "seven": "7", "eight": "8",
-    "nine": "9", "niner": "9", "nayana": "9", "liner": "9", "minor": "9",
+    "nine": "9", "niner": "9", "ight": "8",   # "ight": eight with the e lost (A3 + dev2: 5 times, 2 voices)
+    "nayana": "9", "liner": "9", "minor": "9",
     "ज़ीरो": "0", "झिरो": "0", "जीरो": "0", "वन": "1", "टू": "2", "थ्री": "3", "फोर": "4",
     "फाइव": "5", "फाईव्ह": "5", "फाइव्ह": "5", "सिक्स": "6", "सेवन": "7", "सेव्हन": "7", "एट": "8",
     "नाइन": "9", "नाईन": "9",

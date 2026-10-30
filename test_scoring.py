@@ -228,10 +228,17 @@ def test_fix_n_refuses_when_verbatim_also_hears_nine_eight():
 
 
 def test_fix_n_refuses_lost_digit():
-    # "ight niner niner five": the eight was lost -> 995, cannot come from 89995 by undoing glue
+    # the eight really lost ("niner niner five" only) -> 995 cannot come from 89995 by undoing glue
     o, _ = _n("Akasa Air 89995, runway 11 right, cleared for takeoff.",
-              "Akasa Air ight niner niner five, runway one one, right, cleared for takeoff.", "AKJ8995", rwy="11R")
+              "Akasa Air niner niner five, runway one one, right, cleared for takeoff.", "AKJ8995", rwy="11R")
     assert o == "FLAG"
+
+
+def test_ight_is_eight():
+    # real A3 transcript: verbatim wrote "ight" for eight (seen 5 times, 2 voices)
+    o, r = _n("Akasa Air 89995, runway 11 right, cleared for takeoff.",
+              "Akasa Air ight niner niner five, runway one one, right, cleared for takeoff.", "AKJ8995", rwy="11R")
+    assert o == "AMBER" and r["callsign"] == "AKJ8995"
 
 
 def test_fix_n_refuses_if_runway_differs():

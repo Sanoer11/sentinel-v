@@ -61,9 +61,9 @@ def tts(text, voice, model, lang, path):
     return True
 
 
-def stt(path, channel):
-    """Prisma v3.0, the settings Day 2/3 showed work best: format=transcribe + general ATC context."""
-    data = {"model": "prisma-v3.0", "format": "transcribe",
+def stt(path, channel, fmt="transcribe"):
+    """Prisma v3.0 + general ATC context. fmt: transcribe (digits) | verbatim | codemix (words)."""
+    data = {"model": "prisma-v3.0", "format": fmt,
             "language_code": "hi-IN,en-IN,mr-IN" if channel == "airside" else "en-IN",
             "keyterms": json.dumps(KEYTERMS, ensure_ascii=False), "topic": TOPIC}
     with open(path, "rb") as f:

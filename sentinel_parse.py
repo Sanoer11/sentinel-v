@@ -46,6 +46,10 @@ FIXES = [
 ]
 PUNCT = set(",.।!?:;")
 
+# Decision switch (your call): True = a callsign with a look-alike from the same airline on
+# frequency (5134/5124, 2817/2871) is shown AMBER, never green. False = old behaviour.
+SIMILAR_CALLSIGN_CAUTION = True
+
 
 def normalize(text):
     t = text
@@ -89,6 +93,34 @@ def normalize(text):
     return re.sub(r"\s+([,.।!?:;])", r"\1", s).strip()
 
 
+# Words after which a number is NEVER a flight number.
+NOT_CALLSIGN_BEFORE = {"RUNWAY", "WIND", "DEGREES", "HEADING", "SQUAWK", "LEVEL", "QNH",
+                       "KNOTS", "FEET", "ALTITUDE", "FREQUENCY", "CONTACT", "GATE", "STAND", "BAY"}
+
+
+def anchor_callsign(up, expected_traffic):
+    """
+    Used ONLY when no airline word was recognised (e.g. Prisma wrote "Air France 5134" or "Reply 2241"
+    for IFLY). ICAO phraseology puts the callsign FIRST in a controller call and LAST in a readback,
+    so we look only at the first 3 and last 3 words.
+    A number there must EXACTLY equal the flight number of ONE aircraft on frequency.
+    We never change a digit. Two matches, or no exact match -> nothing (stays FLAG).
+    """
+    toks = re.findall(r"[A-Z]+|\d+", up)
+    words = [t for t in toks]
+    edge = set(range(min(3, len(words)))) | set(range(max(0, len(words) - 3), len(words)))
+    nums = []
+    for i in sorted(edge):
+        t = words[i]
+        if t.isdigit() and 2 <= len(t) <= 4 and not (i > 0 and words[i - 1] in NOT_CALLSIGN_BEFORE):
+            nums.append(t)
+    flights = [f for f in expected_traffic if f[:3] in AIRLINES.values()]
+    hits = {f for n in nums for f in flights if f[3:] == n}
+    if len(hits) == 1:
+        return hits.pop()
+    return None
+
+
 def edit_distance(a, b):
     d = list(range(len(b) + 1))
     for i, ca in enumerate(a, 1):
@@ -110,6 +142,23 @@ def edit1(a, b):
     return any(l[:k] + l[k + 1:] == s for k in range(len(l)))
 
 
+def confusable(a, b):
+    """Two flight numbers a listener can mix up: one digit different (5134/5124)
+    or two neighbouring digits swapped (2817/2871). Eurocontrol's call-sign-similarity
+    work treats exactly these as the risky pairs."""
+    if a == b or len(a) != len(b):
+        return edit1(a, b) and a != b
+    diff = [i for i in range(len(a)) if a[i] != b[i]]
+    if len(diff) == 1:
+        return True
+    return len(diff) == 2 and diff[1] == diff[0] + 1 and a[diff[0]] == b[diff[1]] and a[diff[1]] == b[diff[0]]
+
+
+def similar_on_frequency(cs, expected_traffic):
+    code, num = cs[:3], cs[3:]
+    return sorted(t for t in expected_traffic if t != cs and t[:3] == code and confusable(num, t[3:]))
+
+
 def extract(text, airport, expected_traffic):
     """
     expected_traffic: callsigns known to be on frequency (from schedule/ADS-B), e.g. {"IGO6053"}
@@ -118,15 +167,19 @@ def extract(text, airport, expected_traffic):
     norm = normalize(text)
     up = norm.upper()
     problems, out = [], {"normalized": norm, "runway": None, "callsign": None,
-                         "corrected": False, "suggestion": None}
+                         "corrected": False, "suggestion": None, "amber": []}
 
     m = re.search(r"RUNWAY\s+(\d{1,2}[LRC]?)\b", up)
     if not m:
         problems.append("no runway heard")
     else:
         digits, side = re.match(r"(\d+)([LRC]?)", m.group(1)).groups()
-        rwy = digits.zfill(2) + side            # "9R" -> "09R", "27" -> "27"
-        if rwy in AIRPORTS[airport]["runways"]:
+        rwy = digits + side
+        if len(digits) == 1:
+            # ICAO runways are always spoken as two digits ("zero niner"). One digit means a
+            # digit was lost ("two niner" -> "9"), and padding it to 09 could create a REAL runway.
+            problems.append(f"only one runway digit heard ({digits}) - say again")
+        elif rwy in AIRPORTS[airport]["runways"]:
             out["runway"] = rwy
         else:
             problems.append(f"runway {rwy} does not exist at {AIRPORTS[airport]['name']}")
@@ -168,8 +221,23 @@ def extract(text, airport, expected_traffic):
                         problems.append(f"callsign {cs} not expected on frequency")
                 break
         else:
-            problems.append("no callsign heard")
+            hit = anchor_callsign(up, expected_traffic)
+            if hit:
+                out["callsign"] = hit
+                out["amber"].append(f"callsign not in the usual airline+number form; number matches {hit} exactly")
+            else:
+                problems.append("no callsign heard")
+
+    # A heard callsign that has a look-alike twin on frequency is never shown green:
+    # a "three"/"two" slip would land on the OTHER real flight and pass every other check.
+    cs = out["callsign"]
+    if SIMILAR_CALLSIGN_CAUTION and cs and cs[:3] in AIRLINES.values():
+        twins = similar_on_frequency(cs, expected_traffic)
+        if twins:
+            out["amber"].append(f"similar callsign on frequency: {', '.join(twins)}")
 
     out["problems"] = problems
-    out["status"] = "CONFIRMED" if not problems else "FLAGGED"
+    # CONFIRMED = everything heard cleanly.  PROBABLE (amber) = right facts found, but one part was
+    # identified indirectly -> a human glances at it.  FLAGGED = ask "say again".
+    out["status"] = "FLAGGED" if problems else ("PROBABLE" if out["amber"] else "CONFIRMED")
     return out

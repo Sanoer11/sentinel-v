@@ -44,7 +44,9 @@ def git_state():
 
 
 def parser_fingerprint():
-    return hashlib.sha256(open(sentinel_parse.__file__, "rb").read()).hexdigest()[:12]
+    # ignore trailing blank lines/newline, which downloads sometimes strip
+    text = open(sentinel_parse.__file__, encoding="utf-8").read().rstrip()
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()[:12]
 
 
 def ledger(path="testsets/ledger.json"):
@@ -170,7 +172,7 @@ def main():
                         "said": it["text"], "heard": text, "outcome": outcome,
                         "parsed": [parsed["runway"], parsed["callsign"], parsed["problems"]]})
         if not locked:
-            mark = {"OK": "  ", "FLAG": "~ ", "WRONG": "!!"}[outcome]
+            mark = {"OK": "  ", "AMBER": "a ", "FLAG": "~ ", "WRONG": "!!"}[outcome]
             print(f"{mark}{it['id']} {cond:<18} {outcome:<5} {text}")
 
     # ---- report ----

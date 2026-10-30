@@ -53,7 +53,7 @@ def _background(rng, length):
     return y[start:start + length]
 
 
-def radio(x, sr, snr_db, seed, return_clean=False):
+def radio(x, sr, snr_db, seed, return_clean=False, clip=True):
     rng = np.random.default_rng(seed)
     if x.ndim > 1:
         x = x.mean(axis=1)
@@ -64,8 +64,9 @@ def radio(x, sr, snr_db, seed, return_clean=False):
     m = _speech_mask(x)
     if m.any():
         first = int(np.argmax(m))
-        cut = int(rng.uniform(0.06, 0.20) * SR)
-        x[first:first + cut] = 0.0
+        cut = int(rng.uniform(0.06, 0.20) * SR)     # always drawn, so noise is identical with clip on/off
+        if clip:
+            x[first:first + cut] = 0.0
     x = 0.7 * x / (np.max(np.abs(x)) + 1e-9)
 
     # 1. noise at the requested level, measured on speech only

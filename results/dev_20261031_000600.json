@@ -1,0 +1,5106 @@
+{
+ "testset": "dev",
+ "git": "919a3f7",
+ "dirty": false,
+ "parser": "5f48d463d80d",
+ "dry_run": false,
+ "human": false,
+ "results": [
+  {
+   "id": "d000a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India two zero three one, cross runway zero niner, report vacated.",
+   "heard": "Air India 2031, cross runway 09er, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India two zero three one, cross runway zero niner, report vacated.",
+   "heard": "Air India 2031, cross runway 09, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India two zero three one, cross runway zero niner, report vacated.",
+   "heard": "Air India 2031, cross runway 09, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India two zero three one, cross runway zero niner, report vacated.",
+   "heard": "Air India 2031, cross runway 09, as report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India two zero three one, cross runway zero niner, report vacated.",
+   "heard": "Air India 2031, cross runway 09, before takeoff.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway zero niner, Air India two zero three one.",
+   "heard": "Crossing runway 09 Air India 2031.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway zero niner, Air India two zero three one.",
+   "heard": "Crossing runway 09, Air India 2031.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway zero niner, Air India two zero three one.",
+   "heard": "Crossing runway 09, Air India 2031.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AIC2031",
+    []
+   ]
+  },
+  {
+   "id": "d000b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway zero niner, Air India two zero three one.",
+   "heard": "Taxiway runway 09, Air India 203.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AIC203 not on frequency - did they mean AIC2031?"
+    ]
+   ]
+  },
+  {
+   "id": "d000b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway zero niner, Air India two zero three one.",
+   "heard": "Taxiway runway 09, Air India 202.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AIC202 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d001a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India three eight four eight, cross runway two eight, report vacated.",
+   "heard": "Air India 3848, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India three eight four eight, cross runway two eight, report vacated.",
+   "heard": "Air India 3848, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India three eight four eight, cross runway two eight, report vacated.",
+   "heard": "Air India 3848, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India three eight four eight, cross runway two eight, report vacated.",
+   "heard": "Air India 3848, cross runway 38, report vacated.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "AIC3848",
+    [
+     "runway 38 does not exist at Pune"
+    ]
+   ]
+  },
+  {
+   "id": "d001a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India three eight four eight, cross runway two eight, report vacated.",
+   "heard": "Air India 3848, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Crossing runway one zero, Air India three eight four eight.",
+   "heard": "Crossing runway 10, Air India 3848.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Crossing runway one zero, Air India three eight four eight.",
+   "heard": "Crossing runway 10, Air India 3848.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Crossing runway one zero, Air India three eight four eight.",
+   "heard": "Taxiing runway 10, Air India 3848.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Crossing runway one zero, Air India three eight four eight.",
+   "heard": "Passing runway 10, Air India 3848.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d001b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Crossing runway one zero, Air India three eight four eight.",
+   "heard": "Taxiway runway 10, Air India 3848.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC3848",
+    []
+   ]
+  },
+  {
+   "id": "d002a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India niner one fife eight, hold short runway tree two.",
+   "heard": "Air India 9158, hold short, runway 32.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "AIC9158",
+    []
+   ]
+  },
+  {
+   "id": "d002a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India niner one fife eight, hold short runway tree two.",
+   "heard": "Air India 9158, hold short, runway 32.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "AIC9158",
+    []
+   ]
+  },
+  {
+   "id": "d002a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India niner one fife eight, hold short runway tree two.",
+   "heard": "Air India 915A, hold short, runway 32.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "32",
+    null,
+    [
+     "callsign AIC915 not on frequency - did they mean AIC9158?"
+    ]
+   ]
+  },
+  {
+   "id": "d002a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India niner one fife eight, hold short runway tree two.",
+   "heard": "Air India 915K, hold short, runway 33.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "runway 33 does not exist at Mumbai",
+     "callsign AIC915 not on frequency - did they mean AIC9158?"
+    ]
+   ]
+  },
+  {
+   "id": "d002a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India niner one fife eight, hold short runway tree two.",
+   "heard": "Air India 9158, hold short runway 31.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "AIC9158",
+    [
+     "runway 31 does not exist at Mumbai"
+    ]
+   ]
+  },
+  {
+   "id": "d002b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway tree two, Air India niner one one eight.",
+   "heard": "Holding short, runway 32, Air India 9118.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    null,
+    [
+     "callsign AIC9118 not on frequency - did they mean AIC9158?"
+    ]
+   ]
+  },
+  {
+   "id": "d002b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway tree two, Air India niner one one eight.",
+   "heard": "Crossing short runway 32, Air India 9118.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    null,
+    [
+     "callsign AIC9118 not on frequency - did they mean AIC9158?"
+    ]
+   ]
+  },
+  {
+   "id": "d002b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway tree two, Air India niner one one eight.",
+   "heard": "Crossing short runway 32, Air India 9118.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    null,
+    [
+     "callsign AIC9118 not on frequency - did they mean AIC9158?"
+    ]
+   ]
+  },
+  {
+   "id": "d002b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway tree two, Air India niner one one eight.",
+   "heard": "Holding short runway 32, Air India 91112.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d002b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway tree two, Air India niner one one eight.",
+   "heard": "Holding short runway 32, Air India, niner 112.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    null,
+    [
+     "callsign AIC9112 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d003a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air three two one zero, runway two eight, cleared for takeoff.",
+   "heard": "Akasa Air 3210, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AKJ3210",
+    []
+   ]
+  },
+  {
+   "id": "d003a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air three two one zero, runway two eight, cleared for takeoff.",
+   "heard": "Akasa Air 3210, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AKJ3210",
+    []
+   ]
+  },
+  {
+   "id": "d003a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air three two one zero, runway two eight, cleared for takeoff.",
+   "heard": "Akasa Air 3210, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AKJ3210",
+    []
+   ]
+  },
+  {
+   "id": "d003a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air three two one zero, runway two eight, cleared for takeoff.",
+   "heard": "Akasa Air 3210, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AKJ3210",
+    []
+   ]
+  },
+  {
+   "id": "d003a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air three two one zero, runway two eight, cleared for takeoff.",
+   "heard": "Akasa Air 3310, runway 38, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "runway 38 does not exist at Pune",
+     "callsign AKJ3310 not on frequency - did they mean AKJ3210?"
+    ]
+   ]
+  },
+  {
+   "id": "d003b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Runway two eight, cleared for takeoff, Akasa Air three two one zero.",
+   "heard": "Runway 28 cleared for takeoff, Akasa Air 3210.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AKJ3210",
+    []
+   ]
+  },
+  {
+   "id": "d003b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Runway two eight, cleared for takeoff, Akasa Air three two one zero.",
+   "heard": "Runway 28, cleared for takeoff. Akasa Air 3210.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "AKJ3210",
+    []
+   ]
+  },
+  {
+   "id": "d003b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Runway two eight, cleared for takeoff, Akasa Air three two one zero.",
+   "heard": "Air 28 cleared for takeoff, Akasa Air 3210.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "AKJ3210",
+    [
+     "no runway heard"
+    ]
+   ]
+  },
+  {
+   "id": "d003b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Runway two eight, cleared for takeoff, Akasa Air three two one zero.",
+   "heard": "Taxiway 28, cleared for takeoff, Akasa Air 3212.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "callsign AKJ3212 not on frequency - did they mean AKJ3210?"
+    ]
+   ]
+  },
+  {
+   "id": "d003b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Runway two eight, cleared for takeoff, Akasa Air three two one zero.",
+   "heard": "Excuse me, please. Cleared for takeoff, Akasa Air, 3212.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "callsign AKJ3212 not on frequency - did they mean AKJ3210?"
+    ]
+   ]
+  },
+  {
+   "id": "d004a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Air India niner zero niner one, runway one zero, cleared to land.",
+   "heard": "Air India niner zero niner one runway one zero cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AIC9091",
+    []
+   ]
+  },
+  {
+   "id": "d004a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Air India niner zero niner one, runway one zero, cleared to land.",
+   "heard": "Air India 9091, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AIC9091",
+    []
+   ]
+  },
+  {
+   "id": "d004a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Air India niner zero niner one, runway one zero, cleared to land.",
+   "heard": "India 9091, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AIC9091",
+    []
+   ]
+  },
+  {
+   "id": "d004a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Air India niner zero niner one, runway one zero, cleared to land.",
+   "heard": "Air India 9091, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AIC9091",
+    []
+   ]
+  },
+  {
+   "id": "d004a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Air India niner zero niner one, runway one zero, cleared to land.",
+   "heard": "Air India 9091, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AIC9091",
+    []
+   ]
+  },
+  {
+   "id": "d004b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one zero, Air India niner zero niner tree.",
+   "heard": "Cleared to land runway 10, Air India 9093.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC9093 not on frequency - did they mean AIC9091?"
+    ]
+   ]
+  },
+  {
+   "id": "d004b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one zero, Air India niner zero niner tree.",
+   "heard": "Cleared to land, runway 10, Air India 9093.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC9093 not on frequency - did they mean AIC9091?"
+    ]
+   ]
+  },
+  {
+   "id": "d004b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one zero, Air India niner zero niner tree.",
+   "heard": "Said to land runway 10, Air India 9093.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC9093 not on frequency - did they mean AIC9091?"
+    ]
+   ]
+  },
+  {
+   "id": "d004b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one zero, Air India niner zero niner tree.",
+   "heard": "Cleared to land, runway 10, Air India 9098.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC9098 not on frequency - did they mean AIC9091?"
+    ]
+   ]
+  },
+  {
+   "id": "d004b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one zero, Air India niner zero niner tree.",
+   "heard": "Cleared to land, runway 10, Air India 909.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC909 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d005a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three three six eight, cross runway one zero, report vacated.",
+   "heard": "I fly 3368, cross runway 10, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three three six eight, cross runway one zero, report vacated.",
+   "heard": "Fly 3368, cross runway 10, report vacated.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three three six eight, cross runway one zero, report vacated.",
+   "heard": "Flight 3368, cross runway 10, report vacated.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three three six eight, cross runway one zero, report vacated.",
+   "heard": "I fly 3368, cross runway 10, report vacated.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three three six eight, cross runway one zero, report vacated.",
+   "heard": "Flight 2268, cross runway 10, report vacated.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d005b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway one zero, IFLY three three six eight.",
+   "heard": "Crossing runway 10, IFLY 3368.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway one zero, IFLY three three six eight.",
+   "heard": "Crossing runway 10, IFLY 3368.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway one zero, IFLY three three six eight.",
+   "heard": "Taxiway runway 10, IFLY 3368.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway one zero, IFLY three three six eight.",
+   "heard": "Wing runway 10, IFLY 3368.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d005b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway one zero, IFLY three three six eight.",
+   "heard": "16 runway 10, IFLY 3368.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3368",
+    []
+   ]
+  },
+  {
+   "id": "d006a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India eight four niner six, hold short runway one zero.",
+   "heard": "Air India 8496, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India eight four niner six, hold short runway one zero.",
+   "heard": "Air India 8496, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India eight four niner six, hold short runway one zero.",
+   "heard": "Air India 8496, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India eight four niner six, hold short runway one zero.",
+   "heard": "Air India 8496, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Air India eight four niner six, hold short runway one zero.",
+   "heard": "Air India 8496, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Holding short runway one zero, Air India eight four niner six.",
+   "heard": "Holding short runway 10, Air India 8496.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Holding short runway one zero, Air India eight four niner six.",
+   "heard": "Holding short runway 10, Air India 8496.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Holding short runway one zero, Air India eight four niner six.",
+   "heard": "Taking short runway 10, Air India 8496.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC8496",
+    []
+   ]
+  },
+  {
+   "id": "d006b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Holding short runway one zero, Air India eight four niner six.",
+   "heard": "Holding short, runway 10, Air India 8498.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC8498 not on frequency - did they mean AIC8496?"
+    ]
+   ]
+  },
+  {
+   "id": "d006b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Holding short runway one zero, Air India eight four niner six.",
+   "heard": "Holding short runway 10, Air India 8498.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC8498 not on frequency - did they mean AIC8496?"
+    ]
+   ]
+  },
+  {
+   "id": "d007a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Air India five seven seven zero, runway two eight, cleared for takeoff.",
+   "heard": "Air India 5770, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Air India five seven seven zero, runway two eight, cleared for takeoff.",
+   "heard": "Air India 5770, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Air India five seven seven zero, runway two eight, cleared for takeoff.",
+   "heard": "Air India 5770, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Air India five seven seven zero, runway two eight, cleared for takeoff.",
+   "heard": "Air India 5770, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Air India five seven seven zero, runway two eight, cleared for takeoff.",
+   "heard": "Air India 5770, runway 28, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Runway two eight, cleared for takeoff, Air India five seven seven zero.",
+   "heard": "Runway 28 cleared for takeoff, Air India 5770.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Runway two eight, cleared for takeoff, Air India five seven seven zero.",
+   "heard": "Runway 28, cleared for takeoff. Air India 5770.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Runway two eight, cleared for takeoff, Air India five seven seven zero.",
+   "heard": "Runway 28 cleared for takeoff. Air India 5770.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AIC5770",
+    []
+   ]
+  },
+  {
+   "id": "d007b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Runway two eight, cleared for takeoff, Air India five seven seven zero.",
+   "heard": "Runway 28, cleared for takeoff. Air India 5772.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "callsign AIC5772 not on frequency - did they mean AIC5770?"
+    ]
+   ]
+  },
+  {
+   "id": "d007b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Runway two eight, cleared for takeoff, Air India five seven seven zero.",
+   "heard": "1828, cleared for takeoff. Air India 5772.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "callsign AIC5772 not on frequency - did they mean AIC5770?"
+    ]
+   ]
+  },
+  {
+   "id": "d008a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven three, line up and wait runway zero nine.",
+   "heard": "IFLI 373, line up and wait runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d008a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven three, line up and wait runway zero nine.",
+   "heard": "IFLI 373, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d008a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven three, line up and wait runway zero nine.",
+   "heard": "Specialized 373, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d008a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven three, line up and wait runway zero nine.",
+   "heard": "Personalize 373, line up and wait runway 0.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "IGO373",
+    [
+     "only one runway digit heard (0) - say again"
+    ]
+   ]
+  },
+  {
+   "id": "d008a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven three, line up and wait runway zero nine.",
+   "heard": "Air India 37C, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AIC37 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d008b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Line up and wait runway three two, IFLY three seven three.",
+   "heard": "Line up and wait runway 32, IFLY 373.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d008b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Line up and wait runway three two, IFLY three seven three.",
+   "heard": "Line up and wait. Runway 32, IFL Y 373.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d008b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Line up and wait runway three two, IFLY three seven three.",
+   "heard": "Line up and wait. Runway 32, IFLY 373.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d008b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Line up and wait runway three two, IFLY three seven three.",
+   "heard": "Line up and wait, runway 32, IFLY 373.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d008b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Line up and wait runway three two, IFLY three seven three.",
+   "heard": "Stand up and wait on runway 32, IFLY 373.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "IGO373",
+    []
+   ]
+  },
+  {
+   "id": "d009a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air four nine two four, line up and wait runway two eight.",
+   "heard": "Akasa Air 4924, line up and wait, runway 28.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air four nine two four, line up and wait runway two eight.",
+   "heard": "Akasa Air 4924, line up and wait, runway 28.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air four nine two four, line up and wait runway two eight.",
+   "heard": "Akasa Air 4924, line up and wait, runway 28.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air four nine two four, line up and wait runway two eight.",
+   "heard": "Akasa Air 4924, line up and wait, runway 28.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air four nine two four, line up and wait runway two eight.",
+   "heard": "Akasa Air 4924, line up and wait, runway 38.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "AKJ4924",
+    [
+     "runway 38 does not exist at Pune"
+    ]
+   ]
+  },
+  {
+   "id": "d009b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway two eight, Akasa Air four nine two four.",
+   "heard": "Line up and wait, runway 28, Akasa Air 4924.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway two eight, Akasa Air four nine two four.",
+   "heard": "Line up and wait, runway 28, Akasa Air 4924.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway two eight, Akasa Air four nine two four.",
+   "heard": "Line up and wait, runway 28, Akasa Air 4924.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway two eight, Akasa Air four nine two four.",
+   "heard": "Line up and wait, runway 28, Akasa Air 4924.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "AKJ4924",
+    []
+   ]
+  },
+  {
+   "id": "d009b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway two eight, Akasa Air four nine two four.",
+   "heard": "I love and wait runway 28, Akasa Air 492.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "callsign AKJ492 not on frequency - did they mean AKJ4924?"
+    ]
+   ]
+  },
+  {
+   "id": "d010a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven niner two, cross runway two eight, report vacated.",
+   "heard": "I fly 3790, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "callsign IGO3790 not on frequency - did they mean IGO3792?"
+    ]
+   ]
+  },
+  {
+   "id": "d010a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven niner two, cross runway two eight, report vacated.",
+   "heard": "Flight 3792, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO3792",
+    []
+   ]
+  },
+  {
+   "id": "d010a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven niner two, cross runway two eight, report vacated.",
+   "heard": "A flight, 3790, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d010a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven niner two, cross runway two eight, report vacated.",
+   "heard": "Flight 3792, cross runway 28, report vacated.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO3792",
+    []
+   ]
+  },
+  {
+   "id": "d010a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven niner two, cross runway two eight, report vacated.",
+   "heard": "A flight, 3792, got runway 28 before takeoff.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO3792",
+    []
+   ]
+  },
+  {
+   "id": "d010b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway two eight, IFLY three seven niner two.",
+   "heard": "Crossing runway 28, I fly 37982.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d010b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway two eight, IFLY three seven niner two.",
+   "heard": "Crossing runway 28, I fly 379 or 2.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "callsign IGO379 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d010b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway two eight, IFLY three seven niner two.",
+   "heard": "Sing runway 28, I fly 379 or 2.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "callsign IGO379 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d010b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway two eight, IFLY three seven niner two.",
+   "heard": "Crossing runway 28, I fly 37982.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d010b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Crossing runway two eight, IFLY three seven niner two.",
+   "heard": "15 runway 28, I fly 37 niner 2.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "IGO3792",
+    []
+   ]
+  },
+  {
+   "id": "d011a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air six zero two, runway one one right, cleared to land.",
+   "heard": "Akasa Air 602, runway 11, right. Cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air six zero two, runway one one right, cleared to land.",
+   "heard": "Akasa Air 602, runway 11, right, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air six zero two, runway one one right, cleared to land.",
+   "heard": "Akasa Air 602, runway 11 right, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air six zero two, runway one one right, cleared to land.",
+   "heard": "Casa Air 602, runway 11 right, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air six zero two, runway one one right, cleared to land.",
+   "heard": "Akasa Air 602, runway 11 right, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Cleared to land runway one one right, Akasa Air six zero two.",
+   "heard": "Cleared to land runway 11 right, Akasa Air 602.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Cleared to land runway one one right, Akasa Air six zero two.",
+   "heard": "To land runway 11 right, Akasa Air 602.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Cleared to land runway one one right, Akasa Air six zero two.",
+   "heard": "Ready to land, runway 11 right, Akasa Air 602.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Cleared to land runway one one right, Akasa Air six zero two.",
+   "heard": "Cleared to land runway 11 right, Akasa Air 602.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d011b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Cleared to land runway one one right, Akasa Air six zero two.",
+   "heard": "Cleared to land, runway 11 right, Akasa Air 602.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ602",
+    []
+   ]
+  },
+  {
+   "id": "d012a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India niner three five five, hold short runway one zero.",
+   "heard": "Air India niner 355, hold short runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC9355",
+    []
+   ]
+  },
+  {
+   "id": "d012a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India niner three five five, hold short runway one zero.",
+   "heard": "Air India 9355, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC9355",
+    []
+   ]
+  },
+  {
+   "id": "d012a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India niner three five five, hold short runway one zero.",
+   "heard": "Air India 9355, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC9355",
+    []
+   ]
+  },
+  {
+   "id": "d012a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India niner three five five, hold short runway one zero.",
+   "heard": "Air India 9355, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "AIC9355",
+    []
+   ]
+  },
+  {
+   "id": "d012a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Air India niner three five five, hold short runway one zero.",
+   "heard": "Air India 98355, hold short runway 12.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "runway 12 does not exist at Pune",
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d012b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, Air India six three five five.",
+   "heard": "Holding short, runway 10, Air India 6355.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC6355 not on frequency - did they mean AIC9355?"
+    ]
+   ]
+  },
+  {
+   "id": "d012b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, Air India six three five five.",
+   "heard": "Holding short runway 10, Air India 6355.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC6355 not on frequency - did they mean AIC9355?"
+    ]
+   ]
+  },
+  {
+   "id": "d012b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, Air India six three five five.",
+   "heard": "Holding short, runway 10, Air India 6355.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC6355 not on frequency - did they mean AIC9355?"
+    ]
+   ]
+  },
+  {
+   "id": "d012b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, Air India six three five five.",
+   "heard": "Holding short, runway 10, Air India 6355.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC6355 not on frequency - did they mean AIC9355?"
+    ]
+   ]
+  },
+  {
+   "id": "d012b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, Air India six three five five.",
+   "heard": "Taking short runway 10, Air India 625, sir.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign AIC625 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d013a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "IFLY niner four niner four, hold short runway one zero.",
+   "heard": "I fly niner 4 niner 4, hold short runway 10.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO9494",
+    []
+   ]
+  },
+  {
+   "id": "d013a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "IFLY niner four niner four, hold short runway one zero.",
+   "heard": "Flight line 904, 904, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d013a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "IFLY niner four niner four, hold short runway one zero.",
+   "heard": "Fly 904, 904, hold short, runway 10.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d013a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "IFLY niner four niner four, hold short runway one zero.",
+   "heard": "Fly 904-4, hold short runway 10.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d013a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "IFLY niner four niner four, hold short runway one zero.",
+   "heard": "Fly 988, 94, hold short runway 15.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "runway 15 does not exist at Delhi",
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d013b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, IFLY niner four zero four.",
+   "heard": "Holding short runway 10, I flew by niner 404.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d013b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, IFLY niner four zero four.",
+   "heard": "Starting short runway 10, I fly 9404.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign IGO9404 not on frequency - did they mean IGO9494?"
+    ]
+   ]
+  },
+  {
+   "id": "d013b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, IFLY niner four zero four.",
+   "heard": "Holding short, runway 10. IFL while niner 404.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d013b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, IFLY niner four zero four.",
+   "heard": "Taking short runway 10, IFL Y 90404.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d013b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ],
+   "said": "Holding short runway one zero, IFLY niner four zero four.",
+   "heard": "Flying short runway 10, IFLY niner 406.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign IGO9406 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d014a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air two three one four, line up and wait runway two seven.",
+   "heard": "Akasa Air 2314, line up and wait, runway 27.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air two three one four, line up and wait runway two seven.",
+   "heard": "Akasa Air 2314, line up and wait, runway 27.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air two three one four, line up and wait runway two seven.",
+   "heard": "Akasa Air 2314, line up and wait, runway 27.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air two three one four, line up and wait runway two seven.",
+   "heard": "Akasa Air 2314, line up and wait, runway 27.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air two three one four, line up and wait runway two seven.",
+   "heard": "Akasa Air 2314, line up and wait, runway 27.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Line up and wait runway two seven, Akasa Air two three one four.",
+   "heard": "Line up and wait runway 27, Akasa Air 2314.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Line up and wait runway two seven, Akasa Air two three one four.",
+   "heard": "Line up and wait, runway 27, Akasa Air 2314.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Line up and wait runway two seven, Akasa Air two three one four.",
+   "heard": "Snub and wait runway 27, Akasa Air 2314.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Line up and wait runway two seven, Akasa Air two three one four.",
+   "heard": "Line up and wait, runway 27, Akasa Air 2314.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d014b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [],
+   "said": "Line up and wait runway two seven, Akasa Air two three one four.",
+   "heard": "Line up and wait, runway 27. Akasa Air 2314.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "27",
+    "AKJ2314",
+    []
+   ]
+  },
+  {
+   "id": "d015a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Akasa Air seven six one, line up and wait runway zero niner.",
+   "heard": "Akasa Air 761, line up and wait runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Akasa Air seven six one, line up and wait runway zero niner.",
+   "heard": "Akasa Air 761, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Akasa Air seven six one, line up and wait runway zero niner.",
+   "heard": "Casa Air 761, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Akasa Air seven six one, line up and wait runway zero niner.",
+   "heard": "Casa Air 761, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Akasa Air seven six one, line up and wait runway zero niner.",
+   "heard": "Akasa Air 761, line up and wait runway 09.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air seven six one.",
+   "heard": "Line up and wait runway 09, Akasa Air 761.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air seven six one.",
+   "heard": "Line up and wait, runway 09, Akasa Air 761.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air seven six one.",
+   "heard": "Line up and wait, runway 09, Akasa Air 761.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air seven six one.",
+   "heard": "Line up and wait, runway 09, Akasa Air 761.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d015b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air seven six one.",
+   "heard": "Line up and wait, runway 09, Akasa Air 761.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "09",
+    "AKJ761",
+    []
+   ]
+  },
+  {
+   "id": "d016a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "IFLY niner six zero two, hold short runway two eight.",
+   "heard": "I fly niner 602, hold short runway two eight.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO9602",
+    []
+   ]
+  },
+  {
+   "id": "d016a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "IFLY niner six zero two, hold short runway two eight.",
+   "heard": "Fly 9er 602, hold short, runway 28.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO9602",
+    []
+   ]
+  },
+  {
+   "id": "d016a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "IFLY niner six zero two, hold short runway two eight.",
+   "heard": "Fly 90602, hold short, runway 28.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d016a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "IFLY niner six zero two, hold short runway two eight.",
+   "heard": "I fly niner 602, hold short, runway 28.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO9602",
+    []
+   ]
+  },
+  {
+   "id": "d016a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "IFLY niner six zero two, hold short runway two eight.",
+   "heard": "Please reply 9602, hold short runway 28.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO9602",
+    []
+   ]
+  },
+  {
+   "id": "d016b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Holding short runway two eight, IFLY niner six zero two.",
+   "heard": "Holding short runway 28, IFLY niner 602.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO9602",
+    []
+   ]
+  },
+  {
+   "id": "d016b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Holding short runway two eight, IFLY niner six zero two.",
+   "heard": "Holding short runway 28, IFLY 9602.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO9602",
+    []
+   ]
+  },
+  {
+   "id": "d016b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Holding short runway two eight, IFLY niner six zero two.",
+   "heard": "Holding short runway 28, IFLY 9602.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO9602",
+    []
+   ]
+  },
+  {
+   "id": "d016b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Holding short runway two eight, IFLY niner six zero two.",
+   "heard": "I'm on short runway 28, I fly 90602.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d016b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign",
+    "icao_digits"
+   ],
+   "said": "Holding short runway two eight, IFLY niner six zero two.",
+   "heard": "Holding short runway 28, I see niner 60.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d017a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air one four three nine, runway one four, cleared to land.",
+   "heard": "Akasa Air 1439, runway 14, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    "AKJ1439",
+    []
+   ]
+  },
+  {
+   "id": "d017a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air one four three nine, runway one four, cleared to land.",
+   "heard": "Akasa Air 1439, runway 14, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    "AKJ1439",
+    []
+   ]
+  },
+  {
+   "id": "d017a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air one four three nine, runway one four, cleared to land.",
+   "heard": "Akasa Air 1439, runway 14, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    "AKJ1439",
+    []
+   ]
+  },
+  {
+   "id": "d017a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air one four three nine, runway one four, cleared to land.",
+   "heard": "Akasa Air 1439, runway 14, cleared for land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    "AKJ1439",
+    []
+   ]
+  },
+  {
+   "id": "d017a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air one four three nine, runway one four, cleared to land.",
+   "heard": "Tata Air 1439, runway 14, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "14",
+    "AKJ1439",
+    []
+   ]
+  },
+  {
+   "id": "d017b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one four, Akasa Air one three four nine.",
+   "heard": "Cleared to land runway 14, Akasa Air 1349.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    null,
+    [
+     "callsign AKJ1349 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d017b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one four, Akasa Air one three four nine.",
+   "heard": "Cleared to land, runway 14, Akasa Air, 1349.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    null,
+    [
+     "callsign AKJ1349 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d017b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one four, Akasa Air one three four nine.",
+   "heard": "Cleared to land, runway 14, Akasa Air, 1349.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    null,
+    [
+     "callsign AKJ1349 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d017b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one four, Akasa Air one three four nine.",
+   "heard": "To land runway 14, Akasa Air 134.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    null,
+    [
+     "callsign AKJ134 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d017b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Cleared to land runway one four, Akasa Air one three four nine.",
+   "heard": "Air India land runway 14, Akasa Air 134.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    null,
+    [
+     "callsign AKJ134 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d018a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY niner seven one four, hold short runway one four.",
+   "heard": "I fly 90714, hold short, runway 14.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d018a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY niner seven one four, hold short runway one four.",
+   "heard": "I fly 90714, hold short, runway 14.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d018a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY niner seven one four, hold short runway one four.",
+   "heard": "Fly 98714, hold short, runway 14.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d018a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY niner seven one four, hold short runway one four.",
+   "heard": "Fly 98714, hold short, runway 14.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d018a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY niner seven one four, hold short runway one four.",
+   "heard": "Fly 98714, hold short, runway 14.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d018b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Holding short runway one four, IFLY niner seven one four.",
+   "heard": "Holding short runway 14, IFLY niner 714.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "14",
+    "IGO9714",
+    []
+   ]
+  },
+  {
+   "id": "d018b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Holding short runway one four, IFLY niner seven one four.",
+   "heard": "Holding short, runway 14. I fly 9714.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "14",
+    "IGO9714",
+    []
+   ]
+  },
+  {
+   "id": "d018b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Holding short runway one four, IFLY niner seven one four.",
+   "heard": "Starting short runway 14, IFLY 90714.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d018b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Holding short runway one four, IFLY niner seven one four.",
+   "heard": "Taking short runway 14, I fly 90714.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d018b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Holding short runway one four, IFLY niner seven one four.",
+   "heard": "Hold short, runway 14. I39714.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d019a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY five three zero zero, line up and wait runway one zero.",
+   "heard": "I fly 5300, line up and wait runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY five three zero zero, line up and wait runway one zero.",
+   "heard": "I fly 5300, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY five three zero zero, line up and wait runway one zero.",
+   "heard": "Flight 5300, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY five three zero zero, line up and wait runway one zero.",
+   "heard": "Flight 5300, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "IFLY five three zero zero, line up and wait runway one zero.",
+   "heard": "Fly 5300, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, IFLY five three zero zero.",
+   "heard": "Line up and wait runway 10, IFLY 5300.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, IFLY five three zero zero.",
+   "heard": "Line up and wait, runway 10, I fly 5300.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, IFLY five three zero zero.",
+   "heard": "Line up and wait. Runway 10, I fly 5300.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, IFLY five three zero zero.",
+   "heard": "Line up and wait. Runway 10, IFLY 5300.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO5300",
+    []
+   ]
+  },
+  {
+   "id": "d019b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, IFLY five three zero zero.",
+   "heard": "Line up and wait. Runway 10, I fly 520.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "callsign IGO520 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d020a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air eight niner niner fife, runway one one right, cleared for takeoff.",
+   "heard": "Akasa Air 8995, runway 11 right, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11R",
+    "AKJ8995",
+    []
+   ]
+  },
+  {
+   "id": "d020a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air eight niner niner fife, runway one one right, cleared for takeoff.",
+   "heard": "Akasa Air 89995, runway 11 right, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "11R",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d020a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air eight niner niner fife, runway one one right, cleared for takeoff.",
+   "heard": "Casa Air 89995, runway 11, right, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "11R",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d020a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air eight niner niner fife, runway one one right, cleared for takeoff.",
+   "heard": "Casa Air 89995, runway 11, right, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "11R",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d020a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "icao_digits"
+   ],
+   "said": "Akasa Air eight niner niner fife, runway one one right, cleared for takeoff.",
+   "heard": "Akasa Air 89995, runway 11 right, cleared for takeoff.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "11R",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d020b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_side"
+   ],
+   "said": "Runway one one left, cleared for takeoff, Akasa Air eight niner niner fife.",
+   "heard": "Runway 11 left, cleared for takeoff, Akasa Air 8995.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11L",
+    "AKJ8995",
+    []
+   ]
+  },
+  {
+   "id": "d020b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_side"
+   ],
+   "said": "Runway one one left, cleared for takeoff, Akasa Air eight niner niner fife.",
+   "heard": "Runway 11 left, cleared for takeoff, Akasa Air 8995.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11L",
+    "AKJ8995",
+    []
+   ]
+  },
+  {
+   "id": "d020b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_side"
+   ],
+   "said": "Runway one one left, cleared for takeoff, Akasa Air eight niner niner fife.",
+   "heard": "Air runway 11 left, cleared for takeoff. Akasa Air 89995.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "11L",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d020b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_side"
+   ],
+   "said": "Runway one one left, cleared for takeoff, Akasa Air eight niner niner fife.",
+   "heard": "Runway 11 left, cleared for takeoff, Akasa Air 8995.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "11L",
+    "AKJ8995",
+    []
+   ]
+  },
+  {
+   "id": "d020b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "icao_digits",
+    "wrong_readback_side"
+   ],
+   "said": "Runway one one left, cleared for takeoff, Akasa Air eight niner niner fife.",
+   "heard": "Taxiway 11 left, cleared for takeoff. Akasa Air post 995.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d021a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air niner five one zero, line up and wait runway one zero.",
+   "heard": "Akasa Air niner 510, line up and wait, runway one zero.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air niner five one zero, line up and wait runway one zero.",
+   "heard": "CASA Air 9510, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air niner five one zero, line up and wait runway one zero.",
+   "heard": "Akasa Air 9510, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air niner five one zero, line up and wait runway one zero.",
+   "heard": "Akasa Air, 9510, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Akasa Air niner five one zero, line up and wait runway one zero.",
+   "heard": "Akasa Air, manage 510, line up and wait, runway 10.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d021b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, Akasa Air niner five one zero.",
+   "heard": "Line up and wait, runway 10, Akasa Air niner 510.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, Akasa Air niner five one zero.",
+   "heard": "Line up and wait, runway 10. Akasa Air Niner 510.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, Akasa Air niner five one zero.",
+   "heard": "Line up and wait, runway 10, Akasa Air niner 510.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, Akasa Air niner five one zero.",
+   "heard": "Line up and wait, runway 10, Akasa Air, 9510.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d021b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "similar_callsign"
+   ],
+   "said": "Line up and wait runway one zero, Akasa Air niner five one zero.",
+   "heard": "India will give runway 100, Akasa Air 9510.",
+   "heard2": "Air India will give runway one zero; Akasa Air niner five one zero.",
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "AKJ9510",
+    []
+   ]
+  },
+  {
+   "id": "d022a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven zero seven, runway one zero, cleared to land.",
+   "heard": "IFLY 3707, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven zero seven, runway one zero, cleared to land.",
+   "heard": "I fly 3707, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven zero seven, runway one zero, cleared to land.",
+   "heard": "A flight, 3707 runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven zero seven, runway one zero, cleared to land.",
+   "heard": "Take-fly 3707, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "IFLY three seven zero seven, runway one zero, cleared to land.",
+   "heard": "Flight line 3707, runway 10, cleared to land.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "10",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Cleared to land runway two eight, IFLY three seven zero seven.",
+   "heard": "Cleared to land runway 28, I fly 3707.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Cleared to land runway two eight, IFLY three seven zero seven.",
+   "heard": "Cleared to land runway 28. I fly 3707.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Cleared to land runway two eight, IFLY three seven zero seven.",
+   "heard": "Cleared to land, runway 28. IFLY 3707.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Cleared to land runway two eight, IFLY three seven zero seven.",
+   "heard": "Cleared to land runway 28. IFL 3707.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d022b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_runway"
+   ],
+   "said": "Cleared to land runway two eight, IFLY three seven zero seven.",
+   "heard": "Ready to land runway 28. I clear 3707.",
+   "heard2": null,
+   "outcome": "AMBER",
+   "parsed": [
+    "28",
+    "IGO3707",
+    []
+   ]
+  },
+  {
+   "id": "d023a",
+   "cond": "clean",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air five four seven five, line up and wait runway zero niner.",
+   "heard": "Akasa Air 5475, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AKJ5475",
+    []
+   ]
+  },
+  {
+   "id": "d023a",
+   "cond": "20dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air five four seven five, line up and wait runway zero niner.",
+   "heard": "Akasa Air 5475, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AKJ5475",
+    []
+   ]
+  },
+  {
+   "id": "d023a",
+   "cond": "10dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air five four seven five, line up and wait runway zero niner.",
+   "heard": "Akasa Air 5475, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AKJ5475",
+    []
+   ]
+  },
+  {
+   "id": "d023a",
+   "cond": "5dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air five four seven five, line up and wait runway zero niner.",
+   "heard": "Akasa Air 5475, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AKJ5475",
+    []
+   ]
+  },
+  {
+   "id": "d023a",
+   "cond": "0dB",
+   "channel": "tower",
+   "traps": [],
+   "said": "Akasa Air five four seven five, line up and wait runway zero niner.",
+   "heard": "Akasa Air 5475, line up and wait, runway 09.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "AKJ5475",
+    []
+   ]
+  },
+  {
+   "id": "d023b",
+   "cond": "clean",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air five four two five.",
+   "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AKJ5425 not on frequency - did they mean AKJ5475?"
+    ]
+   ]
+  },
+  {
+   "id": "d023b",
+   "cond": "20dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air five four two five.",
+   "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AKJ5425 not on frequency - did they mean AKJ5475?"
+    ]
+   ]
+  },
+  {
+   "id": "d023b",
+   "cond": "10dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air five four two five.",
+   "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AKJ5425 not on frequency - did they mean AKJ5475?"
+    ]
+   ]
+  },
+  {
+   "id": "d023b",
+   "cond": "5dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air five four two five.",
+   "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AKJ5425 not on frequency - did they mean AKJ5475?"
+    ]
+   ]
+  },
+  {
+   "id": "d023b",
+   "cond": "0dB",
+   "channel": "pilot",
+   "traps": [
+    "wrong_readback_callsign"
+   ],
+   "said": "Line up and wait runway zero niner, Akasa Air five four two five.",
+   "heard": "In up and wait, runway 09, Akasa Air 542.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    null,
+    [
+     "callsign AKJ542 not expected on frequency"
+    ]
+   ]
+  },
+  {
+   "id": "d000v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर फाइव, रनवे ज़ीरो नाइन पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "टावर बर्ड चेसर, 5 runway 09 पर एफओडी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "BIRDCHASER5",
+    []
+   ]
+  },
+  {
+   "id": "d000v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर फाइव, रनवे ज़ीरो नाइन पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "सर, बर्ड चेसर फाइव, रनवे 09 पर एफओडी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "09",
+    "BIRDCHASER5",
+    []
+   ]
+  },
+  {
+   "id": "d000v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर फाइव, रनवे ज़ीरो नाइन पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "सर, Bird Chaser pilot, runway 09 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d000v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर फाइव, रनवे ज़ीरो नाइन पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "फॉर बर्ड चेसर, पाइल रनवे 09 पर एफओडी चेक के लिए जाना है, परमिशन कहाँ है?",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d000v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर फाइव, रनवे ज़ीरो नाइन पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "Our bird chaser pilot, runway 09, for FOD check to be done permission please.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d001v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me two, runway one zero cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME2",
+    []
+   ]
+  },
+  {
+   "id": "d001v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me two, runway one zero cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME2",
+    []
+   ]
+  },
+  {
+   "id": "d001v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me two, runway one zero cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "ओवर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME2",
+    []
+   ]
+  },
+  {
+   "id": "d001v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me two, runway one zero cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "टावर, फॉलो मी टू रनवे 10 cross थाना है, Bravo पे hold short है।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME2",
+    []
+   ]
+  },
+  {
+   "id": "d001v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me two, runway one zero cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "ओह, follow me please। runway 10 cross runway है, Bravo पे hold short है।",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d002v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर टू, रनवे थ्री टू पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "टावर बर्ड चेसर टू, रनवे 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "BIRDCHASER2",
+    []
+   ]
+  },
+  {
+   "id": "d002v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर टू, रनवे थ्री टू पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "Power Bird Chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "BIRDCHASER2",
+    []
+   ]
+  },
+  {
+   "id": "d002v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर टू, रनवे थ्री टू पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "Airport Bird Chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "BIRDCHASER2",
+    []
+   ]
+  },
+  {
+   "id": "d002v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर टू, रनवे थ्री टू पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "4 Bird Chaser 2, runway 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "BIRDCHASER2",
+    []
+   ]
+  },
+  {
+   "id": "d002v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, बर्ड चेसर टू, रनवे थ्री टू पर एफ़ ओ डी चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard": "हौवर Bird Chaser सर, रनवे 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "32",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d003v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी थ्री, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "टॉवर follow me 3, runway 14 वर पक्षी आहेत, मी taxiway Charlie's वर थांबलोय.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    "FOLLOWME3",
+    []
+   ]
+  },
+  {
+   "id": "d003v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी थ्री, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "पॉवर फॉलो मी, 3 runway 14 वर पक्षी आहेत, मी taxiway Charlie वर थांबलोय.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    "FOLLOWME3",
+    []
+   ]
+  },
+  {
+   "id": "d003v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी थ्री, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "वर follow me please. runway 14 वर पक्षी आहे, मी taxiway चालूवर थांबलो.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d003v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी थ्री, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "Tower, follow me. Runway 14 were occupied. We taxiway Charlie was coming.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d003v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी थ्री, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "Once followed with runway 141, taxiway Charlie 17.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d004v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser two, runway two eight cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "टावर, Bird Chaser 2 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "BIRDCHASER2",
+    []
+   ]
+  },
+  {
+   "id": "d004v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser two, runway two eight cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "tower bird chaser 2 runway 28 cross करना है, bravo पे hold कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "BIRDCHASER2",
+    []
+   ]
+  },
+  {
+   "id": "d004v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser two, runway two eight cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "Tower, Bird Chaser 2 runway 28 cross करना है। Bravo पे hold कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "BIRDCHASER2",
+    []
+   ]
+  },
+  {
+   "id": "d004v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser two, runway two eight cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "Our bird chaser to runway 28 cross करना है, Bravo पे hold कर रहे हैं।",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "28",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d004v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser two, runway two eight cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "Air India के crew runway के एक पास आना है, Bravo को बोल पाना।",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d005v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर टू, रनवे ज़ीरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "टॉवर बर्ड चेसर, तू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d005v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर टू, रनवे ज़ीरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "Tower Bird Chaser, runway 09 वर पक्षी आहेत. मी taxiway Charlie वर थांबलो.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d005v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर टू, रनवे ज़ीरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "Our bird chaser runway 09 वर पक्षी आहे. मी taxiway Charlie वर थांबलो आहे.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d005v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर टू, रनवे ज़ीरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "Our bird chaser runway 09 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d005v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर टू, रनवे ज़ीरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "heard": "Good good, check it. Runway 09 वर पक्की आहे. हे taxiway Charlie पर आहे.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "09",
+    null,
+    [
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d006v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway one zero pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "टावर, follow me 5, runway 10P FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d006v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway one zero pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "Tower, follow me 5, runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d006v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway one zero pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "Tower, follow me. 5 runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d006v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway one zero pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "ओ follow me, 5 runway 10 के for takeoff के लिए enter करना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d006v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway one zero pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "power follow me 5 runway 103, 4th पर से वो enter कर रहा है, 235।",
+   "heard2": "पावर फॉलो मी फाइव, रनवे वन ज़ीरो टू, स्क्वॉश करके वो एंटर करना है।",
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "FOLLOWME5",
+    [
+     "no runway heard"
+    ]
+   ]
+  },
+  {
+   "id": "d007v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser four, runway two eight pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "टावर, Bird Chaser 4, runway 28B for check के लिए enter करना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "BIRDCHASER4",
+    []
+   ]
+  },
+  {
+   "id": "d007v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser four, runway two eight pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "Tower Bird Chaser 4, runway 28B, FOD check के लिए enter करना है, permission चाहिए।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "BIRDCHASER4",
+    []
+   ]
+  },
+  {
+   "id": "d007v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser four, runway two eight pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "Tower, bird chaser 4 runway 28, we caught taxiway enter. Permission cleared.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "BIRDCHASER4",
+    []
+   ]
+  },
+  {
+   "id": "d007v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser four, runway two eight pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "Our bird chaser 4 runway 28, we got successfully enter command permission, Charlie.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "28",
+    "BIRDCHASER4",
+    []
+   ]
+  },
+  {
+   "id": "d007v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Bird Chaser four, runway two eight pe FOD check ke liye enter karna hai, permission chahiye.",
+   "heard": "Tower, bird stated 4 runway 280 past 150. We enter the runway 150.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "no callsign heard"
+    ]
+   ]
+  },
+  {
+   "id": "d008v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी फाइव, मला रनवे वन ज़ीरो ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "टॉवर follow me 5, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d008v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी फाइव, मला रनवे वन ज़ीरो ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "पॉवर फॉलो मी फाइव्ह, मला रनवे 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d008v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी फाइव, मला रनवे वन ज़ीरो ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "One follow me, five. मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "10",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d008v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी फाइव, मला रनवे वन ज़ीरो ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "सर, follow me, काय मला runway 10 ओलांडायचा आहे, परवान्या.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "10",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d008v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, फॉलो मी फाइव, मला रनवे वन ज़ीरो ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "एअर फॉलो मी स्टार्ट, मला runway 101 लाईनसाठी परवानगी द्या.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    null,
+    [
+     "no runway heard",
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d009v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway two nine right cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "टावर, फॉलो मी 5, रनवे 29 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "29R",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d009v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway two nine right cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "टावर, फॉलो मी 5, रनवे 29 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "29R",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d009v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway two nine right cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "और follow me, 5 runway 29 right cross करना है, Bravo पे hold करना है।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "29R",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d009v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway two nine right cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "Tower, follow me. 5 runway 29 right cross करना है, Bravo पे hold short.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "29R",
+    "FOLLOWME5",
+    []
+   ]
+  },
+  {
+   "id": "d009v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "Tower, Follow Me five, runway two nine right cross karna hai, Bravo pe hold kar raha hoon.",
+   "heard": "Air, follow me. 5 runway 39, right cross runway. Bravo, take off!",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    null,
+    "FOLLOWME5",
+    [
+     "runway 39R does not exist at Delhi"
+    ]
+   ]
+  },
+  {
+   "id": "d010v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, फॉलो मी टू, रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "heard": "टावर follow me 2, runway 32 cross करना है, holding point Bravo पर हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "FOLLOWME2",
+    []
+   ]
+  },
+  {
+   "id": "d010v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, फॉलो मी टू, रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "heard": "पावर फॉलो मी टू रनवे 32 क्रॉस करना है, होल्डिंग पॉइंट Bravo पर हूँ।",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "32",
+    "FOLLOWME2",
+    []
+   ]
+  },
+  {
+   "id": "d010v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, फॉलो मी टू, रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "heard": "For follow me to runway 32 cross karna hai, holding point bravo पर है।",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "32",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d010v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, फॉलो मी टू, रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "heard": "For follow me to runway 32 cross runway, holding point Bravo 40.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "32",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d010v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टावर, फॉलो मी टू, रनवे थ्री टू क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "heard": "For follow me, runway 32 clockwise, holding point Bravo 44.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "32",
+    null,
+    [
+     "Follow Me number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d011v",
+   "cond": "clean",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर थ्री, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "टॉवर बर्ड चेसर, 3. मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": null,
+   "outcome": "OK",
+   "parsed": [
+    "14",
+    "BIRDCHASER3",
+    []
+   ]
+  },
+  {
+   "id": "d011v",
+   "cond": "20dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर थ्री, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "Tower Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d011v",
+   "cond": "10dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर थ्री, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "Tower Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d011v",
+   "cond": "5dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर थ्री, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "Tower Bird Chaser, मला runway 14 ओलांडायचा आहे. परवानगी?",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  },
+  {
+   "id": "d011v",
+   "cond": "0dB",
+   "channel": "airside",
+   "traps": [],
+   "said": "टॉवर, बर्ड चेसर थ्री, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "heard": "और bird chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "heard2": null,
+   "outcome": "FLAG",
+   "parsed": [
+    "14",
+    null,
+    [
+     "Bird Chaser number not heard"
+    ]
+   ]
+  }
+ ]
+}

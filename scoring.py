@@ -12,27 +12,31 @@ Outcomes:
   WRONG : the system showed something as fine that was NOT what was said (dangerous)
 """
 import math
-from sentinel_parse import extract, second_listen
+from sentinel_parse import extract, second_listen, callsign_second_listen
 
 
 def judge(text, airport, traffic, true_runway, true_callsign, second_text=None):
     r = extract(text, airport, set(traffic))
     if second_text is not None:
         r = second_listen(r, second_text, airport, set(traffic))
+        r = callsign_second_listen(r, second_text, airport, set(traffic))   # no-op while NINER_GLUE_FIX is False
+    return outcome_of(r, traffic, true_runway, true_callsign), r
+
+
+def outcome_of(r, traffic, true_runway, true_callsign):
+    """Score a parser result (what the controller would see) against the truth."""
     should_flag = true_callsign not in traffic          # pilot used a callsign nobody has
     right = (r["runway"], r["callsign"]) == (true_runway, true_callsign)
     if r["status"] == "FLAGGED":
-        outcome = "OK" if should_flag else "FLAG"
-    elif (r["status"] == "PROBABLE" and not should_flag and r["runway"] == true_runway
-          and any(true_callsign in a for a in r["amber"])):
-        outcome = "AMBER"                 # amber that names the true flight as the look-alike to confirm
-    elif should_flag or not right:
-        outcome = "WRONG"                 # shown as fine/probable, but not what was said
-    elif r["status"] == "PROBABLE":
-        outcome = "AMBER"                 # right, but a human is asked to glance at it
-    else:
-        outcome = "OK"
-    return outcome, r
+        return "OK" if should_flag else "FLAG"
+    if (r["status"] == "PROBABLE" and not should_flag and r["runway"] == true_runway
+            and any(true_callsign in a for a in r["amber"])):
+        return "AMBER"                    # amber that names the true flight as the look-alike to confirm
+    if should_flag or not right:
+        return "WRONG"                    # shown as fine/probable, but not what was said
+    if r["status"] == "PROBABLE":
+        return "AMBER"                    # right, but a human is asked to glance at it
+    return "OK"
 
 
 def wilson(k, n, z=1.96):

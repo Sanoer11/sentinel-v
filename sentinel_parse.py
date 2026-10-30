@@ -29,7 +29,7 @@ DIGIT_WORDS = {
     "fower": "4", "five": "5", "fife": "5", "six": "6", "seven": "7", "eight": "8",
     "nine": "9", "niner": "9", "nayana": "9", "liner": "9", "minor": "9",
     "ज़ीरो": "0", "झिरो": "0", "जीरो": "0", "वन": "1", "टू": "2", "थ्री": "3", "फोर": "4",
-    "फाइव": "5", "फाईव्ह": "5", "सिक्स": "6", "सेवन": "7", "सेव्हन": "7", "एट": "8",
+    "फाइव": "5", "फाईव्ह": "5", "फाइव्ह": "5", "सिक्स": "6", "सेवन": "7", "सेव्हन": "7", "एट": "8",
     "नाइन": "9", "नाईन": "9",
 }
 SIDE = {"right": "R", "left": "L", "centre": "C", "center": "C",
@@ -187,7 +187,18 @@ def extract(text, airport, expected_traffic):
     for word, code in VEHICLES.items():
         if word in up:
             vm = re.search(word + r"\W*(\d+)", up)
-            if not vm:
+            # "Follow Me two" heard as "Follow Me to" / "Bird Chaser, तू" (dev run: 5 times, always "two").
+            # Only directly after the vehicle name, never anywhere else, and shown AMBER.
+            vm_to = None if vm else re.search(word + r"[\s,]*(?:TO|तू)(?=[\s,।.]|$)", up)
+            if vm_to:
+                cs = code + "2"
+                vehicles_known = {t for t in expected_traffic if t.startswith(code)}
+                if vehicles_known and cs not in vehicles_known:
+                    problems.append(f"{cs} is not an active vehicle")
+                else:
+                    out["callsign"] = cs
+                    out["amber"].append(f"vehicle number heard as 'to' - probably {word.title()} 2, confirm")
+            elif not vm:
                 # "Follow Me" with no number: we don't know WHICH vehicle -> never confirm
                 problems.append(f"{word.title()} number not heard")
             else:
@@ -274,4 +285,55 @@ def second_listen(r1, second_text, airport, expected_traffic):
         return r1
     out = dict(r1, runway=rwy, problems=[], status="PROBABLE")
     out["amber"] = r1["amber"] + [f"runway from second listen: first heard {glued_digits}{glued_side}, second heard {rwy}"]
+    return out
+
+
+# ---------------------------------------------------------------------------
+# CANDIDATE Fix N (NOT live until Experiment A3 passes): "niner" glued inside a FLIGHT number
+# ---------------------------------------------------------------------------
+# Dev run 31 Oct: "IFLY niner seven one four" came out as 90714 / 98714, "eight niner niner fife"
+# as 89995 - the same "niner -> two digits" glue as runway 290. Flight numbers have at most
+# 4 digits, so a 5+ digit number is impossible. Ask the same audio again in verbatim and accept
+# its callsign only if it is the glued number with digits removed RIGHT AFTER a 9, the flight
+# is on frequency, and the runway agrees in both listens. Always AMBER.
+NINER_GLUE_FIX = False
+
+
+def _niner_deletions(num):
+    """Flight numbers (max 4 digits) you get from `num` by undoing the niner glue only:
+    "niner" was written 90 / 99 / 98, so we may delete a 0, 9 or 8 that directly follows a kept 9."""
+    found = set()
+
+    def walk(i, kept):
+        if i == len(num):
+            if 1 <= len(kept) <= 4:
+                found.add(kept)
+            return
+        walk(i + 1, kept + num[i])
+        if kept.endswith("9") and num[i - 1] == "9" and num[i] in "098":
+            walk(i + 1, kept)            # drop the glued extra digit
+
+    walk(0, "")
+    return found
+
+
+def needs_callsign_second_listen(r):
+    long_runs = re.findall(r"\d{5,}", r["normalized"])
+    cs_only = r["problems"] and all("callsign" in p for p in r["problems"])
+    return bool(long_runs) and cs_only and r["runway"] is not None
+
+
+def callsign_second_listen(r1, second_text, airport, expected_traffic, force=False):
+    if not (NINER_GLUE_FIX or force) or not needs_callsign_second_listen(r1):
+        return r1
+    r2 = extract(second_text, airport, expected_traffic)
+    cs = r2["callsign"]
+    if cs is None or r2["runway"] != r1["runway"] or cs not in expected_traffic:
+        return r1
+    digits = re.sub(r"\D", "", cs[3:])
+    runs = re.findall(r"\d{5,}", r1["normalized"])
+    if not any(digits in _niner_deletions(run) for run in runs):
+        return r1
+    out = dict(r1, callsign=cs, problems=[], status="PROBABLE")
+    out["amber"] = r1["amber"] + r2["amber"] + [f"flight number from second listen: first heard {runs[0]}, second heard {cs}"]
     return out

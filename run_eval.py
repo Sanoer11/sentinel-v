@@ -169,8 +169,9 @@ def main():
             text = stt(path, it["channel"])
         # second listen (verbatim) ONLY when the runway number came out glued, e.g. "290"
         text2 = None
-        if not a.dry_run and sentinel_parse.needs_second_listen(
-                sentinel_parse.extract(text, it["airport"], set(it["traffic"]))):
+        first = None if a.dry_run else sentinel_parse.extract(text, it["airport"], set(it["traffic"]))
+        if first and (sentinel_parse.needs_second_listen(first) or (
+                sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))):
             text2 = stt(path, it["channel"], fmt="verbatim")
         outcome, parsed = judge(text, it["airport"], it["traffic"],
                                 it["truth"]["runway"], it["truth"]["callsign"], second_text=text2)
@@ -180,6 +181,8 @@ def main():
         if not locked:
             mark = {"OK": "  ", "AMBER": "a ", "FLAG": "~ ", "WRONG": "!!"}[outcome]
             print(f"{mark}{it['id']} {cond:<18} {outcome:<5} {text}")
+            if text2 is not None:
+                print(f"     second listen (verbatim): {text2}")
 
     # ---- report ----
     print("\n================ RESULT ================")

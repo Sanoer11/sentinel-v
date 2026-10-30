@@ -188,3 +188,36 @@ def test_second_listen_cannot_add_a_side_the_first_listen_lacked():
     o, r = judge("IFLY 5134, cross runway 290, writer Bravo report vacated.", "VIDP", DEL, "29R", "IGO5134",
                  second_text="IFLY five one three four, cross runway two niner right at Bravo.")
     assert o == "FLAG" and r["runway"] is None
+
+
+# ---- vehicle number "two" heard as "to" / "तू" (dev run 31 Oct, 5 times) ----
+
+def test_vehicle_to_is_amber_two():
+    o, r = judge("For follow me to runway 32 cross karna hai, holding point bravo.", "VABB",
+                 {"FOLLOWME2", "AIC2817"}, "32", "FOLLOWME2")
+    assert o == "AMBER" and r["callsign"] == "FOLLOWME2"
+
+
+def test_vehicle_to_never_invents_an_inactive_vehicle():
+    o, r = judge("Follow me to runway 32 cross karna hai.", "VABB", {"FOLLOWME5", "AIC2817"}, "32", "FOLLOWME5")
+    assert o == "FLAG" and r["callsign"] is None
+
+
+def test_marathi_five_spelling():
+    o, _ = judge("टॉवर फॉलो मी फाइव्ह, मला रनवे 10 ओलांडायचा आहे", "VAPO", {"FOLLOWME5", "AIC947"}, "10", "FOLLOWME5")
+    assert o == "OK"
+
+
+# ---- candidate Fix N (off until A3 passes) ----
+
+def test_fix_n_is_off_by_default():
+    from sentinel_parse import extract, callsign_second_listen
+    T = {"IGO9714", "AIC2817"}
+    r = extract("I fly 90714, hold short, runway 14.", "VABB", T)
+    assert callsign_second_listen(r, "I fly niner seven one four, hold short, runway one four.", "VABB", T)["status"] == "FLAGGED"
+
+
+def test_fix_n_only_removes_niner_glue():
+    from sentinel_parse import _niner_deletions
+    assert _niner_deletions("90714") == {"9714"}
+    assert _niner_deletions("12345") == set()

@@ -166,10 +166,15 @@ def main():
                         seed = int(hashlib.md5(path.encode()).hexdigest()[:8], 16)
                         sf.write(path, radio(x, sr, src, seed=seed), 8000, subtype="PCM_16")
             text = stt(path, it["channel"])
+        # second listen (verbatim) ONLY when the runway number came out glued, e.g. "290"
+        text2 = None
+        if not a.dry_run and sentinel_parse.needs_second_listen(
+                sentinel_parse.extract(text, it["airport"], set(it["traffic"]))):
+            text2 = stt(path, it["channel"], fmt="verbatim")
         outcome, parsed = judge(text, it["airport"], it["traffic"],
-                                it["truth"]["runway"], it["truth"]["callsign"])
+                                it["truth"]["runway"], it["truth"]["callsign"], second_text=text2)
         results.append({"id": it["id"], "cond": cond, "channel": it["channel"], "traps": it["traps"],
-                        "said": it["text"], "heard": text, "outcome": outcome,
+                        "said": it["text"], "heard": text, "heard2": text2, "outcome": outcome,
                         "parsed": [parsed["runway"], parsed["callsign"], parsed["problems"]]})
         if not locked:
             mark = {"OK": "  ", "AMBER": "a ", "FLAG": "~ ", "WRONG": "!!"}[outcome]

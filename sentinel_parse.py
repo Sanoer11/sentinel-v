@@ -241,3 +241,37 @@ def extract(text, airport, expected_traffic):
     # identified indirectly -> a human glances at it.  FLAGGED = ask "say again".
     out["status"] = "FLAGGED" if problems else ("PROBABLE" if out["amber"] else "CONFIRMED")
     return out
+
+
+# ---------------------------------------------------------------------------
+# Second listen (Fix G, passed Experiment A2: rescued 5 calls in 4 of 6 voices, 0 wrong)
+# ---------------------------------------------------------------------------
+# Prisma's "transcribe" style sometimes glues "two niner" into "290". The SAME audio in
+# "verbatim" style (words, no digit-writing) usually keeps "two niner". We ask again ONLY in
+# that case, and accept the second answer only if it can't be a different runway:
+#   - the first listen produced ONE glued runway number (3+ digits) and nothing else was wrong
+#   - the second runway's digits are the START of the glued number (290 -> 29, never 290 -> 28)
+#   - a side letter heard the first time must match (290R -> 29R only)
+#   - the second runway exists at this airport, and the callsign is the same in both listens
+# Result is always AMBER, never green.
+
+def needs_second_listen(r):
+    """True when the first result failed ONLY because the runway number was glued (e.g. 290)."""
+    glued = re.search(r"RUNWAY\s+(\d{3,})([LRC]?)\b", r["normalized"].upper())
+    return bool(glued) and r["problems"] == ["no runway heard"]
+
+
+def second_listen(r1, second_text, airport, expected_traffic):
+    if not needs_second_listen(r1):
+        return r1
+    glued_digits, glued_side = re.search(r"RUNWAY\s+(\d{3,})([LRC]?)\b", r1["normalized"].upper()).groups()
+    r2 = extract(second_text, airport, expected_traffic)
+    rwy = r2["runway"]
+    if rwy is None or r2["callsign"] != r1["callsign"]:
+        return r1
+    digits, side = re.match(r"(\d+)([LRC]?)", rwy).groups()
+    if not glued_digits.startswith(digits) or (glued_side and glued_side != side):
+        return r1
+    out = dict(r1, runway=rwy, problems=[], status="PROBABLE")
+    out["amber"] = r1["amber"] + [f"runway from second listen: first heard {glued_digits}{glued_side}, second heard {rwy}"]
+    return out

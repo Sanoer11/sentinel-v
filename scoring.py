@@ -12,11 +12,13 @@ Outcomes:
   WRONG : the system showed something as fine that was NOT what was said (dangerous)
 """
 import math
-from sentinel_parse import extract
+from sentinel_parse import extract, second_listen
 
 
-def judge(text, airport, traffic, true_runway, true_callsign):
+def judge(text, airport, traffic, true_runway, true_callsign, second_text=None):
     r = extract(text, airport, set(traffic))
+    if second_text is not None:
+        r = second_listen(r, second_text, airport, set(traffic))
     should_flag = true_callsign not in traffic          # pilot used a callsign nobody has
     right = (r["runway"], r["callsign"]) == (true_runway, true_callsign)
     if r["status"] == "FLAGGED":

@@ -1,0 +1,770 @@
+[
+ {
+  "phrase": "R_at",
+  "voice": "Avinash",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134 cross runway 2 niner right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four cross runway two niner right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Avinash",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "Fly 5134, cross runway 290 right at Bravo. Report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  },
+  "verbatim": {
+   "text": "Fly five one three four, cross runway two niner, right at Bravo. Report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Riyaa",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 2 niner, right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I F L Y five one three four, cross runway two niner, right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Riyaa",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "AFL Y 5134, cross runway 29 right at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "AFL Y five one three four, cross runway two niner, right at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Harshad",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 29, right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "IFLY ivalve five one three four, cross runway two niner, right at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Harshad",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 29, right at Bravo. Report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two nine nine, right at Bravo. Report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Prakash",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 2 niner right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner, right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Prakash",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "Fly 5134, cross runway 2, niner right at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "Fly five one three four, cross runway two niner, right at Bravo. Report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Devansh",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 2 niner, right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I F L Y five one three four, cross runway two niner, right at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Devansh",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "FLY 5134, cross runway 2, niner right at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "FLY five one three four, cross runway two, niner right at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Shubham",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 29, right at Bravo. Report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner, right at Bravo. Report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_at",
+  "voice": "Shubham",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 29, right at Bravo. Report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner, right at Bravo. Report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Avinash",
+  "audio": "clean",
+  "truth": "29L",
+  "transcribe": {
+   "text": "IFFL 5134, cross runway 2 niner lefted Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  },
+  "verbatim": {
+   "text": "I F L I five one three four, cross runway two niner lefted Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Avinash",
+  "audio": "radio",
+  "truth": "29L",
+  "transcribe": {
+   "text": "FLI 5124, cross runway 2, niner, left at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "FLI five one two four, cross runway two, niner, left at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Riyaa",
+  "audio": "clean",
+  "truth": "29L",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 2 niner left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "I F L Y five one three four, cross runway two niner left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Riyaa",
+  "audio": "radio",
+  "truth": "29L",
+  "transcribe": {
+   "text": "AFL Y 5134, cross runway 2, niner left at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "AFL Y five one three four, cross runway two niner, left at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Harshad",
+  "audio": "clean",
+  "truth": "29L",
+  "transcribe": {
+   "text": "IFFL 134, cross runway 29 left at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "I F L one three four, cross runway two niner, left at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Harshad",
+  "audio": "radio",
+  "truth": "29L",
+  "transcribe": {
+   "text": "File 134, cross runway 29, left at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "File one three four, cross runway two niner, left at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Prakash",
+  "audio": "clean",
+  "truth": "29L",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 2 niner, left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Prakash",
+  "audio": "radio",
+  "truth": "29L",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 29er, left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two. Niner left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Devansh",
+  "audio": "clean",
+  "truth": "29L",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 29er, left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "IFLY five one three four, cross runway two niner, left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Devansh",
+  "audio": "radio",
+  "truth": "29L",
+  "transcribe": {
+   "text": "Fly 5134, cross runway 2, 9er left at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "Fly five one three four, cross runway two. Niner left at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Shubham",
+  "audio": "clean",
+  "truth": "29L",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 29er left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner, left at Bravo, report vacated.",
+   "outcome": "OK",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "L_at",
+  "voice": "Shubham",
+  "audio": "radio",
+  "truth": "29L",
+  "transcribe": {
+   "text": "A fly 5134, cross runway 290 left at Bravo, report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  },
+  "verbatim": {
+   "text": "Fly five one three four, cross runway two niner left at Bravo, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29L"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Avinash",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134 cross runway 2 niner right report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four cross runway two niner right report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Avinash",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 29, right report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two. Niner, right? Report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Riyaa",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 2 niner, right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "IFLY five one three four, cross runway two niner, right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Riyaa",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "PFI 5134, cross runway 2, 9er right, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "PFI five one three four, cross runway two niner, right report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Harshad",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 29 right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "IFLY five one three four, cross runway two niner, right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Harshad",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "Air fly 5134, cross runway 290, right report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  },
+  "verbatim": {
+   "text": "Air fly five one three four, cross runway two niner, right report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Prakash",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 29er right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Prakash",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 290, right report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner, right report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Devansh",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 29 right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway two niner, right. Report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Devansh",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "Fly 5134, cross runway 2, niner right, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "Fly five one three four, cross runway two. Niner, right, report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Shubham",
+  "audio": "clean",
+  "truth": "29R",
+  "transcribe": {
+   "text": "IFLY 5134, cross runway 2 niner right, report vacated.",
+   "outcome": "OK",
+   "runway": "29R"
+  },
+  "verbatim": {
+   "text": "I F L I five one three four, cross runway two niner right, report vacated.",
+   "outcome": "FLAG",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_end",
+  "voice": "Shubham",
+  "audio": "radio",
+  "truth": "29R",
+  "transcribe": {
+   "text": "Air fly 5134, cross runway 290, right report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  },
+  "verbatim": {
+   "text": "A fly five one three four, cross runway two niner, right report vacated.",
+   "outcome": "AMBER",
+   "runway": "29R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Avinash",
+  "audio": "clean",
+  "truth": "11R",
+  "transcribe": {
+   "text": "IFY-5134, cross runway 11, write at Charlie, report vacated.",
+   "outcome": "FLAG",
+   "runway": null
+  },
+  "verbatim": {
+   "text": "I fly five one three four cross runway one one right at Charlie, report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Avinash",
+  "audio": "radio",
+  "truth": "11R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 11, right at Charlie. Report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway one one, right at Charlie. Report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Riyaa",
+  "audio": "clean",
+  "truth": "11R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 11 right at Charlie, report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four cross runway one one right at Charlie, report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Riyaa",
+  "audio": "radio",
+  "truth": "11R",
+  "transcribe": {
+   "text": "Flight 5134, cross runway 11, right at Charlie, report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "A flight five one three four, cross runway one one, right at Charlie, report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Harshad",
+  "audio": "clean",
+  "truth": "11R",
+  "transcribe": {
+   "text": "IFLI 5134, cross runway 11, right at Charlie, report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "IFLI ily five one three four, cross runway one one right at Charlie, report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Harshad",
+  "audio": "radio",
+  "truth": "11R",
+  "transcribe": {
+   "text": "IFFLI 5134, cross runway 11, right at Charlie, report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "IFLI ily five one three four, cross runway one one, right at Charlie, report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Prakash",
+  "audio": "clean",
+  "truth": "11R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 11 right at Charlie, report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway one one right at Charlie, report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Prakash",
+  "audio": "radio",
+  "truth": "11R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 11, right at Charlie before they get.",
+   "outcome": "OK",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway one one, right at Charlie before they get.",
+   "outcome": "OK",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Devansh",
+  "audio": "clean",
+  "truth": "11R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 11 right at Charlie, report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway one one right at Charlie, report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Devansh",
+  "audio": "radio",
+  "truth": "11R",
+  "transcribe": {
+   "text": "Fly 5134, cross runway 11, right at Charlie. Report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "Fly five one three four, cross runway one one right at Charlie. Report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Shubham",
+  "audio": "clean",
+  "truth": "11R",
+  "transcribe": {
+   "text": "I fly 5134, cross runway 11 right at Charlie. Report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "I fly five one three four, cross runway one one right at Charlie. Report vacated.",
+   "outcome": "OK",
+   "runway": "11R"
+  }
+ },
+ {
+  "phrase": "R_11",
+  "voice": "Shubham",
+  "audio": "radio",
+  "truth": "11R",
+  "transcribe": {
+   "text": "Fly 5134, cross runway 11, right at Charlie. Report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  },
+  "verbatim": {
+   "text": "Fly five one three four, cross runway one one, right at Charlie, report vacated.",
+   "outcome": "AMBER",
+   "runway": "11R"
+  }
+ }
+]

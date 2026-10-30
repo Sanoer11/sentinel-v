@@ -19,7 +19,8 @@ items = {it["id"]: it for it in ts["items"]}
 new_all, changed = [], 0
 for r in res["results"]:
     it = items[r["id"]]
-    o, p = judge(r["heard"], it["airport"], it["traffic"], it["truth"]["runway"], it["truth"]["callsign"])
+    o, p = judge(r["heard"], it["airport"], it["traffic"], it["truth"]["runway"], it["truth"]["callsign"],
+             second_text=r.get("heard2"))
     new_all.append((r["cond"], o))
     flag = "" if o == r["outcome"] else f"   <-- was {r['outcome']}"
     changed += o != r["outcome"]

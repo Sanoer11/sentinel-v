@@ -146,3 +146,38 @@ def test_one_digit_runway_is_flagged_not_padded():
 def test_two_digit_09_still_works():
     o, _ = judge("IFLY 5134, runway 09, cleared to land.", "VIDP", {"IGO5134"}, "09", "IGO5134")
     assert o == "OK"
+
+
+# ---- second listen (Fix G: transcribe glued "two niner" into "290"; verbatim kept "two niner") ----
+
+def test_second_listen_rescues_glued_runway_as_amber():
+    # real A2 transcripts (Harshad, radio)
+    o, r = judge("Air fly 5134, cross runway 290, right report vacated.", "VIDP", DEL, "29R", "IGO5134",
+                 second_text="Air fly five one three four, cross runway two niner, right report vacated.")
+    assert o == "AMBER" and r["runway"] == "29R" and "second listen" in r["amber"][-1]
+
+
+def test_second_listen_never_changes_digits():
+    # 290 -> 28 would be a DIFFERENT runway: refused
+    o, r = judge("IFLY 5134, cross runway 290, right report vacated.", "VIDP", DEL, "29R", "IGO5134",
+                 second_text="IFLY five one three four, cross runway two eight, report vacated.")
+    assert o == "FLAG" and r["runway"] is None
+
+
+def test_second_listen_side_must_match():
+    o, r = judge("IFLY 5134, cross runway 290 left at Bravo.", "VIDP", DEL, "29L", "IGO5134",
+                 second_text="IFLY five one three four, cross runway two niner right at Bravo.")
+    assert o == "FLAG" and r["runway"] is None
+
+
+def test_second_listen_needs_same_callsign():
+    o, _ = judge("IFLY 5134, cross runway 290, right.", "VIDP", DEL, "29R", "IGO5134",
+                 second_text="Air India two eight one seven, cross runway two niner, right.")
+    assert o == "FLAG"
+
+
+def test_second_listen_that_is_also_wrong_stays_flagged():
+    # "two eight, cleared" misheard as 2808, second listen 2838: both impossible -> stays flagged
+    o, r = judge("Air India 2817, runway 2808 to land.", "VIDP", DEL, "28", "AIC2817",
+                 second_text="Air India two eight one seven, runway two eight three eight, to land.")
+    assert o == "FLAG" and r["runway"] is None

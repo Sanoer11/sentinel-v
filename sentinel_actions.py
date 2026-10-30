@@ -1,0 +1,123 @@
+"""
+Sentinel-V Step 1 — WHAT is each runway being used for, and by whom?
+
+analyse(text, airport, traffic, channel, phases) returns the Step-0 parse (runway, callsign,
+status) PLUS one entry per runway mentioned:
+    {"runway", "valid", "action", "strength", "conflict", "cues"}
+
+Actions
+  LAND, TAKEOFF, LINEUP, CROSS            -> will be ON that runway
+  HOLD_SHORT, TAXI_HP                     -> must STOP before that runway
+  GO_AROUND, STOP                         -> leaving it / stop now
+  REQ_CROSS, REQ_ENTER                    -> a VEHICLE asking to go on it (not cleared yet)
+  REPORT_BIRDS                            -> a vehicle reporting birds on it
+  None                                    -> no instruction heard (shown amber, treated as "maybe on it")
+
+Strong cue = ICAO Doc 4444 phrase heard in full ("cleared to land", "hold short").
+Weak cue   = only the END of the phrase survived ("... to land", "... short runway", "... and wait").
+             Why the end: push-to-talk clips the FIRST syllables (dev runs: "Taking short",
+             "I love and wait", "Request to land"). Weak cue -> AMBER, never green.
+
+Safety rules
+  - two different instructions for one runway  -> FLAG (e.g. "Crossing short runway")
+  - instruction impossible for the aircraft's state (ADS-B air/ground bit):
+      LAND / GO_AROUND need an airborne aircraft; TAKEOFF / LINEUP / CROSS / HOLD_SHORT need one
+      on the ground -> FLAG. Catches "cleared to land" heard as "cleared for takeoff" (dev2 e012a, e017a).
+  - on the vehicle (airside) channel a vehicle never GIVES clearances: "cross runway" from a
+    vehicle is a request, and "hold short / holding point Bravo" is where it is waiting.
+  - every runway mentioned must exist at the airport (a 2-runway call checks both).
+"""
+import re
+from sentinel_parse import extract, normalize, AIRPORTS
+
+STRONG = [
+    ("LAND",       r"\bCLEARED\s+TO\s+LAND\b"),
+    ("TAKEOFF",    r"\bCLEARED\s+FOR\s+TAKE\s*-?\s*OFF\b"),
+    ("LINEUP",     r"\bLINE\s+UP(\s+AND\s+WAIT)?\b"),
+    ("CROSS",      r"\bCROSS(ING)?\s+RUNWAY\b"),
+    ("HOLD_SHORT", r"\bHOLD(ING)?\s+SHORT\b"),
+    ("TAXI_HP",    r"\bTAXI\s+TO\s+HOLDING\s+POINT\b"),
+    ("GO_AROUND",  r"\bGO(ING)?\s+AROUND\b"),
+    ("STOP",       r"\bSTOP\s+IMMEDIATELY\b|\bCANCEL\s+TAKE\s*-?\s*OFF\b|\bHOLD\s+POSITION\b"),
+]
+WEAK = [
+    # kept only if seen in 2+ voices and never for a different instruction (dev + dev2, 600 clips).
+    # Dropped by that rule: "for land" (1 voice), "for takeoff" (1 voice) -> those stay "not heard".
+    ("LAND",       r"\bTO\s+LAND\b|\bLAND\s+RUNWAY\b"),
+    ("LINEUP",     r"\bAND\s+WAIT\b"),
+    ("HOLD_SHORT", r"\bSHORT\s+(OF\s+)?RUNWAY\b"),
+    ("CROSS",      r"\bCROSS(ING)?\b"),                    # lets "Crossing short runway" become a conflict
+]
+VEHICLE = [   # airside channel: Hinglish / Hindi / Marathi (no \b after Devanagari: matras break it)
+    ("REQ_CROSS",    r"\bCROSS\b|क्रॉस|ओलांड"),
+    ("REQ_ENTER",    r"\bENTER\b|एंटर|(\bFOD\b|एफओडी|एफ़\s*ओ\s*डी|फॉड)"),
+    ("REPORT_BIRDS", r"पक्षी|\bPAKSHI\b|\bBIRDS\b"),
+]
+CONDITIONAL = r"\bBEHIND\b|\bAFTER\s+THE\s+(LANDING|DEPARTING)\b"
+NEEDS_AIR = {"LAND", "GO_AROUND"}
+NEEDS_GROUND = {"TAKEOFF", "LINEUP", "CROSS", "HOLD_SHORT", "TAXI_HP"}
+ON_RUNWAY = {"LAND", "TAKEOFF", "LINEUP", "CROSS", "REQ_CROSS", "REQ_ENTER", None}
+
+RUNWAY_RE = re.compile(r"\bRUNWAY\s+(\d{1,2}[LRC]?)\b")
+
+
+def _hits(up, table, strength):
+    return [(m.start(), a, m.group(0), strength) for a, pat in table for m in re.finditer(pat, up)]
+
+
+def instructions(normalized, airport, channel="tower"):
+    up = normalized.upper()
+    mentions = [(m.start(), m.end(), m.group(1)) for m in RUNWAY_RE.finditer(up)]
+    if channel == "airside":
+        hits = _hits(up, VEHICLE, "strong")
+    else:
+        hits = _hits(up, STRONG, "strong") + _hits(up, WEAK, "weak")
+    out = []
+    for i, (s, e, rw) in enumerate(mentions):
+        lo = mentions[i - 1][1] if i else 0
+        hi = mentions[i + 1][0] if i + 1 < len(mentions) else len(up)
+        mine = [h for h in hits if lo <= h[0] < hi and h[1] not in ("GO_AROUND", "STOP")]
+        if len(mentions) > 1:
+            mine = [h for h in mine if h[0] < s or i + 1 == len(mentions)]
+        acts = {a for _, a, _, _ in mine}
+        if channel == "airside" and len(acts) > 1:
+            # "FOD check ke liye enter karna hai" = one request; "birds" report wins over nothing else
+            acts = {"REQ_ENTER"} if "REQ_ENTER" in acts and "REQ_CROSS" not in acts else acts
+        strength = None
+        if len(acts) == 1:
+            a = next(iter(acts))
+            strength = "strong" if any(h[1] == a and h[3] == "strong" for h in mine) else "weak"
+        valid = len(re.sub(r"\D", "", rw)) == 2 and rw in AIRPORTS[airport]["runways"]
+        out.append({"runway": rw, "valid": valid, "action": next(iter(acts)) if len(acts) == 1 else None,
+                    "strength": strength, "conflict": len(acts) > 1,
+                    "cues": [c for _, _, c, _ in sorted(mine)]})
+    return out
+
+
+def analyse(text, airport, traffic, channel="tower", phases=None):
+    """Step-0 parse + Step-1 instructions. phases: {callsign: "air" | "ground"} from ADS-B, optional."""
+    r = extract(text, airport, set(traffic))
+    ins = instructions(r["normalized"], airport, channel)
+    problems, amber = list(r["problems"]), list(r["amber"])
+    for x in ins:
+        if x["conflict"]:
+            problems.append(f"runway {x['runway']}: two different instructions heard ({', '.join(x['cues'])}) - say again")
+        elif x["action"] is None:
+            amber.append(f"runway {x['runway']}: instruction not heard")
+        elif x["strength"] == "weak":
+            amber.append(f"runway {x['runway']}: instruction partly heard ('{x['cues'][-1].lower()}') - {x['action']}")
+        if len(ins) > 1 and not x["valid"]:
+            problems.append(f"runway {x['runway']} does not exist at {AIRPORTS[airport]['name']}")
+    if re.search(CONDITIONAL, r["normalized"].upper()):
+        amber.append("conditional clearance (behind / after traffic)")
+    phase = (phases or {}).get(r["callsign"])
+    for x in ins:
+        a = x["action"]
+        if phase == "ground" and a in NEEDS_AIR or phase == "air" and a in NEEDS_GROUND:
+            problems.append(f"{a} does not fit {r['callsign']} ({'on the ground' if phase == 'ground' else 'airborne'}) - say again")
+    # instructions that need no runway number: "go around", "stop immediately", "cancel take-off"
+    call_actions = sorted({a for _, a, _, _ in _hits(r["normalized"].upper(), STRONG, "strong")
+                           if a in ("GO_AROUND", "STOP")}) if channel != "airside" else []
+    out = dict(r, instructions=ins, call_actions=call_actions, problems=problems, amber=amber)
+    out["status"] = "FLAGGED" if problems else ("PROBABLE" if amber else "CONFIRMED")
+    return out

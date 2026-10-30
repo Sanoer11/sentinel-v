@@ -1,0 +1,98 @@
+"""
+Step 1 tests: instruction per runway. ICAO Doc 4444 phrases + real Prisma transcripts from dev/dev2.
+Run:  python -m pytest -q test_actions.py
+"""
+from sentinel_actions import analyse
+
+DEL = {"IGO5134", "AIC2817", "AKJ1123", "FOLLOWME5", "FOLLOWME3"}
+
+
+def acts(r):
+    return [(x["runway"], x["action"], x["strength"]) for x in r["instructions"]]
+
+
+# ---- ICAO phrases ----
+
+def test_two_runways_in_one_call():
+    r = analyse("IFLY five one three four, cross runway two niner left, hold short runway two niner right.", "VIDP", DEL)
+    assert acts(r) == [("29L", "CROSS", "strong"), ("29R", "HOLD_SHORT", "strong")] and r["status"] == "CONFIRMED"
+
+
+def test_second_runway_must_exist_too():
+    r = analyse("IFLY 5134, cross runway 29L, hold short runway 39R.", "VIDP", DEL)
+    assert r["status"] == "FLAGGED" and any("39R does not exist" in p for p in r["problems"])
+
+
+def test_taxi_to_holding_point_is_not_entering():
+    r = analyse("Air India 2817, taxi to holding point runway 28 via Bravo.", "VIDP", DEL)
+    assert acts(r) == [("28", "TAXI_HP", "strong")]
+
+
+def test_conditional_clearance_is_amber():
+    r = analyse("Akasa Air 1123, behind the landing A320, line up and wait runway 27, behind.", "VIDP", DEL)
+    assert acts(r)[0][1] == "LINEUP" and r["status"] == "PROBABLE" and any("conditional" in a for a in r["amber"])
+
+
+def test_go_around_and_stop_need_no_runway():
+    assert analyse("IFLY 5134, go around, I say again, go around.", "VIDP", DEL)["call_actions"] == ["GO_AROUND"]
+    assert analyse("Air India 2817, stop immediately, I say again, stop immediately.", "VIDP", DEL)["call_actions"] == ["STOP"]
+
+
+def test_before_takeoff_is_not_takeoff():
+    # dev d010a 0dB: "report vacated" heard as "before takeoff" (truth: CROSS)
+    r = analyse("A flight, 3792, got runway 28 before takeoff.", "VIDP", {"IGO3792"})
+    assert all(x["action"] != "TAKEOFF" for x in r["instructions"])
+
+
+# ---- real transcripts: clipped start of the phrase -> weak cue -> amber ----
+
+def test_clipped_hold_short_is_amber_hold_short():
+    r = analyse("Taking short runway 10, Akasa Air 6648.", "VAPO", {"AKJ6648"})
+    assert acts(r) == [("10", "HOLD_SHORT", "weak")] and r["status"] == "PROBABLE"
+
+
+def test_clipped_line_up_and_to_land():
+    assert acts(analyse("I love and wait runway 28, Akasa Air 4924.", "VAPO", {"AKJ4924"}))[0][1:] == ("LINEUP", "weak")
+    assert acts(analyse("Request to land runway 09, I fly 5093.", "VABB", {"IGO5093"}))[0][1:] == ("LAND", "weak")
+
+
+def test_crossing_short_is_a_conflict():
+    # dev d002b: "Holding short" heard as "Crossing short" - the two opposite instructions
+    r = analyse("Crossing short runway 32, Air India 9158.", "VABB", {"AIC9158"})
+    assert r["status"] == "FLAGGED" and r["instructions"][0]["conflict"]
+
+
+def test_no_instruction_is_amber_not_green():
+    r = analyse("Taxiway runway 09, Air India 2031.", "VABB", {"AIC2031"})
+    assert r["instructions"][0]["action"] is None and r["status"] == "PROBABLE"
+
+
+# ---- aircraft state (ADS-B air/ground) ----
+
+def test_takeoff_for_airborne_aircraft_is_flagged():
+    # dev2 e012a 0dB: "cleared to land" heard as "cleared for takeoff" - text alone can't tell
+    r = analyse("I fly 7981, runway 14, cleared for takeoff.", "VABB", {"IGO7981"}, phases={"IGO7981": "air"})
+    assert r["status"] == "FLAGGED"
+    assert analyse("I fly 7981, runway 14, cleared for takeoff.", "VABB", {"IGO7981"})["status"] == "CONFIRMED"
+
+
+def test_land_for_aircraft_on_ground_is_flagged():
+    r = analyse("Air India 2817, runway 28, cleared to land.", "VIDP", DEL, phases={"AIC2817": "ground"})
+    assert r["status"] == "FLAGGED"
+
+
+# ---- vehicle channel ----
+
+def test_vehicle_cross_is_a_request_and_hold_is_its_position():
+    r = analyse("Follow me, 5 runway 28 cross करना है, Bravo पे hold short जाना है।", "VIDP", DEL, channel="airside")
+    assert acts(r) == [("28", "REQ_CROSS", "strong")] and r["status"] == "CONFIRMED"
+
+
+def test_vehicle_fod_check_is_enter_request():
+    r = analyse("Tower, Follow Me 3, runway 10 पे FOD check के लिए enter करना है, permission चाहिए।", "VIDP", DEL, channel="airside")
+    assert acts(r)[0][1] == "REQ_ENTER"
+
+
+def test_vehicle_birds_report():
+    r = analyse("टॉवर फॉलो मी 3, runway 27 वर पक्षी आहेत, मी taxiway Charlie वर थांबलोय.", "VIDP", DEL, channel="airside")
+    assert acts(r)[0][1] == "REPORT_BIRDS"

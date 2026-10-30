@@ -251,7 +251,7 @@ def extract(text, airport, expected_traffic):
 # that case, and accept the second answer only if it can't be a different runway:
 #   - the first listen produced ONE glued runway number (3+ digits) and nothing else was wrong
 #   - the second runway's digits are the START of the glued number (290 -> 29, never 290 -> 28)
-#   - a side letter heard the first time must match (290R -> 29R only)
+#   - the side must match exactly (290R -> 29R only; 290 with no side never becomes 29R)
 #   - the second runway exists at this airport, and the callsign is the same in both listens
 # Result is always AMBER, never green.
 
@@ -270,7 +270,7 @@ def second_listen(r1, second_text, airport, expected_traffic):
     if rwy is None or r2["callsign"] != r1["callsign"]:
         return r1
     digits, side = re.match(r"(\d+)([LRC]?)", rwy).groups()
-    if not glued_digits.startswith(digits) or (glued_side and glued_side != side):
+    if not glued_digits.startswith(digits) or glued_side != side:   # side must match exactly, incl. 'no side'
         return r1
     out = dict(r1, runway=rwy, problems=[], status="PROBABLE")
     out["amber"] = r1["amber"] + [f"runway from second listen: first heard {glued_digits}{glued_side}, second heard {rwy}"]

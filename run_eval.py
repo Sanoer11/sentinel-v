@@ -135,7 +135,8 @@ def main():
     calls = len(jobs)
     tts_calls = 0 if a.human else len(items)
     if not a.dry_run:
-        print(f"This run makes {calls} STT + {tts_calls} TTS calls, about Rs {COST_PER_CALL * (calls + tts_calls):.0f}.")
+        print(f"This run makes {calls} STT + {tts_calls} TTS calls, about Rs {COST_PER_CALL * (calls + tts_calls):.0f}."
+              "\n  (+ 1 extra STT call for each glued runway like '290', seen in 4 of 18 (A1) and 5 of 48 (A2) calls)")
         if not a.yes and input("Continue? [y/N] ").strip().lower() != "y":
             return
 

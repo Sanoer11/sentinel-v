@@ -181,3 +181,10 @@ def test_second_listen_that_is_also_wrong_stays_flagged():
     o, r = judge("Air India 2817, runway 2808 to land.", "VIDP", DEL, "28", "AIC2817",
                  second_text="Air India two eight one seven, runway two eight three eight, to land.")
     assert o == "FLAG" and r["runway"] is None
+
+
+def test_second_listen_cannot_add_a_side_the_first_listen_lacked():
+    # first listen "290" with no side, second "29R": the side came from ONE listen only -> refused
+    o, r = judge("IFLY 5134, cross runway 290, writer Bravo report vacated.", "VIDP", DEL, "29R", "IGO5134",
+                 second_text="IFLY five one three four, cross runway two niner right at Bravo.")
+    assert o == "FLAG" and r["runway"] is None

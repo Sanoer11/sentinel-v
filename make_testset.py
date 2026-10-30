@@ -17,6 +17,7 @@ Every line stores:
 Usage:
   python make_testset.py dev
   python make_testset.py dev2     (fresh sentences, same voices: checks fixes made on dev)
+  python make_testset.py step1    (Step 1 phrases: two runways, taxi, conditional, go around, stop, wind)
   python make_testset.py locked
   python make_testset.py human
 """
@@ -195,6 +196,75 @@ def airside_line(rng, kind, idx):
                 truth={"runway": rw, "callsign": vtype + n}, traffic=traffic, traps=[])
 
 
+
+# ---------------------------------------------------------------------------
+# Step 1 phrases (ICAO Doc 4444 forms): two runways in one call, taxi to holding point,
+# conditional line-up, go around, stop, wind numbers next to a runway.
+# truth["instructions"] = [[runway, action], ...] in spoken order; truth["call_actions"] for
+# instructions that carry no runway; phase = the aircraft's ADS-B air/ground state.
+# ---------------------------------------------------------------------------
+# Delhi: the parallel runways 29L/29R (Aug 2023: VTI926 crossing 29R while VTI725 took off from it).
+# Mumbai: 09/27 and 14/32 cross each other.
+TWO_RUNWAYS = {"VIDP": [("29R", "29L"), ("29L", "29R"), ("11R", "11L")], "VABB": [("27", "32"), ("14", "09")]}
+
+STEP1 = {
+    "two_runways": ("{cs}, cross runway {r1}, hold short runway {r2}.",
+                    "Crossing runway {r1}, holding short runway {r2}, {cs}.",
+                    lambda r1, r2: [[r1, "CROSS"], [r2, "HOLD_SHORT"]], [], False, "ground"),
+    "taxi_hp":     ("{cs}, taxi to holding point runway {r1} via Bravo.",
+                    "Taxi to holding point runway {r1} via Bravo, {cs}.",
+                    lambda r1, r2: [[r1, "TAXI_HP"]], [], False, "ground"),
+    "conditional": ("{cs}, behind the landing Airbus, line up and wait runway {r1}, behind.",
+                    "Behind the landing Airbus, line up and wait runway {r1}, behind, {cs}.",
+                    lambda r1, r2: [[r1, "LINEUP"]], [], True, "ground"),
+    "go_around":   ("{cs}, go around, I say again, go around.",
+                    "Going around, {cs}.",
+                    lambda r1, r2: [], ["GO_AROUND"], False, "air"),
+    "stop":        ("{cs}, stop immediately, I say again, stop immediately.",
+                    "Stopping, {cs}.",
+                    lambda r1, r2: [], ["STOP"], False, "ground"),
+    "wind_land":   ("{cs}, wind {wind} degrees, one two knots, runway {r1}, cleared to land.",
+                    "Cleared to land runway {r1}, {cs}.",
+                    lambda r1, r2: [[r1, "LAND"]], [], False, "air"),
+}
+
+
+def step1_lines(rng, kind, idx, ptype):
+    ap = rng.choice(list(TWO_RUNWAYS)) if ptype == "two_runways" else rng.choice(list(AIRPORTS))
+    r1, r2 = rng.choice(TWO_RUNWAYS[ap]) if ptype == "two_runways" else (rng.choice(sorted(AIRPORTS[ap]["runways"])), None)
+    cs = callsign(rng)
+    traffic = sorted({cs} | {callsign(rng) for _ in range(3)})
+    style = rng.choices(list(DIGIT_STYLES), weights=[3, 2, 5])[0]
+    wind = rng.choice(["270", "090", "280", "100"])            # wind numbers that look like runways
+    tower_t, pilot_t, ins, calls, cond, phase = STEP1[ptype]
+    voices = VOICES[kind]["en"]
+    tv = rng.choice(voices)
+    pv = rng.choice([v for v in voices if v != tv])
+    fmt = dict(cs=say_callsign(cs, style), r1=say_runway(r1, style), r2=say_runway(r2, style) if r2 else "",
+               wind=say_digits(wind, style))
+    ideal = dict(cs=ideal_callsign(cs), r1=r1, r2=r2 or "", wind=wind)
+    truth = {"runway": r1 if ins(r1, r2) else None, "callsign": cs, "instructions": ins(r1, r2),
+             "call_actions": calls, "conditional": cond}
+    traps = [f"step1_{ptype}"] + (["icao_digits"] if style == "icao" else [])
+    out = []
+    for sfx, ch, tmpl, v in (("a", "tower", tower_t, tv), ("b", "pilot", pilot_t, pv)):
+        out.append(dict(id=f"s{idx:03d}{sfx}", channel=ch, airport=ap, action=ptype, phase={cs: phase},
+                        voice=v[0], tts_model=v[1], tts_lang=v[2],
+                        text=tmpl.format(**fmt), ideal=tmpl.format(**ideal),
+                        truth=dict(truth, conditional=cond and ch == "tower" or cond),
+                        traffic=traffic, traps=list(traps)))
+    return out
+
+
+def build_step1(kind, seed, per_type):
+    rng = random.Random(seed)
+    items, idx = [], 0
+    for _ in range(per_type):
+        for ptype in STEP1:
+            items += step1_lines(rng, kind, idx, ptype)
+            idx += 1
+    return items
+
 def build(kind, seed, n_pairs, n_airside):
     rng = random.Random(seed)
     items = []
@@ -229,9 +299,12 @@ def main():
         seed, items, name = 25, build("dev", 25, 24, 12), "dev2"
         for it in items:
             it["id"] = "e" + it["id"][1:]
+    elif kind == "step1":
+        seed, items, name = 101, build_step1("dev", 101, 4), "step1"
     elif kind == "locked":
         seed = secrets.randbits(32)
         items, name = build("locked", seed, 60, 30), f"locked_{seed:08x}"
+        items += build_step1("locked", seed, 3)            # the exam covers Step-1 phrases too
     elif kind == "human":
         seed = secrets.randbits(32)
         items = build("locked", seed, 12, 6)
@@ -240,7 +313,7 @@ def main():
         name = f"human_{seed:08x}"
         recording_sheet(items, f"testsets/{name}_SHEET.md")
     else:
-        raise SystemExit("use: dev | locked | human")
+        raise SystemExit("use: dev | dev2 | step1 | locked | human")
     path = f"testsets/{name}.json"
     json.dump({"name": name, "kind": kind, "seed": seed, "items": items},
               open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)

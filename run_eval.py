@@ -26,7 +26,7 @@ import numpy as np
 import soundfile as sf
 
 import sentinel_parse
-from scoring import judge, summarize, fmt
+from scoring import judge_full, summarize, fmt
 from radio_sim import radio
 
 NOISE = [None, 20, 10, 5, 0]          # None = clean (no radio)
@@ -174,14 +174,16 @@ def main():
                       or (sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))
                       or sentinel_parse.needs_vehicle_second_listen(first, set(it["traffic"]))):
             text2 = stt(path, it["channel"], fmt="verbatim")
-        outcome, parsed = judge(text, it["airport"], it["traffic"],
-                                it["truth"]["runway"], it["truth"]["callsign"], second_text=text2)
+        outcome, parsed = judge_full(it, text, second_text=text2)
+        shown = " ".join(f"{x['runway']}:{x['action'] or '?'}" for x in parsed["instructions"]) + \
+            "".join(f" {c}" for c in parsed["call_actions"])
         results.append({"id": it["id"], "cond": cond, "channel": it["channel"], "traps": it["traps"],
-                        "said": it["text"], "heard": text, "heard2": text2, "outcome": outcome,
+                        "kind": it["action"], "said": it["text"], "heard": text, "heard2": text2,
+                        "outcome": outcome, "shown": shown, "why_wrong": parsed.get("why_wrong"),
                         "parsed": [parsed["runway"], parsed["callsign"], parsed["problems"]]})
         if not locked:
             mark = {"OK": "  ", "AMBER": "a ", "FLAG": "~ ", "WRONG": "!!"}[outcome]
-            print(f"{mark}{it['id']} {cond:<18} {outcome:<5} {text}")
+            print(f"{mark}{it['id']} {cond:<18} {outcome:<5} [{shown}] {text}")
             if text2 is not None:
                 print(f"     second listen (verbatim): {text2}")
 
@@ -198,6 +200,10 @@ def main():
         o = [r["outcome"] for r in results if r["channel"] == ch]
         if o:
             print(f"  {ch:<18} {fmt(summarize(o))}")
+    print("\nBy instruction type (all conditions together):")
+    for k in sorted({r["kind"] for r in results}):
+        o = [r["outcome"] for r in results if r["kind"] == k]
+        print(f"  {k:<18} {fmt(summarize(o))}")
     print("\nTraps (how often a trap line ended WRONG):")
     for t in sorted({t for r in results for t in r["traps"]}):
         o = [r["outcome"] for r in results if t in r["traps"]]
@@ -206,7 +212,8 @@ def main():
     if wrong and not locked:
         print("\nEvery WRONG, so nothing is hidden:")
         for r in wrong:
-            print(f"  {r['id']} {r['cond']}: said '{r['said']}'\n      heard '{r['heard']}' -> parsed {r['parsed'][:2]}")
+            print(f"  {r['id']} {r['cond']}: said '{r['said']}'\n      heard '{r['heard']}' -> shown [{r['shown']}] {r['parsed'][1]}"
+                  f"\n      why: {r['why_wrong']}")
 
     os.makedirs("results", exist_ok=True)
     stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")

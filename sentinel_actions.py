@@ -28,7 +28,8 @@ Safety rules
   - every runway mentioned must exist at the airport (a 2-runway call checks both).
 """
 import re
-from sentinel_parse import extract, normalize, AIRPORTS
+from sentinel_parse import (extract, normalize, AIRPORTS, second_listen, callsign_second_listen,
+                            vehicle_second_listen)
 
 STRONG = [
     ("LAND",       r"\bCLEARED\s+TO\s+LAND\b"),
@@ -38,7 +39,7 @@ STRONG = [
     ("HOLD_SHORT", r"\bHOLD(ING)?\s+SHORT\b"),
     ("TAXI_HP",    r"\bTAXI\s+TO\s+HOLDING\s+POINT\b"),
     ("GO_AROUND",  r"\bGO(ING)?\s+AROUND\b"),
-    ("STOP",       r"\bSTOP\s+IMMEDIATELY\b|\bCANCEL\s+TAKE\s*-?\s*OFF\b|\bHOLD\s+POSITION\b"),
+    ("STOP",       r"\bSTOP\s+IMMEDIATELY\b|\bCANCEL\s+TAKE\s*-?\s*OFF\b|\bHOLD\s+POSITION\b|\bSTOPPING\b"),
 ]
 WEAK = [
     # kept only if seen in 2+ voices and never for a different instruction (dev + dev2, 600 clips).
@@ -94,10 +95,18 @@ def instructions(normalized, airport, channel="tower"):
     return out
 
 
-def analyse(text, airport, traffic, channel="tower", phases=None):
-    """Step-0 parse + Step-1 instructions. phases: {callsign: "air" | "ground"} from ADS-B, optional."""
-    r = extract(text, airport, set(traffic))
-    ins = instructions(r["normalized"], airport, channel)
+def analyse(text, airport, traffic, channel="tower", phases=None, second_text=None):
+    """Step-0 parse (+ second listens) + Step-1 instructions.
+    phases: {callsign: "air" | "ground"} from ADS-B, optional."""
+    traffic = set(traffic)
+    r = extract(text, airport, traffic)
+    if second_text is not None:
+        r = vehicle_second_listen(callsign_second_listen(second_listen(r, second_text, airport, traffic),
+                                                         second_text, airport, traffic),
+                                  second_text, airport, traffic)
+    # if the runway came from the second listen, read the instructions from that listen too
+    src = normalize(second_text) if any("runway from second listen" in a for a in r["amber"]) else r["normalized"]
+    ins = instructions(src, airport, channel)
     problems, amber = list(r["problems"]), list(r["amber"])
     for x in ins:
         if x["conflict"]:
@@ -118,6 +127,8 @@ def analyse(text, airport, traffic, channel="tower", phases=None):
     # instructions that need no runway number: "go around", "stop immediately", "cancel take-off"
     call_actions = sorted({a for _, a, _, _ in _hits(r["normalized"].upper(), STRONG, "strong")
                            if a in ("GO_AROUND", "STOP")}) if channel != "airside" else []
+    if call_actions and not ins:
+        problems = [p for p in problems if p != "no runway heard"]     # "go around" carries no runway
     out = dict(r, instructions=ins, call_actions=call_actions, problems=problems, amber=amber)
     out["status"] = "FLAGGED" if problems else ("PROBABLE" if amber else "CONFIRMED")
     return out

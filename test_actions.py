@@ -96,3 +96,39 @@ def test_vehicle_fod_check_is_enter_request():
 def test_vehicle_birds_report():
     r = analyse("टॉवर फॉलो मी 3, runway 27 वर पक्षी आहेत, मी taxiway Charlie वर थांबलोय.", "VIDP", DEL, channel="airside")
     assert acts(r)[0][1] == "REPORT_BIRDS"
+
+
+# ---- the Step-1 scorer itself (judge_full) ----
+from scoring import judge_full
+
+TWO = {"id": "t", "channel": "tower", "airport": "VIDP", "action": "two_runways", "phase": {"IGO5134": "ground"},
+       "traffic": ["IGO5134", "AIC2817"],
+       "truth": {"runway": "29R", "callsign": "IGO5134", "instructions": [["29R", "CROSS"], ["29L", "HOLD_SHORT"]],
+                 "call_actions": [], "conditional": False}}
+
+
+def test_judge_two_runways_ok():
+    assert judge_full(TWO, "IFLY 5134, cross runway 29R, hold short runway 29L.")[0] == "OK"
+
+
+def test_judge_lost_second_runway_is_wrong():
+    # the hold-short half vanished: what is shown is incomplete, so it must count as dangerous
+    o, r = judge_full(TWO, "IFLY 5134, cross runway 29R.")
+    assert o == "WRONG" and "runway 29L missing" in r["why_wrong"]
+
+
+def test_judge_swapped_instructions_are_wrong():
+    assert judge_full(TWO, "IFLY 5134, hold short runway 29R, cross runway 29L.")[0] == "WRONG"
+
+
+def test_judge_go_around_without_runway_is_ok():
+    it = dict(TWO, action="go_around", phase={"IGO5134": "air"},
+              truth={"runway": None, "callsign": "IGO5134", "instructions": [], "call_actions": ["GO_AROUND"], "conditional": False})
+    assert judge_full(it, "IFLY 5134, go around, I say again, go around.")[0] == "OK"
+
+
+def test_judge_lost_condition_is_wrong():
+    it = dict(TWO, action="conditional",
+              truth={"runway": "27", "callsign": "IGO5134", "instructions": [["27", "LINEUP"]], "call_actions": [], "conditional": True})
+    assert judge_full(it, "IFLY 5134, line up and wait runway 27.")[0] == "WRONG"
+    assert judge_full(it, "IFLY 5134, behind the landing Airbus, line up and wait runway 27, behind.")[0] == "AMBER"

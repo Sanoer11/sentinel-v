@@ -1,0 +1,1681 @@
+{
+ "name": "step1",
+ "kind": "step1",
+ "seed": 101,
+ "items": [
+  {
+   "id": "s000a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AIC7753": "ground"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India seven seven fife tree, cross runway one one right, hold short runway one one left.",
+   "ideal": "Air India 7753, cross runway 11R, hold short runway 11L.",
+   "truth": {
+    "runway": "11R",
+    "callsign": "AIC7753",
+    "instructions": [
+     [
+      "11R",
+      "CROSS"
+     ],
+     [
+      "11L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC7753",
+    "IGO4827",
+    "IGO8349",
+    "IGO9963"
+   ],
+   "traps": [
+    "step1_two_runways",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s000b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AIC7753": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Crossing runway one one right, holding short runway one one left, Air India seven seven fife tree.",
+   "ideal": "Crossing runway 11R, holding short runway 11L, Air India 7753.",
+   "truth": {
+    "runway": "11R",
+    "callsign": "AIC7753",
+    "instructions": [
+     [
+      "11R",
+      "CROSS"
+     ],
+     [
+      "11L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC7753",
+    "IGO4827",
+    "IGO8349",
+    "IGO9963"
+   ],
+   "traps": [
+    "step1_two_runways",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s001a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "taxi_hp",
+   "phase": {
+    "IGO2738": "ground"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "IFLY two seven three eight, taxi to holding point runway two seven via Bravo.",
+   "ideal": "IFLY 2738, taxi to holding point runway 27 via Bravo.",
+   "truth": {
+    "runway": "27",
+    "callsign": "IGO2738",
+    "instructions": [
+     [
+      "27",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ6104",
+    "IGO2738",
+    "IGO7394",
+    "IGO7828"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s001b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "taxi_hp",
+   "phase": {
+    "IGO2738": "ground"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Taxi to holding point runway two seven via Bravo, IFLY two seven three eight.",
+   "ideal": "Taxi to holding point runway 27 via Bravo, IFLY 2738.",
+   "truth": {
+    "runway": "27",
+    "callsign": "IGO2738",
+    "instructions": [
+     [
+      "27",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ6104",
+    "IGO2738",
+    "IGO7394",
+    "IGO7828"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s002a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "conditional",
+   "phase": {
+    "IGO7147": "ground"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "IFLY seven one four seven, behind the landing Airbus, line up and wait runway one one right, behind.",
+   "ideal": "IFLY 7147, behind the landing Airbus, line up and wait runway 11R, behind.",
+   "truth": {
+    "runway": "11R",
+    "callsign": "IGO7147",
+    "instructions": [
+     [
+      "11R",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC5085",
+    "AKJ5482",
+    "IGO1915",
+    "IGO7147"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "s002b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "conditional",
+   "phase": {
+    "IGO7147": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Behind the landing Airbus, line up and wait runway one one right, behind, IFLY seven one four seven.",
+   "ideal": "Behind the landing Airbus, line up and wait runway 11R, behind, IFLY 7147.",
+   "truth": {
+    "runway": "11R",
+    "callsign": "IGO7147",
+    "instructions": [
+     [
+      "11R",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC5085",
+    "AKJ5482",
+    "IGO1915",
+    "IGO7147"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "s003a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "go_around",
+   "phase": {
+    "IGO6728": "air"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "IFLY six seven two eight, go around, I say again, go around.",
+   "ideal": "IFLY 6728, go around, I say again, go around.",
+   "truth": {
+    "runway": null,
+    "callsign": "IGO6728",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ6955",
+    "IGO6728",
+    "IGO7703",
+    "IGO8866"
+   ],
+   "traps": [
+    "step1_go_around"
+   ]
+  },
+  {
+   "id": "s003b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "go_around",
+   "phase": {
+    "IGO6728": "air"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Going around, IFLY six seven two eight.",
+   "ideal": "Going around, IFLY 6728.",
+   "truth": {
+    "runway": null,
+    "callsign": "IGO6728",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ6955",
+    "IGO6728",
+    "IGO7703",
+    "IGO8866"
+   ],
+   "traps": [
+    "step1_go_around"
+   ]
+  },
+  {
+   "id": "s004a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "stop",
+   "phase": {
+    "AKJ2612": "ground"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air two six one two, stop immediately, I say again, stop immediately.",
+   "ideal": "Akasa Air 2612, stop immediately, I say again, stop immediately.",
+   "truth": {
+    "runway": null,
+    "callsign": "AKJ2612",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2612",
+    "IGO2570",
+    "IGO4650",
+    "IGO7174"
+   ],
+   "traps": [
+    "step1_stop",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s004b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "stop",
+   "phase": {
+    "AKJ2612": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Stopping, Akasa Air two six one two.",
+   "ideal": "Stopping, Akasa Air 2612.",
+   "truth": {
+    "runway": null,
+    "callsign": "AKJ2612",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2612",
+    "IGO2570",
+    "IGO4650",
+    "IGO7174"
+   ],
+   "traps": [
+    "step1_stop",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s005a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "wind_land",
+   "phase": {
+    "AIC8462": "air"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India eight four six two, wind two seven zero degrees, one two knots, runway one one left, cleared to land.",
+   "ideal": "Air India 8462, wind 270 degrees, one two knots, runway 11L, cleared to land.",
+   "truth": {
+    "runway": "11L",
+    "callsign": "AIC8462",
+    "instructions": [
+     [
+      "11L",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC3068",
+    "AIC8462",
+    "AKJ197",
+    "AKJ8792"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  },
+  {
+   "id": "s005b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "wind_land",
+   "phase": {
+    "AIC8462": "air"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Cleared to land runway one one left, Air India eight four six two.",
+   "ideal": "Cleared to land runway 11L, Air India 8462.",
+   "truth": {
+    "runway": "11L",
+    "callsign": "AIC8462",
+    "instructions": [
+     [
+      "11L",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC3068",
+    "AIC8462",
+    "AKJ197",
+    "AKJ8792"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  },
+  {
+   "id": "s006a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "two_runways",
+   "phase": {
+    "IGO7646": "ground"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "IFLY seven six four six, cross runway one four, hold short runway zero niner.",
+   "ideal": "IFLY 7646, cross runway 14, hold short runway 09.",
+   "truth": {
+    "runway": "14",
+    "callsign": "IGO7646",
+    "instructions": [
+     [
+      "14",
+      "CROSS"
+     ],
+     [
+      "09",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2398",
+    "AKJ3029",
+    "IGO7646",
+    "IGO9067"
+   ],
+   "traps": [
+    "step1_two_runways",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s006b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "two_runways",
+   "phase": {
+    "IGO7646": "ground"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Crossing runway one four, holding short runway zero niner, IFLY seven six four six.",
+   "ideal": "Crossing runway 14, holding short runway 09, IFLY 7646.",
+   "truth": {
+    "runway": "14",
+    "callsign": "IGO7646",
+    "instructions": [
+     [
+      "14",
+      "CROSS"
+     ],
+     [
+      "09",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2398",
+    "AKJ3029",
+    "IGO7646",
+    "IGO9067"
+   ],
+   "traps": [
+    "step1_two_runways",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s007a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "taxi_hp",
+   "phase": {
+    "AIC1206": "ground"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India one two zero six, taxi to holding point runway two eight via Bravo.",
+   "ideal": "Air India 1206, taxi to holding point runway 28 via Bravo.",
+   "truth": {
+    "runway": "28",
+    "callsign": "AIC1206",
+    "instructions": [
+     [
+      "28",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC1041",
+    "AIC1206",
+    "AKJ5840",
+    "IGO9087"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s007b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "taxi_hp",
+   "phase": {
+    "AIC1206": "ground"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Taxi to holding point runway two eight via Bravo, Air India one two zero six.",
+   "ideal": "Taxi to holding point runway 28 via Bravo, Air India 1206.",
+   "truth": {
+    "runway": "28",
+    "callsign": "AIC1206",
+    "instructions": [
+     [
+      "28",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC1041",
+    "AIC1206",
+    "AKJ5840",
+    "IGO9087"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s008a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "conditional",
+   "phase": {
+    "AIC3449": "ground"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India three four four nine, behind the landing Airbus, line up and wait runway two seven, behind.",
+   "ideal": "Air India 3449, behind the landing Airbus, line up and wait runway 27, behind.",
+   "truth": {
+    "runway": "27",
+    "callsign": "AIC3449",
+    "instructions": [
+     [
+      "27",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC1938",
+    "AIC3449",
+    "AKJ5329",
+    "IGO1666"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "s008b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "conditional",
+   "phase": {
+    "AIC3449": "ground"
+   },
+   "voice": "Riyaa",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Behind the landing Airbus, line up and wait runway two seven, behind, Air India three four four nine.",
+   "ideal": "Behind the landing Airbus, line up and wait runway 27, behind, Air India 3449.",
+   "truth": {
+    "runway": "27",
+    "callsign": "AIC3449",
+    "instructions": [
+     [
+      "27",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC1938",
+    "AIC3449",
+    "AKJ5329",
+    "IGO1666"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "s009a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "go_around",
+   "phase": {
+    "AKJ7617": "air"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air seven six one seven, go around, I say again, go around.",
+   "ideal": "Akasa Air 7617, go around, I say again, go around.",
+   "truth": {
+    "runway": null,
+    "callsign": "AKJ7617",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ7617",
+    "AKJ9428",
+    "IGO4576",
+    "IGO5612"
+   ],
+   "traps": [
+    "step1_go_around",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s009b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "go_around",
+   "phase": {
+    "AKJ7617": "air"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Going around, Akasa Air seven six one seven.",
+   "ideal": "Going around, Akasa Air 7617.",
+   "truth": {
+    "runway": null,
+    "callsign": "AKJ7617",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ7617",
+    "AKJ9428",
+    "IGO4576",
+    "IGO5612"
+   ],
+   "traps": [
+    "step1_go_around",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s010a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "stop",
+   "phase": {
+    "AIC403": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India four zero three, stop immediately, I say again, stop immediately.",
+   "ideal": "Air India 403, stop immediately, I say again, stop immediately.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC403",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC403",
+    "AIC6069",
+    "AIC6666",
+    "IGO4821"
+   ],
+   "traps": [
+    "step1_stop"
+   ]
+  },
+  {
+   "id": "s010b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "stop",
+   "phase": {
+    "AIC403": "ground"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Stopping, Air India four zero three.",
+   "ideal": "Stopping, Air India 403.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC403",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC403",
+    "AIC6069",
+    "AIC6666",
+    "IGO4821"
+   ],
+   "traps": [
+    "step1_stop"
+   ]
+  },
+  {
+   "id": "s011a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "wind_land",
+   "phase": {
+    "AKJ2073": "air"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air two zero seven three, wind zero niner zero degrees, one two knots, runway one four, cleared to land.",
+   "ideal": "Akasa Air 2073, wind 090 degrees, one two knots, runway 14, cleared to land.",
+   "truth": {
+    "runway": "14",
+    "callsign": "AKJ2073",
+    "instructions": [
+     [
+      "14",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2073",
+    "IGO5711",
+    "IGO6160",
+    "IGO7429"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  },
+  {
+   "id": "s011b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "wind_land",
+   "phase": {
+    "AKJ2073": "air"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Cleared to land runway one four, Akasa Air two zero seven three.",
+   "ideal": "Cleared to land runway 14, Akasa Air 2073.",
+   "truth": {
+    "runway": "14",
+    "callsign": "AKJ2073",
+    "instructions": [
+     [
+      "14",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2073",
+    "IGO5711",
+    "IGO6160",
+    "IGO7429"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  },
+  {
+   "id": "s012a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AIC9043": "ground"
+   },
+   "voice": "Riyaa",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India nine zero four three, cross runway two nine right, hold short runway two nine left.",
+   "ideal": "Air India 9043, cross runway 29R, hold short runway 29L.",
+   "truth": {
+    "runway": "29R",
+    "callsign": "AIC9043",
+    "instructions": [
+     [
+      "29R",
+      "CROSS"
+     ],
+     [
+      "29L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC5033",
+    "AIC9043",
+    "AKJ4287",
+    "AKJ5315"
+   ],
+   "traps": [
+    "step1_two_runways"
+   ]
+  },
+  {
+   "id": "s012b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AIC9043": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Crossing runway two nine right, holding short runway two nine left, Air India nine zero four three.",
+   "ideal": "Crossing runway 29R, holding short runway 29L, Air India 9043.",
+   "truth": {
+    "runway": "29R",
+    "callsign": "AIC9043",
+    "instructions": [
+     [
+      "29R",
+      "CROSS"
+     ],
+     [
+      "29L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC5033",
+    "AIC9043",
+    "AKJ4287",
+    "AKJ5315"
+   ],
+   "traps": [
+    "step1_two_runways"
+   ]
+  },
+  {
+   "id": "s013a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "taxi_hp",
+   "phase": {
+    "IGO912": "ground"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "IFLY nine one two, taxi to holding point runway zero nine via Bravo.",
+   "ideal": "IFLY 912, taxi to holding point runway 09 via Bravo.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO912",
+    "instructions": [
+     [
+      "09",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC945",
+    "AKJ5713",
+    "AKJ7288",
+    "IGO912"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s013b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "taxi_hp",
+   "phase": {
+    "IGO912": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Taxi to holding point runway zero nine via Bravo, IFLY nine one two.",
+   "ideal": "Taxi to holding point runway 09 via Bravo, IFLY 912.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO912",
+    "instructions": [
+     [
+      "09",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC945",
+    "AKJ5713",
+    "AKJ7288",
+    "IGO912"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s014a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "conditional",
+   "phase": {
+    "IGO6847": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "IFLY six eight four seven, behind the landing Airbus, line up and wait runway one zero, behind.",
+   "ideal": "IFLY 6847, behind the landing Airbus, line up and wait runway 10, behind.",
+   "truth": {
+    "runway": "10",
+    "callsign": "IGO6847",
+    "instructions": [
+     [
+      "10",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC1108",
+    "AIC4591",
+    "AKJ2450",
+    "IGO6847"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "s014b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "conditional",
+   "phase": {
+    "IGO6847": "ground"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Behind the landing Airbus, line up and wait runway one zero, behind, IFLY six eight four seven.",
+   "ideal": "Behind the landing Airbus, line up and wait runway 10, behind, IFLY 6847.",
+   "truth": {
+    "runway": "10",
+    "callsign": "IGO6847",
+    "instructions": [
+     [
+      "10",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC1108",
+    "AIC4591",
+    "AKJ2450",
+    "IGO6847"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "s015a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "go_around",
+   "phase": {
+    "AKJ7468": "air"
+   },
+   "voice": "Avinash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air seven four six eight, go around, I say again, go around.",
+   "ideal": "Akasa Air 7468, go around, I say again, go around.",
+   "truth": {
+    "runway": null,
+    "callsign": "AKJ7468",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC8626",
+    "AKJ1288",
+    "AKJ7468",
+    "IGO7793"
+   ],
+   "traps": [
+    "step1_go_around"
+   ]
+  },
+  {
+   "id": "s015b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "go_around",
+   "phase": {
+    "AKJ7468": "air"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Going around, Akasa Air seven four six eight.",
+   "ideal": "Going around, Akasa Air 7468.",
+   "truth": {
+    "runway": null,
+    "callsign": "AKJ7468",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC8626",
+    "AKJ1288",
+    "AKJ7468",
+    "IGO7793"
+   ],
+   "traps": [
+    "step1_go_around"
+   ]
+  },
+  {
+   "id": "s016a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "stop",
+   "phase": {
+    "AIC3651": "ground"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India three six five one, stop immediately, I say again, stop immediately.",
+   "ideal": "Air India 3651, stop immediately, I say again, stop immediately.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC3651",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC3651",
+    "AKJ3250",
+    "AKJ8810",
+    "IGO3906"
+   ],
+   "traps": [
+    "step1_stop"
+   ]
+  },
+  {
+   "id": "s016b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "stop",
+   "phase": {
+    "AIC3651": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Stopping, Air India three six five one.",
+   "ideal": "Stopping, Air India 3651.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC3651",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC3651",
+    "AKJ3250",
+    "AKJ8810",
+    "IGO3906"
+   ],
+   "traps": [
+    "step1_stop"
+   ]
+  },
+  {
+   "id": "s017a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "wind_land",
+   "phase": {
+    "AIC2344": "air"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India two three four four, wind two seven zero degrees, one two knots, runway one zero, cleared to land.",
+   "ideal": "Air India 2344, wind 270 degrees, one two knots, runway 10, cleared to land.",
+   "truth": {
+    "runway": "10",
+    "callsign": "AIC2344",
+    "instructions": [
+     [
+      "10",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC2344",
+    "AKJ8475",
+    "IGO1820",
+    "IGO3201"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  },
+  {
+   "id": "s017b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "wind_land",
+   "phase": {
+    "AIC2344": "air"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Cleared to land runway one zero, Air India two three four four.",
+   "ideal": "Cleared to land runway 10, Air India 2344.",
+   "truth": {
+    "runway": "10",
+    "callsign": "AIC2344",
+    "instructions": [
+     [
+      "10",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC2344",
+    "AKJ8475",
+    "IGO1820",
+    "IGO3201"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  },
+  {
+   "id": "s018a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AKJ7980": "ground"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air seven niner eight zero, cross runway one one right, hold short runway one one left.",
+   "ideal": "Akasa Air 7980, cross runway 11R, hold short runway 11L.",
+   "truth": {
+    "runway": "11R",
+    "callsign": "AKJ7980",
+    "instructions": [
+     [
+      "11R",
+      "CROSS"
+     ],
+     [
+      "11L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC9450",
+    "AKJ7980",
+    "IGO1897",
+    "IGO770"
+   ],
+   "traps": [
+    "step1_two_runways"
+   ]
+  },
+  {
+   "id": "s018b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AKJ7980": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Crossing runway one one right, holding short runway one one left, Akasa Air seven niner eight zero.",
+   "ideal": "Crossing runway 11R, holding short runway 11L, Akasa Air 7980.",
+   "truth": {
+    "runway": "11R",
+    "callsign": "AKJ7980",
+    "instructions": [
+     [
+      "11R",
+      "CROSS"
+     ],
+     [
+      "11L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC9450",
+    "AKJ7980",
+    "IGO1897",
+    "IGO770"
+   ],
+   "traps": [
+    "step1_two_runways"
+   ]
+  },
+  {
+   "id": "s019a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "taxi_hp",
+   "phase": {
+    "IGO4822": "ground"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "IFLY four eight two two, taxi to holding point runway zero nine via Bravo.",
+   "ideal": "IFLY 4822, taxi to holding point runway 09 via Bravo.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO4822",
+    "instructions": [
+     [
+      "09",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC4822",
+    "AKJ8795",
+    "IGO1677",
+    "IGO4822"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s019b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "taxi_hp",
+   "phase": {
+    "IGO4822": "ground"
+   },
+   "voice": "Devansh",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Taxi to holding point runway zero nine via Bravo, IFLY four eight two two.",
+   "ideal": "Taxi to holding point runway 09 via Bravo, IFLY 4822.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO4822",
+    "instructions": [
+     [
+      "09",
+      "TAXI_HP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC4822",
+    "AKJ8795",
+    "IGO1677",
+    "IGO4822"
+   ],
+   "traps": [
+    "step1_taxi_hp"
+   ]
+  },
+  {
+   "id": "s020a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "conditional",
+   "phase": {
+    "AKJ5548": "ground"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air fife fife four eight, behind the landing Airbus, line up and wait runway one one left, behind.",
+   "ideal": "Akasa Air 5548, behind the landing Airbus, line up and wait runway 11L, behind.",
+   "truth": {
+    "runway": "11L",
+    "callsign": "AKJ5548",
+    "instructions": [
+     [
+      "11L",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC4057",
+    "AKJ5548",
+    "AKJ631",
+    "IGO5095"
+   ],
+   "traps": [
+    "step1_conditional",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s020b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "conditional",
+   "phase": {
+    "AKJ5548": "ground"
+   },
+   "voice": "Riyaa",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Behind the landing Airbus, line up and wait runway one one left, behind, Akasa Air fife fife four eight.",
+   "ideal": "Behind the landing Airbus, line up and wait runway 11L, behind, Akasa Air 5548.",
+   "truth": {
+    "runway": "11L",
+    "callsign": "AKJ5548",
+    "instructions": [
+     [
+      "11L",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC4057",
+    "AKJ5548",
+    "AKJ631",
+    "IGO5095"
+   ],
+   "traps": [
+    "step1_conditional",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "s021a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "go_around",
+   "phase": {
+    "AIC7293": "air"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India seven two niner three, go around, I say again, go around.",
+   "ideal": "Air India 7293, go around, I say again, go around.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC7293",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC3273",
+    "AIC545",
+    "AIC7293",
+    "IGO5493"
+   ],
+   "traps": [
+    "step1_go_around"
+   ]
+  },
+  {
+   "id": "s021b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "go_around",
+   "phase": {
+    "AIC7293": "air"
+   },
+   "voice": "Shubham",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Going around, Air India seven two niner three.",
+   "ideal": "Going around, Air India 7293.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC7293",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC3273",
+    "AIC545",
+    "AIC7293",
+    "IGO5493"
+   ],
+   "traps": [
+    "step1_go_around"
+   ]
+  },
+  {
+   "id": "s022a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "stop",
+   "phase": {
+    "AIC2204": "ground"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Air India two two zero four, stop immediately, I say again, stop immediately.",
+   "ideal": "Air India 2204, stop immediately, I say again, stop immediately.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC2204",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC2204",
+    "AIC4422",
+    "AIC9810",
+    "AKJ6150"
+   ],
+   "traps": [
+    "step1_stop"
+   ]
+  },
+  {
+   "id": "s022b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "stop",
+   "phase": {
+    "AIC2204": "ground"
+   },
+   "voice": "Harshad",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Stopping, Air India two two zero four.",
+   "ideal": "Stopping, Air India 2204.",
+   "truth": {
+    "runway": null,
+    "callsign": "AIC2204",
+    "instructions": [],
+    "call_actions": [
+     "STOP"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC2204",
+    "AIC4422",
+    "AIC9810",
+    "AKJ6150"
+   ],
+   "traps": [
+    "step1_stop"
+   ]
+  },
+  {
+   "id": "s023a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "wind_land",
+   "phase": {
+    "AKJ444": "air"
+   },
+   "voice": "Prakash",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air four four four, wind two seven zero degrees, one two knots, runway one four, cleared to land.",
+   "ideal": "Akasa Air 444, wind 270 degrees, one two knots, runway 14, cleared to land.",
+   "truth": {
+    "runway": "14",
+    "callsign": "AKJ444",
+    "instructions": [
+     [
+      "14",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC8003",
+    "AKJ444",
+    "IGO5899",
+    "IGO6396"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  },
+  {
+   "id": "s023b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "wind_land",
+   "phase": {
+    "AKJ444": "air"
+   },
+   "voice": "Riyaa",
+   "tts_model": "timbre-v3.0",
+   "tts_lang": "en-IN",
+   "text": "Cleared to land runway one four, Akasa Air four four four.",
+   "ideal": "Cleared to land runway 14, Akasa Air 444.",
+   "truth": {
+    "runway": "14",
+    "callsign": "AKJ444",
+    "instructions": [
+     [
+      "14",
+      "LAND"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC8003",
+    "AKJ444",
+    "IGO5899",
+    "IGO6396"
+   ],
+   "traps": [
+    "step1_wind_land"
+   ]
+  }
+ ]
+}

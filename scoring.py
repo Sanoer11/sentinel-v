@@ -65,3 +65,61 @@ def fmt(s):
     lo, hi = s["ok_range"]
     return (f"n={s['n']:>3} | OK {s['OK']:>3} ({100*s['ok_rate']:.0f}%, likely {100*lo:.0f}-{100*hi:.0f}%) "
             f"| AMBER {s['AMBER']:>3} | FLAG {s['FLAG']:>3} | WRONG {s['WRONG']:>2} (true rate could be up to {100*s['wrong_rate_upper_95']:.1f}%)")
+
+
+# ---------------------------------------------------------------------------
+# Step 1: judge the WHOLE call - callsign, every runway, the instruction for each, call-level
+# instructions (go around / stop) and the "behind traffic" condition.
+# ---------------------------------------------------------------------------
+_MAP = {"land": "LAND", "takeoff": "TAKEOFF", "lineup": "LINEUP", "cross": "CROSS", "hold": "HOLD_SHORT"}
+
+
+def truth_of(it):
+    """Truth for any test line. Old dev/dev2 lines get it from their template."""
+    t = it["truth"]
+    if "instructions" in t:
+        return t["instructions"], t["call_actions"], t["conditional"]
+    if it["action"] == "vehicle":
+        rom = it["roman"].lower()
+        act = "REQ_CROSS" if ("cross" in rom or "olandaycha" in rom) else "REQ_ENTER" if "fod" in rom else "REPORT_BIRDS"
+    else:
+        act = _MAP[it["action"]]
+    return [[t["runway"], act]], [], False
+
+
+def phases_of(it):
+    """Aircraft air/ground state, as ADS-B would give it. Old lines: landing = airborne."""
+    if "phase" in it:
+        return it["phase"]
+    if it["action"] in _MAP:
+        return {it["truth"]["callsign"]: "air" if it["action"] == "land" else "ground"}
+    return None
+
+
+def judge_full(it, text, second_text=None):
+    from sentinel_actions import analyse
+    r = analyse(text, it["airport"], it["traffic"], it["channel"], phases_of(it), second_text)
+    tins, tcalls, tcond = truth_of(it)
+    tcs = it["truth"]["callsign"]
+    should_flag = tcs not in it["traffic"]
+    if r["status"] == "FLAGGED":
+        return ("OK" if should_flag else "FLAG"), r
+    if should_flag:
+        return "WRONG", r
+    shown = {x["runway"]: x["action"] for x in r["instructions"]}
+    problems = []
+    for rw, act in tins:
+        if rw not in shown:
+            problems.append(f"runway {rw} missing")
+        elif shown[rw] is not None and shown[rw] != act:
+            problems.append(f"{rw}: shown {shown[rw]}, said {act}")
+    problems += [f"extra runway {rw} shown" for rw in shown if rw not in {a for a, _ in tins}]
+    problems += [f"{c} missing" for c in tcalls if c not in r["call_actions"]]
+    problems += [f"extra {c} shown" for c in r["call_actions"] if c not in tcalls]
+    if tcond and not any("conditional" in a for a in r["amber"]):
+        problems.append("condition 'behind traffic' lost")
+    cs_ok = r["callsign"] == tcs or any(tcs in a for a in r["amber"])
+    if problems or not cs_ok:
+        r = dict(r, why_wrong=problems + ([] if cs_ok else [f"callsign shown {r['callsign']}, said {tcs}"]))
+        return "WRONG", r
+    return ("AMBER" if r["status"] == "PROBABLE" else "OK"), r

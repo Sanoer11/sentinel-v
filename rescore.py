@@ -9,7 +9,7 @@ does what it was meant to do. Proof = a run on lines the fix never saw.
 """
 import sys
 import json
-from scoring import judge, summarize, fmt
+from scoring import judge_full, summarize, fmt
 
 res = json.load(open(sys.argv[1], encoding="utf-8"))
 ts_name = res["testset"]
@@ -19,8 +19,7 @@ items = {it["id"]: it for it in ts["items"]}
 new_all, changed = [], 0
 for r in res["results"]:
     it = items[r["id"]]
-    o, p = judge(r["heard"], it["airport"], it["traffic"], it["truth"]["runway"], it["truth"]["callsign"],
-             second_text=r.get("heard2"))
+    o, p = judge_full(it, r["heard"], second_text=r.get("heard2"))
     new_all.append((r["cond"], o))
     flag = "" if o == r["outcome"] else f"   <-- was {r['outcome']}"
     changed += o != r["outcome"]

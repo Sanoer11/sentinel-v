@@ -1,0 +1,353 @@
+[
+ {
+  "set": "dev",
+  "id": "d000b",
+  "cond": "0dB",
+  "heard": "Taxiway runway 09, Air India 202.",
+  "heard_verbatim": "This is runway zero nine, Air India two zero two.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d002b",
+  "cond": "clean",
+  "heard": "Holding short, runway 32, Air India 9118.",
+  "heard_verbatim": "Holding short, runway three two, Air India nineer one one eight.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d002b",
+  "cond": "20dB",
+  "heard": "Crossing short runway 32, Air India 9118.",
+  "heard_verbatim": "Crossing short runway three two, Air India nine one one eight.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d002b",
+  "cond": "10dB",
+  "heard": "Crossing short runway 32, Air India 9118.",
+  "heard_verbatim": "Crossing short runway three two, Air India nine one one eight.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d003b",
+  "cond": "5dB",
+  "heard": "Taxiway 28, cleared for takeoff, Akasa Air 3212.",
+  "heard_verbatim": "Taxiway two eight cleared for takeoff, Akasa Air three two one zero.",
+  "real_wrong": false,
+  "still_red": false
+ },
+ {
+  "set": "dev",
+  "id": "d004b",
+  "cond": "clean",
+  "heard": "Cleared to land runway 10, Air India 9093.",
+  "heard_verbatim": "Cleared to land runway one zero, Air India niner zero niner three.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d004b",
+  "cond": "20dB",
+  "heard": "Cleared to land, runway 10, Air India 9093.",
+  "heard_verbatim": "Cleared to land, runway one zero. Air India nine zero nine three.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d004b",
+  "cond": "10dB",
+  "heard": "Said to land runway 10, Air India 9093.",
+  "heard_verbatim": "Said to land runway one zero, Air India nine zero nine three.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d004b",
+  "cond": "5dB",
+  "heard": "Cleared to land, runway 10, Air India 9098.",
+  "heard_verbatim": "Cleared to land, runway one zero. Air India nine zero nine eight.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d006b",
+  "cond": "5dB",
+  "heard": "Holding short, runway 10, Air India 8498.",
+  "heard_verbatim": "Holding short, runway one zero. Air India eight four nine eight six.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d006b",
+  "cond": "0dB",
+  "heard": "Holding short runway 10, Air India 8498.",
+  "heard_verbatim": "Holding short runway one zero, Air India eight four nine eight.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d007b",
+  "cond": "5dB",
+  "heard": "Runway 28, cleared for takeoff. Air India 5772.",
+  "heard_verbatim": "Runway two eight, cleared for takeoff. Air India ight seven seven two.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d007b",
+  "cond": "0dB",
+  "heard": "1828, cleared for takeoff. Air India 5772.",
+  "heard_verbatim": "One vehicle eight cleared for takeoff, Air India five seven seven two.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d012b",
+  "cond": "clean",
+  "heard": "Holding short, runway 10, Air India 6355.",
+  "heard_verbatim": "Holding short, runway one zero, Air India six three five five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d012b",
+  "cond": "20dB",
+  "heard": "Holding short runway 10, Air India 6355.",
+  "heard_verbatim": "Holding short runway one zero, Air India six three five five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d012b",
+  "cond": "10dB",
+  "heard": "Holding short, runway 10, Air India 6355.",
+  "heard_verbatim": "Holding short, runway one zero, Air India six three five five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d012b",
+  "cond": "5dB",
+  "heard": "Holding short, runway 10, Air India 6355.",
+  "heard_verbatim": "Holding short, runway one zero, Air India six three five five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d017b",
+  "cond": "clean",
+  "heard": "Cleared to land runway 14, Akasa Air 1349.",
+  "heard_verbatim": "Cleared to land, runway one four, Akasa Air one three four nine.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d017b",
+  "cond": "20dB",
+  "heard": "Cleared to land, runway 14, Akasa Air, 1349.",
+  "heard_verbatim": "Cleared to land, runway one four. Akasa Air one three four nine.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d017b",
+  "cond": "10dB",
+  "heard": "Cleared to land, runway 14, Akasa Air, 1349.",
+  "heard_verbatim": "Cleared to land, runway one four. Akasa Air one three four nine.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d017b",
+  "cond": "0dB",
+  "heard": "Air India land runway 14, Akasa Air 134.",
+  "heard_verbatim": "Air India land runway one four, Akasa Air one three four.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d019b",
+  "cond": "0dB",
+  "heard": "Line up and wait. Runway 10, I fly 520.",
+  "heard_verbatim": "Line up and wait. Runway one zero, I fly five two zero.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d023b",
+  "cond": "clean",
+  "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+  "heard_verbatim": "Line up and wait, runway zero niner, Akasa Air five four two five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d023b",
+  "cond": "20dB",
+  "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+  "heard_verbatim": "Line up and wait, runway zero niner. Akasa Air five four two five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d023b",
+  "cond": "10dB",
+  "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+  "heard_verbatim": "Line up and wait, runway zero nine eight. Akasa Air five four two five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d023b",
+  "cond": "5dB",
+  "heard": "Line up and wait, runway 09, Akasa Air 5425.",
+  "heard_verbatim": "Line up and wait, runway zero nine, Akasa Air five four two five.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev",
+  "id": "d023b",
+  "cond": "0dB",
+  "heard": "In up and wait, runway 09, Akasa Air 542.",
+  "heard_verbatim": "In up and wait, runway zero nine, Akasa Air five four two one.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e006b",
+  "cond": "5dB",
+  "heard": "Holding short, runway 10, Akasa Air 360.",
+  "heard_verbatim": "Holding short, runway one zero, Akasa Air three sixty.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e007b",
+  "cond": "clean",
+  "heard": "Cleared to land runway 11 left, Akasa Air 5391.",
+  "heard_verbatim": "Cleared to land runway one one left, Akasa Air five three nine one.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e007b",
+  "cond": "20dB",
+  "heard": "Cleared to land, runway 11 left, Akasa Air 5391.",
+  "heard_verbatim": "Cleared to land, runway one one left. Akasa Air five three nine one.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e007b",
+  "cond": "10dB",
+  "heard": "Cleared to land, runway 11 left. Akasa Air 5391.",
+  "heard_verbatim": "Cleared to land, runway one one left. Akasa Air five three nine one.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e007b",
+  "cond": "5dB",
+  "heard": "30 land runway 11 left, Akasa Air 5391.",
+  "heard_verbatim": "Thirty-land runway one one left, Akasa Air five three nine one.",
+  "real_wrong": true,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e008b",
+  "cond": "5dB",
+  "heard": "Line up and wait, runway 09, Akasa Air 257.",
+  "heard_verbatim": "Line up and wait, runway zero nine, Akasa Air two five seven.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e011b",
+  "cond": "5dB",
+  "heard": "Taking runway 28, Air India 8982.",
+  "heard_verbatim": "Taking runway two eight, Air India eight nine eight two.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "dev2",
+  "id": "e022b",
+  "cond": "5dB",
+  "heard": "Flying short runway 28, Akasa Air 520.",
+  "heard_verbatim": "Flying short runway two eight, Akasa Air five two two four.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "step1",
+  "id": "s007b",
+  "cond": "5dB",
+  "heard": "62 to holding point, runway 28 via Bravo, Air India 1202.",
+  "heard_verbatim": "Taxi to holding point, runway two eight, via Bravo, Air India one two zero two.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "step1",
+  "id": "s010b",
+  "cond": "10dB",
+  "heard": "Spind Air India 402.",
+  "heard_verbatim": "Spind Air India four zero three.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "step1",
+  "id": "s015b",
+  "cond": "0dB",
+  "heard": "Heading around Akasa Air 7464.",
+  "heard_verbatim": "Heading around Akasa Air Seven Four Six Four.",
+  "real_wrong": false,
+  "still_red": true
+ },
+ {
+  "set": "step1",
+  "id": "s018b",
+  "cond": "0dB",
+  "heard": "Air India runway 11, right holding short runway 11 left. Akasa Air 7988.",
+  "heard_verbatim": "Air India runway one one, right? Holding short runway one one left. Akasa Air seven niner eight.",
+  "real_wrong": false,
+  "still_red": true
+ }
+]

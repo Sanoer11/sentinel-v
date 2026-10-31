@@ -296,3 +296,15 @@ def test_single_active_vehicle_needs_no_second_listen():
     from sentinel_parse import extract, needs_vehicle_second_listen
     T = {"BIRDCHASER4", "IGO4749"}
     assert not needs_vehicle_second_listen(extract("Tower Bird Chaser 4, runway 27", "VIDP", T), T)
+
+
+def test_eight_heard_as_letter_a_is_amber_eight():
+    # dev d002a 10dB: "Air India 915A" for niner one fife eight
+    o, r = judge("Air India 915A, hold short, runway 32.", "VABB", {"AIC9158", "IGO1234"}, "32", "AIC9158")
+    assert o == "AMBER" and r["callsign"] == "AIC9158" and "letter A" in r["amber"][-1]
+
+
+def test_other_glued_letters_are_not_guessed():
+    # "3C" was 32 once, 33 elsewhere; "28B" is Hindi "28 pe" -> never mapped
+    o, r = judge("Air India 898C, cross runway 28.", "VIDP", {"AIC8983"}, "28", "AIC8983")
+    assert o == "FLAG"

@@ -54,6 +54,9 @@ VEHICLE = [   # airside channel: Hinglish / Hindi / Marathi (no \b after Devanag
     ("REQ_ENTER",    r"\bENTER\b|एंटर|(\bFOD\b|एफओडी|एफ़\s*ओ\s*डी|फॉड)"),
     ("REPORT_BIRDS", r"पक्षी|\bPAKSHI\b|\bBIRDS\b"),
 ]
+# call-level weak cue: "Going around" readback with "Go" clipped -> "Heading/Flying around", "Around"
+# (step1 run: 11 times, 2 voices, never in 600 dev/dev2 clips). "go round" (1 voice) not added.
+WEAK_CALL = [("GO_AROUND", r"\bAROUND\b")]
 CONDITIONAL = r"\bBEHIND\b|\bAFTER\s+THE\s+(LANDING|DEPARTING)\b"
 NEEDS_AIR = {"LAND", "GO_AROUND"}
 NEEDS_GROUND = {"TAKEOFF", "LINEUP", "CROSS", "HOLD_SHORT", "TAXI_HP"}
@@ -108,6 +111,13 @@ def analyse(text, airport, traffic, channel="tower", phases=None, second_text=No
     src = normalize(second_text) if any("runway from second listen" in a for a in r["amber"]) else r["normalized"]
     ins = instructions(src, airport, channel)
     problems, amber = list(r["problems"]), list(r["amber"])
+    seen = {}
+    for x in ins:
+        seen.setdefault(x["runway"], set()).add(x["action"])
+    for rw, a in seen.items():
+        if len(a) > 1:
+            # step1 s012b: "cross 29R, hold short 29L" heard as "Ascend runway 29 left, holding short runway 29 left"
+            problems.append(f"runway {rw} named twice with different instructions - say again")
     for x in ins:
         if x["conflict"]:
             problems.append(f"runway {x['runway']}: two different instructions heard ({', '.join(x['cues'])}) - say again")
@@ -127,6 +137,11 @@ def analyse(text, airport, traffic, channel="tower", phases=None, second_text=No
     # instructions that need no runway number: "go around", "stop immediately", "cancel take-off"
     call_actions = sorted({a for _, a, _, _ in _hits(r["normalized"].upper(), STRONG, "strong")
                            if a in ("GO_AROUND", "STOP")}) if channel != "airside" else []
+    if channel != "airside" and not call_actions:
+        weak_calls = sorted({a for _, a, _, _ in _hits(r["normalized"].upper(), WEAK_CALL, "weak")})
+        if weak_calls and not ins:
+            call_actions = weak_calls
+            amber.append(f"instruction partly heard: {', '.join(weak_calls)}")
     if call_actions and not ins:
         problems = [p for p in problems if p != "no runway heard"]     # "go around" carries no runway
     out = dict(r, instructions=ins, call_actions=call_actions, problems=problems, amber=amber)

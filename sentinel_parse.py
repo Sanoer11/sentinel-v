@@ -52,8 +52,14 @@ PUNCT = set(",.।!?:;")
 SIMILAR_CALLSIGN_CAUTION = True
 
 
+# "eight" written as the letter A glued to a number: 915A (9158), 746A (7468), 273A (2738),
+# runway 2A (28) - 4 of 4 right, 3 voices, dev + dev2 + step1. Other glued letters are NOT mapped:
+# C was 3 twice but 2 once ("3C" for 32); B/P after a runway is Hindi "pe" ("28B" = "28 pe").
+EIGHT_AS_A = re.compile(r"\b(\d+)A\b")
+
+
 def normalize(text):
-    t = text
+    t = EIGHT_AS_A.sub(lambda m: m.group(1) + "8", text)
     for pat, rep in FIXES:
         t = re.sub(pat, rep, t, flags=re.IGNORECASE)
     t = re.sub(r"(\d)([A-Za-zऀ-ॿ])", r"\1 \2", t)
@@ -117,6 +123,16 @@ def anchor_callsign(up, expected_traffic):
             nums.append(t)
     flights = [f for f in expected_traffic if f[:3] in AIRLINES.values()]
     hits = {f for n in nums for f in flights if f[3:] == n}
+    if len(hits) > 1:
+        # two airlines share the number (AIC4822 + IGO4822). A garbled airline word right before
+        # the number may still be ONE edit from exactly one airline word: "IFL"/"FLY" -> IFLY.
+        word_of = {code: w.split()[0] for w, code in AIRLINES.items()}
+        near = set()
+        for i, t in enumerate(words):
+            if t.isdigit() and i > 0 and len(words[i - 1]) >= 3 and not words[i - 1].isdigit():
+                near |= {f for f in hits if f[3:] == t and edit_distance(words[i - 1], word_of[f[:3]]) <= 1
+                         and words[i - 1] != word_of[f[:3]]}
+        hits = near
     if len(hits) == 1:
         return hits.pop()
     return None
@@ -248,6 +264,8 @@ def extract(text, airport, expected_traffic):
         if twins:
             out["amber"].append(f"similar callsign on frequency: {', '.join(twins)}")
 
+    if EIGHT_AS_A.search(text):
+        out["amber"].append("a digit was heard as the letter A and read as 8 - confirm")
     out["problems"] = problems
     # CONFIRMED = everything heard cleanly.  PROBABLE (amber) = right facts found, but one part was
     # identified indirectly -> a human glances at it.  FLAGGED = ask "say again".

@@ -132,3 +132,23 @@ def test_judge_lost_condition_is_wrong():
               truth={"runway": "27", "callsign": "IGO5134", "instructions": [["27", "LINEUP"]], "call_actions": [], "conditional": True})
     assert judge_full(it, "IFLY 5134, line up and wait runway 27.")[0] == "WRONG"
     assert judge_full(it, "IFLY 5134, behind the landing Airbus, line up and wait runway 27, behind.")[0] == "AMBER"
+
+
+# ---- fixes from the step1 audio run (31 Oct) ----
+
+def test_clipped_going_around_is_amber_go_around():
+    r = analyse("Heading around, Air India 7293.", "VIDP", {"AIC7293"})
+    assert r["call_actions"] == ["GO_AROUND"] and r["status"] == "PROBABLE"
+
+
+def test_same_runway_twice_with_different_instructions_is_flagged():
+    r = analyse("Ascend runway 29 left, holding short runway 29 left. Air India 9043.", "VIDP", {"AIC9043"})
+    assert r["status"] == "FLAGGED"
+
+
+def test_shared_flight_number_resolved_by_partial_airline_word():
+    T = {"AIC4822", "IGO4822", "AKJ8795"}
+    r = analyse("Taxi to holding point, runway 09, via Bravo, IFL 4822.", "VABB", T)
+    assert r["callsign"] == "IGO4822" and r["status"] == "PROBABLE"
+    # no hint at all -> still refused
+    assert analyse("Taxi to holding point, runway 09, via Bravo, 4822.", "VABB", T)["callsign"] is None

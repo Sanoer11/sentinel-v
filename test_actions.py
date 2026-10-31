@@ -152,3 +152,16 @@ def test_shared_flight_number_resolved_by_partial_airline_word():
     assert r["callsign"] == "IGO4822" and r["status"] == "PROBABLE"
     # no hint at all -> still refused
     assert analyse("Taxi to holding point, runway 09, via Bravo, 4822.", "VABB", T)["callsign"] is None
+
+
+
+# ---- permanent guard: a pilot's clearly heard WRONG callsign must never become OK or AMBER ----
+
+def test_wrong_readback_callsign_is_never_hidden():
+    # dev d002b, clean audio: tower cleared Air India 9158; the pilot really said 9118.
+    it = {"id": "d002b", "channel": "pilot", "airport": "VABB", "action": "hold",
+          "traffic": ["AIC9158", "AKJ1111", "IGO2222"], "traps": ["wrong_readback_callsign"],
+          "truth": {"runway": "32", "callsign": "AIC9118"}}
+    for heard in ["Holding short, runway 32, Air India 9118.", "Holding short runway 32, Air India 9118"]:
+        o, r = judge_full(it, heard)
+        assert r["status"] == "FLAGGED" and o == "OK", heard     # OK here = "correctly flagged"

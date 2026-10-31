@@ -147,3 +147,15 @@ def analyse(text, airport, traffic, channel="tower", phases=None, second_text=No
     out = dict(r, instructions=ins, call_actions=call_actions, problems=problems, amber=amber)
     out["status"] = "FLAGGED" if problems else ("PROBABLE" if amber else "CONFIRMED")
     return out
+
+
+
+# Fix C ("context listen": re-hear a flagged readback with the tower's call as previous_text and
+# fill the gaps) was REJECTED on 1 Nov before spending any API calls. Worst-case test on 129 flagged
+# readbacks (listen 2 = the tower's words exactly, i.e. Prisma fully biased by context):
+#   rescued 39, but HID 4 deliberate wrong readbacks:
+#     d004b  pilot said 9093 (tower 9091), heard "909"   -> completed to 9091   (lost digit = the error)
+#     d013b  pilot said 9404 (tower 9494), heard "I flew by niner 404" -> filled 9494
+#     e010b  pilot read back the wrong runway, heard "3C" / "3 runways in 2" -> filled the tower's 27  (x2)
+# Root cause: anything filled from the tower's words can no longer be checked AGAINST the tower's
+# words - it is circular. Step 2 instead shows what is missing ("callsign 775_ incomplete") and asks.

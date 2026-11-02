@@ -206,12 +206,18 @@ class RunwayEngine:
                 self._occupy(t, cs, act, rw)
             elif act in ("HOLD_SHORT", "TAXI_HP"):
                 self._release(cs, {"CROSS", "LINEUP"}, strip_of(self.airport, rw))
-        unknown_ins = not ins and not a["call_actions"] and a["status"] == "FLAGGED" and bool(a["instructions"])
-        if ins or a["call_actions"] or unknown_ins:
+        # "hold short, runway 29 as well": the instruction was heard, only the side of the runway was lost.
+        # Keep it as a PARTIAL clearance (29L or 29R) so the readback can still be checked against it.
+        rws = AIRPORTS[self.airport]["runways"]
+        partial = [(x["runway"], x["action"], sorted(r for r in rws if r.rstrip("LRC") == x["runway"] and r != x["runway"]))
+                   for x in a["instructions"] if not x["valid"] and x["action"] and x["runway"].isdigit()]
+        partial = [p for p in partial if p[2]]
+        unknown_ins = not ins and not partial and not a["call_actions"] and a["status"] == "FLAGGED" and bool(a["instructions"])
+        if ins or a["call_actions"] or unknown_ins or partial:
             # unknown_ins: e.g. "hold short runway 29 as well" (side lost) - the readback can still be paired,
             # but it can never be confirmed against an instruction we did not understand
             self.pending.append({"t": t, "cs": cs, "ins": ins, "call_actions": list(a["call_actions"]),
-                                 "cond": cond, "answered": False, "overdue": False, "ins_unknown": unknown_ins,
+                                 "cond": cond, "answered": False, "overdue": False, "ins_unknown": unknown_ins, "partial": partial,
                                  "unclear": a["status"] == "FLAGGED", "analysis": a})
         return out
 
@@ -310,6 +316,16 @@ class RunwayEngine:
         # --- runway + instruction
         rb = {x["runway"]: x for x in a["instructions"]}
         rb_valid = {r for r, x in rb.items() if x["valid"]}
+        for digits, act, cands in p.get("partial", []):
+            got = [r for r in rb_valid if r in cands]
+            if len(got) == 1:
+                # the readback says WHICH runway (29R). That cannot be cross-checked (the tower's side was lost),
+                # but it locates the clearance so its safety can be checked.
+                p["ins"] = p["ins"] + [(got[0], act)]
+                missing.append(f"tower's runway side not heard ({digits}?); readback says {got[0]}, not cross-checked")
+            else:
+                missing.append(f"tower's runway side not heard ({digits}?) and the readback does not settle it")
+        p["partial"] = []
         for rw, act in p["ins"]:
             if rw in rb_valid:
                 got = rb[rw]["action"]
@@ -349,8 +365,21 @@ class RunwayEngine:
                     out += self._check_conflict(t, p["cs"], x["action"], x["runway"], False, hypothetical=True)
         elif missing:
             urgent = any(c in m for m in missing for c in ("STOP", "GO_AROUND"))
-            out.append(self._alert(t, "RED" if urgent else "AMBER", "READBACK_INCOMPLETE",
-                                   f"{who}: readback incomplete - " + "; ".join(missing) + " - confirm", (p["cs"],)))
+            # A HOLD SHORT that is not confirmed, on a runway someone else is using right now, is the classic
+            # incursion set-up (ICAO: hold-short instructions must be read back). Not a guess: it is "not confirmed",
+            # exactly like STOP. Consequence decides the level.
+            hold_rw, other = None, None
+            for rw, act in p["ins"]:
+                if act == "HOLD_SHORT" and f"instruction for runway {rw} not heard" in missing:
+                    users = [o for s2 in related_strips(self.airport, strip_of(self.airport, rw))
+                             for o in self.occ.get(s2, []) if o["cs"] != p["cs"]]
+                    if users:
+                        hold_rw, other = rw, users[-1]["cs"]
+                        missing.insert(0, f"HOLD SHORT not confirmed - runway {rw} in use: {users[-1]['cs']} "
+                                          f"{users[-1]['action']} {users[-1]['rw']}")
+            out.append(self._alert(t, "RED" if urgent or hold_rw else "AMBER", "READBACK_INCOMPLETE",
+                                   f"{who}: readback incomplete - " + "; ".join(missing) + " - confirm", (p["cs"], other),
+                                   rw=hold_rw))
         p["verdict"] = "MISMATCH" if wrong else ("INCOMPLETE" if missing else "MATCH")
         p["why"] = wrong + missing
         # the tower's callsign was lost but the readback says who it was: name the aircraft in the picture
@@ -381,7 +410,7 @@ class RunwayEngine:
             strip = strip_of(self.airport, x["runway"])
             for st in related_strips(self.airport, strip):
                 for o in self.occ.get(st, []):
-                    shown = any(al["kind"] == "RUNWAY_CONFLICT" and al["level"] == "RED" and t - al["t"] <= 60
+                    shown = any(al["level"] == "RED" and t - al["t"] <= 60
                                 and {a["callsign"], o["cs"]} <= set(al["callsigns"]) for al in self.alerts)
                     if o["cs"] != a["callsign"] and not shown:
                         out.append(self._alert(t, "AMBER", "RUNWAY_IN_USE_UNCLEAR",

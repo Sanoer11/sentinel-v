@@ -29,6 +29,7 @@ HEADLINE = {
     "READBACK_MISMATCH": "Readback mismatch",
     "STOP_NOT_CONFIRMED": "Stop not confirmed",
     "GO_AROUND_NOT_CONFIRMED": "Go around not confirmed",
+    "HOLD_SHORT_NOT_CONFIRMED": "Hold short not confirmed",
     "NO_READBACK": "No readback",
     "BIRDS_ON_ACTIVE_RUNWAY": "Birds reported",
     "INCURSION": "Runway incursion",
@@ -87,7 +88,7 @@ def say_runway(rw):
 
 # ONE spoken alert per radio call: the most dangerous one. The others stay on screen.
 # (3 Nov run: a hold-short read back as "crossing" gave two spoken alerts back to back, 18 s of audio.)
-PRIORITY = ["RUNWAY_CONFLICT", "INCURSION", "READBACK_CONFLICT", "BIRDS_ON_ACTIVE_RUNWAY",
+PRIORITY = ["RUNWAY_CONFLICT", "INCURSION", "READBACK_CONFLICT", "HOLD_SHORT_NOT_CONFIRMED", "BIRDS_ON_ACTIVE_RUNWAY",
             "STOP_NOT_CONFIRMED", "GO_AROUND_NOT_CONFIRMED", "READBACK_MISMATCH", "NO_READBACK"]
 
 
@@ -96,6 +97,8 @@ def _head(alert):
     if k == "RUNWAY_CONFLICT":
         return "READBACK_CONFLICT" if alert["text"].startswith("IF ") else "RUNWAY_CONFLICT"
     if k == "READBACK_INCOMPLETE":
+        if "HOLD SHORT not confirmed" in alert["text"]:
+            return "HOLD_SHORT_NOT_CONFIRMED"
         return "GO_AROUND_NOT_CONFIRMED" if "GO_AROUND" in alert["text"] else "STOP_NOT_CONFIRMED"
     return k
 
@@ -111,7 +114,7 @@ def phrases(alert):
     # ONE aircraft the controller must act on now (the one just cleared / the one that read back wrong).
     # The other aircraft is on the screen. Target: under 5 s.
     out = [HEADLINE[head]]
-    if head in ("RUNWAY_CONFLICT", "READBACK_CONFLICT", "INCURSION"):
+    if head in ("RUNWAY_CONFLICT", "READBACK_CONFLICT", "INCURSION", "HOLD_SHORT_NOT_CONFIRMED"):
         out += ([say_runway(rw)] if rw else []) + [say_callsign(cs[0] if cs else None)]
     elif head == "BIRDS_ON_ACTIVE_RUNWAY":
         out += ([say_runway(rw)] if rw else []) + ([say_callsign(cs[-1])] if cs else [])

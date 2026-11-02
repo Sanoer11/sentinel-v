@@ -1,0 +1,398 @@
+[
+ {
+  "id": "d000b",
+  "cond": "5dB",
+  "runway": "09",
+  "truth": "CROSS",
+  "heard": "Taxiway runway 09, Air India 203.",
+  "heard_verbatim": "Taxiway runway zero nine, Air India two zero three one.",
+  "got": null
+ },
+ {
+  "id": "d000b",
+  "cond": "0dB",
+  "runway": "09",
+  "truth": "CROSS",
+  "heard": "Taxiway runway 09, Air India 202.",
+  "heard_verbatim": "Taxiway runway zero nine, Air India two zero two.",
+  "got": null
+ },
+ {
+  "id": "d001b",
+  "cond": "10dB",
+  "runway": "10",
+  "truth": "CROSS",
+  "heard": "Taxiing runway 10, Air India 3848.",
+  "heard_verbatim": "Taxiing runway one zero, Air India three eight four eight.",
+  "got": null
+ },
+ {
+  "id": "d001b",
+  "cond": "5dB",
+  "runway": "10",
+  "truth": "CROSS",
+  "heard": "Passing runway 10, Air India 3848.",
+  "heard_verbatim": "Passing runway one zero, Air India three eight four eight.",
+  "got": null
+ },
+ {
+  "id": "d001b",
+  "cond": "0dB",
+  "runway": "10",
+  "truth": "CROSS",
+  "heard": "Taxiway runway 10, Air India 3848.",
+  "heard_verbatim": "Taking runway one zero, Air India three eight four eight.",
+  "got": null
+ },
+ {
+  "id": "d005b",
+  "cond": "10dB",
+  "runway": "10",
+  "truth": "CROSS",
+  "heard": "Taxiway runway 10, IFLY 3368.",
+  "heard_verbatim": "Taxiway runway one zero, IFLY three three six eight.",
+  "got": null
+ },
+ {
+  "id": "d005b",
+  "cond": "5dB",
+  "runway": "10",
+  "truth": "CROSS",
+  "heard": "Wing runway 10, IFLY 3368.",
+  "heard_verbatim": "Wing runway one zero, IFLY three three six eight.",
+  "got": null
+ },
+ {
+  "id": "d005b",
+  "cond": "0dB",
+  "runway": "10",
+  "truth": "CROSS",
+  "heard": "16 runway 10, IFLY 3368.",
+  "heard_verbatim": "Wing runway one zero, IFLY three three six eight.",
+  "got": null
+ },
+ {
+  "id": "d010a",
+  "cond": "0dB",
+  "runway": "28",
+  "truth": "CROSS",
+  "heard": "A flight, 3792, got runway 28 before takeoff.",
+  "heard_verbatim": "A flight eree seven niner two got runway two eight before takeoff.",
+  "got": null
+ },
+ {
+  "id": "d010b",
+  "cond": "10dB",
+  "runway": "28",
+  "truth": "CROSS",
+  "heard": "Sing runway 28, I fly 379 or 2.",
+  "heard_verbatim": "Sing runway two eight, I fly three seven niner two.",
+  "got": null
+ },
+ {
+  "id": "d010b",
+  "cond": "0dB",
+  "runway": "28",
+  "truth": "CROSS",
+  "heard": "15 runway 28, I fly 37 niner 2.",
+  "heard_verbatim": "I think runway two eight. I fly three seven niner two.",
+  "got": null
+ },
+ {
+  "id": "d017a",
+  "cond": "5dB",
+  "runway": "14",
+  "truth": "LAND",
+  "heard": "Akasa Air 1439, runway 14, cleared for land.",
+  "heard_verbatim": "Akasa Air One four three nine, runway one four, cleared for land.",
+  "got": null
+ },
+ {
+  "id": "d003v",
+  "cond": "5dB",
+  "runway": "14",
+  "truth": "REPORT_BIRDS",
+  "heard": "Tower, follow me. Runway 14 were occupied. We taxiway Charlie was coming.",
+  "heard_verbatim": "Tower, follow me. Runway one four were occupied. We taxiway Charlie one seven.",
+  "got": null
+ },
+ {
+  "id": "d005v",
+  "cond": "0dB",
+  "runway": "09",
+  "truth": "REPORT_BIRDS",
+  "heard": "Good good, check it. Runway 09 वर पक्की आहे. हे taxiway Charlie पर आहे.",
+  "heard_verbatim": "फॉर गॉड, चेक इट. रनवे झिरो नाइनवर पक्की आहे. हे टॅक्सीचे चार्ली पण आहे.",
+  "got": null
+ },
+ {
+  "id": "d010v",
+  "cond": "0dB",
+  "runway": "32",
+  "truth": "REQ_CROSS",
+  "heard": "For follow me, runway 32 clockwise, holding point Bravo 44.",
+  "heard_verbatim": "For follow me, runway three two cross runway, holding point bravo position.",
+  "got": "REQ_CROSS"
+ },
+ {
+  "id": "e006b",
+  "cond": "0dB",
+  "runway": "10",
+  "truth": "HOLD_SHORT",
+  "heard": "Air India, runway 10, Akasa Air 266.",
+  "heard_verbatim": "Cleared for runway one zero, Akasa Air two six two.",
+  "got": null
+ },
+ {
+  "id": "e009b",
+  "cond": "10dB",
+  "runway": "11L",
+  "truth": "CROSS",
+  "heard": "Taking runway 11 left, Air India 4586.",
+  "heard_verbatim": "Taking runway one one left, Air India four five eight six.",
+  "got": null
+ },
+ {
+  "id": "e009b",
+  "cond": "5dB",
+  "runway": "11L",
+  "truth": "CROSS",
+  "heard": "Pushing runway 11 left, Air India 4586.",
+  "heard_verbatim": "Pushing runway one one left, Air India four five in six.",
+  "got": null
+ },
+ {
+  "id": "e009b",
+  "cond": "0dB",
+  "runway": "11L",
+  "truth": "CROSS",
+  "heard": "16 runway 11 left, Air India 4526.",
+  "heard_verbatim": "Taxiway runway one one left, Air India four five in six.",
+  "got": null
+ },
+ {
+  "id": "e010b",
+  "cond": "10dB",
+  "runway": "32",
+  "truth": "CROSS",
+  "heard": "In runway 32, Air India 524.",
+  "heard_verbatim": "In runway three two, Air India five two four.",
+  "got": null
+ },
+ {
+  "id": "e011b",
+  "cond": "5dB",
+  "runway": "28",
+  "truth": "CROSS",
+  "heard": "Taking runway 28, Air India 8982.",
+  "heard_verbatim": "Taking runway two eight, Air India eight nine eight two.",
+  "got": null
+ },
+ {
+  "id": "e011b",
+  "cond": "0dB",
+  "runway": "28",
+  "truth": "CROSS",
+  "heard": "Next thing runway 28, Air India 896.",
+  "heard_verbatim": "Next thing runway two eight, Air India eight ninety.",
+  "got": null
+ },
+ {
+  "id": "e013b",
+  "cond": "0dB",
+  "runway": "10",
+  "truth": "CROSS",
+  "heard": "Taking runway 10, IFLY 134.",
+  "heard_verbatim": "Taking runway one zero, IFLY one three four one.",
+  "got": null
+ },
+ {
+  "id": "e021b",
+  "cond": "0dB",
+  "runway": "29R",
+  "truth": "HOLD_SHORT",
+  "heard": "You didn't slot runway 29, right? Akasa Air, please read 57.",
+  "heard_verbatim": "You didn't cross runway two nine, right? Akasa Air, please read five seven.",
+  "got": "CROSS"
+ },
+ {
+  "id": "e003v",
+  "cond": "0dB",
+  "runway": "14",
+  "truth": "REQ_ENTER",
+  "heard": "Air India, follow me. 5, runway 14, takeoff. Just to be entertaining, position 5.",
+  "heard_verbatim": "Air, follow me. Five, runway one four. Report vacated. Entertainment permission cancelled.",
+  "got": null
+ },
+ {
+  "id": "e005v",
+  "cond": "10dB",
+  "runway": "09",
+  "truth": "REPORT_BIRDS",
+  "heard": "वर फॉलो मी की रनवे 09 वर पक्की आहे, मी टॅक्सीवे Charlie वर थांबतो.",
+  "heard_verbatim": "वर फॉलो मी टू रनवे झिरो नाइन वर पक्की आहे, मी टॅक्सीवे चार्लीवर थांबतो.",
+  "got": null
+ },
+ {
+  "id": "e005v",
+  "cond": "5dB",
+  "runway": "09",
+  "truth": "REPORT_BIRDS",
+  "heard": "Our follow-me 3 runway 09 were ok. Yeah, the taxiway Charlie was humming.",
+  "heard_verbatim": "Our follow-me three runway zero nine were ok. Me taxiway Charlie was humming.",
+  "got": null
+ },
+ {
+  "id": "e005v",
+  "cond": "0dB",
+  "runway": "09",
+  "truth": "REPORT_BIRDS",
+  "heard": "Our follow me, runway 09 was occupied. We taxiway Charlie was cleared.",
+  "heard_verbatim": "Our follow me runway zero nine was occupied, so taxiway Charlie was cleared.",
+  "got": null
+ },
+ {
+  "id": "e007v",
+  "cond": "0dB",
+  "runway": "28",
+  "truth": "REQ_CROSS",
+  "heard": "Tower, following 5 runway 28, talk to Anna. Bravo to hold short.",
+  "heard_verbatim": "Tower, following five runway two eight four seven, Bravo to hold short.",
+  "got": null
+ },
+ {
+  "id": "s000b",
+  "cond": "10dB",
+  "runway": "11R",
+  "truth": "CROSS",
+  "heard": "Taxiway runway 11 right, holding short runway 11 left. Air India 7753.",
+  "heard_verbatim": "Taxiway runway one one right, holding short runway one one left. Air India seven seven five three.",
+  "got": null
+ },
+ {
+  "id": "s000b",
+  "cond": "5dB",
+  "runway": "11R",
+  "truth": "CROSS",
+  "heard": "I think runway 11, right? Holding short runway 11 left. Air India 775.",
+  "heard_verbatim": "I think runway one one, right? Holding short runway one one left. Air India seven seven five two.",
+  "got": null
+ },
+ {
+  "id": "s000b",
+  "cond": "0dB",
+  "runway": "11R",
+  "truth": "CROSS",
+  "heard": "I think runway 11, right? Holding short runway 11 left, Air India 775.",
+  "heard_verbatim": "I think runway one one, right? Holding short runway one one left, Air India seven seven five.",
+  "got": null
+ },
+ {
+  "id": "s005b",
+  "cond": "20dB",
+  "runway": "11L",
+  "truth": "LAND",
+  "heard": "Amsterdam runway 11 left, Air India 8462.",
+  "heard_verbatim": "Amsterdam runway one one left, Air India eight four six two.",
+  "got": null
+ },
+ {
+  "id": "s007b",
+  "cond": "5dB",
+  "runway": "28",
+  "truth": "TAXI_HP",
+  "heard": "62 to holding point, runway 28 via Bravo, Air India 1202.",
+  "heard_verbatim": "Taxi to holding point, runway two eight, via Bravo, Air India one two zero two.",
+  "got": "TAXI_HP"
+ },
+ {
+  "id": "s012b",
+  "cond": "10dB",
+  "runway": "29R",
+  "truth": "CROSS",
+  "heard": "Taxiway runway 29 right, holding short runway 29 left. Air India 904C.",
+  "heard_verbatim": "Taxiway runway two nine right, holding short runway two nine left. Air India nine zero four three.",
+  "got": null
+ },
+ {
+  "id": "s012b",
+  "cond": "5dB",
+  "runway": "29R",
+  "truth": "CROSS",
+  "heard": "Passing runway 29 right, holding short runway 29 left. Air India 9043.",
+  "heard_verbatim": "Passing runway two nine right, holding short runway two nine left. Air India nine zero four three.",
+  "got": null
+ },
+ {
+  "id": "s012b",
+  "cond": "0dB",
+  "runway": "29L",
+  "truth": "HOLD_SHORT",
+  "heard": "Ascend runway 29 left, holding short runway 29 left. Air India 904.",
+  "heard_verbatim": "Ascend runway two nine, right holding short runway two nine left, Air India nine zero four.",
+  "got": "HOLD_SHORT"
+ },
+ {
+  "id": "s013b",
+  "cond": "0dB",
+  "runway": "09",
+  "truth": "TAXI_HP",
+  "heard": "Please to holding point runway 09 via Bravo, IFL via 912.",
+  "heard_verbatim": "Please to holding point runway zero nine via Bravo, IFL via nine one two.",
+  "got": null
+ },
+ {
+  "id": "s018b",
+  "cond": "5dB",
+  "runway": "11R",
+  "truth": "CROSS",
+  "heard": "Holding runway 11 right, holding short runway 11 left. Akasa Air 798.",
+  "heard_verbatim": "Holding runway one one, right. Holding short runway one one left. Akasa Air seven niner eight zero.",
+  "got": null
+ },
+ {
+  "id": "s018b",
+  "cond": "0dB",
+  "runway": "11R",
+  "truth": "CROSS",
+  "heard": "Air India runway 11, right holding short runway 11 left. Akasa Air 7988.",
+  "heard_verbatim": "Air India runway one one, right? Holding short runway one one left. Akasa Air seven niner eight.",
+  "got": null
+ },
+ {
+  "id": "DEL_2023#3",
+  "cond": "10",
+  "runway": "29R",
+  "truth": "CROSS",
+  "heard": "Sing runway 29, right with Tara 926.",
+  "heard_verbatim": "Sing runway two, niner right, Vistara niner two six.",
+  "got": null
+ },
+ {
+  "id": "HOLD_AS_CROSS#3",
+  "cond": "10",
+  "runway": "29R",
+  "truth": "CROSS",
+  "heard": "Asking runway 29, right? He flee 5134.",
+  "heard_verbatim": "Asking runway two, niner right? He, please. Five one three four.",
+  "got": null
+ },
+ {
+  "id": "BIRDS_MR#2",
+  "cond": "10",
+  "runway": "27",
+  "truth": "REPORT_BIRDS",
+  "heard": "Tower bird chaser 2, runway 27 वर पक्की आहे. मी taxiway 40 वर थांबलो.",
+  "heard_verbatim": "टावर बर्ड चेस्टर टू रनवे टू सेव्हन वर पक्की आहे. मी टॅक्सीवे चार्लीवर थांबले.",
+  "got": null
+ },
+ {
+  "id": "NORMAL_DEL#3",
+  "cond": "10",
+  "runway": "29L",
+  "truth": "LAND",
+  "heard": "Afterland runway 2, 9 left, Epley 5134.",
+  "heard_verbatim": "Clear to land runway two, niner left, Epley five one three four.",
+  "got": "LAND"
+ }
+]

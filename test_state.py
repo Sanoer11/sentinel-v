@@ -333,8 +333,8 @@ def test_readback_to_a_misunderstood_clearance_is_paired_but_never_matched():
     e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Air India 2817.")
     e.call(15, "tower", "Flight 5134, hold short, runway 29 as well.")
     r = e.call(19, "pilot", "Asking runway 29 right, he flee 5134.")
-    assert e.pending[-1]["verdict"] == "INCOMPLETE"
-    assert any(a["kind"] == "RUNWAY_IN_USE_UNCLEAR" for a in r["alerts"])
+    assert e.pending[-1]["verdict"] == "INCOMPLETE"          # paired, never MATCH
+    assert any("HOLD SHORT not confirmed" in a["text"] for a in r["alerts"])
 
 
 def test_busy_runway_amber_not_repeated_under_a_red_conflict():
@@ -355,3 +355,23 @@ def test_unidentified_same_phase_clearance_is_only_possible_conflict():
     e.call(0, "tower", "Runway 28, cleared for takeoff.")
     r = e.call(30, "tower", "Air India 2817, runway 28, cleared for takeoff.")
     assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "AMBER" for a in r["alerts"]) and not reds(r["alerts"])
+
+
+def test_hold_short_not_confirmed_on_busy_runway_is_red():
+    # HOLD_AS_CROSS at 10 dB: tower "hold short runway 29 as well" (side lost), pilot "Asking runway 29 right"
+    T = {"AIC2817", "IGO5134"}
+    e = RunwayEngine("VIDP", T, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29, right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Air India 2817.")
+    e.call(15, "tower", "Flight 5134, hold short, runway 29 as well.")
+    r = e.call(19, "pilot", "Asking runway 29 right, he flee 5134.")
+    red = reds(r["alerts"])
+    assert red and "HOLD SHORT not confirmed" in red[0]["text"] and red[0]["rw"] == "29R"
+    assert not any(a["kind"] == "RUNWAY_IN_USE_UNCLEAR" for a in r["alerts"])      # no duplicate amber
+
+
+def test_hold_short_not_confirmed_on_free_runway_stays_amber():
+    e = RunwayEngine("VIDP", {"IGO5134"}, {"IGO5134": "ground"})
+    e.call(15, "tower", "IFLY 5134, hold short runway 29 right.")
+    r = e.call(19, "pilot", "Asking runway 29 right, IFLY 5134.")
+    assert not reds(r["alerts"])

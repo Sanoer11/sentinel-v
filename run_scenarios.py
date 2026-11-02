@@ -10,6 +10,8 @@ PASS rules (fixed before the run):
     (LATE = it came at a later step, e.g. only after the readback named the aircraft; shown with the delay.
      LATE is not a PASS - it is reported separately so nothing is rounded up)
   - NORMAL_DEL gives no RED at all
+  - OTHER-RED = the expected alert did not come, but a different RED did at that step (shown which).
+    It is NOT counted as a pass.
   - a scenario whose step is FLAGGED by noise still counts as FAIL if its expected alert is missing:
     nothing is excused; the output shows why.
 Latency: wall time of each Prisma call is logged (used in Step 3).
@@ -94,14 +96,17 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
     for i, kind, lvl in sc.get("expect", []):
         hit = [j for j in range(i, len(steps)) if any(a["kind"] == kind and a["level"] == lvl for a in steps[j]["alerts"])]
         if not hit:
-            misses.append(f"step {i}: expected {lvl} {kind} - never came")
+            other = [a["kind"] for a in steps[i]["alerts"] if a["level"] == "RED"]
+            misses.append(f"step {i}: expected {lvl} {kind} - never came"
+                          + (f" (a different RED did: {', '.join(other)})" if other else ""))
         elif hit[0] != i:
             late.append(f"step {i}: {lvl} {kind} came {steps[hit[0]]['t'] - steps[i]['t']} s late (at t={steps[hit[0]]['t']}s)")
     reds = [a for s in steps for a in s["alerts"] if a["level"] == "RED"] + [a for a in tail if a["level"] == "RED"]
     if sc.get("no_red") and reds:
         misses.append(f"normal traffic gave {len(reds)} RED alert(s)")
     return {"scenario": name, "cond": cond, "prepared_clips": prep, "pass": not misses and not late, "late": late, "misses": misses,
-            "verdict": "FAIL" if misses else ("LATE" if late else "PASS"), "steps": steps,
+            "verdict": ("FAIL" if not any("a different RED did" in m for m in misses) else "OTHER-RED")
+                       if misses else ("LATE" if late else "PASS"), "steps": steps,
             "end_alerts": [{k: a[k] for k in ("level", "kind", "text")} for a in tail]}
 
 

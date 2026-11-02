@@ -62,13 +62,13 @@ def tts(text, voice, model, lang, path, speed=1.0):
     return True
 
 
-def stt(path, channel, fmt="transcribe", previous_text=None):
+def stt(path, channel, fmt="transcribe", previous_text=None, extra_keyterms=None):
     """Prisma v3.0 + general ATC context. fmt: transcribe (digits) | verbatim | codemix (words).
     previous_text: what was said just before (the tower's call, for a readback). Used ONLY by the
     context listen, which may fill gaps but never overrule the first, neutral listen."""
     data = {"model": "prisma-v3.0", "format": fmt,
             "language_code": "hi-IN,en-IN,mr-IN" if channel == "airside" else "en-IN",
-            "keyterms": json.dumps(KEYTERMS, ensure_ascii=False), "topic": TOPIC}
+            "keyterms": json.dumps(sorted(set(KEYTERMS) | set(extra_keyterms or [])), ensure_ascii=False), "topic": TOPIC}
     if previous_text:
         data["previous_text"] = previous_text
     with open(path, "rb") as f:

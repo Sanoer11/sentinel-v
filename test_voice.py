@@ -59,3 +59,9 @@ def test_word_fallback_when_phrase_not_prepared(tmp_path, monkeypatch):
     assert fb == ["Runway conflict", "runway two eight"]
     assert [p.split("/")[-1] for p in v._word_fallback("runway two eight")] == [f"w_runway_s{v.SPEED}.wav", f"d_2_s{v.SPEED}.wav", f"d_8_s{v.SPEED}.wav"]
     assert [p.split("/")[-1] for p in v._word_fallback("Runway conflict")] == [f"h_RUNWAY_CONFLICT_s{v.SPEED}.wav"]
+
+
+def test_hold_short_not_confirmed_is_spoken():
+    s = spoken({"level": "RED", "kind": "READBACK_INCOMPLETE", "callsigns": ["IGO5134", "AIC2817"], "rw": "29R",
+                "text": "IGO5134: readback incomplete - HOLD SHORT not confirmed - runway 29R in use"})
+    assert s == "Hold short not confirmed, two niner right, IFLY fife one tree four"

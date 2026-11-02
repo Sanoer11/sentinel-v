@@ -7,6 +7,8 @@ Step 2b: run whole radio scenarios end to end - Timbre speaks, radio noise, Pris
 
 PASS rules (fixed before the run):
   - every expected alert appears at its step with its level
+    (LATE = it came at a later step, e.g. only after the readback named the aircraft; shown with the delay.
+     LATE is not a PASS - it is reported separately so nothing is rounded up)
   - NORMAL_DEL gives no RED at all
   - a scenario whose step is FLAGGED by noise still counts as FAIL if its expected alert is missing:
     nothing is excused; the output shows why.
@@ -68,12 +70,18 @@ def run(name, sc, cond, dry, tts=None, stt=None):
                       "latency_s": round(lat, 2), "status": rec["analysis"]["status"],
                       "alerts": [{k: a[k] for k in ("level", "kind", "text")} for a in rec["alerts"]]})
     tail = eng.tick(sc["steps"][-1][0] + 15)
-    misses = [f"step {i}: expected {lvl} {kind}" for i, kind, lvl in sc.get("expect", [])
-              if not any(a["kind"] == kind and a["level"] == lvl for a in steps[i]["alerts"])]
+    misses, late = [], []
+    for i, kind, lvl in sc.get("expect", []):
+        hit = [j for j in range(i, len(steps)) if any(a["kind"] == kind and a["level"] == lvl for a in steps[j]["alerts"])]
+        if not hit:
+            misses.append(f"step {i}: expected {lvl} {kind} - never came")
+        elif hit[0] != i:
+            late.append(f"step {i}: {lvl} {kind} came {steps[hit[0]]['t'] - steps[i]['t']} s late (at t={steps[hit[0]]['t']}s)")
     reds = [a for s in steps for a in s["alerts"] if a["level"] == "RED"] + [a for a in tail if a["level"] == "RED"]
     if sc.get("no_red") and reds:
         misses.append(f"normal traffic gave {len(reds)} RED alert(s)")
-    return {"scenario": name, "cond": cond, "pass": not misses, "misses": misses, "steps": steps,
+    return {"scenario": name, "cond": cond, "pass": not misses and not late, "late": late, "misses": misses,
+            "verdict": "FAIL" if misses else ("LATE" if late else "PASS"), "steps": steps,
             "end_alerts": [{k: a[k] for k in ("level", "kind", "text")} for a in tail]}
 
 
@@ -99,7 +107,7 @@ def main():
         for name, sc in SCENARIOS.items():
             r = run(name, sc, cond, a.dry_run, tts, stt)
             out.append(r)
-            print(f"\n=== {name} [{sc['airport']}] {'PASS' if r['pass'] else 'FAIL'} ===")
+            print(f"\n=== {name} [{sc['airport']}] {r['verdict']} ===")
             for s in r["steps"]:
                 print(f"  t={s['t']:>3}s {s['channel']:<7} {s['status']:<9} {s['heard']}"
                       + (f"   ({s['latency_s']} s)" if s["latency_s"] else ""))
@@ -109,13 +117,15 @@ def main():
                     print(f"           {'🔴' if al['level'] == 'RED' else '🟡' if al['level'] == 'AMBER' else 'ℹ️'} {al['text']}")
             for al in r["end_alerts"]:
                 print(f"  (after last call) {'🔴' if al['level'] == 'RED' else '🟡'} {al['text']}")
+            for m in r["late"]:
+                print(f"  .. {m}")
             for m in r["misses"]:
                 print(f"  !! {m}")
     print("\n================ SUMMARY ================")
     for cond in conds:
         rs = [r for r in out if r["cond"] == cond]
-        print(f"  {cond:<6} {sum(r['pass'] for r in rs)}/{len(rs)} scenarios pass: "
-              + ", ".join(f"{r['scenario']}{'' if r['pass'] else ' FAIL'}" for r in rs))
+        print(f"  {cond:<6} {sum(r['pass'] for r in rs)}/{len(rs)} on time: "
+              + ", ".join(f"{r['scenario']}{'' if r['pass'] else ' ' + r['verdict']}" for r in rs))
     lats = [s["latency_s"] for r in out for s in r["steps"] if s["latency_s"]]
     if lats:
         lats.sort()

@@ -261,3 +261,64 @@ def test_glued_number_second_listen_does_not_soften_a_readback_mismatch():
     r = e.call(4, "pilot", "Holding short, runway 10, Air India 8498.",
                second_text="Holding short runway one zero, Air India eight four niner six.")
     assert reds(r["alerts"])
+
+
+# ---- 10 dB scenario run (3 Nov) fixes ----
+
+def test_unidentified_clearance_still_enters_the_picture_and_is_named_by_readback():
+    # BOM_2024 at 10 dB: "IFLY 6053" heard as "36053" -> landing clearance with no callsign
+    T = {"AIC657", "IGO6053"}
+    e = RunwayEngine("VABB", T, {"AIC657": "ground", "IGO6053": "air"})
+    e.call(0, "tower", "Air India 657, runway 27, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 27 cleared for takeoff, Air India 657.")
+    r1 = e.call(40, "tower", "36053, runway 27, cleared to land.")
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "AMBER" for a in r1["alerts"])
+    r2 = e.call(44, "pilot", "Cleared to land, runway 27. IFLY, 6053.")
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and "IGO6053" in a["text"] for a in reds(r2["alerts"]))
+
+
+def test_report_vacated_heard_wrong_still_frees_the_runway():
+    # NORMAL_DEL at 10 dB: "Runway vacated" heard as "Report vacated"
+    T = {"IGO5134", "AKJ1123"}
+    e = RunwayEngine("VIDP", T, {"IGO5134": "air", "AKJ1123": "ground"})
+    e.call(40, "tower", "IFLY 5134, runway 29 left, cleared to land.")
+    e.call(44, "pilot", "Cleared to land runway 29 left, IFLY 5134.")
+    e.call(150, "pilot", "Report vacated. IFLY 5134.")
+    r = e.call(160, "tower", "Akasa Air 1123, runway 29 left, cleared for takeoff.")
+    assert not reds(r["alerts"])
+
+
+def test_crossing_readback_with_report_vacated_is_not_a_vacated_report():
+    T = {"IGO5134"}
+    e = RunwayEngine("VIDP", T, {"IGO5134": "ground"})
+    e.call(0, "tower", "IFLY 5134, cross runway 28, report vacated.")
+    r = e.call(4, "pilot", "Crossing runway 28, will report vacated, IFLY 5134.")
+    assert not any(a["kind"] == "VACATED" for a in r["alerts"]) and e.pending[-1]["verdict"] == "MATCH"
+
+
+def test_call_naming_a_busy_runway_without_instruction_warns():
+    T = {"AIC2817", "IGO5134"}
+    e = RunwayEngine("VIDP", T, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29 right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Air India 2817.")
+    r = e.call(19, "pilot", "Asking runway 29 right, IFLY 5134.")
+    assert any(a["kind"] == "RUNWAY_IN_USE_UNCLEAR" for a in r["alerts"])
+
+
+def test_clipped_crossing_readback_with_report_vacated_does_not_free_runway():
+    # "Crossing runway 28, will report vacated" with "Crossing" clipped -> must stay a readback
+    T = {"IGO5134", "AIC2817"}
+    e = RunwayEngine("VIDP", T, {"IGO5134": "ground", "AIC2817": "ground"})
+    e.call(0, "tower", "IFLY 5134, cross runway 28, report vacated.")
+    r = e.call(4, "pilot", "Taxiway runway 28, will report vacated, IFLY 5134.")
+    assert not any(a["kind"] == "VACATED" for a in r["alerts"])
+    r2 = e.call(10, "tower", "Air India 2817, runway 28, cleared for takeoff.")
+    assert reds(r2["alerts"])                       # the crossing is still in the picture
+
+
+def test_aircraft_named_only_by_readback_with_lookalike_is_flagged():
+    T = {"IGO6053", "IGO6035", "AIC657"}
+    e = RunwayEngine("VABB", T, {"IGO6053": "air", "IGO6035": "air"})
+    e.call(0, "tower", "36053, runway 27, cleared to land.")
+    r = e.call(4, "pilot", "Cleared to land runway 27, IFLY 6035.")
+    assert any(a["kind"] == "NAMED_BY_READBACK_ONLY" for a in r["alerts"])

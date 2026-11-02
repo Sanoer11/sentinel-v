@@ -63,6 +63,10 @@ def _conflict_level(new, old, new_cond):
     return "RED"
 
 
+def _unknown(cs):
+    return cs.startswith("UNIDENTIFIED")
+
+
 class RunwayEngine:
     def __init__(self, airport, traffic, phases=None):
         self.airport, self.traffic, self.phases = airport, set(traffic), dict(phases or {})
@@ -94,6 +98,8 @@ class RunwayEngine:
                 if o["cs"] == cs:
                     continue
                 lvl = _conflict_level(action, o["action"], cond)
+                if lvl and (_unknown(cs) or _unknown(o["cs"])):
+                    lvl = "AMBER"           # who it is not known yet: possible conflict, upgraded once identified
                 if lvl and cs:
                     where = strip if s == strip else f"{strip} (crosses {s})"
                     pre = f"IF {cs} DOES WHAT IT READ BACK: " if hypothetical else ""
@@ -118,9 +124,13 @@ class RunwayEngine:
         if channel == "tower":
             rec["alerts"] += self._tower(t, a)
         elif channel == "pilot":
-            if re.search(r"\bRUNWAY\s+VACATED\b|\bVACATED\s+RUNWAY\b", a["normalized"].upper()) \
-                    and not re.search(r"\bREPORT\b", a["normalized"].upper()) and a["callsign"]:
-                # "Runway vacated, IFLY 5134": the runway is free again (ICAO "report vacated" answer)
+            due = any(p["cs"] in (a["callsign"], None) and not p["answered"] and t - p["t"] <= READBACK_WINDOW
+                      for p in self.pending)
+            if re.search(r"\bVACATED\b", a["normalized"].upper()) and a["callsign"] and not due \
+                    and not any(x["action"] for x in a["instructions"]) and not a["call_actions"]:
+                # "Runway vacated, IFLY 5134" (10 dB: heard as "Report vacated. IFLY 5134"): the runway is free.
+                # NOT when a readback is due from this aircraft: "crossing 28, report vacated" with "crossing"
+                # clipped by push-to-talk would otherwise free a runway the aircraft is about to cross.
                 self._release(a["callsign"])
                 rec["analysis"] = dict(a, status="REPORT")
                 rec["alerts"].append(self._alert(t, "INFO", "VACATED", f"{a['callsign']} reports runway vacated", (a["callsign"],)))
@@ -157,10 +167,18 @@ class RunwayEngine:
         ins = [(x["runway"], x["action"]) for x in a["instructions"]
                if x["valid"] and x["action"] and x["action"] not in bad]
         if not cs:
-            # who it was for is unknown: no runway picture change, but the readback can still be paired
+            # who it was for is not known, but SOMEONE was cleared onto that runway: it goes into the picture
+            # as an unidentified aircraft (adding to the picture can only add alarms, never hide one).
+            # The readback (a separate transmission) usually tells us who it was.
+            ph = f"UNIDENTIFIED (cleared at t={t:.0f}s)"
+            for rw, act in ins:
+                if act in OCCUPY:
+                    out += self._check_conflict(t, ph, act, rw, cond)
+                    self._occupy(t, ph, act, rw)
             if ins or a["call_actions"]:
-                self.pending.append({"t": t, "cs": None, "ins": ins, "call_actions": list(a["call_actions"]),
-                                     "cond": cond, "answered": False, "overdue": False, "unclear": True, "analysis": a})
+                self.pending.append({"t": t, "cs": None, "placeholder": ph, "ins": ins,
+                                     "call_actions": list(a["call_actions"]), "cond": cond,
+                                     "answered": False, "overdue": False, "unclear": True, "analysis": a})
             return out
         if "GO_AROUND" in a["call_actions"]:
             self._release(cs, {"LAND"})
@@ -242,12 +260,14 @@ class RunwayEngine:
             rec["pending"] = p
         if not p:
             return [self._alert(t, "AMBER", "UNMATCHED_READBACK",
-                                "Pilot call could not be matched to a recent clearance", (a["callsign"],))]
+                                "Pilot call could not be matched to a recent clearance", (a["callsign"],))] \
+                + self._in_use_warnings(t, a)
         p["answered"] = True
         wrong, missing = [], []
         # --- callsign
         if p["cs"] is None:
-            missing.append("tower's callsign was not heard, so the readback callsign cannot be checked")
+            missing.append(f"tower's callsign was not heard; readback says {a['callsign']}, not cross-checked"
+                           if a["callsign"] else "tower's callsign was not heard, and none in the readback")
         elif a["callsign"] == p["cs"]:
             pass
         elif isinstance(heard, str) and heard.startswith("read back as"):
@@ -314,11 +334,44 @@ class RunwayEngine:
                                    f"{who}: readback incomplete - " + "; ".join(missing) + " - confirm", (p["cs"],)))
         p["verdict"] = "MISMATCH" if wrong else ("INCOMPLETE" if missing else "MATCH")
         p["why"] = wrong + missing
+        # the tower's callsign was lost but the readback says who it was: name the aircraft in the picture
+        # and re-check it (only when nothing in the readback contradicts the clearance)
+        if p.get("placeholder") and a["callsign"] and not wrong:
+            for st in list(self.occ):
+                for o in self.occ[st]:
+                    if o["cs"] == p["placeholder"]:
+                        self._release(a["callsign"])
+                        o["cs"] = a["callsign"]
+                        out += self._check_conflict(t, a["callsign"], o["action"], o["rw"], p["cond"])
+                        twin = [x for x in a["amber"] if x.startswith("similar callsign on frequency")]
+                        if twin:
+                            # the aircraft was named ONLY by its own readback: a look-alike could have answered
+                            out.append(self._alert(t, "AMBER", "NAMED_BY_READBACK_ONLY",
+                                                   f"{a['callsign']} named only by its readback ({twin[0]}) - confirm who is cleared",
+                                                   (a["callsign"],)))
+            p["placeholder"] = None
+        out += self._in_use_warnings(t, a)
+        return out
+
+    def _in_use_warnings(self, t, a):
+        """A call that names a runway someone else holds, with no instruction heard for it: say so."""
+        out, who = [], a["callsign"] or "unidentified station"
+        for x in a["instructions"]:
+            if not x["valid"] or x["action"] is not None:
+                continue
+            strip = strip_of(self.airport, x["runway"])
+            for st in related_strips(self.airport, strip):
+                for o in self.occ.get(st, []):
+                    if o["cs"] != a["callsign"]:
+                        out.append(self._alert(t, "AMBER", "RUNWAY_IN_USE_UNCLEAR",
+                                               f"{who} named runway {x['runway']} (instruction not heard) - in use: "
+                                               f"{o['cs']} {o['action']} {o['rw']} (cleared {t - o['t']:.0f} s ago) - confirm",
+                                               (a["callsign"], o["cs"])))
         return out
 
     # ---------------------------------------------------------------- vehicles
     def _vehicle(self, t, a):
-        out = []
+        out = self._in_use_warnings(t, a)
         for x in a["instructions"]:
             if not x["valid"]:
                 continue

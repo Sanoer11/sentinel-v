@@ -130,7 +130,7 @@ def test_lost_last_digit_is_incomplete_not_wrong():
 def test_wrong_side_readback_is_red():
     v, al = _one("IFLY 5134, cross runway 29 right.", "Crossing runway 29 left, IFLY 5134.",
                  {"IGO5134"}, {"IGO5134": "ground"}, ap="VIDP")
-    assert v == "MISMATCH" and "WRONG RUNWAY" in reds(al)[0]["text"]
+    assert v == "MISMATCH" and "RUNWAY MISMATCH" in reds(al)[0]["text"]
 
 
 def test_hold_short_read_back_as_cross_is_red_and_checks_conflict():
@@ -141,7 +141,7 @@ def test_hold_short_read_back_as_cross_is_red_and_checks_conflict():
     e.call(10, "tower", "IFLY 5134, hold short runway 29 right.")
     r = e.call(14, "pilot", "Crossing runway 29 right, IFLY 5134.")
     txt = " | ".join(a["text"] for a in reds(r["alerts"]))
-    assert "WRONG INSTRUCTION" in txt and "IF IGO5134 DOES WHAT IT READ BACK" in txt
+    assert "INSTRUCTION MISMATCH" in txt and "IF IGO5134 DOES WHAT IT READ BACK" in txt
 
 
 def test_stop_not_confirmed_is_red():
@@ -195,7 +195,7 @@ def test_tower_callsign_lost_readback_still_checked_for_runway():
     e = RunwayEngine("VIDP", {"IGO6710"}, {"IGO6710": "ground"})
     e.call(0, "tower", "I have a live, hold short runway 10.")
     r = e.call(4, "pilot", "Holding short runway 28, IFLY 6710.")
-    assert any("WRONG RUNWAY" in a["text"] for a in r["alerts"])
+    assert any("RUNWAY MISMATCH" in a["text"] for a in r["alerts"])
 
 
 # ---- second listen on a callsign mismatch (verbatim, no tower context) ----
@@ -242,3 +242,22 @@ def test_second_listen_with_no_number_keeps_red():
     e, rec = _mismatch_engine()
     rec = e.recheck_readback(rec, "Holding short runway one zero, Air India.")
     assert reds(rec["alerts"])
+
+
+def test_runway_vacated_report_frees_the_runway():
+    T = {"AIC2817", "IGO5134"}
+    e = RunwayEngine("VIDP", T, {"AIC2817": "ground", "IGO5134": "air"})
+    e.call(0, "tower", "IFLY 5134, runway 28, cleared to land.")
+    e.call(4, "pilot", "Cleared to land runway 28, IFLY 5134.")
+    e.call(90, "pilot", "Runway vacated, IFLY 5134.")
+    r = e.call(100, "tower", "Air India 2817, runway 28, cleared for takeoff.")
+    assert not reds(r["alerts"])
+
+
+def test_glued_number_second_listen_does_not_soften_a_readback_mismatch():
+    # the verbatim second listen made for glued numbers must not be reused to soften a callsign mismatch (A6 failed)
+    e = RunwayEngine("VIDP", {"AIC8496"}, {"AIC8496": "ground"})
+    e.call(0, "tower", "Air India 8496, hold short, runway 10.")
+    r = e.call(4, "pilot", "Holding short, runway 10, Air India 8498.",
+               second_text="Holding short runway one zero, Air India eight four niner six.")
+    assert reds(r["alerts"])

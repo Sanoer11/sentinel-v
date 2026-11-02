@@ -118,8 +118,15 @@ class RunwayEngine:
         if channel == "tower":
             rec["alerts"] += self._tower(t, a)
         elif channel == "pilot":
-            a2 = analyse(second_text, self.airport, self.traffic, channel, self.phases) if second_text else None
-            rec["alerts"] += self._readback(t, a, a2, rec)
+            if re.search(r"\bRUNWAY\s+VACATED\b|\bVACATED\s+RUNWAY\b", a["normalized"].upper()) \
+                    and not re.search(r"\bREPORT\b", a["normalized"].upper()) and a["callsign"]:
+                # "Runway vacated, IFLY 5134": the runway is free again (ICAO "report vacated" answer)
+                self._release(a["callsign"])
+                rec["analysis"] = dict(a, status="REPORT")
+                rec["alerts"].append(self._alert(t, "INFO", "VACATED", f"{a['callsign']} reports runway vacated", (a["callsign"],)))
+            else:
+                # no second-listen comparison here: A6 showed the same audio is misheard the same way
+                rec["alerts"] += self._readback(t, a, None, rec)
         else:
             rec["alerts"] += self._vehicle(t, a)
         self.log.append(rec)
@@ -244,7 +251,7 @@ class RunwayEngine:
         elif a["callsign"] == p["cs"]:
             pass
         elif isinstance(heard, str) and heard.startswith("read back as"):
-            wrong.append(f"callsign {heard}, clearance was for {p['cs']}")
+            wrong.append(f"CALLSIGN MISMATCH: {heard}, clearance was for {p['cs']} - confirm callsign")
         elif heard:
             want = p["cs"][3:]
             code = p["cs"][:3]
@@ -274,11 +281,11 @@ class RunwayEngine:
                     if act in MUST_READ_BACK:
                         missing.append(f"instruction for runway {rw} not heard")
                 elif got != act:
-                    wrong.append(f"WRONG INSTRUCTION read back: {got} {rw}, cleared {act} {rw}")
+                    wrong.append(f"INSTRUCTION MISMATCH in readback: {got} {rw}, cleared {act} {rw}")
             else:
                 others = sorted(rb_valid - {r for r, _ in p["ins"]})
                 if others:
-                    wrong.append(f"WRONG RUNWAY read back: {others[0]}, cleared {act} {rw}")
+                    wrong.append(f"RUNWAY MISMATCH in readback: {others[0]}, cleared {act} {rw}")
                 else:
                     missing.append(f"runway {rw} not read back clearly")
         for c in p["call_actions"]:

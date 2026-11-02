@@ -16,7 +16,7 @@ def _del():
 
 def test_conflict_says_runway_first_then_new_aircraft_then_other():
     s = spoken([a for a in _del()["alerts"] if a["level"] == "RED"][0])
-    assert s == "Runway conflict, runway two niner right, Vistara niner two six, and, Vistara seven two fife"
+    assert s == "Runway conflict, two niner right, Vistara niner two six"
 
 
 def test_amber_is_never_spoken():
@@ -26,7 +26,7 @@ def test_amber_is_never_spoken():
 def test_unidentified_aircraft_is_spoken_as_such():
     s = spoken({"level": "RED", "kind": "RUNWAY_CONFLICT", "callsigns": ["IGO6053", "UNIDENTIFIED (cleared at t=40s)"],
                 "rw": "27", "text": "RUNWAY CONFLICT"})
-    assert s.endswith("and, unidentified aircraft")
+    assert s == "Runway conflict, two seven, IFLY six zero fife tree"
 
 
 def test_icao_digit_words():
@@ -36,7 +36,7 @@ def test_icao_digit_words():
 
 def test_vehicle_callsign():
     s = spoken({"level": "RED", "kind": "INCURSION", "callsigns": ["FOLLOWME3"], "rw": "28", "text": ""})
-    assert s == "Runway incursion, runway two eight, Follow Me tree"
+    assert s == "Runway incursion, two eight, Follow Me tree"
 
 
 def test_one_voice_per_call_the_most_dangerous():
@@ -47,15 +47,15 @@ def test_one_voice_per_call_the_most_dangerous():
     e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Air India 2817.")
     e.call(15, "tower", "IFLY 5134, hold short runway 29 right.")
     r = e.call(19, "pilot", "Crossing runway 29 right, IFLY 5134.")
-    assert spoken(pick(r["alerts"])).startswith("Readback conflict, runway two niner right")
+    assert spoken(pick(r["alerts"])) == "Readback conflict, two niner right, IFLY fife one tree four"
 
 
 def test_word_fallback_when_phrase_not_prepared(tmp_path, monkeypatch):
     import numpy as np, soundfile as sf, sentinel_voice as v
     monkeypatch.setattr(v, "SEG_DIR", str(tmp_path))
     for k in v.all_segments():
-        sf.write(f"{tmp_path}/{k}.wav", 0.3 * np.sin(np.arange(4000) / 3), 16000)
+        sf.write(v.word_path(k), 0.3 * np.sin(np.arange(4000) / 3), 16000)
     ms, dur, fb = v.assemble(["Runway conflict", "runway two eight"], str(tmp_path / "out.wav"))
     assert fb == ["Runway conflict", "runway two eight"]
-    assert [p.split("/")[-1] for p in v._word_fallback("runway two eight")] == ["w_runway.wav", "d_2.wav", "d_8.wav"]
-    assert [p.split("/")[-1] for p in v._word_fallback("Runway conflict")] == ["h_RUNWAY_CONFLICT.wav"]
+    assert [p.split("/")[-1] for p in v._word_fallback("runway two eight")] == [f"w_runway_s{v.SPEED}.wav", f"d_2_s{v.SPEED}.wav", f"d_8_s{v.SPEED}.wav"]
+    assert [p.split("/")[-1] for p in v._word_fallback("Runway conflict")] == [f"h_RUNWAY_CONFLICT_s{v.SPEED}.wav"]

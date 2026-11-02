@@ -23,6 +23,7 @@ import argparse
 import datetime
 
 import sentinel_parse
+import sentinel_actions
 from scenarios import SCENARIOS, VOICE
 from sentinel_state import RunwayEngine
 from radio_sim import radio
@@ -37,7 +38,9 @@ def hear(path, channel, airport, traffic, stt):
     text2 = None
     if (sentinel_parse.needs_second_listen(first)
             or (sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))
-            or sentinel_parse.needs_vehicle_second_listen(first, set(traffic))):
+            or sentinel_parse.needs_vehicle_second_listen(first, set(traffic))
+            or (sentinel_actions.INSTRUCTION_SECOND_LISTEN
+                and sentinel_actions.needs_instruction_second_listen(first["normalized"], airport, channel))):
         t1 = time.perf_counter()
         text2 = stt(path, channel, fmt="verbatim")
         lat += time.perf_counter() - t1

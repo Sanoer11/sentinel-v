@@ -63,6 +63,13 @@ def _conflict_level(new, old, new_cond):
     return "RED"
 
 
+PHASE_OF = {"LAND": "air", "TAKEOFF": "ground", "LINEUP": "ground", "CROSS": "ground", "STOPPED": "ground"}
+
+
+def _same_phase(a, b):
+    return PHASE_OF.get(a) == PHASE_OF.get(b)
+
+
 def _unknown(cs):
     return cs.startswith("UNIDENTIFIED")
 
@@ -100,8 +107,12 @@ class RunwayEngine:
                 if o["cs"] == cs:
                     continue
                 lvl = _conflict_level(action, o["action"], cond)
-                if lvl and (_unknown(cs) or _unknown(o["cs"])):
-                    lvl = "AMBER"           # who it is not known yet: possible conflict, upgraded once identified
+                if lvl and (_unknown(cs) or _unknown(o["cs"])) and _same_phase(action, o["action"]):
+                    # who it is is not known, and both clearances fit ONE aircraft (e.g. two take-off clearances):
+                    # it may be the same aircraft cleared twice -> possible conflict, upgraded once identified.
+                    # If one needs an airborne aircraft and the other one on the ground (BOM_2024: LAND vs TAKEOFF),
+                    # they CANNOT be the same aircraft, so the conflict is real now: it stays RED.
+                    lvl = "AMBER"
                 if lvl and cs:
                     where = strip if s == strip else f"{strip} (crosses {s})"
                     pre = f"IF {cs} DOES WHAT IT READ BACK: " if hypothetical else ""

@@ -272,7 +272,8 @@ def test_unidentified_clearance_still_enters_the_picture_and_is_named_by_readbac
     e.call(0, "tower", "Air India 657, runway 27, cleared for takeoff.")
     e.call(4, "pilot", "Runway 27 cleared for takeoff, Air India 657.")
     r1 = e.call(40, "tower", "36053, runway 27, cleared to land.")
-    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "AMBER" for a in r1["alerts"])
+    # LAND (airborne) vs TAKEOFF (on the ground) cannot be one aircraft: RED on time, even unidentified
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "RED" for a in r1["alerts"])
     r2 = e.call(44, "pilot", "Cleared to land, runway 27. IFLY, 6053.")
     assert any(a["kind"] == "RUNWAY_CONFLICT" and "IGO6053" in a["text"] for a in reds(r2["alerts"]))
 
@@ -322,3 +323,35 @@ def test_aircraft_named_only_by_readback_with_lookalike_is_flagged():
     e.call(0, "tower", "36053, runway 27, cleared to land.")
     r = e.call(4, "pilot", "Cleared to land runway 27, IFLY 6035.")
     assert any(a["kind"] == "NAMED_BY_READBACK_ONLY" for a in r["alerts"])
+
+
+def test_readback_to_a_misunderstood_clearance_is_paired_but_never_matched():
+    # HOLD_AS_CROSS 10 dB: "hold short runway 29 as well" (side lost)
+    T = {"AIC2817", "IGO5134"}
+    e = RunwayEngine("VIDP", T, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29, right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Air India 2817.")
+    e.call(15, "tower", "Flight 5134, hold short, runway 29 as well.")
+    r = e.call(19, "pilot", "Asking runway 29 right, he flee 5134.")
+    assert e.pending[-1]["verdict"] == "INCOMPLETE"
+    assert any(a["kind"] == "RUNWAY_IN_USE_UNCLEAR" for a in r["alerts"])
+
+
+def test_busy_runway_amber_not_repeated_under_a_red_conflict():
+    T = {"VTI725", "VTI926"}
+    e = RunwayEngine("VIDP", T, {"VTI725": "ground", "VTI926": "ground"})
+    e.call(0, "tower", "Vistara 725, runway 29 right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Vistara 725.")
+    e.call(25, "tower", "Vistara 926, cross runway 29 right.")
+    r = e.call(29, "pilot", "Sing runway 29, right with Vistara 926.")
+    assert not any(a["kind"] == "RUNWAY_IN_USE_UNCLEAR" for a in r["alerts"])
+
+
+
+def test_unidentified_same_phase_clearance_is_only_possible_conflict():
+    # two take-off clearances on 28, the first without a heard callsign: could be the same aircraft twice
+    T = {"AIC2817"}
+    e = RunwayEngine("VIDP", T, {"AIC2817": "ground"})
+    e.call(0, "tower", "Runway 28, cleared for takeoff.")
+    r = e.call(30, "tower", "Air India 2817, runway 28, cleared for takeoff.")
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "AMBER" for a in r["alerts"]) and not reds(r["alerts"])

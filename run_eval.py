@@ -26,6 +26,7 @@ import numpy as np
 import soundfile as sf
 
 import sentinel_parse
+import sentinel_actions
 from scoring import judge_full, summarize, fmt
 from radio_sim import radio
 
@@ -172,7 +173,9 @@ def main():
         first = None if a.dry_run else sentinel_parse.extract(text, it["airport"], set(it["traffic"]))
         if first and (sentinel_parse.needs_second_listen(first)
                       or (sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))
-                      or sentinel_parse.needs_vehicle_second_listen(first, set(it["traffic"]))):
+                      or sentinel_parse.needs_vehicle_second_listen(first, set(it["traffic"]))
+                      or (sentinel_actions.INSTRUCTION_SECOND_LISTEN and sentinel_actions.needs_instruction_second_listen(
+                          first["normalized"], it["airport"], it["channel"]))):
             text2 = stt(path, it["channel"], fmt="verbatim")
         outcome, parsed = judge_full(it, text, second_text=text2)
         shown = " ".join(f"{x['runway']}:{x['action'] or '?'}" for x in parsed["instructions"]) + \
@@ -222,6 +225,10 @@ def main():
                "dry_run": a.dry_run, "human": a.human, "results": results},
               open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"\nSaved {out}  (git {commit}, parser {fp})")
+    if any(r["channel"] == "pilot" for r in results) and not a.human and not locked:
+        print("\n================ STEP 2: readback check (tower call + pilot readback, same noise) ================")
+        import eval_readback
+        eval_readback.main([out])
 
     if locked:
         L = ledger()

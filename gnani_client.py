@@ -45,11 +45,11 @@ def _post(url, **kw):
     return r
 
 
-def tts(text, voice, model, lang, path):
+def tts(text, voice, model, lang, path, speed=1.0):
     """Text -> 16 kHz mono WAV. Cached: never pays twice for the same file."""
     if os.path.exists(path):
         return True
-    body = {"text": text, "voice": voice, "model": model, "language": lang, "speed": 1.0,
+    body = {"text": text, "voice": voice, "model": model, "language": lang, "speed": speed,
             "audio_config": {"sample_rate": 16000, "num_channels": 1, "sample_width": 2,
                              "encoding": "linear_pcm", "container": "wav"}}
     r = _post(f"{BASE}/api/v1/tts/inference", json=body)
@@ -62,11 +62,15 @@ def tts(text, voice, model, lang, path):
     return True
 
 
-def stt(path, channel, fmt="transcribe"):
-    """Prisma v3.0 + general ATC context. fmt: transcribe (digits) | verbatim | codemix (words)."""
+def stt(path, channel, fmt="transcribe", previous_text=None):
+    """Prisma v3.0 + general ATC context. fmt: transcribe (digits) | verbatim | codemix (words).
+    previous_text: what was said just before (the tower's call, for a readback). Used ONLY by the
+    context listen, which may fill gaps but never overrule the first, neutral listen."""
     data = {"model": "prisma-v3.0", "format": fmt,
             "language_code": "hi-IN,en-IN,mr-IN" if channel == "airside" else "en-IN",
             "keyterms": json.dumps(KEYTERMS, ensure_ascii=False), "topic": TOPIC}
+    if previous_text:
+        data["previous_text"] = previous_text
     with open(path, "rb") as f:
         r = _post(f"{BASE}/stt/v3", data=data,
                   files={"audio_file": (os.path.basename(path), f, "application/octet-stream")})

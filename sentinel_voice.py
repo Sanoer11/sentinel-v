@@ -18,6 +18,7 @@ import time
 import numpy as np
 
 VOICE = ("Devansh", "timbre-v3.0", "en-IN")     # one fixed alert voice, different from all scenario speakers
+SPEED = 0.9            # 3 Nov listening check: speed 1.0 was "a tiny bit fast"; niner and fife judged clear
 SPEED = float(os.environ.get("SENTINEL_ALERT_SPEED", "1.0"))
 SEG_DIR = f"audio_alerts/segments_x{SPEED:g}"      # one folder per speaking speed, so sets never mix
 SR = 16000
@@ -48,11 +49,15 @@ def all_segments():
     return seg
 
 
+def word_path(key):
+    return f"{SEG_DIR}/{key}_s{SPEED}.wav"
+
+
 def build(tts):
     os.makedirs(SEG_DIR, exist_ok=True)
     made, took = 0, []
     for key, text in all_segments().items():
-        path = f"{SEG_DIR}/{key}.wav"
+        path = word_path(key)
         if not os.path.exists(path):
             t0 = time.perf_counter()
             if not tts(text, VOICE[0], VOICE[1], VOICE[2], path, speed=SPEED):
@@ -76,7 +81,8 @@ def say_callsign(cs):
 
 
 def say_runway(rw):
-    return " ".join(["runway"] + [DIGITS[c] for c in rw if c.isdigit()] + [WORDS[c] for c in rw if c in "LRC"])
+    # no word "runway": every headline that is followed by a runway already says it ("Runway conflict, two niner right")
+    return " ".join([DIGITS[c] for c in rw if c.isdigit()] + [WORDS[c] for c in rw if c in "LRC"])
 
 
 # ONE spoken alert per radio call: the most dangerous one. The others stay on screen.
@@ -101,17 +107,16 @@ def phrases(alert):
     head, cs, rw = _head(alert), alert["callsigns"], alert["rw"]
     if head not in HEADLINE:
         return None
+    # 3 Nov run: naming both aircraft made alerts 8-9 s long. The voice only has to say WHAT and WHERE and the
+    # ONE aircraft the controller must act on now (the one just cleared / the one that read back wrong).
+    # The other aircraft is on the screen. Target: under 5 s.
     out = [HEADLINE[head]]
-    if head in ("RUNWAY_CONFLICT", "READBACK_CONFLICT"):
-        out += ([say_runway(rw)] if rw else [])
-        for i, c in enumerate(cs[:2]):
-            out += (["and"] if i else []) + [say_callsign(c)]
-    elif head in ("BIRDS_ON_ACTIVE_RUNWAY",):
-        out += ([say_runway(rw)] if rw else []) + ([say_callsign(cs[-1])] if cs else [])
-    elif head == "INCURSION":
+    if head in ("RUNWAY_CONFLICT", "READBACK_CONFLICT", "INCURSION"):
         out += ([say_runway(rw)] if rw else []) + [say_callsign(cs[0] if cs else None)]
+    elif head == "BIRDS_ON_ACTIVE_RUNWAY":
+        out += ([say_runway(rw)] if rw else []) + ([say_callsign(cs[-1])] if cs else [])
     elif head == "READBACK_MISMATCH":
-        out += [say_callsign(cs[0] if cs else None)] + ([say_runway(rw)] if rw else []) + ["confirm"]
+        out += [say_callsign(cs[0] if cs else None), "confirm"]
     else:
         out += [say_callsign(cs[0] if cs else None)]
     return out
@@ -130,20 +135,20 @@ def pick(alerts):
 
 def clip_path(text):
     import hashlib
-    return f"{SEG_DIR}/p_{hashlib.md5(text.encode()).hexdigest()[:12]}.wav"
+    return f"{SEG_DIR}/p_{hashlib.md5(f'{text}|{VOICE}|{SPEED}'.encode()).hexdigest()[:12]}.wav"
 
 
 def prepare(tts, airport, traffic):
     """Record the phrase clips this airport and this traffic can need. Returns (new clips, seconds)."""
     from sentinel_state import STRIPS
-    want = list(HEADLINE.values()) + ["and", "confirm", WORDS["unidentified"]]
+    want = list(HEADLINE.values()) + ["confirm", WORDS["unidentified"]]
     want += [say_runway(r) for pair in STRIPS[airport] for r in pair]
     want += [say_callsign(c) for c in traffic]
     os.makedirs(SEG_DIR, exist_ok=True)
     made, t0 = 0, time.perf_counter()
     for text in want:
         if not os.path.exists(clip_path(text)):
-            if not tts(text, VOICE[0], VOICE[1], VOICE[2], clip_path(text)):
+            if not tts(text, VOICE[0], VOICE[1], VOICE[2], clip_path(text), speed=SPEED):
                 raise SystemExit(f"TTS failed for '{text}'")
             made += 1
     return made, time.perf_counter() - t0
@@ -152,14 +157,14 @@ def prepare(tts, airport, traffic):
 def _word_fallback(text):
     seg = {v: k for k, v in all_segments().items()}
     if text in seg:                                   # a headline or name recorded as one clip
-        return [f"{SEG_DIR}/{seg[text]}.wav"]
+        return [word_path(seg[text])]
     keys = []
     for w in text.replace("Air India", "Air_India").replace("Akasa Air", "Akasa_Air") \
                  .replace("Follow Me", "Follow_Me").replace("Bird Chaser", "Bird_Chaser").split():
         w = w.replace("_", " ")
         if w in seg:
             keys.append(seg[w])
-    return [f"{SEG_DIR}/{k}.wav" for k in keys]
+    return [word_path(k) for k in keys]
 
 
 def _trim(x, thr=0.02):

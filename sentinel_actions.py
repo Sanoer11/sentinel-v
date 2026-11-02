@@ -57,6 +57,16 @@ VEHICLE = [   # airside channel: Hinglish / Hindi / Marathi (no \b after Devanag
 # call-level weak cue: "Going around" readback with "Go" clipped -> "Heading/Flying around", "Around"
 # (step1 run: 11 times, 2 voices, never in 600 dev/dev2 clips). "go round" (1 voice) not added.
 WEAK_CALL = [("GO_AROUND", r"\bAROUND\b")]
+# Experiment A7 decides this (3 Nov): OFF until it passes its rule.
+INSTRUCTION_SECOND_LISTEN = False
+
+
+def needs_instruction_second_listen(normalized, airport, channel):
+    """A runway that exists was named, but no instruction was heard for it."""
+    return any(x["valid"] and x["action"] is None and not x["conflict"]
+               for x in instructions(normalized, airport, channel))
+
+
 CONDITIONAL = r"\bBEHIND\b|\bAFTER\s+THE\s+(LANDING|DEPARTING)\b"
 NEEDS_AIR = {"LAND", "GO_AROUND"}
 NEEDS_GROUND = {"TAKEOFF", "LINEUP", "CROSS", "HOLD_SHORT", "TAXI_HP"}
@@ -111,6 +121,16 @@ def analyse(text, airport, traffic, channel="tower", phases=None, second_text=No
     src = normalize(second_text) if any("runway from second listen" in a for a in r["amber"]) else r["normalized"]
     ins = instructions(src, airport, channel)
     problems, amber = list(r["problems"]), list(r["amber"])
+    if INSTRUCTION_SECOND_LISTEN and second_text is not None:
+        # a runway was heard but its instruction was not (push-to-talk ate "Crossing"/"Holding").
+        # The verbatim listen of the SAME audio (no tower context, so not circular) may still have it.
+        # It may only FILL an empty instruction, never change one, and is always amber.
+        ins2 = {x["runway"]: x for x in instructions(normalize(second_text), airport, channel)}
+        for x in ins:
+            y = ins2.get(x["runway"])
+            if x["action"] is None and x["valid"] and y and y["action"] and not y["conflict"]:
+                x.update(action=y["action"], strength="weak", cues=y["cues"])
+                amber.append(f"runway {x['runway']}: instruction only in the second listen ({y['action']})")
     seen = {}
     for x in ins:
         seen.setdefault(x["runway"], set()).add(x["action"])

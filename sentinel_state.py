@@ -75,8 +75,10 @@ class RunwayEngine:
         self.alerts, self.log = [], []
 
     # ---------------------------------------------------------------- helpers
-    def _alert(self, t, level, kind, text, cs=()):
-        a = {"t": t, "level": level, "kind": kind, "text": text, "callsigns": sorted(c for c in cs if c)}
+    def _alert(self, t, level, kind, text, cs=(), rw=None):
+        # callsigns keep the order given (who it is about first) - the spoken alert uses that order
+        a = {"t": t, "level": level, "kind": kind, "text": text, "rw": rw,
+             "callsigns": [c for c in dict.fromkeys(cs) if c]}
         self.alerts.append(a)
         return a
 
@@ -106,7 +108,7 @@ class RunwayEngine:
                     out.append(self._alert(t, lvl, "RUNWAY_CONFLICT",
                                            f"{pre}RUNWAY CONFLICT on {where}: {cs} {action} {rw} while "
                                            f"{o['cs']} {o['action']} {o['rw']} (cleared {t - o['t']:.0f} s ago)",
-                                           (cs, o["cs"])))
+                                           (cs, o["cs"]), rw=rw))
         return out
 
     def _occupy(self, t, cs, action, rw):
@@ -151,7 +153,7 @@ class RunwayEngine:
                 urgent = set(p["call_actions"]) & {"STOP", "GO_AROUND"}
                 out.append(self._alert(t, "RED" if urgent else "AMBER", "NO_READBACK",
                                        f"NO READBACK from {p['cs'] or 'unknown aircraft'} for "
-                                       f"{', '.join(p['call_actions'] or [f'{x} {r}' for r, x in p['ins']])}", (p["cs"],)))
+                                       f"{', '.join(p['call_actions'] or [f'{x} {r}' for r, x in p['ins']]) or 'an unclear clearance'}", (p["cs"],)))
         return out
 
     # ---------------------------------------------------------------- tower
@@ -193,9 +195,12 @@ class RunwayEngine:
                 self._occupy(t, cs, act, rw)
             elif act in ("HOLD_SHORT", "TAXI_HP"):
                 self._release(cs, {"CROSS", "LINEUP"}, strip_of(self.airport, rw))
-        if ins or a["call_actions"]:
+        unknown_ins = not ins and not a["call_actions"] and a["status"] == "FLAGGED" and bool(a["instructions"])
+        if ins or a["call_actions"] or unknown_ins:
+            # unknown_ins: e.g. "hold short runway 29 as well" (side lost) - the readback can still be paired,
+            # but it can never be confirmed against an instruction we did not understand
             self.pending.append({"t": t, "cs": cs, "ins": ins, "call_actions": list(a["call_actions"]),
-                                 "cond": cond, "answered": False, "overdue": False,
+                                 "cond": cond, "answered": False, "overdue": False, "ins_unknown": unknown_ins,
                                  "unclear": a["status"] == "FLAGGED", "analysis": a})
         return out
 
@@ -308,6 +313,8 @@ class RunwayEngine:
                     wrong.append(f"RUNWAY MISMATCH in readback: {others[0]}, cleared {act} {rw}")
                 else:
                     missing.append(f"runway {rw} not read back clearly")
+        if p.get("ins_unknown"):
+            missing.append("the tower's instruction was not understood, so this readback cannot be checked")
         for c in p["call_actions"]:
             if c not in a["call_actions"]:
                 missing.append(f"{c} not confirmed")
@@ -323,7 +330,8 @@ class RunwayEngine:
             p["verdict"], p["why"] = "INCOMPLETE", wrong + missing
             return out
         if wrong:
-            out.append(self._alert(t, "RED", "READBACK_MISMATCH", f"{who}: " + "; ".join(wrong + missing), (p["cs"],)))
+            out.append(self._alert(t, "RED", "READBACK_MISMATCH", f"{who}: " + "; ".join(wrong + missing), (p["cs"],),
+                                   rw=p["ins"][0][0] if p["ins"] else None))
             # what if the pilot does what he read back?
             for x in a["instructions"]:
                 if x["valid"] and x["action"] in OCCUPY and (x["runway"], x["action"]) not in p["ins"]:
@@ -362,7 +370,9 @@ class RunwayEngine:
             strip = strip_of(self.airport, x["runway"])
             for st in related_strips(self.airport, strip):
                 for o in self.occ.get(st, []):
-                    if o["cs"] != a["callsign"]:
+                    shown = any(al["kind"] == "RUNWAY_CONFLICT" and al["level"] == "RED" and t - al["t"] <= 60
+                                and {a["callsign"], o["cs"]} <= set(al["callsigns"]) for al in self.alerts)
+                    if o["cs"] != a["callsign"] and not shown:
                         out.append(self._alert(t, "AMBER", "RUNWAY_IN_USE_UNCLEAR",
                                                f"{who} named runway {x['runway']} (instruction not heard) - in use: "
                                                f"{o['cs']} {o['action']} {o['rw']} (cleared {t - o['t']:.0f} s ago) - confirm",
@@ -388,7 +398,7 @@ class RunwayEngine:
                     for u in users:
                         out.append(self._alert(t, "RED", "BIRDS_ON_ACTIVE_RUNWAY",
                                                f"Birds reported on runway {x['runway']} by {a['callsign'] or 'vehicle'} - "
-                                               f"{u['cs']} {u['action']} {u['rw']}", (a["callsign"], u["cs"])))
+                                               f"{u['cs']} {u['action']} {u['rw']}", (a["callsign"], u["cs"]), rw=x["runway"]))
                 else:
                     out.append(self._alert(t, "AMBER", "BIRDS_REPORTED",
                                            f"Birds reported on runway {x['runway']} by {a['callsign'] or 'vehicle'}", (a["callsign"],)))
@@ -406,6 +416,6 @@ class RunwayEngine:
         out = []
         if not mine:
             out.append(self._alert(t, "RED", "INCURSION",
-                                   f"RUNWAY INCURSION: {cs} seen on runway {rw} without a clearance for it", (cs,)))
+                                   f"RUNWAY INCURSION: {cs} seen on runway {rw} without a clearance for it", (cs,), rw=rw))
             out += self._check_conflict(t, cs, "LINEUP", rw, False)
         return out

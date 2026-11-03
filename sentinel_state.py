@@ -129,10 +129,14 @@ class RunwayEngine:
                                                "until": t + HOLD_TIME[action]})
 
     # ---------------------------------------------------------------- the one entry point
-    def call(self, t, channel, text, second_text=None):
+    def call(self, t, channel, text, second_text=None, hinted=False):
         self._prune(t)
         new = self.tick(t)
         a = analyse(text, self.airport, self.traffic, channel, self.phases, second_text)
+        if hinted:
+            # this transcript came from the hazard-vocabulary listen (sentinel_pipeline): never shown as plain green
+            a = dict(a, amber=a["amber"] + ["heard with hazard-word hint (vehicle channel)"],
+                     status="FLAGGED" if a["status"] == "FLAGGED" else "PROBABLE")
         rec = {"t": t, "channel": channel, "text": text, "analysis": a, "alerts": new}
         if channel == "tower":
             rec["alerts"] += self._tower(t, a)
@@ -151,7 +155,11 @@ class RunwayEngine:
                 # no second-listen comparison here: A6 showed the same audio is misheard the same way
                 rec["alerts"] += self._readback(t, a, None, rec)
         else:
-            rec["alerts"] += self._vehicle(t, a)
+            got = self._vehicle(t, a)
+            for al in got:
+                if hinted:
+                    al["text"] += " [heard with hazard-word hint]"
+            rec["alerts"] += got
         self.log.append(rec)
         return rec
 

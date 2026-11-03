@@ -96,9 +96,17 @@ def phases_of(it):
     return None
 
 
-def judge_full(it, text, second_text=None):
+def judge_full(it, text, second_text=None, hinted=False):
     from sentinel_actions import analyse
     r = analyse(text, it["airport"], it["traffic"], it["channel"], phases_of(it), second_text)
+    if hinted:     # transcript from the hazard-vocabulary listen: never plain green
+        r = dict(r, amber=r["amber"] + ["heard with hazard-word hint"],
+                 status="FLAGGED" if r["status"] == "FLAGGED" else "PROBABLE")
+    return outcome_full(it, r)
+
+
+def outcome_full(it, r):
+    """Score an analyse() result for test line `it` (what the controller would see vs the truth)."""
     tins, tcalls, tcond = truth_of(it)
     tcs = it["truth"]["callsign"]
     should_flag = tcs not in it["traffic"]

@@ -1,0 +1,1738 @@
+[
+ {
+  "id": "d000v",
+  "cond": "clean",
+  "heard": "टावर बर्ड चेसर, 5 runway 09 पर एफओडी चेक के लिए जाना है, परमिशन चाहिए।",
+  "heard_hint": "टावर बर्ड चेसर 5, रनवे 09 पर एफओडी चेक के लिए जाना है, परमिशन चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d000v",
+  "cond": "20dB",
+  "heard": "सर, बर्ड चेसर फाइव, रनवे 09 पर एफओडी चेक के लिए जाना है, परमिशन चाहिए।",
+  "heard_hint": "सर, Bird Chaser 5, runway 09 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d000v",
+  "cond": "10dB",
+  "heard": "सर, Bird Chaser pilot, runway 09 पर FOD check के लिए जाना है, permission चाहिए।",
+  "heard_hint": "Tower, Bird Chaser Pilot, runway 09 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d000v",
+  "cond": "5dB",
+  "heard": "फॉर बर्ड चेसर, पाइल रनवे 09 पर एफओडी चेक के लिए जाना है, परमिशन कहाँ है?",
+  "heard_hint": "फॉर bird chaser pilot, रनवे 09 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d000v",
+  "cond": "0dB",
+  "heard": "Our bird chaser pilot, runway 09, for FOD check to be done permission please.",
+  "heard_hint": "आवाज bird chaser पाळत, runway 09 पर FOD check के लिए जाणे permission दे.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d001v",
+  "cond": "clean",
+  "heard": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+  "heard_hint": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d001v",
+  "cond": "20dB",
+  "heard": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+  "heard_hint": "टावर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d001v",
+  "cond": "10dB",
+  "heard": "ओवर, फॉलो मी टू रनवे 10 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "Tower, follow me to runway 10 cross karna hai, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d001v",
+  "cond": "5dB",
+  "heard": "टावर, फॉलो मी टू रनवे 10 cross थाना है, Bravo पे hold short है।",
+  "heard_hint": "Tower, follow me to runway 10, cross थाना है, Bravo पे hold short है।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d001v",
+  "cond": "0dB",
+  "heard": "ओह, follow me please। runway 10 cross runway है, Bravo पे hold short है।",
+  "heard_hint": "ओए, follow me please. runway 10 cross runway, Bravo पे hold short.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d002v",
+  "cond": "clean",
+  "heard": "टावर बर्ड चेसर टू, रनवे 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "heard_hint": "टावर बर्ड चेसर टू, रनवे 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d002v",
+  "cond": "20dB",
+  "heard": "Power Bird Chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+  "heard_hint": "power bird chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d002v",
+  "cond": "10dB",
+  "heard": "Airport Bird Chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+  "heard_hint": "फोड bird chaser 2, runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d002v",
+  "cond": "5dB",
+  "heard": "4 Bird Chaser 2, runway 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "heard_hint": "4 Bird Chaser 2, runway 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d002v",
+  "cond": "0dB",
+  "heard": "हौवर Bird Chaser सर, रनवे 32 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "heard_hint": "Our bird chaser flight runway 32 पर FOD check के लिए जाना है, permission चाहिए।",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d003v",
+  "cond": "clean",
+  "heard": "टॉवर follow me 3, runway 14 वर पक्षी आहेत, मी taxiway Charlie's वर थांबलोय.",
+  "heard_hint": "टॉवर follow me 3, runway 14 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "d003v",
+  "cond": "20dB",
+  "heard": "पॉवर फॉलो मी, 3 runway 14 वर पक्षी आहेत, मी taxiway Charlie वर थांबलोय.",
+  "heard_hint": "पॉवर फॉलो मी, 3 runway 14 वर पक्षी आहेत, मी taxiway Charlie वर थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "d003v",
+  "cond": "10dB",
+  "heard": "वर follow me please. runway 14 वर पक्षी आहे, मी taxiway चालूवर थांबलो.",
+  "heard_hint": "सर, follow me please. runway 14 वर पक्षी आहेत, मी taxiway चालूवर थांबलो.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "d003v",
+  "cond": "5dB",
+  "heard": "Tower, follow me. Runway 14 were occupied. We taxiway Charlie was coming.",
+  "heard_hint": "Tower, follow me. Runway 14 वर पक्षी आहेत. मी taxiway Charlie वर थांबलो.",
+  "score": [
+   1,
+   2
+  ],
+  "birds": [
+   false,
+   true
+  ]
+ },
+ {
+  "id": "d003v",
+  "cond": "0dB",
+  "heard": "Once followed with runway 141, taxiway Charlie 17.",
+  "heard_hint": "111, runway 141, पक्षी. मी taxiway Charlie वर थांबलो.",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d004v",
+  "cond": "clean",
+  "heard": "टावर, Bird Chaser 2 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "टावर, Bird Chaser 2, runway 28 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d004v",
+  "cond": "20dB",
+  "heard": "tower bird chaser 2 runway 28 cross करना है, bravo पे hold कर रहा हूँ।",
+  "heard_hint": "power bird chaser 2 runway 28 cross करना है, bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d004v",
+  "cond": "10dB",
+  "heard": "Tower, Bird Chaser 2 runway 28 cross करना है। Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "Tower, bird chaser 2 runway 28 cross करना है। Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d004v",
+  "cond": "5dB",
+  "heard": "Our bird chaser to runway 28 cross करना है, Bravo पे hold कर रहे हैं।",
+  "heard_hint": "Our bird chaser to runway 28 cross करना है, Bravo पे hold कर रहे हैं।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d004v",
+  "cond": "0dB",
+  "heard": "Air India के crew runway के एक पास आना है, Bravo को बोल पाना।",
+  "heard_hint": "Birds पक्षी, पक्षी runway पे एक पक्षी ना जावते, बोलता नाही।",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d005v",
+  "cond": "clean",
+  "heard": "टॉवर बर्ड चेसर, तू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+  "heard_hint": "टॉवर बर्ड चेसर, तू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "d005v",
+  "cond": "20dB",
+  "heard": "Tower Bird Chaser, runway 09 वर पक्षी आहेत. मी taxiway Charlie वर थांबलो.",
+  "heard_hint": "Tower Bird Chaser, runway 09 वर पक्षी आहेत. मी taxiway Charlie वर थांबलो.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "d005v",
+  "cond": "10dB",
+  "heard": "Our bird chaser runway 09 वर पक्षी आहे. मी taxiway Charlie वर थांबलो आहे.",
+  "heard_hint": "Our bird chaser runway 09 वर पक्षी आहे. मी taxiway Charlie वर थांबलो आहे.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "d005v",
+  "cond": "5dB",
+  "heard": "Our bird chaser runway 09 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+  "heard_hint": "Our bird chaser runway 09 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "d005v",
+  "cond": "0dB",
+  "heard": "Good good, check it. Runway 09 वर पक्की आहे. हे taxiway Charlie पर आहे.",
+  "heard_hint": "For God's sake, runway 09 वर पक्षी आहेत. हे taxiway Charlie वर ठेव.",
+  "score": [
+   1,
+   2
+  ],
+  "birds": [
+   false,
+   true
+  ]
+ },
+ {
+  "id": "d006v",
+  "cond": "clean",
+  "heard": "टावर, follow me 5, runway 10P FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "टावर, follow me, 5 runway 10 P, FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d006v",
+  "cond": "20dB",
+  "heard": "Tower, follow me 5, runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "Tower, follow me 5, runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d006v",
+  "cond": "10dB",
+  "heard": "Tower, follow me. 5 runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "Tower, follow me. 5 runway 10 पे FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d006v",
+  "cond": "5dB",
+  "heard": "ओ follow me, 5 runway 10 के for takeoff के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "ओ follow me, 5 runway 10 के for takeoff के लिए enter करना है permission के लिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d006v",
+  "cond": "0dB",
+  "heard": "power follow me 5 runway 103, 4th पर से वो enter कर रहा है, 235।",
+  "heard_hint": "Power follow me, 5 runway 103, 4th taxiway enter करना है. 235.",
+  "score": [
+   1,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d007v",
+  "cond": "clean",
+  "heard": "टावर, Bird Chaser 4, runway 28B for check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "टावर, बर्ड चेसर 4, रनवे 28B फॉर चेक के लिए एंटर करना है, परमिशन चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d007v",
+  "cond": "20dB",
+  "heard": "Tower Bird Chaser 4, runway 28B, FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "Tower Bird Chaser 4, runway 28B, FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d007v",
+  "cond": "10dB",
+  "heard": "Tower, bird chaser 4 runway 28, we caught taxiway enter. Permission cleared.",
+  "heard_hint": "Tower, bird chaser 4 runway 2834, taxiway enter the runway. Permission cleared.",
+  "score": [
+   3,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d007v",
+  "cond": "5dB",
+  "heard": "Our bird chaser 4 runway 28, we got successfully enter command permission, Charlie.",
+  "heard_hint": "Our bird chaser 4, runway 28, we got successfully enter the niner permission, Charlie.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d007v",
+  "cond": "0dB",
+  "heard": "Tower, bird stated 4 runway 280 past 150. We enter the runway 150.",
+  "heard_hint": "Tower, bird state of 4, runway 280, positively enter the runway.",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d008v",
+  "cond": "clean",
+  "heard": "टॉवर follow me 5, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "टॉवर follow me five, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d008v",
+  "cond": "20dB",
+  "heard": "पॉवर फॉलो मी फाइव्ह, मला रनवे 10 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "पॉवर फॉलो मी फाइव्ह, मला रनवे 10 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d008v",
+  "cond": "10dB",
+  "heard": "One follow me, five. मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "One follow me, five. मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d008v",
+  "cond": "5dB",
+  "heard": "सर, follow me, काय मला runway 10 ओलांडायचा आहे, परवान्या.",
+  "heard_hint": "सर, follow me, काय मला runway 10 ओलांडायचा आहे, परवाना.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d008v",
+  "cond": "0dB",
+  "heard": "एअर फॉलो मी स्टार्ट, मला runway 101 लाईनसाठी परवानगी द्या.",
+  "heard_hint": "Air Colony Star, मला runway 101 ला जायचे आहे, परवाना द्या.",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d009v",
+  "cond": "clean",
+  "heard": "टावर, फॉलो मी 5, रनवे 29 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+  "heard_hint": "टावर, फॉलो मी, 5 runway 29 right क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d009v",
+  "cond": "20dB",
+  "heard": "टावर, फॉलो मी 5, रनवे 29 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+  "heard_hint": "टावर, फॉलो मी, 5 runway 29 right क्रॉस करना है, Bravo पे hold करा।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d009v",
+  "cond": "10dB",
+  "heard": "और follow me, 5 runway 29 right cross करना है, Bravo पे hold करना है।",
+  "heard_hint": "Tower, follow me. 5 runway 29 right cross करना है, Bravo पे hold करना है.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d009v",
+  "cond": "5dB",
+  "heard": "Tower, follow me. 5 runway 29 right cross करना है, Bravo पे hold short.",
+  "heard_hint": "Tower, follow me. 5 runway 29 right cross करना है, Bravo पे hold short.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d009v",
+  "cond": "0dB",
+  "heard": "Air, follow me. 5 runway 39, right cross runway. Bravo, take off!",
+  "heard_hint": "Air, follow me. 5 runway 39, right cross runway. Have Bravo to hold short.",
+  "score": [
+   1,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d010v",
+  "cond": "clean",
+  "heard": "टावर follow me 2, runway 32 cross करना है, holding point Bravo पर हूँ।",
+  "heard_hint": "टावर follow me 2, runway 32 cross करना है, holding point Bravo पर हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d010v",
+  "cond": "20dB",
+  "heard": "पावर फॉलो मी टू रनवे 32 क्रॉस करना है, होल्डिंग पॉइंट Bravo पर हूँ।",
+  "heard_hint": "power follow me to runway 32 cross करना है, holding point bravo पर हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d010v",
+  "cond": "10dB",
+  "heard": "For follow me to runway 32 cross karna hai, holding point bravo पर है।",
+  "heard_hint": "For follow me to runway 32 cross करना है, holding point Bravo पर है।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d010v",
+  "cond": "5dB",
+  "heard": "For follow me to runway 32 cross runway, holding point Bravo 40.",
+  "heard_hint": "For follow me to runway 32 cross runway, holding point Bravo person.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d010v",
+  "cond": "0dB",
+  "heard": "For follow me, runway 32 clockwise, holding point Bravo 44.",
+  "heard_hint": "For follow me to runway 3247, holding point Bravo person.",
+  "score": [
+   1,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d011v",
+  "cond": "clean",
+  "heard": "टॉवर बर्ड चेसर, 3. मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "टॉवर बर्ड चेसर, 3. मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d011v",
+  "cond": "20dB",
+  "heard": "Tower Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "Tower Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d011v",
+  "cond": "10dB",
+  "heard": "Tower Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "नागर bird chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d011v",
+  "cond": "5dB",
+  "heard": "Tower Bird Chaser, मला runway 14 ओलांडायचा आहे. परवानगी?",
+  "heard_hint": "Our bird chaser, मला runway 14 ओलांडायचा परवानगी.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "d011v",
+  "cond": "0dB",
+  "heard": "और bird chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "सर, bird chaser मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e000v",
+  "cond": "clean",
+  "heard": "टॉवर बर्ड चेसर फोर, रनवे 10 वर पक्षी आहेत, मी टॅक्सीवे चार्ली जवळ थांबलोय.",
+  "heard_hint": "टॉवर बर्ड चेसर, 4 runway 10 वर पक्षी आहेत, मी टॅक्सीवे चार्ली जवळ थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "e000v",
+  "cond": "20dB",
+  "heard": "Tower Bird Chaser 4, runway 10 वर पक्षी आहे. मी taxiway Charlie वर थांबलोय.",
+  "heard_hint": "Tower Bird Chaser 4, runway 10 वर पक्षी आहे. मी taxiway Charlie वर थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "e000v",
+  "cond": "10dB",
+  "heard": "Tower bird chaser 2, runway 101. Taxiway Charlie 100.",
+  "heard_hint": "Tower bird chaser, runway 10 वर पक्षी आहे. मी taxiway Charlie वर थांबलो.",
+  "score": [
+   0,
+   2
+  ],
+  "birds": [
+   false,
+   true
+  ]
+ },
+ {
+  "id": "e000v",
+  "cond": "5dB",
+  "heard": "Our bird chaser crew, runway 101, is waiting for a clear to land. We taxiway Charlie's bird from here.",
+  "heard_hint": "Our bird chaser crew, runway 100, वर पक्षी आहे. We taxiway Charlie bird from here.",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e000v",
+  "cond": "0dB",
+  "heard": "बरोबर, checkup करून runway on go वर टाकतो. मी taxiway Charlie वरच बोलतोय.",
+  "heard_hint": "बरोबर, checkup करून runway वर टाकतो. मी taxiway Charlie वरच बोलतो.",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e001v",
+  "cond": "clean",
+  "heard": "टावर follow me 5, runway 27 cross करना है, holding point Bravo पर हूँ।",
+  "heard_hint": "टावर follow me 5, runway 27 cross karna hai, holding point Bravo पर हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e001v",
+  "cond": "20dB",
+  "heard": "और follow me, 5 runway 27 cross करना है, holding point Bravo पर हूँ।",
+  "heard_hint": "और follow me, 5 runway 27 cross करना है, holding point Bravo पर हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e001v",
+  "cond": "10dB",
+  "heard": "और follow me 5 runway 27 क्रॉस करना है, holding point Bravo पर था।",
+  "heard_hint": "Tower, follow me. 5 runway 27 cross करना है, holding point Bravo पर है।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e001v",
+  "cond": "5dB",
+  "heard": "Tower following in 5, runway 27 cross runway, holding point Bravo 11.",
+  "heard_hint": "Our following five runway 27 cross runway, holding point Bravo पेचले.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e001v",
+  "cond": "0dB",
+  "heard": "Our following five runway 27 cross runway holding point Bravo 3.",
+  "heard_hint": "Our following five runway 27 cross runway holding point Bravo पक्षी.",
+  "score": [
+   2,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e002v",
+  "cond": "clean",
+  "heard": "टावर बर्ड चेसर, 1 runway 28 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "heard_hint": "टावर बर्ड चेसर, 1 runway 28 पर FOD चेक के लिए जाना है, परमिशन चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e002v",
+  "cond": "20dB",
+  "heard": "Tower Bird Chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+  "heard_hint": "टावर bird chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e002v",
+  "cond": "10dB",
+  "heard": "Our bird chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+  "heard_hint": "Our bird chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e002v",
+  "cond": "5dB",
+  "heard": "ओ bird chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+  "heard_hint": "ओ bird chaser 1, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e002v",
+  "cond": "0dB",
+  "heard": "41441, runway 28 पर FOD check के लिए जाना है, permission चाहिए।",
+  "heard_hint": "वो bird 441, runway 28 पर, FOD check के लिए जाना है। permission चाहिए।",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e003v",
+  "cond": "clean",
+  "heard": "टावर, फॉलो मी 5, रनवे 14 पे FOD चेक के लिए एंटर करना है, परमिशन चाहिए।",
+  "heard_hint": "टावर, फॉलो मी 5, रनवे 14 पे FOD चेक के लिए एंटर करना है, परमिशन चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e003v",
+  "cond": "20dB",
+  "heard": "Tower, follow me. 5 runway 14 पे FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "Tower, follow me. 5 runway 14 पे FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e003v",
+  "cond": "10dB",
+  "heard": "First follow me file runway 14, फिर FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "Sir, follow me. File runway 14. A-FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e003v",
+  "cond": "5dB",
+  "heard": "First, follow me 5, runway 14, before check के लिए enter करना है pollution side।",
+  "heard_hint": "First, follow me. 5 runway 14, ते FOD check के लिए enter करना है. Pollution silent.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e003v",
+  "cond": "0dB",
+  "heard": "Air India, follow me. 5, runway 14, takeoff. Just to be entertaining, position 5.",
+  "heard_hint": "Air India, follow me. 5, runway 14, report vacated. Entertainment, pollution control.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e004v",
+  "cond": "clean",
+  "heard": "टॉवरबर्ड चेसर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "टॉवरबर्ड चेसर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e004v",
+  "cond": "20dB",
+  "heard": "वर Bird Chaser Force, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "वर Bird Chaser Force, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e004v",
+  "cond": "10dB",
+  "heard": "Tower Bird Chaser 4, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "Tower Bird Chaser 4, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e004v",
+  "cond": "5dB",
+  "heard": "For bird chaser, मला runway 27 ओलांडायचा परवानगी.",
+  "heard_hint": "वर bird chaser, मला runway 27 ओलांडायचा परवानगी.",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e004v",
+  "cond": "0dB",
+  "heard": "Good bird chaser, please. मला गंगेची चरण बोलायला परवानगी द्या.",
+  "heard_hint": "Good bird chaser, please मला गंगेची चरण बोलायला परवानगी द्या.",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e005v",
+  "cond": "clean",
+  "heard": "टॉवर, फॉलो मी टू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+  "heard_hint": "टॉवर, फॉलो मी टू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "e005v",
+  "cond": "20dB",
+  "heard": "टावर, फॉलो मी टू रनवे 09 वर पक्षी आहे, मी टॅक्सीवे Charlie वर थांबलोय.",
+  "heard_hint": "टावर फॉलो मी टू रनवे 09 वर पक्षी आहे, मी टॅक्सीवे Charlie वर थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "e005v",
+  "cond": "10dB",
+  "heard": "वर फॉलो मी की रनवे 09 वर पक्की आहे, मी टॅक्सीवे Charlie वर थांबतो.",
+  "heard_hint": "वर फॉलो मी की रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे Charlie वर थांबलो.",
+  "score": [
+   1,
+   2
+  ],
+  "birds": [
+   false,
+   true
+  ]
+ },
+ {
+  "id": "e005v",
+  "cond": "5dB",
+  "heard": "Our follow-me 3 runway 09 were ok. Yeah, the taxiway Charlie was humming.",
+  "heard_hint": "Our follow me to runway 09. Bird Chaser, please taxiway Charlie, bird number.",
+  "score": [
+   1,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e005v",
+  "cond": "0dB",
+  "heard": "Our follow me, runway 09 was occupied. We taxiway Charlie was cleared.",
+  "heard_hint": "Our follow me, runway 09 वर talk करा. मी taxiway Charlie वर थांबतो.",
+  "score": [
+   1,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e006v",
+  "cond": "clean",
+  "heard": "टावर, follow me 5, runway 28B, FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "टावर, follow me 5, runway 28B, FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e006v",
+  "cond": "20dB",
+  "heard": "Tower, follow me. 5 runway 283, FOD check के लिए enter करना है permission time.",
+  "heard_hint": "Tower, follow me. 5 runway 283, FOD check के लिए enter करना है permission time.",
+  "score": [
+   1,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e006v",
+  "cond": "10dB",
+  "heard": "Tower, follow me 5 runway 280, FOD check के लिए enter करना है, permission चाहिए।",
+  "heard_hint": "First, follow me five runway two eighty, FOD check के लिए enter करना है, permission चाहिए।",
+  "score": [
+   1,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e006v",
+  "cond": "5dB",
+  "heard": "Tower Colony 5, runway 28, he caught taxiway enter for landing permission time.",
+  "heard_hint": "Tower, follow me. 5 runway 28, he caught. Check, clearly enter 19, permission pending.",
+  "score": [
+   2,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e006v",
+  "cond": "0dB",
+  "heard": "Tower, follow me. 5 runway 283, cost check के लिए enter करना है, तो listen करना है।",
+  "heard_hint": "Tower, follow me. 5 runway 283, for safety reasons, I am not.",
+  "score": [
+   1,
+   1
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e007v",
+  "cond": "clean",
+  "heard": "टावर, फॉलो मी 5, रनवे 28 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+  "heard_hint": "टावर, फॉलो मी 5, रनवे 28 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e007v",
+  "cond": "20dB",
+  "heard": "टावर, फॉलो मी 5, रनवे 28 क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+  "heard_hint": "टावर, follow me, 5 runway 28 cross करना है, Bravo पे hold कर रहा हूँ.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e007v",
+  "cond": "10dB",
+  "heard": "हवा, follow me, file runway 28 cross करना है, Bravo पे hold short रहा हूँ।",
+  "heard_hint": "power follow me, five runway two eight cross करना है, bravo पे hold short.",
+  "score": [
+   2,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e007v",
+  "cond": "5dB",
+  "heard": "Follow me, 5 runway 28 cross करना है, Bravo पे hold short जाना है।",
+  "heard_hint": "Follow me, 5 runway 28, cock karna, Bravo पे hold short.",
+  "score": [
+   3,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e007v",
+  "cond": "0dB",
+  "heard": "Tower, following 5 runway 28, talk to Anna. Bravo to hold short.",
+  "heard_hint": "Tower, follow me. 5 runway 28, Pakistan. Bravo to hold short.",
+  "score": [
+   1,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e008v",
+  "cond": "clean",
+  "heard": "टावर बर्ड चेसर 4, रनवे 11 लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट Bravo पर हूँ।",
+  "heard_hint": "टावर बर्ड चेसर 4, रनवे 11 लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट Bravo पर हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e008v",
+  "cond": "20dB",
+  "heard": "ओवर Bird Chaser 4, runway 11 left cross करना है, holding point Bravo पर हूँ।",
+  "heard_hint": "tower bird chaser 4, runway 11 left cross करना है, holding point bravo पर हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e008v",
+  "cond": "10dB",
+  "heard": "ओवर Bird Chaser 4, रनवे 11 लेफ्ट क्रॉस करना है, होल्डिंग पॉइंट Bravo पर।",
+  "heard_hint": "Four Bird Chaser 4, runway 11 left cross करणार आहे, holding point Bravo वर.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e008v",
+  "cond": "5dB",
+  "heard": "For Bird Chaser 4, runway 11 left cross runway, holding point Bravo 1.",
+  "heard_hint": "For Bird Chaser 4, runway 11 left cross runway, holding point Bravo 1.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e008v",
+  "cond": "0dB",
+  "heard": "Our bird chaser 4, runway 11 left cross runway, holding point Bravo 1.",
+  "heard_hint": "Our bird chaser crew, runway 11 left cross runway, holding point Bravo 1.",
+  "score": [
+   3,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e009v",
+  "cond": "clean",
+  "heard": "Tower Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "टॉवर बर्ड चेसर, वन, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e009v",
+  "cond": "20dB",
+  "heard": "टावर बर्ड चेसर वन, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "टावर बर्ड चेसर वन, मला रनवे वन झिरो ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e009v",
+  "cond": "10dB",
+  "heard": "Tower Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "Power Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e009v",
+  "cond": "5dB",
+  "heard": "Tower Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "heard_hint": "टावर Bird Chaser 1, मला runway 10 ओलांडायचा आहे, परवानगी द्या.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e009v",
+  "cond": "0dB",
+  "heard": "Sir, बस check कर। मला runway 109 करायला सांग.",
+  "heard_hint": "बरं, बरं, check कर. मला runway 109 करायचं आहे, करवा.",
+  "score": [
+   0,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e010v",
+  "cond": "clean",
+  "heard": "टावर follow me, runway 10 क्रॉस करना है, holding point Bravo पर हूँ।",
+  "heard_hint": "टावर follow me 1 runway 10 क्रॉस करना है, holding point Bravo पर हूँ।",
+  "score": [
+   2,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e010v",
+  "cond": "20dB",
+  "heard": "और follow me, 1 runway 10 cross करना है, holding point Bravo पर।",
+  "heard_hint": "और follow me, 1 runway 10 cross करना है, holding point Bravo पर।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e010v",
+  "cond": "10dB",
+  "heard": "Our follow me 1 runway 10 cross करना है, holding point Bravo पर है।",
+  "heard_hint": "Our follow me 1 runway 10 cross करना है, holding point Bravo पर है।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e010v",
+  "cond": "5dB",
+  "heard": "Our follow me, 1 runway 10 cross runway, holding point Bravo 4.",
+  "heard_hint": "Our follow me, 1 runway 10 cross करना है, holding point bravo पर।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e010v",
+  "cond": "0dB",
+  "heard": "Air, follow me. Runway 10 cross runway, holding point Bravo 1.",
+  "heard_hint": "Air follow me 1110 cross runway, holding point Bravo 10.",
+  "score": [
+   2,
+   0
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e011v",
+  "cond": "clean",
+  "heard": "टावर, follow me, 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "टावर, follow me, 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e011v",
+  "cond": "20dB",
+  "heard": "टावर, फॉलो मी, 3 runway 09 क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "टावर, follow me, 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e011v",
+  "cond": "10dB",
+  "heard": "टावर, follow me, 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "टावर, फॉलो मी, 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e011v",
+  "cond": "5dB",
+  "heard": "टावर following 3 runway 09 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "Tower, following 3 runway 09 cross करना है, Bravo पे hold short करना है।",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "e011v",
+  "cond": "0dB",
+  "heard": "Tower, follow me। runway 09 cross करना है, Bravo को hold short करना है।",
+  "heard_hint": "tower follow me, runway 09 cross करना है, Bravo पे hold करना है।",
+  "score": [
+   2,
+   2
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "BIRDS_MR#2",
+  "cond": "clean",
+  "heard": "टॉवर बर्ड चेसर टू रनवे टू सेव्हन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+  "heard_hint": "टॉवर बर्ड चेसर टू रनवे टू सेव्हन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "VEHICLE_HI#2",
+  "cond": "clean",
+  "heard": "टावर, follow me, 3 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "टावर, follow me, 3 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ },
+ {
+  "id": "BIRDS_MR#2",
+  "cond": "10",
+  "heard": "Tower bird chaser 2, runway 27 वर पक्की आहे. मी taxiway 40 वर थांबलो.",
+  "heard_hint": "Tower bird chaser 2, runway 27 वर पक्षी आहे. मी taxiway 40 वर थांबलो.",
+  "score": [
+   2,
+   3
+  ],
+  "birds": [
+   false,
+   true
+  ]
+ },
+ {
+  "id": "VEHICLE_HI#2",
+  "cond": "10",
+  "heard": "Tower, follow me. 3 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+  "heard_hint": "Tower, follow me. 3 runway 28 cross करणार आहे. Bravo पे hold short.",
+  "score": [
+   3,
+   3
+  ],
+  "birds": [
+   false,
+   false
+  ]
+ }
+]

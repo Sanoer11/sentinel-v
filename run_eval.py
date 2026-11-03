@@ -28,6 +28,7 @@ import soundfile as sf
 import sentinel_parse
 import sentinel_actions
 from scoring import judge_full, summarize, fmt
+from sentinel_pipeline import hear
 from radio_sim import radio
 
 NOISE = [None, 20, 10, 5, 0]          # None = clean (no radio)
@@ -167,21 +168,15 @@ def main():
                         x, sr = sf.read(clean)
                         seed = int(hashlib.md5(path.encode()).hexdigest()[:8], 16)
                         sf.write(path, radio(x, sr, src, seed=seed), 8000, subtype="PCM_16")
-            text = stt(path, it["channel"])
-        # second listen (verbatim) ONLY when the runway number came out glued, e.g. "290"
-        text2 = None
-        first = None if a.dry_run else sentinel_parse.extract(text, it["airport"], set(it["traffic"]))
-        if first and (sentinel_parse.needs_second_listen(first)
-                      or (sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))
-                      or sentinel_parse.needs_vehicle_second_listen(first, set(it["traffic"]))
-                      or (sentinel_actions.INSTRUCTION_SECOND_LISTEN and sentinel_actions.needs_instruction_second_listen(
-                          first["normalized"], it["airport"], it["channel"]))):
-            text2 = stt(path, it["channel"], fmt="verbatim")
-        outcome, parsed = judge_full(it, text, second_text=text2)
+            h = hear(path, it["channel"], it["airport"], it["traffic"], stt)
+            text, text2, hinted = h["text"], h["text2"], h["hinted"]
+        if a.dry_run:
+            text2, hinted = None, False
+        outcome, parsed = judge_full(it, text, second_text=text2, hinted=hinted)
         shown = " ".join(f"{x['runway']}:{x['action'] or '?'}" for x in parsed["instructions"]) + \
             "".join(f" {c}" for c in parsed["call_actions"])
         results.append({"id": it["id"], "cond": cond, "channel": it["channel"], "traps": it["traps"],
-                        "kind": it["action"], "said": it["text"], "heard": text, "heard2": text2,
+                        "kind": it["action"], "said": it["text"], "heard": text, "heard2": text2, "hinted": hinted,
                         "outcome": outcome, "shown": shown, "why_wrong": parsed.get("why_wrong"),
                         "parsed": [parsed["runway"], parsed["callsign"], parsed["problems"]]})
         if not locked:

@@ -28,25 +28,8 @@ import sentinel_parse
 import sentinel_actions
 from scenarios import SCENARIOS, VOICE
 from sentinel_state import RunwayEngine
+from sentinel_pipeline import hear
 from radio_sim import radio
-
-
-def hear(path, channel, airport, traffic, stt):
-    """First listen + the verbatim second listen, by the same rules as run_eval."""
-    t0 = time.perf_counter()
-    text = stt(path, channel)
-    lat = time.perf_counter() - t0
-    first = sentinel_parse.extract(text, airport, set(traffic))
-    text2 = None
-    if (sentinel_parse.needs_second_listen(first)
-            or (sentinel_parse.NINER_GLUE_FIX and sentinel_parse.needs_callsign_second_listen(first))
-            or sentinel_parse.needs_vehicle_second_listen(first, set(traffic))
-            or (sentinel_actions.INSTRUCTION_SECOND_LISTEN
-                and sentinel_actions.needs_instruction_second_listen(first["normalized"], airport, channel))):
-        t1 = time.perf_counter()
-        text2 = stt(path, channel, fmt="verbatim")
-        lat += time.perf_counter() - t1
-    return text, text2, lat
 
 
 def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
@@ -57,7 +40,7 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
         import sentinel_voice
         prep = sentinel_voice.prepare(tts, sc["airport"], sc["traffic"])   # before any call: not alert-time
     for i, (t, ch, spk, said) in enumerate(sc["steps"]):
-        text2, lat = None, 0.0
+        text2, lat, hinted, h = None, 0.0, False, {}
         if dry:
             text = said
         else:
@@ -72,9 +55,10 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
                     x, sr = sf.read(clean)
                     sf.write(path, radio(x, sr, int(cond), seed=int(hashlib.md5(path.encode()).hexdigest()[:8], 16)),
                              8000, subtype="PCM_16")
-            text, text2, lat = hear(path, ch, sc["airport"], sc["traffic"], stt)
+            h = hear(path, ch, sc["airport"], sc["traffic"], stt)
+            text, text2, lat, hinted = h["text"], h["text2"], h["latency_s"], h["hinted"]
         e0 = time.perf_counter()
-        rec = eng.call(t, ch, text, text2)
+        rec = eng.call(t, ch, text, text2, hinted=hinted if not dry else False)
         eng_ms = (time.perf_counter() - e0) * 1000
         spoken = []
         if voice:
@@ -88,6 +72,7 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
                                "duration_s": round(dur, 2), "fallback": fb,
                                "ready_after_call_s": round(lat + (eng_ms + ms) / 1000, 2)})
         steps.append({"t": t, "channel": ch, "speaker": spk, "said": said, "heard": text, "heard2": text2,
+                      "hinted": hinted, "first_listen": h.get("first"),
                       "latency_s": round(lat, 2), "engine_ms": round(eng_ms, 1), "spoken": spoken,
                       "status": rec["analysis"]["status"],
                       "alerts": [{k: a[k] for k in ("level", "kind", "text")} for a in rec["alerts"]]})
@@ -139,6 +124,8 @@ def main():
                       + (f"   ({s['latency_s']} s)" if s["latency_s"] else ""))
                 if s["heard2"]:
                     print(f"           second listen: {s['heard2']}")
+                if s.get("hinted"):
+                    print(f"           (hazard-word hint used; listen 1 was: {s['first_listen']})")
                 for al in s["alerts"]:
                     print(f"           {'🔴' if al['level'] == 'RED' else '🟡' if al['level'] == 'AMBER' else 'ℹ️'} {al['text']}")
                 for sp in s.get("spoken", []):

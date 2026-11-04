@@ -4,6 +4,7 @@ Step 2b: run whole radio scenarios end to end - Timbre speaks, radio noise, Pris
   python run_scenarios.py --dry-run            # perfect hearing (the scripted text): checks the scenarios themselves
   python run_scenarios.py                      # clean audio and 10 dB radio
   python run_scenarios.py --cond 10            # one condition
+  python run_scenarios.py --cond 10 --seeds 5  # 5 DIFFERENT noise recordings at 10 dB (seed 0 = the old one)
 
 PASS rules (fixed before the run):
   - every expected alert appears at its step with its level
@@ -32,7 +33,12 @@ from sentinel_pipeline import hear
 from radio_sim import radio
 
 
-def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
+def noisy_path(clean, cond, seed):
+    """seed 0 keeps the old file name, so earlier runs stay comparable; seed k>0 = a new noise recording."""
+    return clean.replace(".wav", f"_snr{cond}.wav" if seed == 0 else f"_snr{cond}_n{seed}.wav")
+
+
+def run(name, sc, cond, dry, tts=None, stt=None, voice=False, seed=0):
     import soundfile as sf
     eng = RunwayEngine(sc["airport"], sc["traffic"], sc["phases"])
     steps, prep = [], None
@@ -50,7 +56,7 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
                 raise SystemExit(f"TTS failed for {name} step {i}")
             path = clean
             if cond != "clean":
-                path = clean.replace(".wav", f"_snr{cond}.wav")
+                path = noisy_path(clean, cond, seed)
                 if not os.path.exists(path):
                     x, sr = sf.read(clean)
                     sf.write(path, radio(x, sr, int(cond), seed=int(hashlib.md5(path.encode()).hexdigest()[:8], 16)),
@@ -73,6 +79,7 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
                                "ready_after_call_s": round(lat + (eng_ms + ms) / 1000, 2)})
         steps.append({"t": t, "channel": ch, "speaker": spk, "said": said, "heard": text, "heard2": text2,
                       "hinted": hinted, "first_listen": h.get("first"),
+                      "hint_text": h.get("hint_text"), "hint_rejected": h.get("hint_rejected", False),
                       "latency_s": round(lat, 2), "engine_ms": round(eng_ms, 1), "spoken": spoken,
                       "status": rec["analysis"]["status"],
                       "alerts": [{k: a[k] for k in ("level", "kind", "text")} for a in rec["alerts"]]})
@@ -89,7 +96,7 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False):
     reds = [a for s in steps for a in s["alerts"] if a["level"] == "RED"] + [a for a in tail if a["level"] == "RED"]
     if sc.get("no_red") and reds:
         misses.append(f"normal traffic gave {len(reds)} RED alert(s)")
-    return {"scenario": name, "cond": cond, "prepared_clips": prep, "pass": not misses and not late, "late": late, "misses": misses,
+    return {"scenario": name, "cond": cond, "seed": seed, "prepared_clips": prep, "pass": not misses and not late, "late": late, "misses": misses,
             "verdict": ("FAIL" if not any("a different RED did" in m for m in misses) else "OTHER-RED")
                        if misses else ("LATE" if late else "PASS"), "steps": steps,
             "end_alerts": [{k: a[k] for k in ("level", "kind", "text")} for a in tail]}
@@ -100,23 +107,26 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--cond", default="clean,10")
     ap.add_argument("--yes", action="store_true")
+    ap.add_argument("--seeds", type=int, default=1, help="noise recordings per noisy condition (clean has only one)")
+    ap.add_argument("--seed-from", type=int, default=0, help="first noise recording number (5 = never heard before)")
     ap.add_argument("--voice", action="store_true", help="speak RED alerts from the pre-recorded clips + time it")
     a = ap.parse_args()
     conds = ["text"] if a.dry_run else a.cond.split(",")
+    runs = [(c, k) for c in conds for k in (range(a.seed_from, a.seed_from + a.seeds) if c not in ("clean", "text") else [0])]
     tts = stt = None
     if not a.dry_run:
         from gnani_client import tts, stt
         n = sum(len(s["steps"]) for s in SCENARIOS.values())
-        print(f"{n} lines x {len(conds)} conditions = {n * len(conds)} STT (+ a few second listens) + {n} TTS, "
-              f"about Rs {0.05 * (n * len(conds) + n):.0f}.")
+        m = n * len(runs)
+        print(f"{n} lines x {len(runs)} runs = {m} calls, about {m + m // 8} STT + {n} TTS, about Rs {0.05 * (m + m // 8 + n):.0f}.")
         if not a.yes and input("Continue? [y/N] ").strip().lower() != "y":
             return
     os.makedirs("audio_eval/scen", exist_ok=True)
     out = []
-    for cond in conds:
-        print(f"\n################ condition: {cond} ################")
+    for cond, seed in runs:
+        print(f"\n################ condition: {cond}{f'  noise recording {seed}' if seed else ''} ################")
         for name, sc in SCENARIOS.items():
-            r = run(name, sc, cond, a.dry_run, tts, stt, a.voice)
+            r = run(name, sc, cond, a.dry_run, tts, stt, a.voice, seed)
             out.append(r)
             print(f"\n=== {name} [{sc['airport']}] {r['verdict']} ===")
             for s in r["steps"]:
@@ -126,6 +136,8 @@ def main():
                     print(f"           second listen: {s['heard2']}")
                 if s.get("hinted"):
                     print(f"           (hazard-word hint used; listen 1 was: {s['first_listen']})")
+                elif s.get("hint_text"):
+                    print(f"           (hint asked, NOT used{' - it lost the vehicle listen 1 heard' if s.get('hint_rejected') else ''}: {s['hint_text']})")
                 for al in s["alerts"]:
                     print(f"           {'🔴' if al['level'] == 'RED' else '🟡' if al['level'] == 'AMBER' else 'ℹ️'} {al['text']}")
                 for sp in s.get("spoken", []):
@@ -139,10 +151,23 @@ def main():
             for m in r["misses"]:
                 print(f"  !! {m}")
     print("\n================ SUMMARY ================")
-    for cond in conds:
-        rs = [r for r in out if r["cond"] == cond]
-        print(f"  {cond:<6} {sum(r['pass'] for r in rs)}/{len(rs)} on time: "
+    for cond, seed in runs:
+        rs = [r for r in out if r["cond"] == cond and r["seed"] == seed]
+        print(f"  {cond:<6}{f' n{seed}' if seed else '   '} {sum(r['pass'] for r in rs)}/{len(rs)} on time: "
               + ", ".join(f"{r['scenario']}{'' if r['pass'] else ' ' + r['verdict']}" for r in rs))
+    if a.seeds > 1:
+        print("  --- per scenario, over all noise recordings (one noise recording = one sample, not a rate) ---")
+        for cond in conds:
+            if cond in ("clean", "text"):
+                continue
+            for name in SCENARIOS:
+                rs = [r for r in out if r["cond"] == cond and r["scenario"] == name]
+                v = [r["verdict"] for r in rs]
+                print(f"  {cond:<6} {name:<14} PASS {v.count('PASS')}/{len(v)}"
+                      + "".join(f", {x} {v.count(x)}" for x in ("LATE", "OTHER-RED", "FAIL") if v.count(x)))
+            nr = [r for r in out if r["cond"] == cond and SCENARIOS[r["scenario"]].get("no_red")]
+            bad = sum(any("normal traffic" in m for m in r["misses"]) for r in nr)
+            print(f"  {cond:<6} normal traffic with a false RED: {bad}/{len(nr)} recordings")
     lats = [s["latency_s"] for r in out for s in r["steps"] if s["latency_s"]]
     if lats:
         lats.sort()

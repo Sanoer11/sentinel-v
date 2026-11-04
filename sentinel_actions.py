@@ -54,6 +54,29 @@ VEHICLE = [   # airside channel: Hinglish / Hindi / Marathi (no \b after Devanag
     ("REQ_ENTER",    r"\bENTER\b|एंटर|(\bFOD\b|एफओडी|एफ़\s*ओ\s*डी|फॉड)"),
     ("REPORT_BIRDS", r"पक्षी|\bPAKSHI\b|\bBIRDS\b"),
 ]
+# English "BIRDS" fired once on a garbled STATION NAME: "4 birds is a 5 runway 27" = "Bird Chaser 5" (A10, 4 Nov;
+# 1 false bird in 295 saved vehicle transcripts). The word "bird" is in the station's own name, so in English it
+# can mean the hazard OR the speaker. Strict rule: English "birds" is the hazard only when
+#   (a) a hazard word follows it: birds ON / NEAR / AT / OVER / ACROSS / REPORTED / SPOTTED / SIGHTED,
+#       or "bird activity", or
+#   (b) the station already named itself before it ("Bird Chaser 2, ... birds")
+# Marathi/Hindi पक्षी is never the station name, so it is untouched.
+# A11 (4 Nov, rule fixed before): 30 new English lines x 3 noise levels + 295 saved transcripts = 385:
+#   0 true birds lost, 0 false birds, 51/54 English bird clips shown, +18 'bird activity' reports the old cue missed.
+#   The 3 not shown: 2x singular 'bird on runway' (1 voice: not added), 1 with no runway number heard. -> ON
+BIRDS_EN_STRICT = True
+EN_BIRDS_HAZARD = re.compile(r"\bBIRDS\b(?=[\s,]+(ON|NEAR|AT|OVER|ACROSS|REPORTED|SPOTTED|SIGHTED)\b)|\bBIRD\s+ACTIVITY\b")
+STATION_NAME = re.compile(r"\bBIRD\s+CHASER\b|\bFOLLOW\s+ME\b")
+
+
+def _birds_ok(up, start, cue):
+    """Strict mode: is this English 'birds' the hazard (not the station's garbled name)?"""
+    if not re.fullmatch(r"BIRDS|BIRD\s+ACTIVITY", cue):
+        return True                                   # पक्षी / PAKSHI: never the station name
+    if any(m.start() == start for m in EN_BIRDS_HAZARD.finditer(up)):
+        return True
+    st = STATION_NAME.search(up)
+    return bool(st) and st.end() <= start
 # call-level weak cue: "Going around" readback with "Go" clipped -> "Heading/Flying around", "Around"
 # (step1 run: 11 times, 2 voices, never in 600 dev/dev2 clips). "go round" (1 voice) not added.
 WEAK_CALL = [("GO_AROUND", r"\bAROUND\b")]
@@ -83,7 +106,12 @@ def instructions(normalized, airport, channel="tower"):
     up = normalized.upper()
     mentions = [(m.start(), m.end(), m.group(1)) for m in RUNWAY_RE.finditer(up)]
     if channel == "airside":
-        hits = _hits(up, VEHICLE, "strong")
+        table = VEHICLE
+        if BIRDS_EN_STRICT:
+            table = VEHICLE[:-1] + [("REPORT_BIRDS", r"पक्षी|\bPAKSHI\b|\bBIRDS\b|\bBIRD\s+ACTIVITY\b")]
+        hits = _hits(up, table, "strong")
+        if BIRDS_EN_STRICT:
+            hits = [h for h in hits if h[1] != "REPORT_BIRDS" or _birds_ok(up, h[0], h[2])]
     else:
         hits = _hits(up, STRONG, "strong") + _hits(up, WEAK, "weak")
     out = []
@@ -108,11 +136,50 @@ def instructions(normalized, airport, channel="tower"):
     return out
 
 
+# "Runway" clipped by push-to-talk and heard as "Taxiway": "Taxiway 28, cleared for takeoff". Seen in 4 voices
+# (dev d003b Prakash, d020b Avinash, dev2 e003b Harshad, scenario p1 Riyaa: 23 transcripts), the speaker said
+# "runway" every time, and EVERY time the call was a runway-only clearance. Indian taxiways are lettered
+# (Bravo, Charlie, B4) - "taxiway 28 ... cleared for takeoff" cannot be a taxiway. So, tower/pilot calls only,
+# no "runway" word in the call, a number right after "taxiway", and cleared for takeoff / to land / line up:
+# read it as runway. Always amber. (Project rule for word mappings: 2+ voices, never a wrong result - checked
+# by the free re-score in exp_a12 before it counts.)
+# A12 (4 Nov, free re-score, rule fixed before): 720 saved tower/pilot transcripts -> 0 worse, 0 new WRONG, but
+# 0 better (the 3 dev lines with "Taxiway 28..." had ALSO lost the callsign, so they stay FLAG) -> rule T1 FAIL -> OFF.
+# Its own test now: NEW noise recordings 5-9 of the scenarios (exp_a12.py --taxiway), rule in exp_a12.py.
+TAXIWAY_AS_RUNWAY = False
+_NUMW = r"(?:\d|zero|one|two|three|tree|four|five|fife|six|seven|eight|nine|niner)"
+_TAXIWAY_NUM = re.compile(r"\btaxi\s*way\b(?=[\s,]*" + _NUMW + r")", re.IGNORECASE)
+_RUNWAY_ONLY = re.compile(r"\bcleared\s+(for\s+take\s*-?\s*off|to\s+land)\b|\bline\s+up\b", re.IGNORECASE)
+
+
+# Other sound-alikes of a clipped "Runway" seen 4-5 Nov: "One way 27" / "1 way, 2 niner right" (Riyaa only so far),
+# "Airway 10" (Riyaa only). Each is OFF until Experiment A13 shows it in 2+ voices and the free re-scores pass.
+RUNWAY_SOUNDALIKES = {"taxiway": r"taxi\s*way", "one way": r"(?:one|1)\s*way", "airway": r"air\s*way"}
+RUNWAY_SOUNDALIKES_ON = set()
+
+
+def _taxiway_as_runway(text, channel):
+    on = set(RUNWAY_SOUNDALIKES_ON) | ({"taxiway"} if TAXIWAY_AS_RUNWAY else set())
+    if not on or channel == "airside" or not text or re.search(r"\brunway\b", text, re.IGNORECASE) \
+            or not _RUNWAY_ONLY.search(text):
+        return text, False
+    for w in sorted(on):
+        pat = re.compile(r"\b" + RUNWAY_SOUNDALIKES[w] + r"\b(?=[\s,]*" + _NUMW + r")", re.IGNORECASE)
+        if pat.search(text):
+            return pat.sub("runway", text, count=1), True
+    return text, False
+
+
 def analyse(text, airport, traffic, channel="tower", phases=None, second_text=None):
     """Step-0 parse (+ second listens) + Step-1 instructions.
     phases: {callsign: "air" | "ground"} from ADS-B, optional."""
     traffic = set(traffic)
+    text, taxi = _taxiway_as_runway(text, channel)
+    if second_text is not None:
+        second_text, _ = _taxiway_as_runway(second_text, channel)
     r = extract(text, airport, traffic)
+    if taxi:
+        r = dict(r, amber=r["amber"] + ["'runway' heard as 'taxiway' (a numbered runway-only clearance) - read as runway"])
     if second_text is not None:
         r = vehicle_second_listen(callsign_second_listen(second_listen(r, second_text, airport, traffic),
                                                          second_text, airport, traffic),

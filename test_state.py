@@ -375,3 +375,146 @@ def test_hold_short_not_confirmed_on_free_runway_stays_amber():
     e.call(15, "tower", "IFLY 5134, hold short runway 29 right.")
     r = e.call(19, "pilot", "Asking runway 29 right, IFLY 5134.")
     assert not reds(r["alerts"])
+
+
+def test_hold_short_read_back_as_crossing_stays_red_when_only_the_side_was_lost():
+    # 4 Nov, HOLD_AS_CROSS at 10 dB, noise recordings 2 and 3: the exact transcripts
+    e = RunwayEngine("VIDP", {"AIC2817", "IGO5134"}, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29, right, cleared for takeoff.")
+    e.call(15, "tower", "Fly 5134, hold short, runway 29 as well.")
+    r = e.call(19, "pilot", "Crossing runway 29, right? If please, 5134.")
+    kinds = {(a["level"], a["kind"]) for a in r["alerts"]}
+    assert ("RED", "READBACK_MISMATCH") in kinds and ("RED", "RUNWAY_CONFLICT") in kinds
+    assert any("side not heard" in a["text"] for a in r["alerts"])          # still says what was not checked
+
+
+def test_unclear_callsign_still_only_amber():
+    # the callsign was lost in the tower call: a differing readback is NOT proof of a pilot error
+    e = RunwayEngine("VIDP", {"AIC2817", "IGO5134"}, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29, right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Air India 2817.")
+    e.call(15, "tower", "Hold short, runway 29 as well.")
+    r = e.call(19, "pilot", "Crossing runway 29, right, IFLY 5134.")
+    assert not any(a["kind"] == "READBACK_MISMATCH" for a in r["alerts"])
+
+
+def test_runway_lost_in_tower_call_is_located_by_the_readback():
+    # DEL_2023 10 dB noise recordings 1 and 2 (4 Nov), exact transcripts: tower runway glued (290), pilot's
+    # "Runway" heard as "Taxiway" -> before: no conflict when VTI926 was cleared to cross 29R
+    import sentinel_actions
+    sentinel_actions.TAXIWAY_AS_RUNWAY = True          # needed for this pilot transcript; OFF by default (A12 T1)
+    try:
+        _located_case()
+    finally:
+        sentinel_actions.TAXIWAY_AS_RUNWAY = False
+
+
+def _located_case():
+    for t0 in ("ARF 725, runway 290, right. Cleared for takeoff.", "775, runway 290, right. Cleared for takeoff."):
+        e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
+        e.call(0, "tower", t0)
+        r = e.call(4, "pilot", "Taxiway 2, niner right, cleared for takeoff, Vistara 725.")
+        assert any("tower's runway not heard; readback says 29R, not cross-checked" in a["text"] for a in r["alerts"])
+        assert not any(a["level"] == "RED" for a in r["alerts"])           # nothing contradicts: AMBER, not RED
+        r = e.call(25, "tower", "Tara, 926, cross runway 29 right.")
+        red = [a for a in r["alerts"] if a["level"] == "RED"]
+        assert red and red[0]["kind"] == "RUNWAY_CONFLICT" and "cleared 25 s ago" in red[0]["text"]
+
+
+def test_taxiway_word_is_never_read_as_runway_without_a_runway_only_clearance():
+    from sentinel_actions import analyse
+    tr = {"IGO5134", "AIC657"}
+    a = analyse("To land runway 2, niner left, taxiway 5134.", "VIDP", tr, "pilot")       # has 'runway' already
+    assert not any("heard as 'taxiway'" in x for x in a["amber"])
+    a = analyse("IFLY 5134, taxi via taxiway Bravo 4, hold short runway 28.", "VIDP", tr, "tower")
+    assert not any("heard as 'taxiway'" in x for x in a["amber"])
+    a = analyse("Tower bird chaser 2, runway 27 वर पक्षी आहे. मी taxiway 40 वर थांबलो.", "VABB", {"BIRDCHASER2"}, "airside")
+    assert not any("heard as 'taxiway'" in x for x in a["amber"])
+    import sentinel_actions
+    sentinel_actions.TAXIWAY_AS_RUNWAY = True
+    try:
+        a = analyse("Taxiway 10, cleared for takeoff, Akasa Air 2612.", "VAPO", {"AKJ2612"}, "pilot")
+        assert any("heard as 'taxiway'" in x for x in a["amber"]) and a["instructions"][0]["runway"] == "10" \
+            and a["status"] != "CONFIRMED"
+    finally:
+        sentinel_actions.TAXIWAY_AS_RUNWAY = False
+
+
+def test_located_by_readback_with_a_real_runway_word():
+    # Fix L on its own (Fix T off): tower runway lost, the readback SAYS "runway"
+    e = RunwayEngine("VIDP", {"VTI725", "VTI926"}, {"VTI725": "ground", "VTI926": "ground"})
+    e.call(0, "tower", "ARF 725, runway 290, right. Cleared for takeoff.")
+    e.call(4, "pilot", "Runway 2, niner right, cleared for takeoff, Vistara 725.")
+    r = e.call(25, "tower", "Tara, 926, cross runway 29 right.")
+    assert any(a["level"] == "RED" and a["kind"] == "RUNWAY_CONFLICT" for a in r["alerts"])
+
+
+def test_lost_runway_located_by_a_readback_with_a_different_instruction_is_red():
+    # HOLD_AS_CROSS 10 dB noise 5 (4 Nov), exact transcripts: tower runway glued "291", readback "Crossing 29 right"
+    e = RunwayEngine("VIDP", {"AIC2817", "IGO5134"}, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29, right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29, arrive, cleared for takeoff. Air India 2817.")
+    e.call(15, "tower", "Fly 5134, hold short, runway 291.", "Fly five one three four, hold short, runway two nine as well.")
+    r = e.call(19, "pilot", "Crossing runway 29, right? He, please. 5134.")
+    kinds = {(a["level"], a["kind"]) for a in r["alerts"]}
+    assert ("RED", "READBACK_MISMATCH") in kinds and ("RED", "RUNWAY_CONFLICT") in kinds
+
+
+def test_lost_runway_not_located_when_readback_runway_does_not_fit_the_heard_digits():
+    e = RunwayEngine("VIDP", {"AIC2817", "IGO5134"}, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29, right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff. Air India 2817.")
+    e.call(15, "tower", "Fly 5134, hold short, runway 291.")
+    r = e.call(19, "pilot", "Crossing runway 28, IFLY 5134.")              # 28 does not start "291"
+    assert not any(a["kind"] == "READBACK_MISMATCH" for a in r["alerts"])
+    assert any("does not settle it" in a["text"] for a in r["alerts"])
+
+
+def test_unidentified_crossing_whose_number_cannot_be_the_departure_is_red():
+    # DEL_2023 10 dB noise 8 (4 Nov), exact transcripts: "Tara, 9826" and "Vistara 9 ..." cannot be VTI725
+    e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
+    e.call(0, "tower", "First 725, runway 2, 9er right, cleared for takeoff.")
+    e.call(4, "pilot", "One way, 29er right, cleared for takeoff. Vistara 725.")
+    e.call(25, "tower", "Tara, 9826, cross runway 298, right?")
+    r = e.call(29, "pilot", "Crossing runway 29 right, Vistara 9 Tuesday.")
+    assert any(a["level"] == "RED" and a["kind"] == "RUNWAY_CONFLICT" for a in r["alerts"])
+
+
+def test_unidentified_that_could_be_the_same_aircraft_stays_amber():
+    # "15725" could be a garbled "725": a second clearance for maybe the SAME aircraft is not a proven conflict
+    from sentinel_state import _could_be, _heard_numbers
+    for heard in ("15725", "7725", "775", "725"):
+        assert _could_be({heard}, "VTI725")
+    assert not _could_be({"9826"}, "VTI725") and not _could_be({"9"}, "VTI725")
+    assert _could_be(set(), "VTI725")                                    # nothing heard -> could be
+    assert _heard_numbers("Wind 270 degrees 12 knots, runway 29R, cleared to land.") == set()
+
+
+def test_misheard_runway_digit_located_by_readback_one_digit_away():
+    # HOLD_AS_CROSS 10 dB noise 10 and 14 (4 Nov): tower "runway 39" (said 29), readback "Crossing runway 29 right"
+    for tw in ("Fly 5134, hold short, runway 39 as well.", "Fly 5134, hold short, runway 39 right."):
+        e = RunwayEngine("VIDP", {"AIC2817", "IGO5134"}, {"AIC2817": "ground", "IGO5134": "ground"})
+        e.call(0, "tower", "Air India 2817, runway 29 right, cleared for takeoff.")
+        e.call(4, "pilot", "Runway 29 right, cleared for takeoff. Air India 2817.")
+        e.call(15, "tower", tw)
+        r = e.call(19, "pilot", "Crossing runway 29, right? Kifley 5134.")
+        kinds = {(a["level"], a["kind"]) for a in r["alerts"]}
+        assert ("RED", "READBACK_MISMATCH") in kinds and ("RED", "RUNWAY_CONFLICT") in kinds
+        assert any("heard as 39 (no such runway)" in a["text"] for a in r["alerts"])
+    # a readback runway that is NOT one digit away does not locate it
+    e = RunwayEngine("VIDP", {"AIC2817", "IGO5134"}, {"AIC2817": "ground", "IGO5134": "ground"})
+    e.call(0, "tower", "Air India 2817, runway 29 right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff. Air India 2817.")
+    e.call(15, "tower", "Fly 5134, hold short, runway 39 right.")
+    r = e.call(19, "pilot", "Crossing runway 10, IFLY 5134.")
+    assert not any(a["kind"] == "READBACK_MISMATCH" for a in r["alerts"])
+
+
+def test_conflict_with_an_old_landing_says_no_vacated_report_was_heard():
+    # NORMAL_DEL 10 dB noise 17 (5 Nov): "Runway vacated" heard as "Can we vacate it" -> RED stays, reason shown
+    e = RunwayEngine("VIDP", {"IGO5134", "AKJ1123"}, {"IGO5134": "air", "AKJ1123": "ground"})
+    e.call(40, "tower", "IFLY 5134, runway 29 left, cleared to land.")
+    e.call(150, "pilot", "Can we vacate it, IFLY 5134?")
+    r = e.call(160, "tower", "Akasa Air 1123, runway 29 left, cleared for takeoff.")
+    red = [a for a in r["alerts"] if a["level"] == "RED"]
+    assert red and "no 'runway vacated' heard from IGO5134" in red[0]["text"]

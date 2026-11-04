@@ -36,7 +36,18 @@ def _post(url, **kw):
     headers = {"X-API-Key-ID": _key()}
     r = None
     for attempt in range(6):
-        r = requests.post(url, headers=headers, timeout=60, **kw)
+        for f in kw.get("files", {}).values():      # an upload must start from byte 0 again on a retry
+            f[1].seek(0)
+        try:
+            r = requests.post(url, headers=headers, timeout=60, **kw)
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+            # 4 Nov: one TTS read timed out and the whole A9 run died. A dropped connection is the same kind
+            # of hiccup as a 502: wait and try again. After 6 tries it still fails loudly (never a silent "").
+            if attempt == 5:
+                raise
+            print(f"  [network: {type(e).__name__}, retry {attempt + 1}]")
+            time.sleep(2 * (attempt + 1))
+            continue
         if r.status_code != 429 and r.status_code < 500:
             return r
         # 429 = rate limit, 5xx = server hiccup (A4 got one 502): wait and try again
@@ -62,10 +73,8 @@ def tts(text, voice, model, lang, path, speed=1.0):
     return True
 
 
-def stt(path, channel, fmt="transcribe", previous_text=None, extra_keyterms=None):
-    """Prisma v3.0 + general ATC context. fmt: transcribe (digits) | verbatim | codemix (words).
-    previous_text: what was said just before (the tower's call, for a readback). Used ONLY by the
-    context listen, which may fill gaps but never overrule the first, neutral listen."""
+def stt_raw(path, channel, fmt="transcribe", previous_text=None, extra_keyterms=None):
+    """The whole Prisma reply as a dict (probe_prisma.py uses it to see every field Prisma sends back)."""
     data = {"model": "prisma-v3.0", "format": fmt,
             "language_code": "hi-IN,en-IN,mr-IN" if channel == "airside" else "en-IN",
             "keyterms": json.dumps(sorted(set(KEYTERMS) | set(extra_keyterms or [])), ensure_ascii=False), "topic": TOPIC}
@@ -75,7 +84,16 @@ def stt(path, channel, fmt="transcribe", previous_text=None, extra_keyterms=None
         r = _post(f"{BASE}/stt/v3", data=data,
                   files={"audio_file": (os.path.basename(path), f, "application/octet-stream")})
     try:
-        b = r.json()
+        return r.json()
     except ValueError:
-        return f"<error {r.status_code}>"
+        return {"success": False, "http_status": r.status_code, "body": r.text[:300]}
+
+
+def stt(path, channel, fmt="transcribe", previous_text=None, extra_keyterms=None):
+    """Prisma v3.0 + general ATC context. fmt: transcribe (digits) | verbatim | codemix (words).
+    previous_text: what was said just before (the tower's call, for a readback). Used ONLY by the
+    context listen, which may fill gaps but never overrule the first, neutral listen."""
+    b = stt_raw(path, channel, fmt, previous_text, extra_keyterms)
+    if "http_status" in b:
+        return f"<error {b['http_status']}>"
     return b.get("transcript", "") if b.get("success") else f"<error {b}>"

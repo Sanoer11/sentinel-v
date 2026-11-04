@@ -165,3 +165,24 @@ def test_wrong_readback_callsign_is_never_hidden():
     for heard in ["Holding short, runway 32, Air India 9118.", "Holding short runway 32, Air India 9118"]:
         o, r = judge_full(it, heard)
         assert r["status"] == "FLAGGED" and o == "OK", heard     # OK here = "correctly flagged"
+
+
+def test_strict_bird_cue_ignores_the_garbled_station_name():
+    # A10 a10_Prakash_2 5 dB: "Bird Chaser 5" heard as "4 birds is a 5" -> false bird report (old cue)
+    import sentinel_actions as A
+    from sentinel_parse import normalize
+    t = "4 birds is a 5 runway 27, Orlando का Bravo बस था।"
+    def birds(text):
+        return any(x["action"] == "REPORT_BIRDS" for x in A.instructions(normalize(text), "VABB", "airside"))
+    A.BIRDS_EN_STRICT = False
+    try:
+        assert birds(t)                   # the old cue: this was the false bird
+    finally:
+        A.BIRDS_EN_STRICT = True          # live since A11
+    try:
+        assert not birds(t)
+        assert birds("Tower, Bird Chaser 2, birds on runway 27, we are dispersing them.")
+        assert birds("Tower, Bird Chaser 2, heavy bird activity on runway 27.")
+        assert birds("Tower, Bird Chaser 2, runway 27 वर पक्षी आहेत.")          # Marathi untouched
+    finally:
+        A.BIRDS_EN_STRICT = True

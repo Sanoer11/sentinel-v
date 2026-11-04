@@ -1,0 +1,1292 @@
+[
+ {
+  "scenario": "DEL_2023",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Vistara seven two five, runway two niner right, cleared for takeoff.",
+    "heard": "Vistara 725 runway 29 right cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.77,
+    "engine_ms": 2.1,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two niner right, cleared for takeoff, Vistara seven two five.",
+    "heard": "Runway 29 right, cleared for takeoff, Vistara 725.",
+    "heard2": null,
+    "latency_s": 0.72,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 25,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Vistara niner two six, cross runway two niner right.",
+    "heard": "Vistara 926, cross runway 29 right.",
+    "heard2": null,
+    "latency_s": 0.64,
+    "engine_ms": 0.3,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/DEL_2023_clean_t25_0.wav",
+      "says": "Runway conflict, runway, two, niner, right, Vistara, niner, two, six, and, Vistara, seven, two, fife",
+      "assemble_ms": 18.4,
+      "duration_s": 8.35,
+      "ready_after_call_s": 0.66
+     }
+    ],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "RUNWAY_CONFLICT",
+      "text": "RUNWAY CONFLICT on 11L/29R: VTI926 CROSS 29R while VTI725 TAKEOFF 29R (cleared 25 s ago)"
+     }
+    ]
+   },
+   {
+    "t": 29,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Crossing runway two niner right, Vistara niner two six.",
+    "heard": "Crossing runway 29 right, Vistara 926.",
+    "heard2": null,
+    "latency_s": 0.67,
+    "engine_ms": 0.5,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "BOM_2024",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India six five seven, runway two seven, cleared for takeoff.",
+    "heard": "Air India 657, runway 27, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.63,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two seven, cleared for takeoff, Air India six five seven.",
+    "heard": "Runway 27 cleared for takeoff, Air India 657.",
+    "heard2": null,
+    "latency_s": 0.63,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 40,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY six zero five tree, runway two seven, cleared to land.",
+    "heard": "Ifly 6053, runway 27, cleared to land.",
+    "heard2": null,
+    "latency_s": 0.62,
+    "engine_ms": 0.3,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/BOM_2024_clean_t40_0.wav",
+      "says": "Runway conflict, runway, two, seven, IFLY, six, zero, fife, tree, and, Air India, six, fife, seven",
+      "assemble_ms": 15.2,
+      "duration_s": 11.18,
+      "ready_after_call_s": 0.63
+     }
+    ],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "RUNWAY_CONFLICT",
+      "text": "RUNWAY CONFLICT on 09/27: IGO6053 LAND 27 while AIC657 TAKEOFF 27 (cleared 40 s ago)"
+     }
+    ]
+   },
+   {
+    "t": 44,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Cleared to land runway two seven, IFLY six zero five tree.",
+    "heard": "Cleared to land runway 27, IFLY 6053.",
+    "heard2": null,
+    "latency_s": 0.67,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "HOLD_AS_CROSS",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India two eight one seven, runway two niner right, cleared for takeoff.",
+    "heard": "Air India 2817, runway 2 niner right, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.69,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two niner right, cleared for takeoff, Air India two eight one seven.",
+    "heard": "Runway 29 right, cleared for takeoff, Air India 2817.",
+    "heard2": null,
+    "latency_s": 0.63,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 15,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, hold short runway two niner right.",
+    "heard": "I fly 5134, hold short runway 29er right.",
+    "heard2": null,
+    "latency_s": 0.66,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 19,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Crossing runway two niner right, IFLY five one tree four.",
+    "heard": "Crossing runway 29 right, iflee 5134.",
+    "heard2": null,
+    "latency_s": 0.62,
+    "engine_ms": 1.4,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/HOLD_AS_CROSS_clean_t19_0.wav",
+      "says": "Readback mismatch, IFLY, fife, one, tree, four, runway, two, niner, right, confirm",
+      "assemble_ms": 8.4,
+      "duration_s": 7.87,
+      "ready_after_call_s": 0.63
+     },
+     {
+      "file": "audio_alerts/out/HOLD_AS_CROSS_clean_t19_1.wav",
+      "says": "Readback conflict, runway, two, niner, right, IFLY, fife, one, tree, four, and, Air India, two, eight, one, seven",
+      "assemble_ms": 7.2,
+      "duration_s": 10.56,
+      "ready_after_call_s": 0.63
+     }
+    ],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "READBACK_MISMATCH",
+      "text": "IGO5134: INSTRUCTION MISMATCH in readback: CROSS 29R, cleared HOLD_SHORT 29R"
+     },
+     {
+      "level": "RED",
+      "kind": "RUNWAY_CONFLICT",
+      "text": "IF IGO5134 DOES WHAT IT READ BACK: RUNWAY CONFLICT on 11L/29R: IGO5134 CROSS 29R while AIC2817 TAKEOFF 29R (cleared 19 s ago)"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "TWIN_CALLSIGN",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, runway two eight, cleared to land.",
+    "heard": "I fly 5134 runway 28 cleared to land.",
+    "heard2": null,
+    "latency_s": 0.69,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p3",
+    "said": "Cleared to land runway two eight, IFLY five one two four.",
+    "heard": "Cleared to land runway 28, IFLY 5124.",
+    "heard2": null,
+    "latency_s": 0.57,
+    "engine_ms": 0.4,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/TWIN_CALLSIGN_clean_t4_0.wav",
+      "says": "Readback mismatch, IFLY, fife, one, tree, four, runway, two, eight, confirm",
+      "assemble_ms": 5.2,
+      "duration_s": 7.4,
+      "ready_after_call_s": 0.57
+     }
+    ],
+    "status": "PROBABLE",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "READBACK_MISMATCH",
+      "text": "IGO5134: CALLSIGN MISMATCH: read back as IGO5124 (also on frequency), clearance was for IGO5134 - confirm callsign"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "STOP",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air two six one two, runway one zero, cleared for takeoff.",
+    "heard": "Akasa Air 2612, runway 10, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.6,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway one zero, cleared for takeoff, Akasa Air two six one two.",
+    "heard": "Runway 10, cleared for takeoff, Akasa Air 2612.",
+    "heard2": null,
+    "latency_s": 0.59,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 20,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air two six one two, stop immediately, I say again, stop immediately.",
+    "heard": "Akasa Air 2612, stop immediately! I say again, stop immediately!",
+    "heard2": null,
+    "latency_s": 0.64,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 24,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Stopping, Akasa Air two six one two.",
+    "heard": "Stopping, Akasa Air 2612.",
+    "heard2": null,
+    "latency_s": 0.6,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "BIRDS_MR",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India six five seven, runway two seven, cleared for takeoff.",
+    "heard": "Air India 657, runway 27, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.58,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two seven, cleared for takeoff, Air India six five seven.",
+    "heard": "Runway 27, cleared for takeoff. Air India 657.",
+    "heard2": null,
+    "latency_s": 0.69,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 15,
+    "channel": "airside",
+    "speaker": "veh_mr",
+    "said": "टॉवर, बर्ड चेसर टू, रनवे टू सेवन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+    "heard": "टॉवर बर्ड चेसर टू रनवे टू सेव्हन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+    "heard2": null,
+    "latency_s": 0.7,
+    "engine_ms": 0.6,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/BIRDS_MR_clean_t15_0.wav",
+      "says": "Birds reported, runway, two, seven, Air India, six, fife, seven",
+      "assemble_ms": 6.1,
+      "duration_s": 5.5,
+      "ready_after_call_s": 0.71
+     }
+    ],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "BIRDS_ON_ACTIVE_RUNWAY",
+      "text": "Birds reported on runway 27 by BIRDCHASER2 - AIC657 TAKEOFF 27"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "VEHICLE_HI",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, runway two eight, cleared to land.",
+    "heard": "I fly 5134 runway 28 cleared to land.",
+    "heard2": null,
+    "latency_s": 0.53,
+    "engine_ms": 0.1,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Cleared to land runway two eight, IFLY five one tree four.",
+    "heard": "Clear to land, runway 28, IFLY 5134.",
+    "heard2": null,
+    "latency_s": 0.68,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 30,
+    "channel": "airside",
+    "speaker": "veh_hi",
+    "said": "Tower, Follow Me three, runway two eight cross karna hai, Bravo pe hold kar raha hoon.",
+    "heard": "टावर, follow me, 3 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+    "heard2": null,
+    "latency_s": 0.61,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "VEHICLE_REQUEST_OCCUPIED",
+      "text": "FOLLOWME3 asks for runway 28 - in use: IGO5134 LAND 28 (cleared 30 s ago)"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "NORMAL_DEL",
+  "cond": "clean",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India two eight one seven, runway two eight, cleared for takeoff.",
+    "heard": "Air India 2817, runway 28, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.7,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two eight, cleared for takeoff, Air India two eight one seven.",
+    "heard": "Runway 28 cleared for takeoff, Air India 2817.",
+    "heard2": null,
+    "latency_s": 0.63,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 40,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, runway two niner left, cleared to land.",
+    "heard": "I fly 5134 runway 29 left cleared to land.",
+    "heard2": null,
+    "latency_s": 0.72,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 44,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Cleared to land runway two niner left, IFLY five one tree four.",
+    "heard": "Cleared to land runway 29 left, ifly 5134.",
+    "heard2": null,
+    "latency_s": 0.55,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 70,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air one one two tree, behind the landing Airbus, line up and wait runway two niner left, behind.",
+    "heard": "Akasa Air 1123 behind the landing Airbus, line up and wait runway 29 left behind.",
+    "heard2": null,
+    "latency_s": 0.6,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 75,
+    "channel": "pilot",
+    "speaker": "p3",
+    "said": "Behind the landing Airbus, line up and wait runway two niner left, behind, Akasa Air one one two tree.",
+    "heard": "Behind the landing Airbus, line up and wait runway 2 niner left. Behind Akasa Air 1123.",
+    "heard2": null,
+    "latency_s": 0.6,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 150,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Runway vacated, IFLY five one tree four.",
+    "heard": "Runway vacated, IFLY 5134.",
+    "heard2": null,
+    "latency_s": 0.52,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "REPORT",
+    "alerts": [
+     {
+      "level": "INFO",
+      "kind": "VACATED",
+      "text": "IGO5134 reports runway vacated"
+     }
+    ]
+   },
+   {
+    "t": 160,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air one one two tree, runway two niner left, cleared for takeoff.",
+    "heard": "Akasa Air 1123, runway 2 niner left, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.61,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 164,
+    "channel": "pilot",
+    "speaker": "p3",
+    "said": "Runway two niner left, cleared for takeoff, Akasa Air one one two tree.",
+    "heard": "Runway 29 left cleared for takeoff, Akasa Air 1123.",
+    "heard2": null,
+    "latency_s": 0.72,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "DEL_2023",
+  "cond": "10",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Vistara seven two five, runway two niner right, cleared for takeoff.",
+    "heard": "15725, runway 2, 9er right, cleared for takeoff.",
+    "heard2": "Number seven two five, runway two. Niner right, cleared for takeoff.",
+    "latency_s": 1.2,
+    "engine_ms": 0.7,
+    "spoken": [],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "UNCLEAR_CLEARANCE",
+      "text": "Tower call not fully understood (no callsign heard) - runway picture may be incomplete"
+     }
+    ]
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two niner right, cleared for takeoff, Vistara seven two five.",
+    "heard": "Runway 29 right, cleared for takeoff, Vistara 725.",
+    "heard2": null,
+    "latency_s": 0.61,
+    "engine_ms": 0.1,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "VTI725: readback incomplete - tower's callsign was not heard; readback says VTI725, not cross-checked - confirm"
+     }
+    ]
+   },
+   {
+    "t": 25,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Vistara niner two six, cross runway two niner right.",
+    "heard": "Tara, 926, cross runway 2, 9 right.",
+    "heard2": null,
+    "latency_s": 0.48,
+    "engine_ms": 0.3,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/DEL_2023_10_t25_0.wav",
+      "says": "Runway conflict, runway, two, niner, right, Vistara, niner, two, six, and, Vistara, seven, two, fife",
+      "assemble_ms": 6.6,
+      "duration_s": 8.35,
+      "ready_after_call_s": 0.48
+     }
+    ],
+    "status": "PROBABLE",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "RUNWAY_CONFLICT",
+      "text": "RUNWAY CONFLICT on 11L/29R: VTI926 CROSS 29R while VTI725 TAKEOFF 29R (cleared 25 s ago)"
+     }
+    ]
+   },
+   {
+    "t": 29,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Crossing runway two niner right, Vistara niner two six.",
+    "heard": "Sing runway 29, right with Tara 926.",
+    "heard2": null,
+    "latency_s": 0.65,
+    "engine_ms": 0.4,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "VTI926: readback incomplete - instruction for runway 29R not heard - confirm"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "BOM_2024",
+  "cond": "10",
+  "pass": false,
+  "late": [
+   "step 2: RED RUNWAY_CONFLICT came 4 s late (at t=44s)"
+  ],
+  "misses": [],
+  "verdict": "LATE",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India six five seven, runway two seven, cleared for takeoff.",
+    "heard": "Air India 657, runway 27, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.61,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two seven, cleared for takeoff, Air India six five seven.",
+    "heard": "Runway 27 cleared for takeoff, Air India 657.",
+    "heard2": null,
+    "latency_s": 0.58,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 40,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY six zero five tree, runway two seven, cleared to land.",
+    "heard": "36053, runway 27, cleared to land.",
+    "heard2": "Three six zero five three, runway two seven, cleared to land.",
+    "latency_s": 1.12,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "UNCLEAR_CLEARANCE",
+      "text": "Tower call not fully understood (no callsign heard) - runway picture may be incomplete"
+     },
+     {
+      "level": "AMBER",
+      "kind": "RUNWAY_CONFLICT",
+      "text": "RUNWAY CONFLICT on 09/27: UNIDENTIFIED (cleared at t=40s) LAND 27 while AIC657 TAKEOFF 27 (cleared 40 s ago)"
+     }
+    ]
+   },
+   {
+    "t": 44,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Cleared to land runway two seven, IFLY six zero five tree.",
+    "heard": "Cleared to land, runway 27. IFLY, 6053.",
+    "heard2": null,
+    "latency_s": 0.59,
+    "engine_ms": 0.3,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/BOM_2024_10_t44_1.wav",
+      "says": "Runway conflict, runway, two, seven, IFLY, six, zero, fife, tree, and, Air India, six, fife, seven",
+      "assemble_ms": 7.0,
+      "duration_s": 11.18,
+      "ready_after_call_s": 0.59
+     }
+    ],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "IGO6053: readback incomplete - tower's callsign was not heard; readback says IGO6053, not cross-checked - confirm"
+     },
+     {
+      "level": "RED",
+      "kind": "RUNWAY_CONFLICT",
+      "text": "RUNWAY CONFLICT on 09/27: IGO6053 LAND 27 while AIC657 TAKEOFF 27 (cleared 44 s ago)"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "HOLD_AS_CROSS",
+  "cond": "10",
+  "pass": false,
+  "late": [],
+  "misses": [
+   "step 3: expected RED READBACK_MISMATCH - never came",
+   "step 3: expected RED RUNWAY_CONFLICT - never came"
+  ],
+  "verdict": "FAIL",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India two eight one seven, runway two niner right, cleared for takeoff.",
+    "heard": "Air India 2817, runway 29, right, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.68,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two niner right, cleared for takeoff, Air India two eight one seven.",
+    "heard": "1829, right, cleared for takeoff. Air India 2817.",
+    "heard2": null,
+    "latency_s": 0.63,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "AIC2817: readback incomplete - runway 29R not read back clearly - confirm"
+     }
+    ]
+   },
+   {
+    "t": 15,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, hold short runway two niner right.",
+    "heard": "Flight 5134, hold short, runway 29 as well.",
+    "heard2": null,
+    "latency_s": 0.59,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "UNCLEAR_CLEARANCE",
+      "text": "Tower call not fully understood (runway 29 does not exist at Delhi) - runway picture may be incomplete"
+     }
+    ]
+   },
+   {
+    "t": 19,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Crossing runway two niner right, IFLY five one tree four.",
+    "heard": "Asking runway 29 right, he flee 5134.",
+    "heard2": null,
+    "latency_s": 0.57,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "IGO5134: readback incomplete - the tower's instruction was not understood, so this readback cannot be checked - confirm"
+     },
+     {
+      "level": "AMBER",
+      "kind": "RUNWAY_IN_USE_UNCLEAR",
+      "text": "IGO5134 named runway 29R (instruction not heard) - in use: AIC2817 TAKEOFF 29R (cleared 19 s ago) - confirm"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "TWIN_CALLSIGN",
+  "cond": "10",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, runway two eight, cleared to land.",
+    "heard": "I fly 5134, runway 28, cleared to land.",
+    "heard2": null,
+    "latency_s": 0.55,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p3",
+    "said": "Cleared to land runway two eight, IFLY five one two four.",
+    "heard": "Cleared to land runway 28, IFLY 5124.",
+    "heard2": null,
+    "latency_s": 0.55,
+    "engine_ms": 0.2,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/TWIN_CALLSIGN_10_t4_0.wav",
+      "says": "Readback mismatch, IFLY, fife, one, tree, four, runway, two, eight, confirm",
+      "assemble_ms": 6.4,
+      "duration_s": 7.4,
+      "ready_after_call_s": 0.56
+     }
+    ],
+    "status": "PROBABLE",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "READBACK_MISMATCH",
+      "text": "IGO5134: CALLSIGN MISMATCH: read back as IGO5124 (also on frequency), clearance was for IGO5134 - confirm callsign"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "STOP",
+  "cond": "10",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air two six one two, runway one zero, cleared for takeoff.",
+    "heard": "Akasa Air 2612, runway 10, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.67,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway one zero, cleared for takeoff, Akasa Air two six one two.",
+    "heard": "2810, cleared for takeoff. Akasa Air 2612.",
+    "heard2": null,
+    "latency_s": 0.73,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "AKJ2612: readback incomplete - runway 10 not read back clearly - confirm"
+     }
+    ]
+   },
+   {
+    "t": 20,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air two six one two, stop immediately, I say again, stop immediately.",
+    "heard": "Casa Air 2612, stop immediately. I say again, stop immediately.",
+    "heard2": null,
+    "latency_s": 0.6,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 24,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Stopping, Akasa Air two six one two.",
+    "heard": "Copying Akasa Air 2612.",
+    "heard2": null,
+    "latency_s": 0.46,
+    "engine_ms": 0.2,
+    "spoken": [
+     {
+      "file": "audio_alerts/out/STOP_10_t24_0.wav",
+      "says": "Stop not confirmed, Akasa Air, two, six, one, two",
+      "assemble_ms": 8.4,
+      "duration_s": 4.89,
+      "ready_after_call_s": 0.46
+     }
+    ],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "RED",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "AKJ2612: readback incomplete - STOP not confirmed - confirm"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "BIRDS_MR",
+  "cond": "10",
+  "pass": false,
+  "late": [],
+  "misses": [
+   "step 2: expected RED BIRDS_ON_ACTIVE_RUNWAY - never came"
+  ],
+  "verdict": "FAIL",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India six five seven, runway two seven, cleared for takeoff.",
+    "heard": "Air India 657, runway 27, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.49,
+    "engine_ms": 5.1,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two seven, cleared for takeoff, Air India six five seven.",
+    "heard": "1887, cleared for takeoff. Air India 657.",
+    "heard2": null,
+    "latency_s": 0.68,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "AIC657: readback incomplete - runway 27 not read back clearly - confirm"
+     }
+    ]
+   },
+   {
+    "t": 15,
+    "channel": "airside",
+    "speaker": "veh_mr",
+    "said": "टॉवर, बर्ड चेसर टू, रनवे टू सेवन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+    "heard": "Tower bird chaser 2, runway 27 वर पक्की आहे. मी taxiway 40 वर थांबलो.",
+    "heard2": null,
+    "latency_s": 0.71,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "RUNWAY_IN_USE_UNCLEAR",
+      "text": "BIRDCHASER2 named runway 27 (instruction not heard) - in use: AIC657 TAKEOFF 27 (cleared 15 s ago) - confirm"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "VEHICLE_HI",
+  "cond": "10",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, runway two eight, cleared to land.",
+    "heard": "Fly 5134, runway 28, cleared to land.",
+    "heard2": null,
+    "latency_s": 0.62,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Cleared to land runway two eight, IFLY five one tree four.",
+    "heard": "Cleared to land, runway 28. I fly 5134.",
+    "heard2": null,
+    "latency_s": 0.71,
+    "engine_ms": 3.7,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 30,
+    "channel": "airside",
+    "speaker": "veh_hi",
+    "said": "Tower, Follow Me three, runway two eight cross karna hai, Bravo pe hold kar raha hoon.",
+    "heard": "Tower, follow me. 3 runway 28 cross करना है, Bravo पे hold कर रहा हूँ।",
+    "heard2": null,
+    "latency_s": 0.64,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "VEHICLE_REQUEST_OCCUPIED",
+      "text": "FOLLOWME3 asks for runway 28 - in use: IGO5134 LAND 28 (cleared 30 s ago)"
+     }
+    ]
+   }
+  ],
+  "end_alerts": []
+ },
+ {
+  "scenario": "NORMAL_DEL",
+  "cond": "10",
+  "pass": true,
+  "late": [],
+  "misses": [],
+  "verdict": "PASS",
+  "steps": [
+   {
+    "t": 0,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Air India two eight one seven, runway two eight, cleared for takeoff.",
+    "heard": "Air India 2817, runway 28, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.58,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 4,
+    "channel": "pilot",
+    "speaker": "p1",
+    "said": "Runway two eight, cleared for takeoff, Air India two eight one seven.",
+    "heard": "Excuse me, 28 cleared for takeoff, Air India 2817.",
+    "heard2": null,
+    "latency_s": 0.6,
+    "engine_ms": 0.4,
+    "spoken": [],
+    "status": "FLAGGED",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "AIC2817: readback incomplete - runway 28 not read back clearly - confirm"
+     }
+    ]
+   },
+   {
+    "t": 40,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "IFLY five one tree four, runway two niner left, cleared to land.",
+    "heard": "Fly 5134, runway 29 left, cleared to land.",
+    "heard2": null,
+    "latency_s": 0.61,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 44,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Cleared to land runway two niner left, IFLY five one tree four.",
+    "heard": "Air India runway 2, 9 left, Epley 5134.",
+    "heard2": null,
+    "latency_s": 0.57,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": [
+     {
+      "level": "AMBER",
+      "kind": "READBACK_INCOMPLETE",
+      "text": "IGO5134: readback incomplete - instruction for runway 29L not heard - confirm"
+     }
+    ]
+   },
+   {
+    "t": 70,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air one one two tree, behind the landing Airbus, line up and wait runway two niner left, behind.",
+    "heard": "Casa Air 1123, behind the landing arrow, line up and wait runway 2, niner left, behind.",
+    "heard2": null,
+    "latency_s": 0.7,
+    "engine_ms": 0.4,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 75,
+    "channel": "pilot",
+    "speaker": "p3",
+    "said": "Behind the landing Airbus, line up and wait runway two niner left, behind, Akasa Air one one two tree.",
+    "heard": "Behind the landing airbus, line up and wait runway 2. Niner left behind. Akasa Air 1123.",
+    "heard2": null,
+    "latency_s": 0.81,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "PROBABLE",
+    "alerts": []
+   },
+   {
+    "t": 150,
+    "channel": "pilot",
+    "speaker": "p2",
+    "said": "Runway vacated, IFLY five one tree four.",
+    "heard": "Report vacated. IFLY 5134.",
+    "heard2": null,
+    "latency_s": 0.47,
+    "engine_ms": 0.2,
+    "spoken": [],
+    "status": "REPORT",
+    "alerts": [
+     {
+      "level": "INFO",
+      "kind": "VACATED",
+      "text": "IGO5134 reports runway vacated"
+     }
+    ]
+   },
+   {
+    "t": 160,
+    "channel": "tower",
+    "speaker": "tower",
+    "said": "Akasa Air one one two tree, runway two niner left, cleared for takeoff.",
+    "heard": "Akasa Air 1123, runway 2, 9 left, cleared for takeoff.",
+    "heard2": null,
+    "latency_s": 0.58,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   },
+   {
+    "t": 164,
+    "channel": "pilot",
+    "speaker": "p3",
+    "said": "Runway two niner left, cleared for takeoff, Akasa Air one one two tree.",
+    "heard": "Runway 2, liner left, cleared for takeoff, Akasa Air 1123.",
+    "heard2": null,
+    "latency_s": 0.65,
+    "engine_ms": 0.3,
+    "spoken": [],
+    "status": "CONFIRMED",
+    "alerts": []
+   }
+  ],
+  "end_alerts": []
+ }
+]

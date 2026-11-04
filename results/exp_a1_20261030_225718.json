@@ -1,0 +1,326 @@
+[
+ {
+  "id": "h001a",
+  "audio": "as recorded",
+  "style": "transcribe",
+  "heard": "Air India 2817, runway 28, cleared to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "as recorded",
+  "style": "verbatim",
+  "heard": "Air India ‐ two eight one seven, runway two eight, cleared to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "as recorded",
+  "style": "codemix",
+  "heard": "Air India 2817, runway 28, cleared to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "radio, start cut",
+  "style": "transcribe",
+  "heard": "Air India 2817, runway 2808 to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "radio, start cut",
+  "style": "verbatim",
+  "heard": "Air India two eight one seven, runway two eight three eight, to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "radio, start cut",
+  "style": "codemix",
+  "heard": "Air India 2817, runway 2808 to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "radio, no cut",
+  "style": "transcribe",
+  "heard": "Air India 2817, runway 28, cleared to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "radio, no cut",
+  "style": "verbatim",
+  "heard": "Air India two eight one seven, runway two eight three eight, to land."
+ },
+ {
+  "id": "h001a",
+  "audio": "radio, no cut",
+  "style": "codemix",
+  "heard": "Air India 2817, runway 2808 to land."
+ },
+ {
+  "id": "h003a",
+  "audio": "as recorded",
+  "style": "transcribe",
+  "heard": "Air India 2871, line up and wait. Runway 29 left."
+ },
+ {
+  "id": "h003a",
+  "audio": "as recorded",
+  "style": "verbatim",
+  "heard": "Air India ‐ two eight seven one, line up and wait, runway two, niner left."
+ },
+ {
+  "id": "h003a",
+  "audio": "as recorded",
+  "style": "codemix",
+  "heard": "Air India 2871, line up and wait. Runway 29 left."
+ },
+ {
+  "id": "h003a",
+  "audio": "radio, start cut",
+  "style": "transcribe",
+  "heard": "Air India 2871, line up and wait, runway 29 left."
+ },
+ {
+  "id": "h003a",
+  "audio": "radio, start cut",
+  "style": "verbatim",
+  "heard": "Air India two eight seven one, line up and wait on runway two nine eleven."
+ },
+ {
+  "id": "h003a",
+  "audio": "radio, start cut",
+  "style": "codemix",
+  "heard": "Air India 2871, line up and wait, runway two, niner left."
+ },
+ {
+  "id": "h003a",
+  "audio": "radio, no cut",
+  "style": "transcribe",
+  "heard": "Air India 2871, line up and wait on runway 29 left."
+ },
+ {
+  "id": "h003a",
+  "audio": "radio, no cut",
+  "style": "verbatim",
+  "heard": "Air India two eight seven one, line up and wait on runway two nine eleven."
+ },
+ {
+  "id": "h003a",
+  "audio": "radio, no cut",
+  "style": "codemix",
+  "heard": "Air India 2871, line up and wait, runway two, niner left."
+ },
+ {
+  "id": "h005a",
+  "audio": "as recorded",
+  "style": "transcribe",
+  "heard": "I fly 5134, cross runway 290, writer Bravo report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "as recorded",
+  "style": "verbatim",
+  "heard": "I fly five one three four, cross runway two niner, a writer Bravo report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "as recorded",
+  "style": "codemix",
+  "heard": "I fly 5134, cross runway 290, writer Bravo report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "radio, start cut",
+  "style": "transcribe",
+  "heard": "Air fly 5134, cross runway 299, right at Bravo, report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "radio, start cut",
+  "style": "verbatim",
+  "heard": "Air fly five one three four, cross runway two nine nine. Right, a Bravo report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "radio, start cut",
+  "style": "codemix",
+  "heard": "Air fly 5134, cross runway 299. Writer Bravo report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "radio, no cut",
+  "style": "transcribe",
+  "heard": "Air fly 5134, cross runway 299. Writer Bravo report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "radio, no cut",
+  "style": "verbatim",
+  "heard": "Air fly five one three four, cross runway two nine nine. Writer Bravo report vacated."
+ },
+ {
+  "id": "h005a",
+  "audio": "radio, no cut",
+  "style": "codemix",
+  "heard": "Air fly 5134, cross runway 299. Writer Bravo report vacated."
+ },
+ {
+  "id": "h009a",
+  "audio": "as recorded",
+  "style": "transcribe",
+  "heard": "I fly 5134, runway 27, cleared to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "as recorded",
+  "style": "verbatim",
+  "heard": "I fly five one three four, runway two seven, cleared to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "as recorded",
+  "style": "codemix",
+  "heard": "I fly 5134, runway 27, cleared to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "radio, start cut",
+  "style": "transcribe",
+  "heard": "Air France 5134, runway 27, near to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "radio, start cut",
+  "style": "verbatim",
+  "heard": "Air France five one three four, runway two seven, cleared to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "radio, start cut",
+  "style": "codemix",
+  "heard": "Air France 5134, runway 27, near to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "radio, no cut",
+  "style": "transcribe",
+  "heard": "Air France 5124, runway 27, near to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "radio, no cut",
+  "style": "verbatim",
+  "heard": "Air France Five one three four, runway two seven, near to land."
+ },
+ {
+  "id": "h009a",
+  "audio": "radio, no cut",
+  "style": "codemix",
+  "heard": "Air France 5124, runway 27, near to land."
+ },
+ {
+  "id": "h010a",
+  "audio": "as recorded",
+  "style": "transcribe",
+  "heard": "I fly at 2241, runway 10, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "as recorded",
+  "style": "verbatim",
+  "heard": "I fly at two two four one, runway one zero, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "as recorded",
+  "style": "codemix",
+  "heard": "I fly at 2241, runway 10, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "radio, start cut",
+  "style": "transcribe",
+  "heard": "Reply 2241, runway 10, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "radio, start cut",
+  "style": "verbatim",
+  "heard": "Reply two two four one, runway one zero, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "radio, start cut",
+  "style": "codemix",
+  "heard": "Reply 2241, runway 10, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "radio, no cut",
+  "style": "transcribe",
+  "heard": "I fly 2241, runway 10, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "radio, no cut",
+  "style": "verbatim",
+  "heard": "I fly two two four one, runway one zero, cleared for takeoff."
+ },
+ {
+  "id": "h010a",
+  "audio": "radio, no cut",
+  "style": "codemix",
+  "heard": "I fly 2241, runway 10, cleared for takeoff."
+ },
+ {
+  "id": "h015a",
+  "audio": "as recorded",
+  "style": "transcribe",
+  "heard": "टावर follow me 3, runway 29 right cross करना है, holding point Bravo पर हूँ।"
+ },
+ {
+  "id": "h015a",
+  "audio": "as recorded",
+  "style": "verbatim",
+  "heard": "टावर फॉलो मी थ्री, रनवे टू नाइन राइट क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।"
+ },
+ {
+  "id": "h015a",
+  "audio": "as recorded",
+  "style": "codemix",
+  "heard": "टावर follow me three, runway two nine right cross करना है, holding point Bravo पर हूँ।"
+ },
+ {
+  "id": "h015a",
+  "audio": "radio, start cut",
+  "style": "transcribe",
+  "heard": "Bird, follow me. 3 runway 29, right? Cross runway, holding point Bravo for me."
+ },
+ {
+  "id": "h015a",
+  "audio": "radio, start cut",
+  "style": "verbatim",
+  "heard": "Bird, follow me. Three, runway two nine. Right, cross runway. Holding point, Bravo, for me."
+ },
+ {
+  "id": "h015a",
+  "audio": "radio, start cut",
+  "style": "codemix",
+  "heard": "Bird, follow me. Three runway two nine, right? Cross runway, holding point Bravo for him."
+ },
+ {
+  "id": "h015a",
+  "audio": "radio, no cut",
+  "style": "transcribe",
+  "heard": "Tower, follow me. 3 runway 29, right cross runway, holding point Bravo for me."
+ },
+ {
+  "id": "h015a",
+  "audio": "radio, no cut",
+  "style": "verbatim",
+  "heard": "Tower, follow me. Three, runway two nine, right cross runway. Holding point, Bravo, for me."
+ },
+ {
+  "id": "h015a",
+  "audio": "radio, no cut",
+  "style": "codemix",
+  "heard": "Tower, follow me. Three, runway two nine, right cross runway. Holding point, Bravo, for me."
+ }
+]

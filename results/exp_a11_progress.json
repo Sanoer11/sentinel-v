@@ -1,0 +1,1382 @@
+[
+ {
+  "part": "E",
+  "id": "a11_Avinash_0",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 2, birds on runway 27, we are dispersing them.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 2, birds on runway 27, we are dispersing them.",
+  "text2": "Tower, Bird Chaser two, birds on runway two seven, we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_0",
+  "cond": "10",
+  "first": "Tower, bird chaser 2, bird on runway 27. We are dispersing.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 2, bird on runway 27. We are dispersing.",
+  "text2": "Tower, bird chaser two, birds on runway two seven. We are dispersing.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_0",
+  "cond": "5",
+  "first": "Tower, bird chaser 2, bird on runway 27. We are dispatching.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 2, bird on runway 27. We are dispatching.",
+  "text2": "Tower, bird chaser two, birds on runway two seven. We are dispatching.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_1",
+  "cond": "clean",
+  "first": "Tower, bird chaser 2. Heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 2. Heavy bird activity on runway 14.",
+  "text2": "Tower, bird chaser two. Heavy bird activity on runway one four.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_1",
+  "cond": "10",
+  "first": "Tower, bird chatter too heavy. Bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Tower, bird chatter too heavy. Bird activity on runway 14.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_1",
+  "cond": "5",
+  "first": "Our bird chaser team, heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Our bird chaser team, heavy bird activity on runway 14.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_2",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 1, runway 27, a flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 1, runway 27, a flock of birds near the center line.",
+  "text2": "Tower, Bird Chaser one, runway two seven, a flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_2",
+  "cond": "10",
+  "first": "Bird Chaser 1, runway 27, a flock of birds near the centerline.",
+  "hint_text": null,
+  "text": "Bird Chaser 1, runway 27, a flock of birds near the centerline.",
+  "text2": "Bird Chaser one, runway two seven, a flock of birds near the centerline.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_2",
+  "cond": "5",
+  "first": "So, Bird Chaser 11227, a flock of birds near the center line.",
+  "hint_text": null,
+  "text": "So, Bird Chaser 11227, a flock of birds near the center line.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_3",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, request to cross runway 14 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to cross runway 14 at Bravo.",
+  "text2": "Tower, Bird Chaser five, request to cross runway one four at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_3",
+  "cond": "10",
+  "first": "Bird Chaser 5 request to cross runway 14 at Bravo.",
+  "hint_text": null,
+  "text": "Bird Chaser 5 request to cross runway 14 at Bravo.",
+  "text2": "Bird Chaser five request to cross runway one four at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_3",
+  "cond": "5",
+  "first": "Air India Bird Chaser 5 request to cross runway 14 at Bravo.",
+  "hint_text": null,
+  "text": "Air India Bird Chaser 5 request to cross runway 14 at Bravo.",
+  "text2": "Air India Bird Chaser ight request to cross runway one four at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_4",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 4 request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 4 request to enter runway 27 for FOD check.",
+  "text2": "Tower, Bird Chaser four request to enter runway two seven for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_4",
+  "cond": "10",
+  "first": "Tower, bird chaser 4 request to enter runway 27 for FOD.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 4 request to enter runway 27 for FOD.",
+  "text2": "Tower, Bird Chaser Four, request to enter runway two seven for FOD.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Avinash_4",
+  "cond": "5",
+  "first": "Our bird chaser, sir, request to enter runway 27 for takeoff.",
+  "hint_text": null,
+  "text": "Our bird chaser, sir, request to enter runway 27 for takeoff.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_0",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 3, birds on runway 09, we are dispersing them.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 3, birds on runway 09, we are dispersing them.",
+  "text2": "Tower, Bird Chaser three, birds on runway zero nine, we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_0",
+  "cond": "10",
+  "first": "FOB Bird Chaser 3, birds on runway 09. We are dispersing them.",
+  "hint_text": null,
+  "text": "FOB Bird Chaser 3, birds on runway 09. We are dispersing them.",
+  "text2": "Bird Chaser three, birds on runway zero nine. We are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_0",
+  "cond": "5",
+  "first": "Our bird chaser team, birds on runway 09, we are dispersing them.",
+  "hint_text": null,
+  "text": "Our bird chaser team, birds on runway 09, we are dispersing them.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_1",
+  "cond": "clean",
+  "first": "Tower, bird chaser 4, heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 4, heavy bird activity on runway 14.",
+  "text2": "Tower, bird chaser four. Heavy bird activity on runway one four.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_1",
+  "cond": "10",
+  "first": "Tower, bird chaser 4. Heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 4. Heavy bird activity on runway 14.",
+  "text2": "Tower, bird chaser four. Heavy bird activity on runway one four.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_1",
+  "cond": "5",
+  "first": "Bird Chaser 4, heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Bird Chaser 4, heavy bird activity on runway 14.",
+  "text2": "Bird Chaser four, heavy bird activity on runway one four.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_2",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 3, runway 27, a flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 3, runway 27, a flock of birds near the center line.",
+  "text2": "Tower, Bird Chaser three, runway two seven, a flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_2",
+  "cond": "10",
+  "first": "Tower Bird Chaser 3, runway 27. A flock of birds near the central line.",
+  "hint_text": null,
+  "text": "Tower Bird Chaser 3, runway 27. A flock of birds near the central line.",
+  "text2": "Tower Bird Chaser Three, runway two seven, a flock of birds near the central line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_2",
+  "cond": "5",
+  "first": "Tower, bird chaser 3, runway 27. A flock of birds near the centre line.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 3, runway 27. A flock of birds near the centre line.",
+  "text2": "Tower, bird chaser three, runway two seven. A flock of birds near the centre line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_3",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "text2": "Tower, Bird Chaser Five, request to cross runway three two at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_3",
+  "cond": "10",
+  "first": "Tower, Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "text2": "Tower, Bird Chaser Five, request to cross runway three two at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_3",
+  "cond": "5",
+  "first": "Tower, Bird Chaser 5, request to cross runway 3C at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to cross runway 3C at Bravo.",
+  "text2": "Tower, Bird Chaser Five, request to cross runway three three at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_4",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 4 request to enter runway 09 for FOD check.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 4 request to enter runway 09 for FOD check.",
+  "text2": "Tower, Bird Chaser four request to enter runway zero nine for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_4",
+  "cond": "10",
+  "first": "Our bird chaser, 4, request to enter runway 09 for FOD check.",
+  "hint_text": null,
+  "text": "Our bird chaser, 4, request to enter runway 09 for FOD check.",
+  "text2": "Our Bird Chaser four request to enter runway zero nine for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Riyaa_4",
+  "cond": "5",
+  "first": "Tower bird chaser 4, request to enter runway 09 for takeoff.",
+  "hint_text": null,
+  "text": "Tower bird chaser 4, request to enter runway 09 for takeoff.",
+  "text2": "Tower bird chaser four, request to enter runway zero nine for takeoff.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_0",
+  "cond": "clean",
+  "first": "Tower, bird chaser 5, birds on runway 27. We are dispersing them.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 5, birds on runway 27. We are dispersing them.",
+  "text2": "Tower, bird chaser five, birds on runway two seven. We are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_0",
+  "cond": "10",
+  "first": "Oh, bird chaser 5. Birds on runway 27, we are dispersing them.",
+  "hint_text": null,
+  "text": "Oh, bird chaser 5. Birds on runway 27, we are dispersing them.",
+  "text2": "Oh, bird chaser five. Birds on runway two seven, we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_0",
+  "cond": "5",
+  "first": "Go Bird Chaser 5, birds on runway 27. We are dispersing them.",
+  "hint_text": null,
+  "text": "Go Bird Chaser 5, birds on runway 27. We are dispersing them.",
+  "text2": "Go Bird Chaser five, birds on runway two seven. We are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_1",
+  "cond": "clean",
+  "first": "Tower, bird chaser 4, heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 4, heavy bird activity on runway 14.",
+  "text2": "Tower, bird chaser four. Heavy bird activity on runway one four.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_1",
+  "cond": "10",
+  "first": "Tower, bird chaser 4. Heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 4. Heavy bird activity on runway 14.",
+  "text2": "Tower, bird chaser four. Heavy bird activity on runway one four.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_1",
+  "cond": "5",
+  "first": "However, bird chaser 4, heavy bird activity on runway 14.",
+  "hint_text": null,
+  "text": "However, bird chaser 4, heavy bird activity on runway 14.",
+  "text2": "However, bird chaser four, heavy bird activity on runway one four.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_2",
+  "cond": "clean",
+  "first": "Tower, bird chaser 2, runway 32. A flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 2, runway 32. A flock of birds near the center line.",
+  "text2": "Tower, bird chaser two, runway three two. A flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_2",
+  "cond": "10",
+  "first": "Tower, bird chatter. 2, runway 32, a flock of birds near the centerline.",
+  "hint_text": null,
+  "text": "Tower, bird chatter. 2, runway 32, a flock of birds near the centerline.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_2",
+  "cond": "5",
+  "first": "Our bird chaser 2, runway 32, a flock of birds near the centerline.",
+  "hint_text": null,
+  "text": "Our bird chaser 2, runway 32, a flock of birds near the centerline.",
+  "text2": "Our bird chaser crew, runway three two, a flock of birds near the centerline.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_3",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, request to cross runway 09 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to cross runway 09 at Bravo.",
+  "text2": "Tower, Bird Chaser five, request to cross runway zero nine at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_3",
+  "cond": "10",
+  "first": "Tower, Bird Chaser 5, request to cross runway 09 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to cross runway 09 at Bravo.",
+  "text2": "Tower, Bird Chaser five, request to cross runway zero nine at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_3",
+  "cond": "5",
+  "first": "Tower, bird chaser 5 request to cross runway 09 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 5 request to cross runway 09 at Bravo.",
+  "text2": "Tower, bird chaser five, request to cross runway zero nine at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_4",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 2, request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 2, request to enter runway 27 for FOD check.",
+  "text2": "Tower, Bird Chaser Two, request to enter runway two seven for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_4",
+  "cond": "10",
+  "first": "For Bird Chaser 2, request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "For Bird Chaser 2, request to enter runway 27 for FOD check.",
+  "text2": "Four Bird Chaser Two request to enter runway two seven for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Harshad_4",
+  "cond": "5",
+  "first": "Our bird chaser 2 request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "Our bird chaser 2 request to enter runway 27 for FOD check.",
+  "text2": "Our bird chaser two request to enter runway two seven for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_0",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 3, birds on runway 27, we are dispersing them.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 3, birds on runway 27, we are dispersing them.",
+  "text2": "Tower, Bird Chaser three, birds on runway two seven, we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_0",
+  "cond": "10",
+  "first": "Our Bird Chaser 3, birds on runway 27, were dispersing.",
+  "hint_text": null,
+  "text": "Our Bird Chaser 3, birds on runway 27, were dispersing.",
+  "text2": "Our Bird Chaser three, birds on runway two seven, we're dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_0",
+  "cond": "5",
+  "first": "Our bird chaser sees birds on runway 27; we are dispersing.",
+  "hint_text": null,
+  "text": "Our bird chaser sees birds on runway 27; we are dispersing.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_1",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, heavy bird activity on runway 27.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, heavy bird activity on runway 27.",
+  "text2": "Tower, Bird Chaser five, heavy bird activity on runway two seven.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_1",
+  "cond": "10",
+  "first": "Tower, bird chaser 5. Heavy bird activity on runway 27.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 5. Heavy bird activity on runway 27.",
+  "text2": "Tower, bird chaser five. Heavy bird activity on runway two seven.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_1",
+  "cond": "5",
+  "first": "However, bird chaser fires, heavy bird activity on runway 37.",
+  "hint_text": null,
+  "text": "However, bird chaser fires, heavy bird activity on runway 37.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_2",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 3, runway 27, a flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 3, runway 27, a flock of birds near the center line.",
+  "text2": "Tower, Bird Chaser Three, runway two seven, a flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_2",
+  "cond": "10",
+  "first": "Tower, bird sighted. 3, runway 27, a flock of birds near the centerline.",
+  "hint_text": null,
+  "text": "Tower, bird sighted. 3, runway 27, a flock of birds near the centerline.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_2",
+  "cond": "5",
+  "first": "Tower, bird chaser C runway 27, a flock of birds near the control tower.",
+  "hint_text": null,
+  "text": "Tower, bird chaser C runway 27, a flock of birds near the control tower.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_3",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 4 request to cross runway 32 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 4 request to cross runway 32 at Bravo.",
+  "text2": "Tower, Bird Chaser four, request to cross runway three two at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_3",
+  "cond": "10",
+  "first": "Our Bird Chaser 4 requests to cross runway 32 at Bravo.",
+  "hint_text": null,
+  "text": "Our Bird Chaser 4 requests to cross runway 32 at Bravo.",
+  "text2": "Our Bird Chaser four request to cross runway three two at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_3",
+  "cond": "5",
+  "first": "Tower bird chaser code request to cross runway 22 at ground.",
+  "hint_text": null,
+  "text": "Tower bird chaser code request to cross runway 22 at ground.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_4",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, request to enter runway 32 for FOD check.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to enter runway 32 for FOD check.",
+  "text2": "Tower, Bird Chaser five, request to enter runway three two for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_4",
+  "cond": "10",
+  "first": "Our Bird Chaser 5 requests to enter runway 32 for hold short.",
+  "hint_text": null,
+  "text": "Our Bird Chaser 5 requests to enter runway 32 for hold short.",
+  "text2": "Tower, Bird Chaser Five, request to enter runway three two for hold short.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Prakash_4",
+  "cond": "5",
+  "first": "Tower, Bird Chaser 5, request to enter runway 32 for hold short.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to enter runway 32 for hold short.",
+  "text2": "Tower, Bird Chaser Five, request to enter runway three two for hold short.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_0",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 3, birds on runway 09, we are dispersing them.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 3, birds on runway 09, we are dispersing them.",
+  "text2": "Tower, Bird Chaser three, birds on runway zero nine, we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_0",
+  "cond": "10",
+  "first": "Tower, bird chaser 3. Birds on runway 09, we are dispersing them.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 3. Birds on runway 09, we are dispersing them.",
+  "text2": "Tower, bird chaser three. Birds on runway zero nine; we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_0",
+  "cond": "5",
+  "first": "Worst bird chaser. 3 birds on runway 09; we are dispersing them.",
+  "hint_text": null,
+  "text": "Worst bird chaser. 3 birds on runway 09; we are dispersing them.",
+  "text2": "Worst bird chaser. Three birds on runway zero nine; we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_1",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 2, heavy bird activity on runway 27.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 2, heavy bird activity on runway 27.",
+  "text2": "Tower, Bird Chaser two, heavy bird activity on runway two seven.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_1",
+  "cond": "10",
+  "first": "Our bird chaser do heavy bird activity on runway 27.",
+  "hint_text": null,
+  "text": "Our bird chaser do heavy bird activity on runway 27.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_1",
+  "cond": "5",
+  "first": "Our bird chaser, too heavy bird activity on runway 2.",
+  "hint_text": null,
+  "text": "Our bird chaser, too heavy bird activity on runway 2.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_2",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, runway 32, a flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, runway 32, a flock of birds near the center line.",
+  "text2": "Tower bird chaser five, runway three two, a flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_2",
+  "cond": "10",
+  "first": "Tower, bird chaser 5, runway 32. A flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 5, runway 32. A flock of birds near the center line.",
+  "text2": "Tower, bird chaser five, runway three two. A flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_2",
+  "cond": "5",
+  "first": "Over bird chaser 5, runway 32, a flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Over bird chaser 5, runway 32, a flock of birds near the center line.",
+  "text2": "Over Bird Chaser Five, runway three two, a flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_3",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser five request to cross runway 27 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser five request to cross runway 27 at Bravo.",
+  "text2": "Tower, bird chaser five request to cross runway two seven at bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_3",
+  "cond": "10",
+  "first": "For Bird Chaser 5, request to cross runway 27 at Bravo.",
+  "hint_text": null,
+  "text": "For Bird Chaser 5, request to cross runway 27 at Bravo.",
+  "text2": "For Bird Chaser Five, request to cross runway two seven at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_3",
+  "cond": "5",
+  "first": "For Bird Chaser 5, request to cross runway 27 at Bravo.",
+  "hint_text": null,
+  "text": "For Bird Chaser 5, request to cross runway 27 at Bravo.",
+  "text2": "For Bird Chaser five, request to cross runway two seven at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_4",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 2 request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 2 request to enter runway 27 for FOD check.",
+  "text2": "Tower, Bird Chaser two, request to enter runway two seven for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_4",
+  "cond": "10",
+  "first": "Tower Bird Chaser 2 request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "Tower Bird Chaser 2 request to enter runway 27 for FOD check.",
+  "text2": "Tower Bird Chaser Two request to enter runway two seven for FOD.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Devansh_4",
+  "cond": "5",
+  "first": "Our bird chaser 2 request to enter runway 27 for FOD.",
+  "hint_text": null,
+  "text": "Our bird chaser 2 request to enter runway 27 for FOD.",
+  "text2": "Tower Bird Chaser Two request to enter runway two seven for FOD.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_0",
+  "cond": "clean",
+  "first": "Tower, bird chaser 5. Birds on runway 14, we are dispersing them.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 5. Birds on runway 14, we are dispersing them.",
+  "text2": "Tower, bird chaser five. Birds on runway one four, we are dispersing them.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_0",
+  "cond": "10",
+  "first": "Our bird chaser pilot, birds on runway 14. We are dispersing.",
+  "hint_text": null,
+  "text": "Our bird chaser pilot, birds on runway 14. We are dispersing.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_0",
+  "cond": "5",
+  "first": "For Bird Chaser 5, birds on runway 14, we are departing.",
+  "hint_text": null,
+  "text": "For Bird Chaser 5, birds on runway 14, we are departing.",
+  "text2": "For Bird Chaser Five, birds on runway one four, we are departing.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_1",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, heavy bird activity on runway 09.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, heavy bird activity on runway 09.",
+  "text2": "Tower, Bird Chaser five, heavy bird activity on runway zero nine.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_1",
+  "cond": "10",
+  "first": "However, Bird Chaser fired heavy bird activity on runway 09.",
+  "hint_text": null,
+  "text": "However, Bird Chaser fired heavy bird activity on runway 09.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_1",
+  "cond": "5",
+  "first": "However, Bird Chaser fired heavy bird activity on runway 09.",
+  "hint_text": null,
+  "text": "However, Bird Chaser fired heavy bird activity on runway 09.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_2",
+  "cond": "clean",
+  "first": "Tower, bird chaser 3, runway 27. A flock of birds near the center line.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 3, runway 27. A flock of birds near the center line.",
+  "text2": "Tower, bird chaser three, runway two seven. A flock of birds near the center line.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_2",
+  "cond": "10",
+  "first": "For Bird Chaser Street runway 27, a flock of birds near the centre.",
+  "hint_text": null,
+  "text": "For Bird Chaser Street runway 27, a flock of birds near the centre.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_2",
+  "cond": "5",
+  "first": "Before bird chaser 3, runway 27, a flock of birds may be sent away.",
+  "hint_text": null,
+  "text": "Before bird chaser 3, runway 27, a flock of birds may be sent away.",
+  "text2": "Before bird chaser three, runway two seven, a flock of birds may be sent away.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_3",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "text2": "Tower, Bird Chaser five, request to cross runway three two at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_3",
+  "cond": "10",
+  "first": "Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "hint_text": null,
+  "text": "Bird Chaser 5, request to cross runway 32 at Bravo.",
+  "text2": "Bird Chaser five, request to cross runway three two at Bravo.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_3",
+  "cond": "5",
+  "first": "Tower, bird chaser 5, request to cross runway 32 at ground.",
+  "hint_text": null,
+  "text": "Tower, bird chaser 5, request to cross runway 32 at ground.",
+  "text2": "Tower, bird chaser five request to cross runway three two at ground.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_4",
+  "cond": "clean",
+  "first": "Tower, Bird Chaser 1, request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 1, request to enter runway 27 for FOD check.",
+  "text2": "Tower, Bird Chaser One, request to enter runway two seven for FOD check.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_4",
+  "cond": "10",
+  "first": "Tower, Bird Chaser 1, request to enter runway 27 for FOD test.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 1, request to enter runway 27 for FOD test.",
+  "text2": "Tower, Bird Chaser One, request to enter runway two seven for FOD test.",
+  "hinted": false
+ },
+ {
+  "part": "E",
+  "id": "a11_Shubham_4",
+  "cond": "5",
+  "first": "For Bird Chaser, request to enter runway 27 for FOD check.",
+  "hint_text": null,
+  "text": "For Bird Chaser, request to enter runway 27 for FOD check.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_0",
+  "cond": "10",
+  "first": "हो बर्ड चीसर, पाय रनवे 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "हो बर्ड चीसर, पाय रनवे 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_0",
+  "cond": "5",
+  "first": "Our bird chaser file runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत नाही.",
+  "hint_text": null,
+  "text": "Our bird chaser file runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत नाही.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_1",
+  "cond": "10",
+  "first": "Overbird, Chaser, Four runway 3 2 च्या मध्यभागी पक्षी आहेत. सावध रहा!",
+  "hint_text": null,
+  "text": "Overbird, Chaser, Four runway 3 2 च्या मध्यभागी पक्षी आहेत. सावध रहा!",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_1",
+  "cond": "5",
+  "first": "For bird chaser, 4 runway 32 का मध्यभागी पक्षियाँ आवत।",
+  "hint_text": "हो, bird chaser. हो, runway 32 च्या मध्यभागी पक्षी आहेत. सावध!",
+  "text": "For bird chaser, 4 runway 32 का मध्यभागी पक्षियाँ आवत।",
+  "text2": "For bird chaser, four runway three two, the Madhya Bhagi पक्षी.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_2",
+  "cond": "10",
+  "first": "Four Bird Chaser 2, runway 27 ओलांडू का Bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "text": "Four Bird Chaser 2, runway 27 ओलांडू का Bravo वर थांबलो आहे.",
+  "text2": "फोर बर्ड चेसर टू, रनवे टू सेव्हन ओलांडू का? ब्रावो वर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_2",
+  "cond": "5",
+  "first": "Our bird chaser, Team 77, Orlando Bravo, work on.",
+  "hint_text": "Our bird chaser, team 77, Orlando का Bravo वर थांबलो आहे.",
+  "text": "Our bird chaser, Team 77, Orlando Bravo, work on.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_3",
+  "cond": "10",
+  "first": "Our bird chaser 2 runway 09 were FOD तपासण्याला जायचा परवानगी द्या.",
+  "hint_text": null,
+  "text": "Our bird chaser 2 runway 09 were FOD तपासण्याला जायचा परवानगी द्या.",
+  "text2": "Our bird chaser two runway zero nine were FOD तपासण्याला जायचा परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Avinash_3",
+  "cond": "5",
+  "first": "Our bird chaser 2 runway 09 वर FOD तपासायला जायचा, परवानगी द्या.",
+  "hint_text": null,
+  "text": "Our bird chaser 2 runway 09 वर FOD तपासायला जायचा, परवानगी द्या.",
+  "text2": "ओवर बर्ड चेसर टू रनवे ज़ीरो नाइन वर एफ ओ डी तपासण्याला जायका परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_0",
+  "cond": "10",
+  "first": "Tower Bird Chaser 3, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "Tower Bird Chaser 3, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "वर बर्ड चेसर थ्री रनवे टू सेव्हन वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_0",
+  "cond": "5",
+  "first": "हो बर Bird Chaser, तू runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "हो बर Bird Chaser, तू runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_1",
+  "cond": "10",
+  "first": "व bird chaser 4 runway 14 च्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "hint_text": null,
+  "text": "व bird chaser 4 runway 14 च्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "text2": "व बर्ड चेसर फोर रनवे वन फोर च्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_1",
+  "cond": "5",
+  "first": "Tower Bird Chaser, 4 runway 14 च्या मध्यभागी पक्की आहे. सावध राहा!",
+  "hint_text": "Tower bird chaser, 4 runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "text": "Tower bird chaser, 4 runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "text2": "टावर बर्ड चेसर फोर, रनवे वन फोर च्या मध्यभागी पक्की आहे. सावध राहा!",
+  "hinted": true
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_2",
+  "cond": "10",
+  "first": "4 Bird Chaser 1, runway 14, ओलांडुका Bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "text": "4 Bird Chaser 1, runway 14, ओलांडुका Bravo वर थांबलो आहे.",
+  "text2": "को बर्ड चेसर वन, रनवे वन फोर, ओलांडुका ब्रावोवर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_2",
+  "cond": "5",
+  "first": "Over bird chaser 1, runway 14, ओलांडिसा Bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "text": "Over bird chaser 1, runway 14, ओलांडिसा Bravo वर थांबलो आहे.",
+  "text2": "ओवरबर्ग चेसर वन, रनवे वन फोर, ओलांडिसा ब्रावोवर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_3",
+  "cond": "10",
+  "first": "ओव्हर बर्ड चेसर, तू रनवे 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "ओव्हर बर्ड चेसर, तू रनवे 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "ओव्हर बर्ड चेसर टू रनवे टू सेव्हन वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Riyaa_3",
+  "cond": "5",
+  "first": "हो बरं Bird Chaser जी, runway 27 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "हो बरं Bird Chaser जी, runway 27 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_0",
+  "cond": "10",
+  "first": "Bird Chaser 2, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "Bird Chaser 2, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "text2": "फॉर बर्ड चेसर टू, रनवे थ्री टू वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_0",
+  "cond": "5",
+  "first": "मोर bird chaser 2 runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "मोर bird chaser 2 runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "मोअर बर्ड चेसर टू रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_1",
+  "cond": "10",
+  "first": "Four Bird Chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hint_text": null,
+  "text": "Four Bird Chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "text2": "मोर बर्ड चेसर वन रनवे झिरो नाइन च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_1",
+  "cond": "5",
+  "first": "Our bird chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध आहे.",
+  "hint_text": null,
+  "text": "Our bird chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध आहे.",
+  "text2": "फॉरवर्ड बर्ड चेसर वन रनवे झिरो नाइन च्या मध्यभागी बक्षी आहे. सावध!",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_2",
+  "cond": "10",
+  "first": "4 Bird Chaser 5, runway 09. Olando, Bravo, worth a low eye.",
+  "hint_text": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "text": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "text2": "Four Bird Chaser five, runway zero nine. Olando ka Bravo, we're thumbnail ahead.",
+  "hinted": true
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_2",
+  "cond": "5",
+  "first": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "text": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "text2": "Four Bird Chaser five, runway zero nine. Olando का Bravo वर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_3",
+  "cond": "10",
+  "first": "आता Bird Chaser 3, runway 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "आता Bird Chaser 3, runway 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "आता बर्ड चेसर थ्री, रनवे टू सेव्हन वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Harshad_3",
+  "cond": "5",
+  "first": "4 bird chaser 3 runway 27 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "4 bird chaser 3 runway 27 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "text2": "फोर बर्ड चेसर थ्री, रनवे टू सेवन वर एफ ओ डी तपासायला जायचा आहे. परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_0",
+  "cond": "10",
+  "first": "टावर Bird Chaser 1, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "टावर Bird Chaser 1, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "टावर बर्ड चेसर वन रनवे टू सेव्हन वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_0",
+  "cond": "5",
+  "first": "Airport Bird Chaser 1, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "Airport Bird Chaser 1, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "एअरपोर्ट बर्ड चॅपर वन: रनवे टू सेव्हन वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_1",
+  "cond": "10",
+  "first": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहेत.",
+  "hint_text": null,
+  "text": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहेत.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_1",
+  "cond": "5",
+  "first": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहे.",
+  "hint_text": null,
+  "text": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहे.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_2",
+  "cond": "10",
+  "first": "4 Bird Chaser 5, runway 27. Orlando का Bravo बस थांगलो है।",
+  "hint_text": "4 birds chase up 5, runway 27. ओलांडू का Bravo वर थांबलो आहे.",
+  "text": "4 Bird Chaser 5, runway 27. Orlando का Bravo बस थांगलो है।",
+  "text2": "Four bird chaser five, runway two seven. Orlando का bravo बस थांगलो है।",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_2",
+  "cond": "5",
+  "first": "4 birds is a 5 runway 27, Orlando का Bravo बस था।",
+  "hint_text": "4 birds is a 5 runway 27 ओलांडू का Bravo व थांबलो.",
+  "text": "4 birds is a 5 runway 27 ओलांडू का Bravo व थांबलो.",
+  "text2": null,
+  "hinted": true
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_3",
+  "cond": "10",
+  "first": "Tower, Bird Chaser 2, runway 14 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "Tower, Bird Chaser 2, runway 14 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "text2": "टॉवर बर्ड चेसर टू, रनवे वन फोर वर एफ ओ डी तपासायला जायचे आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Prakash_3",
+  "cond": "5",
+  "first": "पर Bird Chaser 2, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "पर Bird Chaser 2, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "पर बर्ड चेसर टू रनवे वन फोर वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_0",
+  "cond": "10",
+  "first": "Tower Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "Tower Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "टावर बर्ड चेसर फोर, रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_0",
+  "cond": "5",
+  "first": "Our Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "Our Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "ओव्हर बर्ड चेसर फोर, रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_1",
+  "cond": "10",
+  "first": "Upper Bird Chaser 1, runway 14 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hint_text": null,
+  "text": "Upper Bird Chaser 1, runway 14 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "text2": "वर बर्ड चेसर वन रनवे वन फोर च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_1",
+  "cond": "5",
+  "first": "वर bird chaser 1, runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "hint_text": null,
+  "text": "वर bird chaser 1, runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "text2": "वर बर्ड चेसर वन रनवे वन फोरच्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_2",
+  "cond": "10",
+  "first": "Our Bird Chaser 1, runway 27, Olunduca Bravo, were thamblo i.",
+  "hint_text": "Our bird chaser 1, runway 27, Olando ka Bravo वर थांबलो आहे.",
+  "text": "Our Bird Chaser 1, runway 27, Olunduca Bravo, were thamblo i.",
+  "text2": "Our Bird Chaser one, runway two seven, Olunduca Bravo, were thamblo i.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_2",
+  "cond": "5",
+  "first": "Our Bird Chaser 1, runway 27, Olunduca Bravo, were thamblo aahe.",
+  "hint_text": "वर bird chaser 1, runway 27, ओलांडू का bravo वर थांबलो आहे.",
+  "text": "वर bird chaser 1, runway 27, ओलांडू का bravo वर थांबलो आहे.",
+  "text2": "Our Bird Chaser One runway two seven, Olunduca Bravo, were thamblo aahe.",
+  "hinted": true
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_3",
+  "cond": "10",
+  "first": "आपण Bird Chaser 3, runway 09 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "आपण Bird Chaser 3, runway 09 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "आपण बर्ड चेसर थ्री, रनवे झिरो नाइन वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Devansh_3",
+  "cond": "5",
+  "first": "4 Bird Chaser 3, runway 09 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "4 Bird Chaser 3, runway 09 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "text2": "फोर बर्ड चेसर थ्री, रनवे झिरो नाइन वर एफ ओ डी तपासायला जायचा आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_0",
+  "cond": "10",
+  "first": "Tower Bird Chaser 1, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "Tower Bird Chaser 1, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "text2": "टावर बर्ड चेसर वन, रनवे थ्री टू वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_0",
+  "cond": "5",
+  "first": "होवा Bird Chaser One, रनवे 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "text": "होवा Bird Chaser One, रनवे 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "पॉवर बर्ड चेसर वन, रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_1",
+  "cond": "10",
+  "first": "Tower Bird Chaser 3, runway 27 च्या मध्यभागी पक्षी आहे. सावध राहा!",
+  "hint_text": null,
+  "text": "Tower Bird Chaser 3, runway 27 च्या मध्यभागी पक्षी आहे. सावध राहा!",
+  "text2": "होवर बर्ड चेसर फ्री रनवे टू सेव्हन च्या मध्यभागी पक्षी आहे. सावध राहा!",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_1",
+  "cond": "5",
+  "first": "Bird Chaser 3, runway 27 च्या मध्यभागी पक्ष्या सावध.",
+  "hint_text": "Bird Chaser 3, runway 27 च्या मध्यभागी पक्षी आहे. सावध!",
+  "text": "Bird Chaser 3, runway 27 च्या मध्यभागी पक्षी आहे. सावध!",
+  "text2": "बर्ड चेसर थ्री, रनवे टू सेव्हनच्या मध्यभागी पक्षी आहे. सावध!",
+  "hinted": true
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_2",
+  "cond": "10",
+  "first": "For Bird Chaser 1, runway 09, Olando ka Bravo were thamblo.",
+  "hint_text": "For Bird Chaser 1, runway 09, Olando का Bravo वर थांबलो आहे.",
+  "text": "For Bird Chaser 1, runway 09, Olando ka Bravo were thamblo.",
+  "text2": "For Bird Chaser one, runway zero nine, Olando ka Bravo, work on lower.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_2",
+  "cond": "5",
+  "first": "For Bird Chaser 1, runway 09, Orlando, Bravo were thambled.",
+  "hint_text": "वर bird chaser 1, runway 09, ओलांडू का Bravo वर थांबलो आहे.",
+  "text": "वर bird chaser 1, runway 09, ओलांडू का Bravo वर थांबलो आहे.",
+  "text2": "For Bird Chaser one, runway zero nine, Orlando, Bravo were thambled.",
+  "hinted": true
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_3",
+  "cond": "10",
+  "first": "सर, Bird Chaser Four, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "सर, Bird Chaser Four, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "सर, बर्ड चेसर फोर, रनवे वन फोर वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "part": "R",
+  "id": "a10_Shubham_3",
+  "cond": "5",
+  "first": "सर, Bird Chaser 4, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "text": "सर, Bird Chaser 4, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "सर, बर्ड चेसर फोर, रनवे वन फोर वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ }
+]

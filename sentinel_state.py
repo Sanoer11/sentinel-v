@@ -24,7 +24,7 @@ Assumptions (written down, to be reviewed by an ATC professional)
   - A readback is expected within 10 s, and is paired with clearances up to 30 s old.
 """
 import re
-from sentinel_actions import analyse
+from sentinel_actions import analyse, _hits, STRONG
 from sentinel_parse import AIRLINES, AIRPORTS
 
 STRIPS = {
@@ -35,6 +35,22 @@ STRIPS = {
 INTERSECTING = {"VABB": [("09/27", "14/32")]}
 HOLD_TIME = {"LAND": 240, "TAKEOFF": 120, "LINEUP": 300, "CROSS": 120, "STOPPED": 600}
 OCCUPY = {"LAND", "TAKEOFF", "LINEUP", "CROSS"}
+# DEL_2023 10 dB (4 Nov): a clearance whose runway (or side) was lost, LOCATED by its readback, is kept and put
+# in the runway picture. Checked free on every saved transcript and scenario run by exp_a12.py.
+# A12 (4 Nov): readback check 0 missed / false RED 15 -> 15; 272 scenario replays 0 worse -> ON.
+# Extended the same night (HOLD_AS_CROSS noise 5): the readback may locate it whatever instruction it reads back,
+# if its runway fits the heard digits. Same free checks re-run; then NEW noise 10-14 (rule in exp_a12.py).
+LOCATE_FROM_READBACK = True
+# An UNIDENTIFIED clearance whose heard number fragments clearly cannot be the other aircraft ("9826" vs VTI725) is
+# not "maybe the same aircraft cleared twice": its conflict stays RED (DEL_2023 noise 8). Free checks: exp_a12.py.
+EXCLUDE_BY_NUMBER = True
+# "Runway vacated" heard as "Can we vacate it" (NORMAL_DEL noise 17, one voice): the stem form is OFF until A13.
+VACATE_STEM = False
+# misheard runway digit ("runway 39" for 29) located by a readback one digit away: free checks passed 4 Nov,
+# not yet seen on fresh noise -> A13 Part D measures it.
+RW_BAD_LOCATE = True
+VACATE_RE = r"\bVACATED\b"
+VACATE_STEM_RE = r"\bVACAT(ED|E|ING)\b"
 READBACK_DUE, READBACK_WINDOW = 10, 30
 MUST_READ_BACK = {"LAND", "TAKEOFF", "LINEUP", "CROSS", "HOLD_SHORT", "TAXI_HP"}
 
@@ -74,6 +90,31 @@ def _unknown(cs):
     return cs.startswith("UNIDENTIFIED")
 
 
+def _heard_numbers(normalized):
+    """Number fragments heard in a call that are NOT runway numbers ("Tara, 9826, cross runway 298R" -> {"9826"})."""
+    from sentinel_parse import NOT_CALLSIGN_BEFORE
+    # only where a callsign stands (ICAO: first words of a tower call, last words of a readback), never after
+    # runway / wind / QNH ... - the same positions anchor_callsign uses
+    toks = re.findall(r"[A-Z]+|\d+[A-Z]?", normalized.upper())
+    edge = set(range(min(3, len(toks)))) | set(range(max(0, len(toks) - 3), len(toks)))
+    return {toks[i] for i in sorted(edge) if toks[i].isdigit() and len(toks[i]) <= 5
+            and not (i > 0 and (toks[i - 1] in NOT_CALLSIGN_BEFORE or toks[i - 1] == "RUNWAY"))}
+
+
+def _could_be(nums, cs):
+    """Could an UNIDENTIFIED aircraft, of which only these number fragments were heard, be `cs`?
+    DEL_2023 10 dB noise 8 (4 Nov): crossing clearance for "Tara, 9826" (really VTI926), readback "Vistara 9 ...":
+    neither fragment can be VTI725's "725", so the crossing is NOT VTI725 cleared twice -> the conflict is real.
+    Kept deliberately loose (only a clear mismatch excludes): a fragment that contains, or is contained in, the
+    flight number, is one edit from it, or starts with the same digit -> "could be" (e.g. "15725", "7725", "775").
+    Nothing heard -> could be."""
+    from sentinel_parse import edit_distance
+    num = cs[3:] if cs[:3] in AIRLINES.values() else None
+    if not nums or not num:
+        return True
+    return any(n in num or num in n or edit_distance(n, num) <= 1 or n[0] == num[0] for n in nums)
+
+
 class RunwayEngine:
     def __init__(self, airport, traffic, phases=None):
         self.airport, self.traffic, self.phases = airport, set(traffic), dict(phases or {})
@@ -99,7 +140,7 @@ class RunwayEngine:
                 continue
             self.occ[s] = [o for o in self.occ[s] if not (o["cs"] == cs and (actions is None or o["action"] in actions))]
 
-    def _check_conflict(self, t, cs, action, rw, cond, hypothetical=False):
+    def _check_conflict(self, t, cs, action, rw, cond, hypothetical=False, nums=None):
         strip = strip_of(self.airport, rw)
         out = []
         for s in related_strips(self.airport, strip):
@@ -107,7 +148,10 @@ class RunwayEngine:
                 if o["cs"] == cs:
                     continue
                 lvl = _conflict_level(action, o["action"], cond)
-                if lvl and (_unknown(cs) or _unknown(o["cs"])) and _same_phase(action, o["action"]):
+                maybe_same = (_unknown(cs) and _could_be(nums, o["cs"])) or (_unknown(o["cs"]) and _could_be(o.get("nums"), cs))
+                if (_unknown(cs) and _unknown(o["cs"])) or (not EXCLUDE_BY_NUMBER and (_unknown(cs) or _unknown(o["cs"]))):
+                    maybe_same = True
+                if lvl and maybe_same and _same_phase(action, o["action"]):
                     # who it is is not known, and both clearances fit ONE aircraft (e.g. two take-off clearances):
                     # it may be the same aircraft cleared twice -> possible conflict, upgraded once identified.
                     # If one needs an airborne aircraft and the other one on the ground (BOM_2024: LAND vs TAKEOFF),
@@ -118,15 +162,20 @@ class RunwayEngine:
                     pre = f"IF {cs} DOES WHAT IT READ BACK: " if hypothetical else ""
                     out.append(self._alert(t, lvl, "RUNWAY_CONFLICT",
                                            f"{pre}RUNWAY CONFLICT on {where}: {cs} {action} {rw} while "
-                                           f"{o['cs']} {o['action']} {o['rw']} (cleared {t - o['t']:.0f} s ago)",
+                                           f"{o['cs']} {o['action']} {o['rw']} (cleared {t - o['t']:.0f} s ago"
+                                           # NORMAL_DEL noise 17 (5 Nov): "Runway vacated" heard as "Can we vacate it"
+                                           # -> the landing aircraft is still in the picture. Say WHY, so the
+                                           # controller can check it in one look (the level does not change).
+                                           + (f"; no 'runway vacated' heard from {o['cs']}" if o["action"] == "LAND"
+                                              and t - o["t"] > 60 else "") + ")",
                                            (cs, o["cs"]), rw=rw))
         return out
 
-    def _occupy(self, t, cs, action, rw):
+    def _occupy(self, t, cs, action, rw, nums=None):
         strip = strip_of(self.airport, rw)
         self._release(cs)                                   # one runway clearance per aircraft at a time
         self.occ.setdefault(strip, []).append({"cs": cs, "action": action, "rw": rw, "t": t,
-                                               "until": t + HOLD_TIME[action]})
+                                               "until": t + HOLD_TIME[action], "nums": set(nums or ())})
 
     # ---------------------------------------------------------------- the one entry point
     def call(self, t, channel, text, second_text=None, hinted=False):
@@ -143,7 +192,7 @@ class RunwayEngine:
         elif channel == "pilot":
             due = any(p["cs"] in (a["callsign"], None) and not p["answered"] and t - p["t"] <= READBACK_WINDOW
                       for p in self.pending)
-            if re.search(r"\bVACATED\b", a["normalized"].upper()) and a["callsign"] and not due \
+            if re.search(VACATE_STEM_RE if VACATE_STEM else VACATE_RE, a["normalized"].upper()) and a["callsign"] and not due \
                     and not any(x["action"] for x in a["instructions"]) and not a["call_actions"]:
                 # "Runway vacated, IFLY 5134" (10 dB: heard as "Report vacated. IFLY 5134"): the runway is free.
                 # NOT when a readback is due from this aircraft: "crossing 28, report vacated" with "crossing"
@@ -187,6 +236,19 @@ class RunwayEngine:
         bad = {p.split()[0] for p in a["problems"] if " does not fit " in p}
         ins = [(x["runway"], x["action"]) for x in a["instructions"]
                if x["valid"] and x["action"] and x["action"] not in bad]
+        # "ARF 725, runway 290, right. Cleared for takeoff." - the instruction was heard, the runway number was
+        # lost (glued 290). Keep the instruction; the readback may say WHICH runway (as for a lost side, below).
+        rw_unknown = []
+        if LOCATE_FROM_READBACK and not ins and not a["call_actions"] and not any(x["valid"] for x in a["instructions"]):
+            acts = {act for _, act, _, _ in _hits(a["normalized"].upper(), STRONG, "strong") if act in MUST_READ_BACK}
+            rw_unknown = sorted(acts) if len(acts) == 1 else []
+        # glued digits that were heard ("runway 291"): the readback's runway must start with them (29R fits 291)
+        glued = re.search(r"\bRUNWAY\s+(\d{3,})", a["normalized"].upper())
+        rw_digits = glued.group(1) if glued and rw_unknown else None
+        # a runway number that does not exist here ("hold short runway 39" at Delhi, said 29): one digit misheard.
+        # The readback's runway must be ONE digit away from it (29R vs 39) to locate the clearance.
+        rw_bad = sorted({x["runway"].rstrip("LRC") for x in a["instructions"] if not x["valid"]}) \
+            if rw_unknown and RW_BAD_LOCATE else []
         if not cs:
             # who it was for is not known, but SOMEONE was cleared onto that runway: it goes into the picture
             # as an unidentified aircraft (adding to the picture can only add alarms, never hide one).
@@ -194,10 +256,12 @@ class RunwayEngine:
             ph = f"UNIDENTIFIED (cleared at t={t:.0f}s)"
             for rw, act in ins:
                 if act in OCCUPY:
-                    out += self._check_conflict(t, ph, act, rw, cond)
-                    self._occupy(t, ph, act, rw)
-            if ins or a["call_actions"]:
-                self.pending.append({"t": t, "cs": None, "placeholder": ph, "ins": ins,
+                    out += self._check_conflict(t, ph, act, rw, cond, nums=_heard_numbers(a["normalized"]))
+                    self._occupy(t, ph, act, rw, nums=_heard_numbers(a["normalized"]))
+            if ins or a["call_actions"] or rw_unknown:
+                self.pending.append({"t": t, "cs": None, "placeholder": ph, "ins": ins, "rw_unknown": rw_unknown,
+                                     "nums": _heard_numbers(a["normalized"]),
+                                     "rw_digits": rw_digits,
                                      "call_actions": list(a["call_actions"]), "cond": cond,
                                      "answered": False, "overdue": False, "unclear": True, "analysis": a})
             return out
@@ -220,13 +284,29 @@ class RunwayEngine:
         partial = [(x["runway"], x["action"], sorted(r for r in rws if r.rstrip("LRC") == x["runway"] and r != x["runway"]))
                    for x in a["instructions"] if not x["valid"] and x["action"] and x["runway"].isdigit()]
         partial = [p for p in partial if p[2]]
-        unknown_ins = not ins and not partial and not a["call_actions"] and a["status"] == "FLAGGED" and bool(a["instructions"])
-        if ins or a["call_actions"] or unknown_ins or partial:
+        if partial:
+            rw_unknown, rw_bad = [], []
+        # (rw_unknown: the instruction WAS understood, only its runway was not - so it is not "unknown_ins")
+        unknown_ins = not ins and not partial and not rw_unknown and not a["call_actions"] and a["status"] == "FLAGGED" \
+            and bool(a["instructions"])
+        if ins or a["call_actions"] or unknown_ins or partial or rw_unknown:
             # unknown_ins: e.g. "hold short runway 29 as well" (side lost) - the readback can still be paired,
             # but it can never be confirmed against an instruction we did not understand
             self.pending.append({"t": t, "cs": cs, "ins": ins, "call_actions": list(a["call_actions"]),
                                  "cond": cond, "answered": False, "overdue": False, "ins_unknown": unknown_ins, "partial": partial,
-                                 "unclear": a["status"] == "FLAGGED", "analysis": a})
+                                 "rw_unknown": rw_unknown, "rw_digits": rw_digits, "rw_bad": rw_bad,
+                                 # unclear ONLY because the runway number was lost or misheard: callsign + instruction heard
+                                 "runway_only": bool(rw_unknown) and cs is not None
+                                                and all(pr == "no runway heard" or any(
+                                                    pr == f"runway {b}{sd} does not exist at {AIRPORTS[self.airport]['name']}"
+                                                    for b in rw_bad for sd in ("", "L", "R", "C")) for pr in a["problems"]),
+                                 "unclear": a["status"] == "FLAGGED", "analysis": a,
+                                 # unclear ONLY because the runway side was lost ("29 as well"): callsign and
+                                 # instruction were heard. If the readback settles the side, an INSTRUCTION
+                                 # mismatch is a real one (hold short vs crossing does not depend on the side).
+                                 "side_only": bool(partial) and cs is not None and a["status"] == "FLAGGED"
+                                              and all(any(pr == f"runway {d} does not exist at {AIRPORTS[self.airport]['name']}"
+                                                          for d, _, _ in partial) for pr in a["problems"])})
         return out
 
     # ---------------------------------------------------------------- readback
@@ -324,12 +404,34 @@ class RunwayEngine:
         # --- runway + instruction
         rb = {x["runway"]: x for x in a["instructions"]}
         rb_valid = {r for r, x in rb.items() if x["valid"]}
+        side_settled = bool(p.get("partial"))
+        located = []
+        rw_settled = bool(p.get("rw_unknown"))
+        for act in p.get("rw_unknown", []):
+            # HOLD_AS_CROSS 10 dB noise 5 (4 Nov): tower "hold short runway 291", readback "Crossing runway 29 right".
+            # The readback names ONE runway that fits the heard digits: that locates the clearance whatever
+            # instruction the pilot read back - comparing the instructions is the point of the check.
+            from sentinel_parse import edit_distance
+            got = [r for r in rb_valid
+                   if (not p.get("rw_digits") or p["rw_digits"].startswith(r.rstrip("LRC")))
+                   and (not p.get("rw_bad") or any(edit_distance(r.rstrip("LRC"), b) <= 1 for b in p["rw_bad"]))]
+            rw_settled = rw_settled and len(got) == 1
+            if len(got) == 1:
+                p["ins"] = p["ins"] + [(got[0], act)]
+                located.append((got[0], act))
+                heard_as = f"heard as {'/'.join(p['rw_bad'])} (no such runway)" if p.get("rw_bad") else "not heard"
+                missing.append(f"tower's runway {heard_as}; readback says {got[0]}, not cross-checked")
+            else:
+                missing.append("tower's runway not heard and the readback does not settle it")
+        p["rw_unknown"] = []
         for digits, act, cands in p.get("partial", []):
             got = [r for r in rb_valid if r in cands]
+            side_settled = side_settled and len(got) == 1
             if len(got) == 1:
                 # the readback says WHICH runway (29R). That cannot be cross-checked (the tower's side was lost),
                 # but it locates the clearance so its safety can be checked.
                 p["ins"] = p["ins"] + [(got[0], act)]
+                located.append((got[0], act))
                 missing.append(f"tower's runway side not heard ({digits}?); readback says {got[0]}, not cross-checked")
             else:
                 missing.append(f"tower's runway side not heard ({digits}?) and the readback does not settle it")
@@ -357,7 +459,12 @@ class RunwayEngine:
             missing.append("condition ('behind traffic') not read back")
         out = []
         who = p["cs"] or a["callsign"] or "unknown aircraft"
-        if wrong and p["unclear"]:
+        # HOLD_AS_CROSS at 10 dB (4 Nov, 2 of 5 noise recordings): tower "hold short runway 29 as well" (side
+        # lost), readback "crossing runway 29 right" -> was only AMBER "tower call unclear". The unclear part
+        # (side) is settled by the readback and has nothing to do with HOLD SHORT vs CROSSING: that stays RED.
+        clear_enough = ((p.get("side_only") and side_settled) or (p.get("runway_only") and rw_settled)) \
+            and all(w.startswith("INSTRUCTION MISMATCH") for w in wrong)
+        if wrong and p["unclear"] and not clear_enough:
             # the reference itself was not heard cleanly: say so, don't claim a pilot error
             out.append(self._alert(t, "AMBER", "READBACK_DIFFERS_UNCLEAR",
                                    f"{who}: readback differs from what was heard of the tower call ("
@@ -388,6 +495,15 @@ class RunwayEngine:
             out.append(self._alert(t, "RED" if urgent or hold_rw else "AMBER", "READBACK_INCOMPLETE",
                                    f"{who}: readback incomplete - " + "; ".join(missing) + " - confirm", (p["cs"], other),
                                    rw=hold_rw))
+        if not wrong and LOCATE_FROM_READBACK:
+            # a clearance located only by its readback (tower's runway or side lost) goes into the picture too:
+            # the pilot will act on what he read back. Adding to the picture can only add alarms, never hide one.
+            who_cs = p["cs"] or a["callsign"] or p.get("placeholder")
+            for rw, act in located:
+                if act in OCCUPY and who_cs:
+                    nums = (p.get("nums") or set()) | _heard_numbers(a["normalized"]) if _unknown(who_cs) else None
+                    out += self._check_conflict(t, who_cs, act, rw, p["cond"], nums=nums)
+                    self._occupy(p["t"], who_cs, act, rw, nums=nums)        # cleared when the TOWER spoke, not at the readback
         p["verdict"] = "MISMATCH" if wrong else ("INCOMPLETE" if missing else "MATCH")
         p["why"] = wrong + missing
         # the tower's callsign was lost but the readback says who it was: name the aircraft in the picture

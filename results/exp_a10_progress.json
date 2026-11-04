@@ -1,0 +1,482 @@
+[
+ {
+  "id": "a10_Avinash_0",
+  "cond": "10",
+  "first": "हो बर्ड चीसर, पाय रनवे 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "हो बर्ड चीसर, पाय रनवे 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Avinash_0",
+  "cond": "5",
+  "first": "Our bird chaser file runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत नाही.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Our bird chaser file runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत नाही.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Avinash_1",
+  "cond": "10",
+  "first": "Overbird, Chaser, Four runway 3 2 च्या मध्यभागी पक्षी आहेत. सावध रहा!",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Overbird, Chaser, Four runway 3 2 च्या मध्यभागी पक्षी आहेत. सावध रहा!",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Avinash_1",
+  "cond": "5",
+  "first": "For bird chaser, 4 runway 32 का मध्यभागी पक्षियाँ आवत।",
+  "hint_text": "हो, bird chaser. हो, runway 32 च्या मध्यभागी पक्षी आहेत. सावध!",
+  "hint_rejected": true,
+  "text": "For bird chaser, 4 runway 32 का मध्यभागी पक्षियाँ आवत।",
+  "text2": "For bird chaser, four runway three two, the Madhya Bhagi पक्षी.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Avinash_2",
+  "cond": "10",
+  "first": "Four Bird Chaser 2, runway 27 ओलांडू का Bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Four Bird Chaser 2, runway 27 ओलांडू का Bravo वर थांबलो आहे.",
+  "text2": "फोर बर्ड चेसर टू, रनवे टू सेव्हन ओलांडू का? ब्रावो वर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Avinash_2",
+  "cond": "5",
+  "first": "Our bird chaser, Team 77, Orlando Bravo, work on.",
+  "hint_text": "Our bird chaser, team 77, Orlando का Bravo वर थांबलो आहे.",
+  "hint_rejected": false,
+  "text": "Our bird chaser, Team 77, Orlando Bravo, work on.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Avinash_3",
+  "cond": "10",
+  "first": "Our bird chaser 2 runway 09 were FOD तपासण्याला जायचा परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Our bird chaser 2 runway 09 were FOD तपासण्याला जायचा परवानगी द्या.",
+  "text2": "Our bird chaser two runway zero nine were FOD तपासण्याला जायचा परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Avinash_3",
+  "cond": "5",
+  "first": "Our bird chaser 2 runway 09 वर FOD तपासायला जायचा, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Our bird chaser 2 runway 09 वर FOD तपासायला जायचा, परवानगी द्या.",
+  "text2": "ओवर बर्ड चेसर टू रनवे ज़ीरो नाइन वर एफ ओ डी तपासण्याला जायका परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Riyaa_0",
+  "cond": "10",
+  "first": "Tower Bird Chaser 3, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Tower Bird Chaser 3, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "वर बर्ड चेसर थ्री रनवे टू सेव्हन वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Riyaa_0",
+  "cond": "5",
+  "first": "हो बर Bird Chaser, तू runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "हो बर Bird Chaser, तू runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Riyaa_1",
+  "cond": "10",
+  "first": "व bird chaser 4 runway 14 च्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "व bird chaser 4 runway 14 च्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "text2": "व बर्ड चेसर फोर रनवे वन फोर च्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Riyaa_1",
+  "cond": "5",
+  "first": "Tower Bird Chaser, 4 runway 14 च्या मध्यभागी पक्की आहे. सावध राहा!",
+  "hint_text": "Tower bird chaser, 4 runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "hint_rejected": false,
+  "text": "Tower bird chaser, 4 runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "text2": "टावर बर्ड चेसर फोर, रनवे वन फोर च्या मध्यभागी पक्की आहे. सावध राहा!",
+  "hinted": true
+ },
+ {
+  "id": "a10_Riyaa_2",
+  "cond": "10",
+  "first": "को bird chaser 1, runway 14, ओलांडुका bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "को bird chaser 1, runway 14, ओलांडुका bravo वर थांबलो आहे.",
+  "text2": "को बर्ड चेसर वन, रनवे वन फोर, ओलांडुका ब्रावोवर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Riyaa_2",
+  "cond": "5",
+  "first": "Over bird chaser 1, runway 14, ओलांडिसा Bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Over bird chaser 1, runway 14, ओलांडिसा Bravo वर थांबलो आहे.",
+  "text2": "ओवर बर्ग चेसर वन, रनवे वन फोर, ओलांडिसा ब्रावोवर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Riyaa_3",
+  "cond": "10",
+  "first": "ओवर बर्ड चेसर, तू रनवे 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "ओवर बर्ड चेसर, तू रनवे 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "ओव्हर बर्ड चेसर टू रनवे टू सेव्हन वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Riyaa_3",
+  "cond": "5",
+  "first": "हो बरं Bird Chaser जी, runway 27 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "हो बरं Bird Chaser जी, runway 27 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Harshad_0",
+  "cond": "10",
+  "first": "Bird Chaser 2, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Bird Chaser 2, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "text2": "फॉर बर्ड चेसर टू, रनवे थ्री टू वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Harshad_0",
+  "cond": "5",
+  "first": "मोर bird chaser 2 runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "मोर bird chaser 2 runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "मोअर बर्ड चेसर टू रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Harshad_1",
+  "cond": "10",
+  "first": "Four Bird Chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Four Bird Chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "text2": "मोर बर्ड चेसर वन रनवे झिरो नाइन च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Harshad_1",
+  "cond": "5",
+  "first": "Our bird chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध आहे.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Our bird chaser 1 runway 09 च्या मध्यभागी पक्षी आहे, सावध आहे.",
+  "text2": "फॉरवर्ड बर्ड चेसर वन रनवे झिरो नाइन च्या मध्यभागी बक्षी आहे. सावध!",
+  "hinted": false
+ },
+ {
+  "id": "a10_Harshad_2",
+  "cond": "10",
+  "first": "4 Bird Chaser 5, runway 09. Olando, Bravo, worth a low eye.",
+  "hint_text": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "hint_rejected": false,
+  "text": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "text2": "Four Bird Chaser five, runway zero nine. Olando ka Bravo, we're thumbnail ahead.",
+  "hinted": true
+ },
+ {
+  "id": "a10_Harshad_2",
+  "cond": "5",
+  "first": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "4 Bird Chaser 5, runway 09. ओलांडू का Bravo वर थांबलो आहे.",
+  "text2": "Four Bird Chaser five, runway zero nine. Olando का Bravo वर थांबलो आहे.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Harshad_3",
+  "cond": "10",
+  "first": "आता Bird Chaser 3, runway 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "आता Bird Chaser 3, runway 27 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "आता बर्ड चेसर थ्री, रनवे टू सेव्हन वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Harshad_3",
+  "cond": "5",
+  "first": "4 bird chaser 3 runway 27 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "4 bird chaser 3 runway 27 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "text2": "फोर बर्ड चेसर थ्री, रनवे टू सेवन वर एफ ओ डी तपासायला जायचा आहे. परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_0",
+  "cond": "10",
+  "first": "टावर बर्ड चेसर 1, रनवे 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "टावर बर्ड चेसर 1, रनवे 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "टावर बर्ड चेसर वन रनवे टू सेव्हन वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_0",
+  "cond": "5",
+  "first": "Airport Bird Chaser 1, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Airport Bird Chaser 1, runway 27 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "एअरपोर्ट बर्ड चॅपर वन: रनवे टू सेव्हन वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_1",
+  "cond": "10",
+  "first": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहेत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहेत.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_1",
+  "cond": "5",
+  "first": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहे.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Tower bird chaser pilot, runway 14 च्या मध्यभागी पक्षी आहे.",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_2",
+  "cond": "10",
+  "first": "4 Bird Chaser 5, runway 27. Orlando का Bravo बस थांगलो है।",
+  "hint_text": "4 birds chase up 5, runway 27. ओलांडू का Bravo वर थांबलो आहे.",
+  "hint_rejected": false,
+  "text": "4 Bird Chaser 5, runway 27. Orlando का Bravo बस थांगलो है।",
+  "text2": "Four bird chaser five, runway two seven. Orlando का bravo बस थांगलो है।",
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_2",
+  "cond": "5",
+  "first": "4 birds is a 5 runway 27, Orlando का Bravo बस था।",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "4 birds is a 5 runway 27, Orlando का Bravo बस था।",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_3",
+  "cond": "10",
+  "first": "Tower, Bird Chaser 2, runway 14 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Tower, Bird Chaser 2, runway 14 वर FOD तपासायला जायचे आहे, परवानगी द्या.",
+  "text2": "टॉवर बर्ड चेसर टू, रनवे वन फोर वर एफ ओ डी तपासायला जायचे आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Prakash_3",
+  "cond": "5",
+  "first": "पर bird chaser 2 runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "पर bird chaser 2 runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "पर बर्ड चेसर टू रनवे वन फोर वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Devansh_0",
+  "cond": "10",
+  "first": "Tower Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Tower Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "टावर बर्ड चेसर फोर, रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Devansh_0",
+  "cond": "5",
+  "first": "Our Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Our Bird Chaser 4, runway 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "ओव्हर बर्ड चेसर फोर, रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Devansh_1",
+  "cond": "10",
+  "first": "Upper Bird Chaser 1, runway 14 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Upper Bird Chaser 1, runway 14 च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "text2": "वर बर्ड चेसर वन रनवे वन फोर च्या मध्यभागी पक्षी आहे, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Devansh_1",
+  "cond": "5",
+  "first": "वर bird chaser 1, runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "वर bird chaser 1, runway 14 च्या मध्यभागी पक्षी आहेत. सावध राहा!",
+  "text2": "वर बर्ड चेसर वन रनवे वन फोरच्या मध्यभागी पक्षी आहेत, सावध राहा.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Devansh_2",
+  "cond": "10",
+  "first": "Our Bird Chaser 1, runway 27, Olunduca Bravo, were thamblo i.",
+  "hint_text": "Our bird chaser 1, runway 27, Olando ka Bravo वर थांबलो आहे.",
+  "hint_rejected": false,
+  "text": "Our Bird Chaser 1, runway 27, Olunduca Bravo, were thamblo i.",
+  "text2": "Our Bird Chaser one, runway two seven, Olunduca Bravo, were thamblo i.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Devansh_2",
+  "cond": "5",
+  "first": "Our Bird Chaser 1, runway 27, Olunduca Bravo, were thamblo aahe.",
+  "hint_text": "वर bird chaser 1, runway 27, ओलांडू का bravo वर थांबलो आहे.",
+  "hint_rejected": false,
+  "text": "वर bird chaser 1, runway 27, ओलांडू का bravo वर थांबलो आहे.",
+  "text2": "Our Bird Chaser One runway two seven, Olunduca Bravo, were thamblo aahe.",
+  "hinted": true
+ },
+ {
+  "id": "a10_Devansh_3",
+  "cond": "10",
+  "first": "आपण Bird Chaser 3, runway 09 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "आपण Bird Chaser 3, runway 09 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "आपण बर्ड चेसर थ्री, रनवे झिरो नाइन वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Devansh_3",
+  "cond": "5",
+  "first": "4 Bird Chaser 3, runway 09 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "4 Bird Chaser 3, runway 09 वर FOD तपासायला जायचा आहे, परवानगी द्या.",
+  "text2": "फोर बर्ड चेसर थ्री, रनवे झिरो नाइन वर एफ ओ डी तपासायला जायचा आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Shubham_0",
+  "cond": "10",
+  "first": "Tower Bird Chaser 1, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Tower Bird Chaser 1, runway 32 वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "text2": "टावर बर्ड चेसर वन, रनवे थ्री टू वर खूप पक्षी दिसत आहेत. आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Shubham_0",
+  "cond": "5",
+  "first": "होवा Bird Chaser One, रनवे 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "होवा Bird Chaser One, रनवे 32 वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "text2": "पॉवर बर्ड चेसर वन, रनवे थ्री टू वर खूप पक्षी दिसत आहेत, आम्ही त्यांना हाकलत आहोत.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Shubham_1",
+  "cond": "10",
+  "first": "Our bird chaser C runway 27 च्या मध्यभागी पक्षी आहे. सावध राहा!",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "Our bird chaser C runway 27 च्या मध्यभागी पक्षी आहे. सावध राहा!",
+  "text2": null,
+  "hinted": false
+ },
+ {
+  "id": "a10_Shubham_1",
+  "cond": "5",
+  "first": "Bird Chaser 3, runway 27 च्या मध्यभागी पक्ष्या सावध.",
+  "hint_text": "Bird Chaser 3, runway 27 च्या मध्यभागी पक्षी आहे. सावध!",
+  "hint_rejected": false,
+  "text": "Bird Chaser 3, runway 27 च्या मध्यभागी पक्षी आहे. सावध!",
+  "text2": "बर्ड चेसर थ्री, रनवे टू सेव्हनच्या मध्यभागी पक्षी आहे. सावध!",
+  "hinted": true
+ },
+ {
+  "id": "a10_Shubham_2",
+  "cond": "10",
+  "first": "For Bird Chaser 1, runway 09, Olando ka Bravo were thamblo.",
+  "hint_text": "For Bird Chaser 1, runway 09, Olando का Bravo वर थांबलो आहे.",
+  "hint_rejected": false,
+  "text": "For Bird Chaser 1, runway 09, Olando ka Bravo were thamblo.",
+  "text2": "For Bird Chaser one, runway zero nine, Olando ka Bravo were thamblo.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Shubham_2",
+  "cond": "5",
+  "first": "For Bird Chaser 1, runway 09, Orlando, Bravo were thambled.",
+  "hint_text": "वर bird chaser 1, runway 09, ओलांडू का bravo वर थांबलो आहे.",
+  "hint_rejected": false,
+  "text": "वर bird chaser 1, runway 09, ओलांडू का bravo वर थांबलो आहे.",
+  "text2": "For Bird Chaser one, runway zero nine, Orlando, Bravo were thambled.",
+  "hinted": true
+ },
+ {
+  "id": "a10_Shubham_3",
+  "cond": "10",
+  "first": "सर, Bird Chaser Four, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "सर, Bird Chaser Four, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "सर, बर्ड चेसर फोर, रनवे वन फोर वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ },
+ {
+  "id": "a10_Shubham_3",
+  "cond": "5",
+  "first": "सर, Bird Chaser 4, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "hint_text": null,
+  "hint_rejected": false,
+  "text": "सर, Bird Chaser 4, runway 14 वर FOD तपासायला जायचं आहे, परवानगी द्या.",
+  "text2": "सर, बर्ड चेसर फोर, रनवे वन फोर वर एफ ओ डी तपासायला जायचं आहे, परवानगी द्या.",
+  "hinted": false
+ }
+]

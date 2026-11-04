@@ -1,0 +1,1462 @@
+{
+ "rows": [
+  {
+   "id": "a9A_Avinash_0",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर 2, रनवे 32 वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर 2 रनवे 32 वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर 2, रनवे 32 वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर टू रनवे थ्री टू वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Avinash_0",
+   "cond": "10",
+   "first": "For Bird Chaser, the runway 32 were poshia. The taxiway Charlie was somewhere.",
+   "hint_text": "For bird chaser, the runway 32 were पक्षी आहे आणि taxiway 40 वर थांबले.",
+   "text": "For bird chaser, the runway 32 were पक्षी आहे आणि taxiway 40 वर थांबले.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9A_Avinash_0",
+   "cond": "5",
+   "first": "4 bird chaser 2, runway 3 to a taxiway. Miss taxiway Charlie, 1 niner.",
+   "hint_text": "4 bird chaser 2, runway 32, a taxiway. This taxiway Charlie was.",
+   "text": "4 bird chaser 2, runway 3 to a taxiway. Miss taxiway Charlie, 1 niner.",
+   "text2": "Four bird chaser two, runway three two, a taxiway. In fact, taxiway Charlie was here.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Avinash_1",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर टू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर टू रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर टू रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर टू रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Avinash_1",
+   "cond": "10",
+   "first": "Our bird chaser 2 runway 09 वर पक्षी आहेत, मी taxiway Charlie's वर थांबलो.",
+   "hint_text": "Power Bird Chaser 2 runway 09 वर पक्षी आहेत. मी taxiway Charlie's वर थांबलो.",
+   "text": "Our bird chaser 2 runway 09 वर पक्षी आहेत, मी taxiway Charlie's वर थांबलो.",
+   "text2": "पॉवर बर्ड चेसर टू रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीज वर थांबलो.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Avinash_1",
+   "cond": "5",
+   "first": "Tower bird chaser 2, runway 09, work up here. Please activate Charlie's word 11.",
+   "hint_text": "Our bird chaser team, runway 09, were पक्षी आहे. Please activate Charlie's bird signal.",
+   "text": "Our bird chaser team, runway 09, were पक्षी आहे. Please activate Charlie's bird signal.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9A_Avinash_2",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फोर, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फोर, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फोर, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Avinash_2",
+   "cond": "10",
+   "first": "Over bird chaser 4, mala runway 3 to Olandica parvan gidhe.",
+   "hint_text": "Over bird, seafar sports, मला runway 32 ओलांडायचा परवानगी द्या.",
+   "text": "Over bird, seafar sports, मला runway 32 ओलांडायचा परवानगी द्या.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9A_Avinash_2",
+   "cond": "5",
+   "first": "Our bird chaser code, Mala Ranji 32, Olana. I can't. Parvanji do.",
+   "hint_text": "Our bird chaser को मला runway 32 ओलांडायचा परवानगी दे.",
+   "text": "Our bird chaser को मला runway 32 ओलांडायचा परवानगी दे.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9A_Avinash_3",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर टू, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर टू, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर टू, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर टू, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Avinash_3",
+   "cond": "10",
+   "first": "Our bird chaser crew, Mala runway 32, Olandica, for one year.",
+   "hint_text": "Our bird chaser crew, Mala runway 32, Olandica, parvan viya.",
+   "text": "Our bird chaser crew, Mala runway 32, Olandica, for one year.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9A_Avinash_3",
+   "cond": "5",
+   "first": "Our bird chaser crew, Mala runway 32, Air India, for 100.",
+   "hint_text": "Our bird chaser crew, Mala runway 320, land. I can't.",
+   "text": "Our bird chaser crew, Mala runway 32, Air India, for 100.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Avinash",
+   "cond": "clean",
+   "first": "Akasa Air niner 208 runway 29 left cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air niner 208 runway 29 left cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Avinash",
+   "cond": "10",
+   "first": "Casa Air 908, runway 29 left, cleared to land.",
+   "hint_text": null,
+   "text": "Casa Air 908, runway 29 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Avinash",
+   "cond": "5",
+   "first": "Casa Air 908, runway 29 left, cleared to land.",
+   "hint_text": null,
+   "text": "Casa Air 908, runway 29 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Avinash",
+   "cond": "clean",
+   "first": "I fly 2051, cross runway 2 niner, right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "I fly 2051, cross runway 2 niner, right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Avinash",
+   "cond": "10",
+   "first": "Flight 2051, cross runway 29, is right at Bravo. Report vacated.",
+   "hint_text": null,
+   "text": "Flight 2051, cross runway 29, is right at Bravo. Report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Avinash",
+   "cond": "5",
+   "first": "Fly 3051, cross runway 3 niner, right at Bravo. Report vacated.",
+   "hint_text": null,
+   "text": "Fly 3051, cross runway 3 niner, right at Bravo. Report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Avinash",
+   "cond": "clean",
+   "first": "Line up and wait, runway 27. Air India 9597.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 9597.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Avinash",
+   "cond": "10",
+   "first": "Spin up and wait, runway 27, Air India 90597.",
+   "hint_text": null,
+   "text": "Spin up and wait, runway 27, Air India 90597.",
+   "text2": "Spin up and wait, runway two seven. Air India nine eight five nine seven.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Avinash",
+   "cond": "5",
+   "first": "Line up and wait runway 27, Air India -597.",
+   "hint_text": null,
+   "text": "Line up and wait runway 27, Air India -597.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Avinash",
+   "cond": "clean",
+   "first": "टावर, follow me to runway 29 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "hint_text": "टॉवर, फॉलो मी टू रनवे 29 left क्रॉस करना है, Bravo पे hold कर रहा हूँ।",
+   "text": "टावर, follow me to runway 29 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Avinash",
+   "cond": "10",
+   "first": "सर, follow me to runway 29 left cross runway, Bravo पे hold कर रहा हूँ।",
+   "hint_text": "सर, follow me to runway 29 left cross runway, Bravo पे hold कर रहा हूँ।",
+   "text": "सर, follow me to runway 29 left cross runway, Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Avinash",
+   "cond": "5",
+   "first": "Hello, follow me please. Runway 29 left, top 10 Bravo पे hold कर रहा हूँ।",
+   "hint_text": "Hello, follow me please. Runway 29 left, top 10 Bravo पे hold short.",
+   "text": "Hello, follow me please. Runway 29 left, top 10 Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Avinash",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, फोर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर, फोर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फोर, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Avinash",
+   "cond": "10",
+   "first": "Hello, Bird Chaser 4, Mala runway 27, Olundai. Can I give permission?",
+   "hint_text": "Hello Bird Chaser, 4. मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "Hello Bird Chaser, 4. मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "Hello, Bird Chaser four, Mala runway two seven, Olondai. Can I give permission?",
+   "hinted": true
+  },
+  {
+   "id": "a9B_force_Avinash",
+   "cond": "5",
+   "first": "Go Bird Chaser 4, मला runway 37 ओलांडायचा परवानगी द्या.",
+   "hint_text": "हो, Bird Chaser 4, मला runway 37 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "Go Bird Chaser 4, मला runway 37 ओलांडायचा परवानगी द्या.",
+   "text2": "गो गो चेसर फोर, मला रनवे थ्री सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_0",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर 5, रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर 5, रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर 5, रनवे 09 वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर फाइव्ह, रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_0",
+   "cond": "10",
+   "first": "Our bird chaser 5, runway 09, were parked here. Please taxiway Charlie 100.",
+   "hint_text": "हॉट Bird Chaser 5, runway 09 वर पक्षी आहेत, please taxiway Charlie 1 वर थांबवा.",
+   "text": "हॉट Bird Chaser 5, runway 09 वर पक्षी आहेत, please taxiway Charlie 1 वर थांबवा.",
+   "text2": "हॉट बर्ड चेसर फाइव्ह, रनवे झिरो नाइन वर पच किया है. ली टॅक्सीवे चार्लीज वर थांबलो.",
+   "hinted": true
+  },
+  {
+   "id": "a9A_Riyaa_0",
+   "cond": "5",
+   "first": "Our bird chaser 5, runway 09, were positioned. Please taxiway Charlie bird number 5.",
+   "hint_text": "For bird chaser 5, runway 09 वर पक्षी आहे, please taxiway Charlie वर थांबवा.",
+   "text": "For bird chaser 5, runway 09 वर पक्षी आहे, please taxiway Charlie वर थांबवा.",
+   "text2": "Our bird chaser five runway zero nine were occupied. Please taxiway Charlie bird number.",
+   "hinted": true
+  },
+  {
+   "id": "a9A_Riyaa_1",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, वन रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर, रनवे 14 वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर, वन रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे 40 वर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर वन, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_1",
+   "cond": "10",
+   "first": "For Bird Chaser 1, runway 14 वर पक्की आहे, please taxiway Charlie जवळ थांबलोय.",
+   "hint_text": "For Bird Chaser 1, runway 14 वर पक्षी आहेत, please taxiway Charlie जवळ थांबवा.",
+   "text": "For Bird Chaser 1, runway 14 वर पक्षी आहेत, please taxiway Charlie जवळ थांबवा.",
+   "text2": "फोर बर्ड चेसर वन, रनवे वन फोर वर पक्की आहे, प्लीज टॅक्सीवे चार्ली जवळ थांबलोय.",
+   "hinted": true
+  },
+  {
+   "id": "a9A_Riyaa_1",
+   "cond": "5",
+   "first": "हवा bird chaser 1, runway 14 वर पक्षी आहे, please taxiway 40 वर थांबा.",
+   "hint_text": "Tower, Bird Chaser 1, runway 14 वर पक्षी आहेत, please taxiway 40 वर थांबा.",
+   "text": "हवा bird chaser 1, runway 14 वर पक्षी आहे, please taxiway 40 वर थांबा.",
+   "text2": "टावर बर्ड चेसर वन, रनवे वन फोर वर पक्षी आहे, प्लीज टॅक्सीवे चाळीस वर थांबवा.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_2",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चीसर वन, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चीसर वन, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चीसर वन, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_2",
+   "cond": "10",
+   "first": "हो Bird Chaser One, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो Bird Chaser One, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "हो Bird Chaser One, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "हो बर्ड चेसर वन, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_2",
+   "cond": "5",
+   "first": "हो Bird Chaser 1, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो Bird Chaser 1, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "हो Bird Chaser 1, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "हो बर्ड चेसर वन, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_3",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर वन, मला रनवे २७ ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर वन, मला रनवे २७ ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर वन, मला रनवे २७ ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर वन, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_3",
+   "cond": "10",
+   "first": "व Bird Chaser 1, मला runway 27 ओलांडायचं आहे, परवानगी द्या.",
+   "hint_text": "व Bird Chaser 1, मला runway 27 ओलांडायचं आहे, परवानगी द्या.",
+   "text": "व Bird Chaser 1, मला runway 27 ओलांडायचं आहे, परवानगी द्या.",
+   "text2": "व बर्ड चेसर वन, मला रनवे टू सेव्हन ओलांडायचं आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Riyaa_3",
+   "cond": "5",
+   "first": "Hello Bird Chaser 1, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "Hello Bird Chaser 1, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "Hello Bird Chaser 1, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "अच्छा बर्ड चेसर वन, मला रनवे टू सेव्हन ओलांडायचं आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Riyaa",
+   "cond": "clean",
+   "first": "Akasa Air 1444, runway 2 niner left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 1444, runway 2 niner left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Riyaa",
+   "cond": "10",
+   "first": "Akasa Air 1444, runway 2, 9 left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 1444, runway 2, 9 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Riyaa",
+   "cond": "5",
+   "first": "Akasa Air 1444, runway 29 left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 1444, runway 29 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Riyaa",
+   "cond": "clean",
+   "first": "IFLY 8848, cross runway 2 niner right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "IFLY 8848, cross runway 2 niner right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Riyaa",
+   "cond": "10",
+   "first": "FLY 8848, cross runway 2, niner right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "FLY 8848, cross runway 2, niner right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Riyaa",
+   "cond": "5",
+   "first": "FL Y 884A, cross runway 2, niner right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "FL Y 884A, cross runway 2, niner right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Riyaa",
+   "cond": "clean",
+   "first": "Line up and wait, runway 27, Air India 4397.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27, Air India 4397.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Riyaa",
+   "cond": "10",
+   "first": "Line up and wait, runway 27. Air India 4397.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 4397.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Riyaa",
+   "cond": "5",
+   "first": "Line up and wait, runway 27. Air India 4397.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 4397.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Riyaa",
+   "cond": "clean",
+   "first": "टावर, फॉलो मी, 1 runway 29 left क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "hint_text": "टावर, फॉलो मी, 1 runway 29 left क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "text": "टावर, फॉलो मी, 1 runway 29 left क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Riyaa",
+   "cond": "10",
+   "first": "टावर, follow me, 1 runway 29 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "hint_text": "टावर, follow me. 1 runway 29 left cross करना है, Bravo पे hold कर रहा हूँ.",
+   "text": "टावर, follow me, 1 runway 29 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Riyaa",
+   "cond": "5",
+   "first": "हवा, follow me। 1 runway 29 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "hint_text": "However, follow me. 1 runway 29 left cross करना है. Bravo पे hold कर रहा हूँ.",
+   "text": "हवा, follow me। 1 runway 29 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Riyaa",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फोर, मला रनवे 2701 ला जायचं आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, मला रनवे 2701 ला जायचं आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फोर, मला रनवे 2701 ला जायचं आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फोर, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Riyaa",
+   "cond": "10",
+   "first": "Good Bird Chaser 4, मला runway 27 all-on-di चा आहे, परवानगी द्या.",
+   "hint_text": "Good bird chaser, for मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "Good bird chaser, for मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9B_force_Riyaa",
+   "cond": "5",
+   "first": "Tower Bird Chaser 4, मला runway 27 online द्यायचा आहे, परवानगी द्या.",
+   "hint_text": "Tower Bird Chaser Force, मला runway 27 online जायचा आहे, परवानगी द्या.",
+   "text": "Tower Bird Chaser 4, मला runway 27 online द्यायचा आहे, परवानगी द्या.",
+   "text2": "टावर बर्ड चेसर पोस्ट, मला रनवे थ्री सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_0",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर टू रनवे टू सेव्हन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर टू रनवे टू सेव्हन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर टू रनवे टू सेव्हन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर टू रनवे टू सेवन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_0",
+   "cond": "10",
+   "first": "Over bird chaser 2, runway 271. पक्षी आहे, मी taxiway चार्लीजवर थांबलो.",
+   "hint_text": "Our bird chaser 2, runway 271, पक्षी आहे. मी taxiway Charlie's वर थांबलो.",
+   "text": "Over bird chaser 2, runway 271. पक्षी आहे, मी taxiway चार्लीजवर थांबलो.",
+   "text2": "Over bird chaser two, runway two seven. What पक्षी आहे? मी taxiway चार्लीज वर्क थांबलो.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_0",
+   "cond": "5",
+   "first": "For bird chaser 2, runway 27 were पक्षी आहे. मी taxiway Charlie's bird थांबलं.",
+   "hint_text": "For bird chaser 2, runway 27 वर पक्षी आहे. मी taxiway Charlie's bird थांबलो.",
+   "text": "For bird chaser 2, runway 27 were पक्षी आहे. मी taxiway Charlie's bird थांबलं.",
+   "text2": "फॉर बर्ड चेसर टू, रनवे टू सेव्हनवर पक्षी आहे. मी टॅक्सीवे चार्ली बर्ड थांबला.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_1",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, वन रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर, वन रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर, वन रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर वन, रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_1",
+   "cond": "10",
+   "first": "ओर Bird Chaser 1, runway 09 वर पक्षी आहेत, मी taxiway Charlie's World थांबलो आहे.",
+   "hint_text": "ओर Bird Chaser 1, runway 09 वर पक्षी आहेत, मी taxiway Charlie's World थांबलो आहे.",
+   "text": "ओर Bird Chaser 1, runway 09 वर पक्षी आहेत, मी taxiway Charlie's World थांबलो आहे.",
+   "text2": "ओर बर्ड चेसर वन, रनवे झिरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीज वर थांबलो आहे.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_1",
+   "cond": "5",
+   "first": "Our bird chaser 1, runway 09, were पक्षी आत. मी taxiway Charlie's bird sound आहे.",
+   "hint_text": "Our bird chaser 1, runway 09 वर पक्षी आहेत. मी taxiway Charlie's bird sound आहे.",
+   "text": "Our bird chaser 1, runway 09, were पक्षी आत. मी taxiway Charlie's bird sound आहे.",
+   "text2": "Our bird chaser one, runway zero nine, were पक्षी. After me taxiway Charlie's bird sounded.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_2",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर टू, मला रनवे 14 ऑलँडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर टू, मला रनवे 14 ऑलँडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर टू, मला रनवे 14 ऑलँडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर टू, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_2",
+   "cond": "10",
+   "first": "4 Bird Chaser 2, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "Four Bird Chaser Two, मला runway 14 all-and-I चा आहे, परवानगी द्या.",
+   "text": "4 Bird Chaser 2, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "फोर बर्ड चेसर टू, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_2",
+   "cond": "5",
+   "first": "Over Bird Chaser 2, मला runway 14 all-out द्यायचा आहे. परवानगी द्या.",
+   "hint_text": "Over Bird Chaser 2, मला runway 14 all-out जायचा आहे, परवानगी द्या.",
+   "text": "Over Bird Chaser 2, मला runway 14 all-out द्यायचा आहे. परवानगी द्या.",
+   "text2": "ओवर बर्ड चेसर टू, मला रनवे वन फोर ऑल अँड आयचा परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_3",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फोर, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फोर, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फोर, मला रनवे झिरो नाइन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_3",
+   "cond": "10",
+   "first": "हो Bird Chaser 4, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो Bird Chaser 4, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "हो Bird Chaser 4, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "हो बर्ड चेसर, मला रनवे झिरो नाइन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Harshad_3",
+   "cond": "5",
+   "first": "सर Bird Chaser, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "सर Bird Chaser, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "सर Bird Chaser, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Harshad",
+   "cond": "clean",
+   "first": "Akasa Air 6874, runway 29 left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 6874, runway 29 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Harshad",
+   "cond": "10",
+   "first": "Akasa Air 6874, runway 2, 9er left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 6874, runway 2, 9er left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Harshad",
+   "cond": "5",
+   "first": "Akasa Air 6874, runway 29 left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 6874, runway 29 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Harshad",
+   "cond": "clean",
+   "first": "I fly 7468, cross runway 290, right at Bravo. Report vacated.",
+   "hint_text": null,
+   "text": "I fly 7468, cross runway 290, right at Bravo. Report vacated.",
+   "text2": "I fly irl ight cross runway two niner, right at Bravo, report vacated.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Harshad",
+   "cond": "10",
+   "first": "I fly 7468, cross runway 290, writer Bravo, report vacated.",
+   "hint_text": null,
+   "text": "I fly 7468, cross runway 290, writer Bravo, report vacated.",
+   "text2": "I fly seven four six eight, cross runway two niner, writer Bravo, report vacated.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Harshad",
+   "cond": "5",
+   "first": "I fly 7468, cross runway 290, write a Bravo report vacated.",
+   "hint_text": null,
+   "text": "I fly 7468, cross runway 290, write a Bravo report vacated.",
+   "text2": "I fly seven four six eight, cross runway two niner, write a Bravo, report vacated.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Harshad",
+   "cond": "clean",
+   "first": "Line up and wait, runway 27, Air India 11905.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27, Air India 11905.",
+   "text2": "Line up and wait, runway two seven, Air India one one nine oh five.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Harshad",
+   "cond": "10",
+   "first": "Line up and wait, runway 27, Air India 1195.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27, Air India 1195.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Harshad",
+   "cond": "5",
+   "first": "Line up and wait, runway 27, Air India 1195.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27, Air India 1195.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Harshad",
+   "cond": "clean",
+   "first": "टावर, फॉलो मी 3, रनवे 11 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "hint_text": "टावर, फॉलो मी 3, रनवे 11 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "text": "टावर, फॉलो मी 3, रनवे 11 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Harshad",
+   "cond": "10",
+   "first": "Tower, follow me. Tree runway 11 right cross करना है. Bravo पे hold कर रहा हूँ.",
+   "hint_text": "power follow me, 3 runway 11 right cross करना है। Bravo पे hold कर रहा हूँ।",
+   "text": "Tower, follow me. Tree runway 11 right cross करना है. Bravo पे hold कर रहा हूँ.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Harshad",
+   "cond": "5",
+   "first": "But follow me, please. Runway 11, right cross करना है। Bravo पे hold short करना है।",
+   "hint_text": "पर follow me, श्री runway 11 right cross करना, bravo पे hold short करना।",
+   "text": "But follow me, please. Runway 11, right cross करना है। Bravo पे hold short करना है।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Harshad",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फोर, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Harshad",
+   "cond": "10",
+   "first": "हो Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "हो Bird Chaser, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Harshad",
+   "cond": "5",
+   "first": "हो Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो Bird Chaser, हो. मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "हो Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "ओह बर्ड चेसर स्पोर्ट, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_0",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फाइव्ह, रनवे थ्री टू वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर फाइव्ह, रनवे थ्री टू वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर फाइव्ह, रनवे थ्री टू वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर फाइव्ह, रनवे थ्री टू वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_0",
+   "cond": "10",
+   "first": "Four Bird Chaser 5, runway 32 वर पक्षी आहेत, please taxiway Charlie जवळ थांबवा.",
+   "hint_text": "Four Bird Chaser 5, runway 32 वर पक्षी आहेत, please taxiway Charlie जवळ थांबवा.",
+   "text": "Four Bird Chaser 5, runway 32 वर पक्षी आहेत, please taxiway Charlie जवळ थांबवा.",
+   "text2": "फोर बर्ड चेसर फाइव्ह, रनवे थ्री टू वर पक्षी आहेत, प्लीज टॅक्सीवे चार्लीज वर थांबवा.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_0",
+   "cond": "5",
+   "first": "For Bird Chaser pilot, runway 32 were first year, please activate Charlie's voice radio.",
+   "hint_text": "For Bird Chaser pilot, runway 32 वर पक्षी आहे, please activate Charlie's voice handle.",
+   "text": "For Bird Chaser pilot, runway 32 वर पक्षी आहे, please activate Charlie's voice handle.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9A_Prakash_1",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फोर, रनवे 32 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलो आहे.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, रनवे 32 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलो आहे.",
+   "text": "टॉवर बर्ड चेसर फोर, रनवे 32 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलो आहे.",
+   "text2": "टॉवर बर्ड चेसर फोर, रनवे थ्री टू वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलो आहे.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_1",
+   "cond": "10",
+   "first": "हॉवर Bird Chaser 2, रनवे 32 वर पक्षी आहेत, मी taxiway Charlie जवळ थांबलो.",
+   "hint_text": "हॉवर Bird Chaser 2, रनवे 32 वर पक्षी आहेत, मी taxiway Charlie जवळ थांबलो.",
+   "text": "हॉवर Bird Chaser 2, रनवे 32 वर पक्षी आहेत, मी taxiway Charlie जवळ थांबलो.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_1",
+   "cond": "5",
+   "first": "Tower Bird Chaser, ते runway 32 वर taxi आहे, please taxiway Charlie चा खाली आहे.",
+   "hint_text": "Tower bird chaser बोलत आहे, runway 32 वर पक्षी आहेत, please taxiway Charlie चा खाली आहे.",
+   "text": "Tower bird chaser बोलत आहे, runway 32 वर पक्षी आहेत, please taxiway Charlie चा खाली आहे.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9A_Prakash_2",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, 1. मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर, 1. मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर, 1. मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर वन, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_2",
+   "cond": "10",
+   "first": "हो बर्ड चेसर वन, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो Bird Chaser 1, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "हो बर्ड चेसर वन, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "फोर बर्ड चेसर वन, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_2",
+   "cond": "5",
+   "first": "For Bird Chaser 1, मला runway 37 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "For bird chaser 1, मला runway 37 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "For Bird Chaser 1, मला runway 37 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "फॉर बर्ड चेसर वन, मला रनवे टू सेवन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_3",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फाइव्ह, मला रनवे झिरो नाइन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_3",
+   "cond": "10",
+   "first": "ओवर Bird Chaser 5, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो बर Bird Chaser, पाईक, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "ओवर Bird Chaser 5, मला रनवे 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "ओवर बर्ड चेसर स्पाइक, मला रनवे झिरो नाइन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Prakash_3",
+   "cond": "5",
+   "first": "For Bird Chaser file, मला runway 09 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "For bird chaser file, मला runway 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "For Bird Chaser file, मला runway 09 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Prakash",
+   "cond": "clean",
+   "first": "Akasa Air 2168, runway 2 niner left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 2168, runway 2 niner left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Prakash",
+   "cond": "10",
+   "first": "Akasa Air 2168, runway 2, niner left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 2168, runway 2, niner left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Prakash",
+   "cond": "5",
+   "first": "Akasa Air 2168, runway 2, 9er left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 2168, runway 2, 9er left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Prakash",
+   "cond": "clean",
+   "first": "I fly 7666, cross runway 29er, right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "I fly 7666, cross runway 29er, right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Prakash",
+   "cond": "10",
+   "first": "Fly 7666, cross runway 29er, right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "Fly 7666, cross runway 29er, right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Prakash",
+   "cond": "5",
+   "first": "Fly 766, cross runway 290, by Jet Bravo report vacated.",
+   "hint_text": null,
+   "text": "Fly 766, cross runway 290, by Jet Bravo report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Prakash",
+   "cond": "clean",
+   "first": "Line up and wait, runway 27, Air India 59996.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27, Air India 59996.",
+   "text2": "Line up and wait, runway two seven, Air India five niner niner six.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Prakash",
+   "cond": "10",
+   "first": "Line up and wait, runway 27. Air India 590, 96.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 590, 96.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Prakash",
+   "cond": "5",
+   "first": "Line up and wait, runway 27. Air India 5 niner niner 6.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 5 niner niner 6.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Prakash",
+   "cond": "clean",
+   "first": "टावर, फॉलो मी 5, रनवे 29 लेफ्ट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "hint_text": "टावर, फॉलो मी 5, रनवे 29 लेफ्ट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ.",
+   "text": "टावर, फॉलो मी 5, रनवे 29 लेफ्ट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Prakash",
+   "cond": "10",
+   "first": "सर, follow me 5 runway 29 left cross करना है, Bravo पे hold कर रहे हैं।",
+   "hint_text": "सर, follow me 5 runway 29 left cross करना है, Bravo पे hold कर रहे हैं।",
+   "text": "सर, follow me 5 runway 29 left cross करना है, Bravo पे hold कर रहे हैं।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Prakash",
+   "cond": "5",
+   "first": "सर, follow me 5 runway 29 left cross करने Bravo के hold short के लिए।",
+   "hint_text": "सर, follow me 5 runway 29 left cross करना, Bravo पे hold short.",
+   "text": "सर, follow me 5 runway 29 left cross करने Bravo के hold short के लिए।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Prakash",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर, फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर, फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर, फोर, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Prakash",
+   "cond": "10",
+   "first": "Tower Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "Tower Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "Tower Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टावर बर्ड चेसर फोर, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Prakash",
+   "cond": "5",
+   "first": "Four Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "Four Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "Four Bird Chaser 4, मला runway 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "फोर बर्ड चेसर फोर, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_0",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर 4 रनवे 27 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर 4 रनवे 27 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर 4 रनवे 27 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर फोर रनवे टू सेव्हन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_0",
+   "cond": "10",
+   "first": "Number bird chaser 4, runway 27 वर पक्षी आहेत. मी taxiway Charlie's वर थांबलो.",
+   "hint_text": "Above bird chaser 4, runway 27 वर पक्षी आहेत. मी taxiway Charlie's वर थांबलो.",
+   "text": "Number bird chaser 4, runway 27 वर पक्षी आहेत. मी taxiway Charlie's वर थांबलो.",
+   "text2": "नंबर बर्ड चेसर फोर, रनवे टू सेव्हनवर पक्षी आहेत. मी टॅक्सीवे चार्लीजवर थांबलो.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_0",
+   "cond": "5",
+   "first": "Our bird chaser 4 runway 27 वर पक्षी आहेत. मी taxiway Charlie वर थांबलो.",
+   "hint_text": "Over bird catcher 4, runway 27 वर पक्षी आहेत. मी taxiway Charlie वर थांबलो.",
+   "text": "Our bird chaser 4 runway 27 वर पक्षी आहेत. मी taxiway Charlie वर थांबलो.",
+   "text2": "ओव्हर बर्ड चेसर फोर, रनवे टू सेव्हन वर पक्षी आहेत. मी टॅक्सीवे चार्ली वर थांबलो.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_1",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, 1 runway 32 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर 1, रनवे 32 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर, 1 runway 32 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर वन, रनवे थ्री टू वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_1",
+   "cond": "10",
+   "first": "Upper Bird Chaser 1, runway 32 वर पक्षी आहेत. मी taxiway 40 वर थांबलोय.",
+   "hint_text": "Upper Bird Chaser 1, runway 32 वर पक्षी आहेत. मी taxiway 40 वर थांबलोय.",
+   "text": "Upper Bird Chaser 1, runway 32 वर पक्षी आहेत. मी taxiway 40 वर थांबलोय.",
+   "text2": "वर बर्ड चेसर वन, रनवे थ्री टू वर पक्षी आहेत. मी टॅक्सीवे चालीवर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_1",
+   "cond": "5",
+   "first": "For Bird Chaser 1, runway 32 वर पक्षी आहे. मी taxiway 40 वर थांबलोय.",
+   "hint_text": "For bird chaser 1, runway 32 वर पक्षी आहेत. मी taxiway 40 वर थांबलो.",
+   "text": "For Bird Chaser 1, runway 32 वर पक्षी आहे. मी taxiway 40 वर थांबलोय.",
+   "text2": "फॉर बर्ड चेसर वन, रनवे थ्री टू वर पक्षी आहे. मी टॅक्सीवे चालीत बस थांबले.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_2",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_2",
+   "cond": "10",
+   "first": "ओवर Bird Chaser 2, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "ओव्हर Bird Chaser 2, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "ओवर Bird Chaser 2, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "ओव्हर बर्ड चेसर टू, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_2",
+   "cond": "5",
+   "first": "Our bird chaser to Mala runway 27, Olana, Diana, for 1 video.",
+   "hint_text": "Our bird chaser to मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "Our bird chaser to मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "Our bird chaser to Mala runway two seven, Olana. I can have permission.",
+   "hinted": true
+  },
+  {
+   "id": "a9A_Devansh_3",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_3",
+   "cond": "10",
+   "first": "ओव्हरबर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "ओव्हरबर्ड चेसर वन, मला रनवे 32 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "ओव्हरबर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "ओव्हरबर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Devansh_3",
+   "cond": "5",
+   "first": "वर Bird Chaser 1, मला runway 32 ओलांडायचा परवानगी द्या.",
+   "hint_text": "वर Bird Chaser 1, मला runway 32 ओलांडायचा परवानगी द्या.",
+   "text": "वर Bird Chaser 1, मला runway 32 ओलांडायचा परवानगी द्या.",
+   "text2": "वर बर्ड चेसर वन, मला रनवे थ्री टू ओलांडायचा परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Devansh",
+   "cond": "clean",
+   "first": "Akasa Air niner 831, runway 2 niner left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air niner 831, runway 2 niner left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Devansh",
+   "cond": "10",
+   "first": "Akasa Air 9831, runway 29 left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 9831, runway 29 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Devansh",
+   "cond": "5",
+   "first": "Akasa Air 981, runway 29 left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 981, runway 29 left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Devansh",
+   "cond": "clean",
+   "first": "I fly 8242, cross runway 29 right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "I fly 8242, cross runway 29 right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Devansh",
+   "cond": "10",
+   "first": "Fly 8242, cross runway 2, 9 right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "Fly 8242, cross runway 2, 9 right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Devansh",
+   "cond": "5",
+   "first": "Fly 8242, cross runway 2, niner right at Bravo, report vacated.",
+   "hint_text": null,
+   "text": "Fly 8242, cross runway 2, niner right at Bravo, report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Devansh",
+   "cond": "clean",
+   "first": "Line up and wait, runway 27. Air India 6594.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 6594.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Devansh",
+   "cond": "10",
+   "first": "Line up and wait, runway 27, Air India 6594.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27, Air India 6594.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Devansh",
+   "cond": "5",
+   "first": "Line up and wait, runway 27. Air India 6594.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 6594.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Devansh",
+   "cond": "clean",
+   "first": "टावर, follow me for runway 11 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "hint_text": "टावर, follow me for runway 11 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "text": "टावर, follow me for runway 11 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Devansh",
+   "cond": "10",
+   "first": "और follow me for runway 11 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "hint_text": "Tower, follow me. 4 runway 11 left cross करना है. Bravo पे hold कर रहा हूँ.",
+   "text": "और follow me for runway 11 left cross करना है, Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Devansh",
+   "cond": "5",
+   "first": "Our follow me 4 runway 11 left cross करना है, Bravo पे hold करना है।",
+   "hint_text": "Our follow me, 4 runway 11 left cross करना, Bravo पे hold करना।",
+   "text": "Our follow me 4 runway 11 left cross करना है, Bravo पे hold करना है।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Devansh",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फोर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फोर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फोर, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Devansh",
+   "cond": "10",
+   "first": "ओव्हर बर्ड चेसर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "Over bird chaser port, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "ओव्हर बर्ड चेसर, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Devansh",
+   "cond": "5",
+   "first": "पर Bird Chaser 4, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "For Bird Chaser 4, मला runway 27 ओलांडायचा परवानगी द्या.",
+   "text": "पर Bird Chaser 4, मला runway 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "पर बर्ड चेसर फोर, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_0",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर 1 रनवे 27 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर 1 रनवे 27 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर 1 रनवे 27 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर वन रनवे टू सेवन वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_0",
+   "cond": "10",
+   "first": "Over Bird Chaser 1, runway 27, were Paxia. Me taxiway Charlie's work.",
+   "hint_text": "Over bird chaser 1, runway 27, bird taxiway Charlie's work.",
+   "text": "Over Bird Chaser 1, runway 27, were Paxia. Me taxiway Charlie's work.",
+   "text2": "Over Bird Chaser one, runway two seven, were Paxia. Me taxiway Charlie's work.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_0",
+   "cond": "5",
+   "first": "For Bird Chaser 1, runway 27 were bakshia. Me taxiway Charlie's work.",
+   "hint_text": "So, Bird Chaser 1, runway 27, where पक्षी and taxiway Charlie's work.",
+   "text": "So, Bird Chaser 1, runway 27, where पक्षी and taxiway Charlie's work.",
+   "text2": "For Bird Chaser one, runway two seven were Bakshi. Me taxiway Charlie's work.",
+   "hinted": true
+  },
+  {
+   "id": "a9A_Shubham_1",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर, 1 runway 14 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "hint_text": "टॉवर बर्ड चेसर, 1 runway 14 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "text": "टॉवर बर्ड चेसर, 1 runway 14 वर पक्षी आहेत, मी टॅक्सीवे चार्लीझवर थांबलोय.",
+   "text2": "टॉवर बर्ड चेसर वन, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीझ वर थांबलोय.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_1",
+   "cond": "10",
+   "first": "Hello Bird Chaser 1, runway 14 were पक्षी आए। Me taxiway Charlie's word था।",
+   "hint_text": "हो Bird Chaser, 1 runway 14 वर पक्षी आहेत, मी taxiway Charlie वर थांबलोय.",
+   "text": "Hello Bird Chaser 1, runway 14 were पक्षी आए। Me taxiway Charlie's word था।",
+   "text2": "Hello Bird Chaser one. Runway one four were पक्षी आए। Meet taxiway Charlie's world somewhere.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_1",
+   "cond": "5",
+   "first": "Hello Bird Chaser 1, runway 14 were occupied. Please taxiway Charlie 1.",
+   "hint_text": "हो Bird Chaser, runway 14 वर पक्षी आहेत, please activate Charlie bird.",
+   "text": "हो Bird Chaser, runway 14 वर पक्षी आहेत, please activate Charlie bird.",
+   "text2": null,
+   "hinted": true
+  },
+  {
+   "id": "a9A_Shubham_2",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे २७ ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फाइव्ह, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_2",
+   "cond": "10",
+   "first": "ओवर बर्ड चेसर, फाईल मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "ओवर Bird Chaser 5, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "ओवर बर्ड चेसर, फाईल मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_2",
+   "cond": "5",
+   "first": "ओवर Bird Chaser 5, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "ओवर Bird Chaser 5, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "ओवर Bird Chaser 5, मला रनवे 27 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "पॉवर बर्ड चेसर फाईव्ह, मला रनवे टू सेव्हन ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_3",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फाईव्ह, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फाइव्ह, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_3",
+   "cond": "10",
+   "first": "For Bird Chaser 5, मला runway 32 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "For Bird Chaser 5, मला runway 32 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "For Bird Chaser 5, मला runway 32 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "फॉर बर्ड चेसर फाइव्ह, मला रनवे थ्री टू ओलांडा एस आर परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9A_Shubham_3",
+   "cond": "5",
+   "first": "ओवर Bird Chaser 5, मला रनवे 32 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "ओव्हर Bird Chaser 5, मला रनवे 32 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "ओवर Bird Chaser 5, मला रनवे 32 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "ओव्हर बर्ड चेसर फाइव्ह, मला रनवे थ्री टू ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Shubham",
+   "cond": "clean",
+   "first": "Akasa Air 8785, runway 2 niner left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 8785, runway 2 niner left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Shubham",
+   "cond": "10",
+   "first": "Akasa Air 8785, runway 2, niner left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 8785, runway 2, niner left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_casa_Shubham",
+   "cond": "5",
+   "first": "Akasa Air 8785, runway 2, minor left, cleared to land.",
+   "hint_text": null,
+   "text": "Akasa Air 8785, runway 2, minor left, cleared to land.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Shubham",
+   "cond": "clean",
+   "first": "I fly 2878, cross runway 29, right at Bravo. Report vacated.",
+   "hint_text": null,
+   "text": "I fly 2878, cross runway 29, right at Bravo. Report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Shubham",
+   "cond": "10",
+   "first": "Fly 2878, cross runway 29, right at Bravo. Report vacated.",
+   "hint_text": null,
+   "text": "Fly 2878, cross runway 29, right at Bravo. Report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_writer_Shubham",
+   "cond": "5",
+   "first": "Fly 287A, cross runway 29, right at Bravo. Report vacated.",
+   "hint_text": null,
+   "text": "Fly 287A, cross runway 29, right at Bravo. Report vacated.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Shubham",
+   "cond": "clean",
+   "first": "Line up and wait, runway 27. Air India 6998.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 6998.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Shubham",
+   "cond": "10",
+   "first": "Line up and wait, runway 27. Air India 69998.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 27. Air India 69998.",
+   "text2": "Line up and wait, runway two seven. Air India six niner, niner eight.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_or_Shubham",
+   "cond": "5",
+   "first": "Line up and wait, runway 37. Air India 6998.",
+   "hint_text": null,
+   "text": "Line up and wait, runway 37. Air India 6998.",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Shubham",
+   "cond": "clean",
+   "first": "टावर, फॉलो मी फाइव, रनवे 11 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "hint_text": "टावर, फॉलो मी फाइव्ह, रनवे 11 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ.",
+   "text": "टावर, फॉलो मी फाइव, रनवे 11 राइट क्रॉस करना है, Bravo पे होल्ड कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Shubham",
+   "cond": "10",
+   "first": "Tower, follow me 5, runway 11 right cross करना है, Bravo पे hold कर रहा हूँ।",
+   "hint_text": "Tower, follow me. 5 runway 11 right cross करना है. Bravo पे hold कर रहा हूँ.",
+   "text": "Tower, follow me 5, runway 11 right cross करना है, Bravo पे hold कर रहा हूँ।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_following_Shubham",
+   "cond": "5",
+   "first": "सर, follow me 5, runway 11 right cross करना है, Bravo पे hold short करना है।",
+   "hint_text": "Sir, follow me. 5 runway 11 right cross करना, Bravo पे hold करना.",
+   "text": "सर, follow me 5, runway 11 right cross करना है, Bravo पे hold short करना है।",
+   "text2": null,
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Shubham",
+   "cond": "clean",
+   "first": "टॉवर बर्ड चेसर फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "टॉवर बर्ड चेसर फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "टॉवर बर्ड चेसर फोर, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "टॉवर बर्ड चेसर फोर, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Shubham",
+   "cond": "10",
+   "first": "4 Bird Chaser 4, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "4 Bird Chaser 4, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "4 Bird Chaser 4, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "फोर बर्ड चेसर फोर, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  },
+  {
+   "id": "a9B_force_Shubham",
+   "cond": "5",
+   "first": "4 Bird Chaser 4, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "hint_text": "हो Bird Chaser 4, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text": "4 Bird Chaser 4, मला रनवे 14 ओलांडायचा आहे, परवानगी द्या.",
+   "text2": "फोर बर्ड चेसर फोर, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "hinted": false
+  }
+ ]
+}

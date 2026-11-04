@@ -285,6 +285,15 @@ def extract(text, airport, expected_traffic):
 #   - the second runway exists at this airport, and the callsign is the same in both listens
 # Result is always AMBER, never green.
 
+# DEL_2023, 10 dB, noise recording 1 (4 Nov): listen 1 "ARF 725, runway 290, right" (callsign found by its number),
+# listen 2 "ARF riven two five, runway two niner, right" - runway clear, but "seven" -> "riven" so NO callsign,
+# and Fix G refused because the callsigns differ. A missing callsign is not a different one. Found on 1 clip:
+# OFF until exp_a10 Part G (re-scores every saved transcript, no API) shows >=1 better, 0 worse, 0 new WRONG.
+# A10 Part G (4 Nov): 15 saved transcripts with a second listen -> 0 better, 0 worse -> FAIL, stays OFF.
+# (No harm found, but no help outside the one clip it came from: not enough to turn it on.)
+FIXG_SILENT_CALLSIGN = False
+
+
 def needs_second_listen(r):
     """True when the first result failed ONLY because the runway number was glued (e.g. 290)."""
     glued = re.search(r"RUNWAY\s+(\d{3,})([LRC]?)\b", r["normalized"].upper())
@@ -297,7 +306,8 @@ def second_listen(r1, second_text, airport, expected_traffic):
     glued_digits, glued_side = re.search(r"RUNWAY\s+(\d{3,})([LRC]?)\b", r1["normalized"].upper()).groups()
     r2 = extract(second_text, airport, expected_traffic)
     rwy = r2["runway"]
-    if rwy is None or r2["callsign"] != r1["callsign"]:
+    silent = FIXG_SILENT_CALLSIGN and r2["callsign"] is None      # listen 2 heard NO callsign: not a contradiction
+    if rwy is None or (r2["callsign"] != r1["callsign"] and not silent):
         return r1
     digits, side = re.match(r"(\d+)([LRC]?)", rwy).groups()
     if not glued_digits.startswith(digits) or glued_side != side:   # side must match exactly, incl. 'no side'

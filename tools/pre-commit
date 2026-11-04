@@ -1,0 +1,20 @@
+#!/bin/sh
+# Sentinel-V safety hook: refuses any commit that would put secrets or audio on GitHub.
+# Installed by:  sh tools/install_hooks.sh      (copies this file to .git/hooks/pre-commit)
+# Blocks: .env files, anything in my_voice/ (friends' recordings), audio files, and API-key-looking text.
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+bad=$(printf '%s\n' "$staged" | grep -E '(^|/)\.env($|\.)|(^|/)my_voice/|\.(wav|m4a|mp3|aac|ogg|flac)$')
+if [ -n "$bad" ]; then
+  echo "BLOCKED by Sentinel-V safety hook - these must never be committed:"
+  printf '  %s\n' $bad
+  echo "Unstage them:  git restore --staged <file>"
+  exit 1
+fi
+# an API key pasted into code: GNANI_API_KEY=<16+ key characters>, or a long hex/base64-looking secret after "key"
+if git diff --cached -U0 | grep -E '^\+' | grep -qiE 'GNANI_API_KEY *= *["'"'"']?[A-Za-z0-9_\-]{16,}|api[_-]?key["'"'"' ]*[:=] *["'"'"'][A-Za-z0-9_\-]{24,}'; then
+  echo "BLOCKED by Sentinel-V safety hook - an API key seems to be in the staged changes:"
+  git diff --cached -U0 | grep -E '^\+' | grep -iE 'GNANI_API_KEY *=|api[_-]?key' | sed -E 's/[:=].*/= <hidden>/; s/^/  /'
+  echo "Keep keys only in .env."
+  exit 1
+fi
+exit 0

@@ -38,7 +38,21 @@ def noisy_path(clean, cond, seed):
     return clean.replace(".wav", f"_snr{cond}.wav" if seed == 0 else f"_snr{cond}_n{seed}.wav")
 
 
-def run(name, sc, cond, dry, tts=None, stt=None, voice=False, seed=0):
+# THE LOCKED EXAM, scenario part: the same 8 scenarios spoken by voices never used in any test or fix
+# (Timbre v2.5 English set + the Marathi voice Ishaan, kept aside since Day 3). Run ONCE on frozen code.
+# Hinglish exception: Poorvi is the only Hinglish voice that exists, so VEHICLE_HI is NOT an unseen voice - reported.
+LOCKED_VOICE = {
+    "tower": ("Pranav", "timbre-v2.5", "en-IN"),
+    "p1": ("Kaveri", "timbre-v2.5", "en-IN"),
+    "p2": ("Shlok", "timbre-v2.5", "en-IN"),
+    "p3": ("Devika", "timbre-v2.5", "en-IN"),
+    "veh_mr": ("Ishaan", "timbre-v2.5", "mr-IN"),
+    "veh_hi": ("Poorvi", "timbre-v2.5", "hi-en"),
+}
+LOCKED_SEEDS = range(100, 105)          # noise recordings never used before
+
+
+def run(name, sc, cond, dry, tts=None, stt=None, voice=False, seed=0, voices=None, folder="scen"):
     import soundfile as sf
     eng = RunwayEngine(sc["airport"], sc["traffic"], sc["phases"])
     steps, prep = [], None
@@ -50,8 +64,8 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False, seed=0):
         if dry:
             text = said
         else:
-            v = VOICE[spk]
-            clean = f"audio_eval/scen/{name}_{i}_{spk}.wav"
+            v = (voices or VOICE)[spk]
+            clean = f"audio_eval/{folder}/{name}_{i}_{spk}.wav"
             if not tts(said, v[0], v[1], v[2], clean):
                 raise SystemExit(f"TTS failed for {name} step {i}")
             path = clean
@@ -109,8 +123,18 @@ def main():
     ap.add_argument("--yes", action="store_true")
     ap.add_argument("--seeds", type=int, default=1, help="noise recordings per noisy condition (clean has only one)")
     ap.add_argument("--seed-from", type=int, default=0, help="first noise recording number (5 = never heard before)")
+    ap.add_argument("--locked", action="store_true", help="THE EXAM: unseen voices, clean + 10 dB x 5 new noise, ONCE")
     ap.add_argument("--voice", action="store_true", help="speak RED alerts from the pre-recorded clips + time it")
     a = ap.parse_args()
+    locked = a.locked and not a.dry_run
+    if locked:
+        import run_eval
+        commit, dirty = run_eval.git_state()
+        if commit is None or dirty:
+            raise SystemExit("STOP: the exam needs committed code. Commit first (git status must be clean).")
+        if "locked_scenarios" in run_eval.ledger():
+            raise SystemExit(f"STOP: the scenario exam was already used on {run_eval.ledger()['locked_scenarios']['date']}.")
+        a.cond, a.seed_from, a.seeds, a.voice = "clean,10", LOCKED_SEEDS.start, len(LOCKED_SEEDS), True
     conds = ["text"] if a.dry_run else a.cond.split(",")
     runs = [(c, k) for c in conds for k in (range(a.seed_from, a.seed_from + a.seeds) if c not in ("clean", "text") else [0])]
     tts = stt = None
@@ -126,7 +150,8 @@ def main():
     for cond, seed in runs:
         print(f"\n################ condition: {cond}{f'  noise recording {seed}' if seed else ''} ################")
         for name, sc in SCENARIOS.items():
-            r = run(name, sc, cond, a.dry_run, tts, stt, a.voice, seed)
+            r = run(name, sc, cond, a.dry_run, tts, stt, a.voice, seed,
+                    voices=LOCKED_VOICE if locked else None, folder="scen_locked" if locked else "scen")
             out.append(r)
             print(f"\n=== {name} [{sc['airport']}] {r['verdict']} ===")
             for s in r["steps"]:
@@ -182,9 +207,17 @@ def main():
     eng = sorted(s["engine_ms"] for r in out for s in r["steps"])
     print(f"  Engine decision time per call: median {eng[len(eng) // 2]:.1f} ms, worst {eng[-1]:.1f} ms")
     os.makedirs("results", exist_ok=True)
-    path = f"results/scenarios_{'dry_' if a.dry_run else ''}{datetime.datetime.now():%Y%m%d_%H%M%S}.json"
+    path = f"results/scenarios_{'locked_' if locked else 'dry_' if a.dry_run else ''}{datetime.datetime.now():%Y%m%d_%H%M%S}.json"
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"Saved {path}")
+    if locked:
+        import run_eval
+        L = run_eval.ledger()
+        L["locked_scenarios"] = {"date": f"{datetime.datetime.now():%Y-%m-%d %H:%M}", "git": run_eval.git_state()[0],
+                                 "result_file": path, "voices": LOCKED_VOICE, "seeds": list(LOCKED_SEEDS)}
+        json.dump(L, open("testsets/ledger.json", "w"), indent=1)
+        print("Scenario exam is now USED. It can never be run as the exam again.")
+        print("Note: VEHICLE_HI used Poorvi, the only Hinglish voice - NOT an unseen voice.")
 
 
 if __name__ == "__main__":

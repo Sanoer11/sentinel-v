@@ -45,9 +45,14 @@ LOCATE_FROM_READBACK = True
 # not "maybe the same aircraft cleared twice": its conflict stays RED (DEL_2023 noise 8). Free checks: exp_a12.py.
 EXCLUDE_BY_NUMBER = True
 # "Runway vacated" heard as "Can we vacate it" (NORMAL_DEL noise 17, one voice): the stem form is OFF until A13.
+# A13: 0 voices said a "vacate" form without "vacated" -> FAIL -> OFF. 3 of 18 "Runway vacated" were lost completely
+# ("Did I fly 5134?", "Cleared for takeoff, IFLY 5134" x2 voices): no wording rule can recover those; the RED then
+# says "no 'runway vacated' heard from ..." so the controller can check the runway with one look.
 VACATE_STEM = False
 # misheard runway digit ("runway 39" for 29) located by a readback one digit away: free checks passed 4 Nov,
 # not yet seen on fresh noise -> A13 Part D measures it.
+# A13 Part D (fresh voices): 1 of 18 tower clips had "runway 39" -> with it RED mismatch + conflict, without it no RED;
+# 0 worse -> stays ON.
 RW_BAD_LOCATE = True
 VACATE_RE = r"\bVACATED\b"
 VACATE_STEM_RE = r"\bVACAT(ED|E|ING)\b"

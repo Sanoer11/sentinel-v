@@ -122,7 +122,7 @@ def old_rows(files):
 def rescore(pool, word):
     better, worse, new_wrong = [], [], []
     for it, t, t2, tag in pool:
-        if not it["truth"]["instructions"] and it.get("line") == "R5":
+        if it.get("line") == "R5":            # (old dev items have no truth["instructions"]: judge_full handles them)
             continue
         sentinel_actions.RUNWAY_SOUNDALIKES_ON = set()
         o1 = judge_full(it, t, t2)[0]

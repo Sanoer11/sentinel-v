@@ -275,6 +275,43 @@ def build(kind, seed, n_pairs, n_airside):
     return items
 
 
+def build_human(seed):
+    """30 lines for real people (5 Nov): the old sheet had only land/takeoff/cross/vehicle lines. Now it also has
+    the Step-1 phrases and the Marathi bird reports, so friends' voices test everything the engine does.
+      16 = 8 tower call + pilot readback pairs (some readbacks deliberately wrong, as in dev)
+       6 = 3 Step-1 pairs: two runways in one call, go around, "behind the landing Airbus"
+       8 = vehicle calls: 3 Marathi bird reports, 2 Marathi crossing requests, 2 Hindi, 1 Hinglish"""
+    rng = random.Random(seed)
+    items, idx, wrong = [], 0, 0
+    while idx < 8:
+        pair = flight_lines(rng, "locked", idx)
+        is_wrong = any(t.startswith("wrong_readback") for it in pair for t in it["traps"])
+        # content rule (decided before any recording): at least 3 of the 8 pairs have a deliberately wrong readback
+        if not is_wrong and (8 - idx) <= (3 - wrong):
+            continue
+        wrong += is_wrong
+        for it in pair:
+            it["id"] = f"h{idx:03d}{it['id'][-1]}"
+            items.append(it)
+        idx += 1
+    for ptype in ("two_runways", "go_around", "conditional"):
+        for it in step1_lines(rng, "locked", idx, ptype):
+            it["id"] = f"h{idx:03d}{it['id'][-1]}"
+            items.append(it)
+        idx += 1
+    want = [("mr", "birds")] * 3 + [("mr", "cross")] * 2 + [("hi", "any")] * 2 + [("hinglish", "any")]
+    for lang, what in want:
+        while True:
+            it = airside_line(rng, "locked", idx)
+            rom = it["roman"].lower()
+            if it["lang"] == lang and (what == "any" or (what == "birds") == ("pakshi" in rom)):
+                break
+        it["id"] = f"h{idx:03d}v"
+        items.append(it)
+        idx += 1
+    return items
+
+
 def recording_sheet(items, path):
     with open(path, "w", encoding="utf-8") as f:
         f.write("# Recording sheet\n\n"
@@ -284,7 +321,10 @@ def recording_sheet(items, path):
                 "Some lines contain DELIBERATE mistakes (a pilot reading back the wrong number). "
                 "Read exactly what is written, do not correct it.\n\n| id | read this |\n|---|---|\n")
         for it in items:
-            f.write(f"| {it['id']} | {it.get('roman', it['text'])} |\n")
+            line = it["text"] if it.get("roman", it["text"]) == it["text"] else f"{it['text']}<br>({it['roman']})"
+            f.write(f"| {it['id']} | {line} |\n")
+        f.write("\nConsent: by sending these recordings you agree they are used only to test Sentinel-V on this laptop. "
+                "They are never uploaded or published.\n")
 
 
 def main():
@@ -307,10 +347,7 @@ def main():
         items += build_step1("locked", seed, 3)            # the exam covers Step-1 phrases too
     elif kind == "human":
         seed = secrets.randbits(32)
-        items = build("locked", seed, 12, 6)
-        for it in items:
-            it["id"] = "h" + it["id"][1:]
-        name = f"human_{seed:08x}"
+        items, name = build_human(seed), f"human_{seed:08x}"
         recording_sheet(items, f"testsets/{name}_SHEET.md")
     else:
         raise SystemExit("use: dev | dev2 | step1 | locked | human")

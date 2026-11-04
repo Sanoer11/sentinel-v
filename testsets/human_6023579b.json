@@ -1,0 +1,791 @@
+{
+ "name": "human_6023579b",
+ "kind": "human",
+ "seed": 1612928923,
+ "items": [
+  {
+   "id": "h000a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "land",
+   "voice": "Girish",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air one zero one fife, runway tree two, cleared to land.",
+   "ideal": "Akasa Air 1015, runway 32, cleared to land.",
+   "truth": {
+    "runway": "32",
+    "callsign": "AKJ1015"
+   },
+   "traffic": [
+    "AIC7741",
+    "AKJ1015",
+    "AKJ2417",
+    "AKJ3766"
+   ],
+   "traps": [
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "h000b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "land",
+   "readback_of": "l000a",
+   "voice": "Trupti",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Cleared to land runway zero niner, Akasa Air one zero one fife.",
+   "ideal": "Cleared to land runway 09, Akasa Air 1015.",
+   "truth": {
+    "runway": "09",
+    "callsign": "AKJ1015"
+   },
+   "traffic": [
+    "AIC7741",
+    "AKJ1015",
+    "AKJ2417",
+    "AKJ3766"
+   ],
+   "traps": [
+    "icao_digits",
+    "wrong_readback_runway"
+   ]
+  },
+  {
+   "id": "h001a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "cross",
+   "voice": "Shlok",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "IFLY niner one six three, cross runway zero niner, report vacated.",
+   "ideal": "IFLY 9163, cross runway 09, report vacated.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO9163"
+   },
+   "traffic": [
+    "AIC2649",
+    "AKJ5820",
+    "IGO1963",
+    "IGO7708",
+    "IGO9163"
+   ],
+   "traps": [
+    "similar_callsign"
+   ]
+  },
+  {
+   "id": "h001b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "cross",
+   "readback_of": "l001a",
+   "voice": "Kaveri",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Crossing runway zero niner, IFLY niner one six three.",
+   "ideal": "Crossing runway 09, IFLY 9163.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO9163"
+   },
+   "traffic": [
+    "AIC2649",
+    "AKJ5820",
+    "IGO1963",
+    "IGO7708",
+    "IGO9163"
+   ],
+   "traps": [
+    "similar_callsign"
+   ]
+  },
+  {
+   "id": "h002a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "lineup",
+   "voice": "Devika",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "IFLY tree one one, line up and wait runway zero niner.",
+   "ideal": "IFLY 311, line up and wait runway 09.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO311"
+   },
+   "traffic": [
+    "AIC5831",
+    "IGO311",
+    "IGO5770",
+    "IGO6860"
+   ],
+   "traps": [
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "h002b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "lineup",
+   "readback_of": "l002a",
+   "voice": "Kaveri",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Line up and wait runway zero niner, IFLY tree one one.",
+   "ideal": "Line up and wait runway 09, IFLY 311.",
+   "truth": {
+    "runway": "09",
+    "callsign": "IGO311"
+   },
+   "traffic": [
+    "AIC5831",
+    "IGO311",
+    "IGO5770",
+    "IGO6860"
+   ],
+   "traps": [
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "h003a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "cross",
+   "voice": "Girish",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "IFLY seven tree tree niner, cross runway one zero, report vacated.",
+   "ideal": "IFLY 7339, cross runway 10, report vacated.",
+   "truth": {
+    "runway": "10",
+    "callsign": "IGO7339"
+   },
+   "traffic": [
+    "AIC9254",
+    "AIC9938",
+    "AKJ6732",
+    "IGO7339"
+   ],
+   "traps": [
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "h003b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "cross",
+   "readback_of": "l003a",
+   "voice": "Trupti",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Crossing runway one zero, IFLY seven tree zero niner.",
+   "ideal": "Crossing runway 10, IFLY 7309.",
+   "truth": {
+    "runway": "10",
+    "callsign": "IGO7309"
+   },
+   "traffic": [
+    "AIC9254",
+    "AIC9938",
+    "AKJ6732",
+    "IGO7339"
+   ],
+   "traps": [
+    "icao_digits",
+    "wrong_readback_callsign"
+   ]
+  },
+  {
+   "id": "h004a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "hold",
+   "voice": "Pranav",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air two nine three three, hold short runway one four.",
+   "ideal": "Akasa Air 2933, hold short runway 14.",
+   "truth": {
+    "runway": "14",
+    "callsign": "AKJ2933"
+   },
+   "traffic": [
+    "AIC3426",
+    "AIC5603",
+    "AKJ2933",
+    "IGO6144"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h004b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "hold",
+   "readback_of": "l004a",
+   "voice": "Shlok",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Holding short runway one four, Akasa Air two nine three three.",
+   "ideal": "Holding short runway 14, Akasa Air 2933.",
+   "truth": {
+    "runway": "14",
+    "callsign": "AKJ2933"
+   },
+   "traffic": [
+    "AIC3426",
+    "AIC5603",
+    "AKJ2933",
+    "IGO6144"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h005a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "lineup",
+   "voice": "Kaveri",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air three six five niner, line up and wait runway three two.",
+   "ideal": "Akasa Air 3659, line up and wait runway 32.",
+   "truth": {
+    "runway": "32",
+    "callsign": "AKJ3659"
+   },
+   "traffic": [
+    "AIC1247",
+    "AIC1686",
+    "AKJ3659",
+    "IGO8659"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h005b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "lineup",
+   "readback_of": "l005a",
+   "voice": "Shlok",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Line up and wait runway zero niner, Akasa Air three six five niner.",
+   "ideal": "Line up and wait runway 09, Akasa Air 3659.",
+   "truth": {
+    "runway": "09",
+    "callsign": "AKJ3659"
+   },
+   "traffic": [
+    "AIC1247",
+    "AIC1686",
+    "AKJ3659",
+    "IGO8659"
+   ],
+   "traps": [
+    "wrong_readback_runway"
+   ]
+  },
+  {
+   "id": "h006a",
+   "channel": "tower",
+   "airport": "VAPO",
+   "action": "lineup",
+   "voice": "Devika",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Air India five one four, line up and wait runway two eight.",
+   "ideal": "Air India 514, line up and wait runway 28.",
+   "truth": {
+    "runway": "28",
+    "callsign": "AIC514"
+   },
+   "traffic": [
+    "AIC514",
+    "AIC6758",
+    "IGO1894",
+    "IGO5328"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h006b",
+   "channel": "pilot",
+   "airport": "VAPO",
+   "action": "lineup",
+   "readback_of": "l006a",
+   "voice": "Trupti",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Line up and wait runway two eight, Air India five one four.",
+   "ideal": "Line up and wait runway 28, Air India 514.",
+   "truth": {
+    "runway": "28",
+    "callsign": "AIC514"
+   },
+   "traffic": [
+    "AIC514",
+    "AIC6758",
+    "IGO1894",
+    "IGO5328"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h007a",
+   "channel": "tower",
+   "airport": "VABB",
+   "action": "lineup",
+   "voice": "Devika",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Air India two four seven zero, line up and wait runway three two.",
+   "ideal": "Air India 2470, line up and wait runway 32.",
+   "truth": {
+    "runway": "32",
+    "callsign": "AIC2470"
+   },
+   "traffic": [
+    "AIC1309",
+    "AIC1759",
+    "AIC2470",
+    "AIC9216"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h007b",
+   "channel": "pilot",
+   "airport": "VABB",
+   "action": "lineup",
+   "readback_of": "l007a",
+   "voice": "Shlok",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Line up and wait runway three two, Air India two four seven zero.",
+   "ideal": "Line up and wait runway 32, Air India 2470.",
+   "truth": {
+    "runway": "32",
+    "callsign": "AIC2470"
+   },
+   "traffic": [
+    "AIC1309",
+    "AIC1759",
+    "AIC2470",
+    "AIC9216"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h008a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AKJ3145": "ground"
+   },
+   "voice": "Kaveri",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Akasa Air three one four five, cross runway two nine right, hold short runway two nine left.",
+   "ideal": "Akasa Air 3145, cross runway 29R, hold short runway 29L.",
+   "truth": {
+    "runway": "29R",
+    "callsign": "AKJ3145",
+    "instructions": [
+     [
+      "29R",
+      "CROSS"
+     ],
+     [
+      "29L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2152",
+    "AKJ3145",
+    "AKJ339",
+    "IGO4269"
+   ],
+   "traps": [
+    "step1_two_runways"
+   ]
+  },
+  {
+   "id": "h008b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "two_runways",
+   "phase": {
+    "AKJ3145": "ground"
+   },
+   "voice": "Pranav",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Crossing runway two nine right, holding short runway two nine left, Akasa Air three one four five.",
+   "ideal": "Crossing runway 29R, holding short runway 29L, Akasa Air 3145.",
+   "truth": {
+    "runway": "29R",
+    "callsign": "AKJ3145",
+    "instructions": [
+     [
+      "29R",
+      "CROSS"
+     ],
+     [
+      "29L",
+      "HOLD_SHORT"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": false
+   },
+   "traffic": [
+    "AKJ2152",
+    "AKJ3145",
+    "AKJ339",
+    "IGO4269"
+   ],
+   "traps": [
+    "step1_two_runways"
+   ]
+  },
+  {
+   "id": "h009a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "go_around",
+   "phase": {
+    "IGO3106": "air"
+   },
+   "voice": "Kaveri",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "IFLY tree one zero six, go around, I say again, go around.",
+   "ideal": "IFLY 3106, go around, I say again, go around.",
+   "truth": {
+    "runway": null,
+    "callsign": "IGO3106",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC6408",
+    "IGO3106",
+    "IGO5403",
+    "IGO8826"
+   ],
+   "traps": [
+    "step1_go_around",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "h009b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "go_around",
+   "phase": {
+    "IGO3106": "air"
+   },
+   "voice": "Trupti",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Going around, IFLY tree one zero six.",
+   "ideal": "Going around, IFLY 3106.",
+   "truth": {
+    "runway": null,
+    "callsign": "IGO3106",
+    "instructions": [],
+    "call_actions": [
+     "GO_AROUND"
+    ],
+    "conditional": false
+   },
+   "traffic": [
+    "AIC6408",
+    "IGO3106",
+    "IGO5403",
+    "IGO8826"
+   ],
+   "traps": [
+    "step1_go_around",
+    "icao_digits"
+   ]
+  },
+  {
+   "id": "h010a",
+   "channel": "tower",
+   "airport": "VIDP",
+   "action": "conditional",
+   "phase": {
+    "IGO2460": "ground"
+   },
+   "voice": "Devika",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "IFLY two four six zero, behind the landing Airbus, line up and wait runway two eight, behind.",
+   "ideal": "IFLY 2460, behind the landing Airbus, line up and wait runway 28, behind.",
+   "truth": {
+    "runway": "28",
+    "callsign": "IGO2460",
+    "instructions": [
+     [
+      "28",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC3760",
+    "AKJ6915",
+    "IGO2046",
+    "IGO2460"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "h010b",
+   "channel": "pilot",
+   "airport": "VIDP",
+   "action": "conditional",
+   "phase": {
+    "IGO2460": "ground"
+   },
+   "voice": "Pranav",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "en-IN",
+   "text": "Behind the landing Airbus, line up and wait runway two eight, behind, IFLY two four six zero.",
+   "ideal": "Behind the landing Airbus, line up and wait runway 28, behind, IFLY 2460.",
+   "truth": {
+    "runway": "28",
+    "callsign": "IGO2460",
+    "instructions": [
+     [
+      "28",
+      "LINEUP"
+     ]
+    ],
+    "call_actions": [],
+    "conditional": true
+   },
+   "traffic": [
+    "AIC3760",
+    "AKJ6915",
+    "IGO2046",
+    "IGO2460"
+   ],
+   "traps": [
+    "step1_conditional"
+   ]
+  },
+  {
+   "id": "h011v",
+   "channel": "airside",
+   "airport": "VABB",
+   "action": "vehicle",
+   "lang": "mr",
+   "voice": "Ishaan",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "mr-IN",
+   "text": "टॉवर, बर्ड चेसर थ्री, रनवे वन फोर वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "roman": "Tower, Bird Chaser three, runway one four var pakshi aahet, mi taxiway Charlie javal thamblo aahe.",
+   "ideal": "Tower, Bird Chaser 3, runway 14.",
+   "truth": {
+    "runway": "14",
+    "callsign": "BIRDCHASER3"
+   },
+   "traffic": [
+    "BIRDCHASER2",
+    "BIRDCHASER3",
+    "IGO6701"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h012v",
+   "channel": "airside",
+   "airport": "VABB",
+   "action": "vehicle",
+   "lang": "mr",
+   "voice": "Ishaan",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "mr-IN",
+   "text": "टॉवर, फॉलो मी फोर, रनवे ज़ीरो नाइन वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "roman": "Tower, Follow Me four, runway zero nine var pakshi aahet, mi taxiway Charlie javal thamblo aahe.",
+   "ideal": "Tower, Follow Me 4, runway 09.",
+   "truth": {
+    "runway": "09",
+    "callsign": "FOLLOWME4"
+   },
+   "traffic": [
+    "FOLLOWME2",
+    "FOLLOWME3",
+    "FOLLOWME4",
+    "IGO749"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h013v",
+   "channel": "airside",
+   "airport": "VIDP",
+   "action": "vehicle",
+   "lang": "mr",
+   "voice": "Ishaan",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "mr-IN",
+   "text": "टॉवर, फॉलो मी थ्री, रनवे टू एट वर पक्षी आहेत, मी टॅक्सीवे चार्लीजवळ थांबलोय.",
+   "roman": "Tower, Follow Me three, runway two eight var pakshi aahet, mi taxiway Charlie javal thamblo aahe.",
+   "ideal": "Tower, Follow Me 3, runway 28.",
+   "truth": {
+    "runway": "28",
+    "callsign": "FOLLOWME3"
+   },
+   "traffic": [
+    "FOLLOWME1",
+    "FOLLOWME3",
+    "IGO9550"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h014v",
+   "channel": "airside",
+   "airport": "VABB",
+   "action": "vehicle",
+   "lang": "mr",
+   "voice": "Ishaan",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "mr-IN",
+   "text": "टॉवर, फॉलो मी थ्री, मला रनवे वन फोर ओलांडायचा आहे, परवानगी द्या.",
+   "roman": "Tower, Follow Me three, mala runway one four olandaycha aahe, parvangi dya.",
+   "ideal": "Tower, Follow Me 3, runway 14.",
+   "truth": {
+    "runway": "14",
+    "callsign": "FOLLOWME3"
+   },
+   "traffic": [
+    "AIC6614",
+    "FOLLOWME1",
+    "FOLLOWME3",
+    "FOLLOWME5"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h015v",
+   "channel": "airside",
+   "airport": "VIDP",
+   "action": "vehicle",
+   "lang": "mr",
+   "voice": "Ishaan",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "mr-IN",
+   "text": "टॉवर, फॉलो मी फाइव, मला रनवे टू सेवन ओलांडायचा आहे, परवानगी द्या.",
+   "roman": "Tower, Follow Me five, mala runway two seven olandaycha aahe, parvangi dya.",
+   "ideal": "Tower, Follow Me 5, runway 27.",
+   "truth": {
+    "runway": "27",
+    "callsign": "FOLLOWME5"
+   },
+   "traffic": [
+    "FOLLOWME1",
+    "FOLLOWME3",
+    "FOLLOWME5",
+    "IGO6894"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h016v",
+   "channel": "airside",
+   "airport": "VAPO",
+   "action": "vehicle",
+   "lang": "hi",
+   "voice": "Urmila",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "hi-IN",
+   "text": "टावर, फॉलो मी फोर, रनवे वन ज़ीरो क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "roman": "Tower, Follow Me four, runway one zero cross karna hai, holding point Bravo par hoon.",
+   "ideal": "Tower, Follow Me 4, runway 10.",
+   "truth": {
+    "runway": "10",
+    "callsign": "FOLLOWME4"
+   },
+   "traffic": [
+    "AKJ5162",
+    "FOLLOWME4"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h017v",
+   "channel": "airside",
+   "airport": "VAPO",
+   "action": "vehicle",
+   "lang": "hi",
+   "voice": "Urmila",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "hi-IN",
+   "text": "टावर, बर्ड चेसर फोर, रनवे टू एट क्रॉस करना है, होल्डिंग पॉइंट ब्रावो पर हूँ।",
+   "roman": "Tower, Bird Chaser four, runway two eight cross karna hai, holding point Bravo par hoon.",
+   "ideal": "Tower, Bird Chaser 4, runway 28.",
+   "truth": {
+    "runway": "28",
+    "callsign": "BIRDCHASER4"
+   },
+   "traffic": [
+    "BIRDCHASER1",
+    "BIRDCHASER4",
+    "BIRDCHASER5",
+    "IGO6241"
+   ],
+   "traps": []
+  },
+  {
+   "id": "h018v",
+   "channel": "airside",
+   "airport": "VAPO",
+   "action": "vehicle",
+   "lang": "hinglish",
+   "voice": "Poorvi",
+   "tts_model": "timbre-v2.5",
+   "tts_lang": "hi-en",
+   "text": "Tower, Bird Chaser two, runway one zero cross karna hai, Bravo pe hold kar raha hoon.",
+   "roman": "Tower, Bird Chaser two, runway one zero cross karna hai, Bravo pe hold kar raha hoon.",
+   "ideal": "Tower, Bird Chaser 2, runway 10.",
+   "truth": {
+    "runway": "10",
+    "callsign": "BIRDCHASER2"
+   },
+   "traffic": [
+    "AKJ9052",
+    "BIRDCHASER2",
+    "BIRDCHASER4",
+    "BIRDCHASER5"
+   ],
+   "traps": []
+  }
+ ]
+}

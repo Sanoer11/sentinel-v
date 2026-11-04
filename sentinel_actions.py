@@ -155,6 +155,10 @@ _RUNWAY_ONLY = re.compile(r"\bcleared\s+(for\s+take\s*-?\s*off|to\s+land)\b|\bli
 # Other sound-alikes of a clipped "Runway" seen 4-5 Nov: "One way 27" / "1 way, 2 niner right" (Riyaa only so far),
 # "Airway 10" (Riyaa only). Each is OFF until Experiment A13 shows it in 2+ voices and the free re-scores pass.
 RUNWAY_SOUNDALIKES = {"taxiway": r"taxi\s*way", "one way": r"(?:one|1)\s*way", "airway": r"air\s*way"}
+# A13 (5 Nov, 6 voices x clean/10/5 dB, rule fixed before): 'taxiway' 0 voices, 'one way' 1 voice (Riyaa again),
+# 'airway' 0 -> all FAIL rule W1 -> OFF. What a lost "Runway" really turns into: a digit glued to the runway number
+# ("227", "2827", "927" for "runway 27") in 15 of 24 noisy readbacks - filling it from the tower's runway would be
+# circular (Fix C, rejected), so it stays AMBER "runway not read back clearly".
 RUNWAY_SOUNDALIKES_ON = set()
 
 

@@ -1,0 +1,758 @@
+[
+ {
+  "id": "a13_R1_Avinash",
+  "cond": "clean",
+  "heard": "Runway 29, right. Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Avinash",
+  "cond": "10",
+  "heard": "329, right? Cleared for takeoff, Vistara 75.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Avinash",
+  "cond": "5",
+  "heard": "0829, I cleared for takeoff. Vistara 75.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Avinash",
+  "cond": "clean",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Avinash",
+  "cond": "10",
+  "heard": "927, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Avinash",
+  "cond": "5",
+  "heard": "227, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Avinash",
+  "cond": "clean",
+  "heard": "Crossing runway 29 right, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Avinash",
+  "cond": "10",
+  "heard": "I think runway 29, right? IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Avinash",
+  "cond": "5",
+  "heard": "In runway 2, 9 right, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Avinash",
+  "cond": "clean",
+  "heard": "Holding short runway 29 right, IFL Y 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Avinash",
+  "cond": "10",
+  "heard": "Taking short runway 290, right? IFL Y 5134.",
+  "heard2": "Taking short runway two niner, right? IFL Y five one three four."
+ },
+ {
+  "id": "a13_R4_Avinash",
+  "cond": "5",
+  "heard": "Holding short runway 290, right? IFL via 5134.",
+  "heard2": "Holding short runway two niner, right? IFLY five one three four."
+ },
+ {
+  "id": "a13_R5_Avinash",
+  "cond": "clean",
+  "heard": "Runway vacated, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Avinash",
+  "cond": "10",
+  "heard": "Runway vacated, IFLY Y5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Avinash",
+  "cond": "5",
+  "heard": "Report vacated. IFL Y5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Avinash",
+  "cond": "clean",
+  "heard": "I fly 5134, hold short, runway 298, right?",
+  "heard2": "I fly five one three four, hold short, runway two niner, right?"
+ },
+ {
+  "id": "a13_T1_Avinash",
+  "cond": "10",
+  "heard": "Fly 5134, hold short, runway 298.",
+  "heard2": "Fly ivalve one three four, hold short, runway two nine, right."
+ },
+ {
+  "id": "a13_T1_Avinash",
+  "cond": "5",
+  "heard": "Fly 5134, hold short, runway 39 right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Avinash",
+  "cond": "clean",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Avinash",
+  "cond": "10",
+  "heard": "Akasa Air 1123, runway 29, left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Avinash",
+  "cond": "5",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Riyaa",
+  "cond": "clean",
+  "heard": "Runway 29 right, cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Riyaa",
+  "cond": "10",
+  "heard": "29, right? Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Riyaa",
+  "cond": "5",
+  "heard": "V290, right? Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Riyaa",
+  "cond": "clean",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Riyaa",
+  "cond": "10",
+  "heard": "227, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Riyaa",
+  "cond": "5",
+  "heard": "7 cleared to land, Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Riyaa",
+  "cond": "clean",
+  "heard": "Crossing runway 29, right? I fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Riyaa",
+  "cond": "10",
+  "heard": "Crossing runway 29, right? I fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Riyaa",
+  "cond": "5",
+  "heard": "1 way 2 niner, right? I fly 5136.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Riyaa",
+  "cond": "clean",
+  "heard": "Holding short runway 29, right fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Riyaa",
+  "cond": "10",
+  "heard": "Holding short runway 290, right flag, 5134.",
+  "heard2": "Holding short runway two, niner right, flag five one three four."
+ },
+ {
+  "id": "a13_R4_Riyaa",
+  "cond": "5",
+  "heard": "I think short runway 2, niner right, flag 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Riyaa",
+  "cond": "clean",
+  "heard": "Runway vacated, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Riyaa",
+  "cond": "10",
+  "heard": "Runway vacated. IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Riyaa",
+  "cond": "5",
+  "heard": "Did I fly 5134?",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Riyaa",
+  "cond": "clean",
+  "heard": "I fly 5134, hold short, runway 29 right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Riyaa",
+  "cond": "10",
+  "heard": "Reply 5134, hold short, runway 29, right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Riyaa",
+  "cond": "5",
+  "heard": "55134, hold short, runway 2, niner right.",
+  "heard2": "Five five one three four, hold short, runway two. Niner right."
+ },
+ {
+  "id": "a13_T2_Riyaa",
+  "cond": "clean",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Riyaa",
+  "cond": "10",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Riyaa",
+  "cond": "5",
+  "heard": "Tata Air 1122, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Harshad",
+  "cond": "clean",
+  "heard": "Runway 29, right. Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Harshad",
+  "cond": "10",
+  "heard": "V29, right, cleared for takeoff with tara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Harshad",
+  "cond": "5",
+  "heard": "V29, right? Cleared for takeoff. Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Harshad",
+  "cond": "clean",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Harshad",
+  "cond": "10",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Harshad",
+  "cond": "5",
+  "heard": "2827, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Harshad",
+  "cond": "clean",
+  "heard": "Crossing runway 29, right? IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Harshad",
+  "cond": "10",
+  "heard": "Crossing runway 29, right? IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Harshad",
+  "cond": "5",
+  "heard": "I think runway 29, right? IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Harshad",
+  "cond": "clean",
+  "heard": "Holding short, runway 29 right. I fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Harshad",
+  "cond": "10",
+  "heard": "Holding short, runway 29 right. I fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Harshad",
+  "cond": "5",
+  "heard": "Holding short runway 29 right. I fly 513.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Harshad",
+  "cond": "clean",
+  "heard": "Runway vacated, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Harshad",
+  "cond": "10",
+  "heard": "Runway vacated, ISL Y 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Harshad",
+  "cond": "5",
+  "heard": "Runway vacated. ISL Y5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Harshad",
+  "cond": "clean",
+  "heard": "I fly 5134, hold short, runway 29 right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Harshad",
+  "cond": "10",
+  "heard": "Fly 5134, hold short, runway 29, right?",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Harshad",
+  "cond": "5",
+  "heard": "I fly 5134, hold short, runway 29, right?",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Harshad",
+  "cond": "clean",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Harshad",
+  "cond": "10",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Harshad",
+  "cond": "5",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Prakash",
+  "cond": "clean",
+  "heard": "Runway 29 right, cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Prakash",
+  "cond": "10",
+  "heard": "Runway 2, niner right, cleared for takeoff. Vistara 75.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Prakash",
+  "cond": "5",
+  "heard": "Runway 290, cleared for takeoff. Vistara 735.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Prakash",
+  "cond": "clean",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Prakash",
+  "cond": "10",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Prakash",
+  "cond": "5",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Prakash",
+  "cond": "clean",
+  "heard": "Crossing runway 29 right, IFL Y 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Prakash",
+  "cond": "10",
+  "heard": "Crossing runway 2, line up and wait. Right, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Prakash",
+  "cond": "5",
+  "heard": "Crossing runway 29, right? ISL Y 513.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Prakash",
+  "cond": "clean",
+  "heard": "Holding short, runway 2, niner right, fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Prakash",
+  "cond": "10",
+  "heard": "Holding short runway 290, right 5134.",
+  "heard2": "Holding short runway two, niner right, five one three four."
+ },
+ {
+  "id": "a13_R4_Prakash",
+  "cond": "5",
+  "heard": "Holding short, runway 2, niner right, 512.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Prakash",
+  "cond": "clean",
+  "heard": "Runway vacated, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Prakash",
+  "cond": "10",
+  "heard": "Report vacated. IFL Y 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Prakash",
+  "cond": "5",
+  "heard": "Cleared for takeoff, IFL Y5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Prakash",
+  "cond": "clean",
+  "heard": "I fly 5134, hold short, runway 2, niner right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Prakash",
+  "cond": "10",
+  "heard": "Fly 5134, hold short, runway 2, 9 right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Prakash",
+  "cond": "5",
+  "heard": "Fly 5134, hold short, runway 295.",
+  "heard2": "Fly five one three four, hold short, runway two, niner right."
+ },
+ {
+  "id": "a13_T2_Prakash",
+  "cond": "clean",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Prakash",
+  "cond": "10",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Prakash",
+  "cond": "5",
+  "heard": "Tata Air 1126, runway 290 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Devansh",
+  "cond": "clean",
+  "heard": "Runway 29, right. Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Devansh",
+  "cond": "10",
+  "heard": "Way 29, right? Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Devansh",
+  "cond": "5",
+  "heard": "Runway 290, right? Cleared for takeoff, Vistara 725.",
+  "heard2": "Way two niner, right? Cleared for takeoff, Vistara seven two five."
+ },
+ {
+  "id": "a13_R2_Devansh",
+  "cond": "clean",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Devansh",
+  "cond": "10",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Devansh",
+  "cond": "5",
+  "heard": "2827, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Devansh",
+  "cond": "clean",
+  "heard": "Crossing runway 29 right, IFL Y 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Devansh",
+  "cond": "10",
+  "heard": "I think runway 29, right? IFL Y5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Devansh",
+  "cond": "5",
+  "heard": "I think runway 29, right? IFL Y 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Devansh",
+  "cond": "clean",
+  "heard": "Holding short runway 29er, right I fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Devansh",
+  "cond": "10",
+  "heard": "Short runway 29, right? I fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Devansh",
+  "cond": "5",
+  "heard": "Holding short runway 2, niner right, I feel 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Devansh",
+  "cond": "clean",
+  "heard": "Runway vacated, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Devansh",
+  "cond": "10",
+  "heard": "Runway vacated, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Devansh",
+  "cond": "5",
+  "heard": "Runway vacated. I fly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Devansh",
+  "cond": "clean",
+  "heard": "I fly 5134, hold short, runway 29 right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Devansh",
+  "cond": "10",
+  "heard": "Fly 5134, hold short, runway 290, please.",
+  "heard2": "Fly five one three four, hold short, runway two. Niner, try."
+ },
+ {
+  "id": "a13_T1_Devansh",
+  "cond": "5",
+  "heard": "Fly 5134, hold short runway 29 aircraft.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Devansh",
+  "cond": "clean",
+  "heard": "Akasa Air 1123, runway 2 niner left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Devansh",
+  "cond": "10",
+  "heard": "Akasa Air 1123, runway 2, 9 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Devansh",
+  "cond": "5",
+  "heard": "Akasa Air 1123, runway 2, 9 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Shubham",
+  "cond": "clean",
+  "heard": "Runway 29, right? Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R1_Shubham",
+  "cond": "10",
+  "heard": "Cross runway 290, right? Cleared for takeoff, Vistara 725.",
+  "heard2": "Cross runway two niner, right? Cleared for takeoff, Vistara seven two five."
+ },
+ {
+  "id": "a13_R1_Shubham",
+  "cond": "5",
+  "heard": "Way 290, right? Cleared for takeoff, Vistara 725.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Shubham",
+  "cond": "clean",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Shubham",
+  "cond": "10",
+  "heard": "Runway 27, cleared to land. Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R2_Shubham",
+  "cond": "5",
+  "heard": "27 cleared to land, Air India 657.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Shubham",
+  "cond": "clean",
+  "heard": "Crossing runway 29, right? IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Shubham",
+  "cond": "10",
+  "heard": "I think runway 29, right? IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R3_Shubham",
+  "cond": "5",
+  "heard": "I think runway 29, right? IFLY 513.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Shubham",
+  "cond": "clean",
+  "heard": "Holding short runway 29, right Efly 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R4_Shubham",
+  "cond": "10",
+  "heard": "Holding short runway 290, right Epley 5134.",
+  "heard2": "Holding short runway two nine, write Epley five one three four."
+ },
+ {
+  "id": "a13_R4_Shubham",
+  "cond": "5",
+  "heard": "Short runway 2, niner right, E flight 5136.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Shubham",
+  "cond": "clean",
+  "heard": "Runway vacated, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Shubham",
+  "cond": "10",
+  "heard": "We vacated IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_R5_Shubham",
+  "cond": "5",
+  "heard": "Cleared for takeoff, IFLY 5134.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Shubham",
+  "cond": "clean",
+  "heard": "I fly 5134, hold short, runway 29 right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Shubham",
+  "cond": "10",
+  "heard": "Fly 5134, hold short, runway 29, right.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T1_Shubham",
+  "cond": "5",
+  "heard": "Fli Fly 5134, hold short, runway 299 right.",
+  "heard2": "Fli Fly ight five one three four, hold short, runway two nine nine right."
+ },
+ {
+  "id": "a13_T2_Shubham",
+  "cond": "clean",
+  "heard": "Akasa Air 1123, runway 2 niner left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Shubham",
+  "cond": "10",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ },
+ {
+  "id": "a13_T2_Shubham",
+  "cond": "5",
+  "heard": "Akasa Air 1123, runway 29 left, cleared for takeoff.",
+  "heard2": null
+ }
+]

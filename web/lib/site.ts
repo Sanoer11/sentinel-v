@@ -1,7 +1,7 @@
 // Edit these before submitting. Empty strings hide the link.
 export const SITE = {
-  repoUrl: '',                       // e.g. https://github.com/<you>/sentinel-v
-  ciBadge: '',                       // e.g. https://github.com/<you>/sentinel-v/actions/workflows/ci.yml/badge.svg
+  repoUrl: 'https://github.com/Sanoer11/sentinel-v',
+  ciBadge: 'https://github.com/Sanoer11/sentinel-v/actions/workflows/ci.yml/badge.svg',
   team: [
     { name: 'Sanoer', role: 'Speech pipeline, runway engine, experiments, dashboard' },
   ],

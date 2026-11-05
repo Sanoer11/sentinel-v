@@ -3,7 +3,7 @@
 The public site for Sentinel-V: replay of every measured scenario run (with the radio audio and the spoken
 alert), the measured results, every experiment with its rule, and the limits.
 
-**Live:** `<your Vercel URL>` - judges need nothing installed.
+**Live:** https://sentinel-v-one.vercel.app - judges need nothing installed.
 
 | | |
 |---|---|

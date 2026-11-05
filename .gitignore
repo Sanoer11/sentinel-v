@@ -10,3 +10,10 @@ __pycache__/
 .vscode/
 *.wav
 *.m4a
+dashboard/audio/
+web/node_modules/
+web/.next/
+web/out/
+!web/public/audio/
+!web/public/audio/*.wav
+dashboard/

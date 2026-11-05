@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentinel-V</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f14; --panel:#111821; --panel2:#0e141c; --line:#1f2a36; --text:#d8e1ea; --dim:#7d8b99; --faint:#4b5866;
+  --red:#ff4d4f; --red-bg:rgba(255,77,79,.12); --amber:#ffb020; --amber-bg:rgba(255,176,32,.11);
+  --green:#36c98a; --blue:#4aa8ff; --violet:#a98bff; --strip:#2a3644; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:18px 24px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand h1{margin:0;font-size:22px;letter-spacing:.06em;font-weight:700}
+.brand h1 span{color:var(--red)}
+.brand p{margin:4px 0 0;color:var(--dim)}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{font-family:var(--mono);font-size:11px;border:1px solid var(--line);border-radius:4px;padding:4px 8px;color:var(--dim)}
+.badge b{color:var(--text);font-weight:600}
+main{display:grid;grid-template-columns:250px minmax(0,1fr) 330px;gap:0;min-height:calc(100vh - 140px)}
+aside,section{border-right:1px solid var(--line)}
+aside{padding:14px 12px;background:var(--panel2)}
+.label{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:6px 4px 10px}
+.scen{width:100%;text-align:left;background:none;border:1px solid transparent;color:var(--text);padding:10px;border-radius:6px;cursor:pointer;margin-bottom:4px;font-family:var(--sans)}
+.scen:hover{background:var(--panel)}
+.scen.on{background:var(--panel);border-color:var(--line)}
+.scen .n{font-family:var(--mono);font-weight:600;font-size:12.5px;display:flex;justify-content:space-between;gap:6px}
+.scen .w{color:var(--dim);font-size:12px;margin-top:3px}
+.v{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;white-space:nowrap}
+.v.ON{background:rgba(54,201,138,.13);color:var(--green)} .v.LATE{background:var(--amber-bg);color:var(--amber)}
+.v.MISSED,.v.FALSE{background:var(--red-bg);color:var(--red)} .v.OTHER{background:var(--amber-bg);color:var(--amber)}
+#center{padding:16px 22px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.top h2{margin:0;font-family:var(--mono);font-size:18px}
+.top .what{color:var(--dim);margin-top:4px;max-width:640px}
+.runs{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.chip{font-family:var(--mono);font-size:11.5px;background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:4px;padding:5px 9px;cursor:pointer}
+.chip.on{color:var(--text);border-color:var(--blue)}
+.controls{display:flex;gap:8px;align-items:center}
+button.ctl{font-family:var(--mono);font-size:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:5px;padding:8px 14px;cursor:pointer}
+button.ctl.primary{background:var(--blue);border-color:var(--blue);color:#06121f;font-weight:600}
+button.ctl:disabled{opacity:.4;cursor:default}
+.clock{font-family:var(--mono);color:var(--dim);font-size:12px;min-width:64px;text-align:right}
+.field{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.field svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--dim);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+#log{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--faint);border-radius:7px;padding:11px 13px}
+.card.new{animation:in .25s ease-out}
+.card.red{border-left-color:var(--red)} .card.amber{border-left-color:var(--amber)} .card.ok{border-left-color:var(--green)}
+.card.live{box-shadow:0 0 0 1px var(--blue)}
+@keyframes in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.ch{display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:11px;color:var(--dim);flex-wrap:wrap}
+.who{color:var(--text);font-weight:600;letter-spacing:.06em}
+.st{margin-left:auto;font-size:10.5px;padding:2px 7px;border-radius:3px;border:1px solid var(--line)}
+.st.CONFIRMED{color:var(--green)} .st.PROBABLE{color:var(--amber)} .st.FLAGGED{color:var(--red)} .st.REPORT{color:var(--blue)}
+.heard{font-family:var(--mono);font-size:14px;margin:7px 0 3px;line-height:1.45}
+.said{font-size:12px;color:var(--dim)} .said b{color:var(--faint);font-weight:500;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em}
+.extra{font-size:12px;color:var(--dim);margin-top:4px;font-family:var(--mono)}
+.al{margin-top:8px;font-size:12.5px;padding:7px 9px;border-radius:5px;line-height:1.4}
+.al.RED{background:var(--red-bg);color:#ffd0d0} .al.AMBER{background:var(--amber-bg);color:#ffe3b0} .al.INFO{background:rgba(74,168,255,.09);color:#cfe6ff}
+.al b{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;margin-right:6px}
+#right{padding:16px 16px;background:var(--panel2)}
+.speak{border:1px solid var(--line);border-radius:8px;padding:12px;min-height:84px;background:var(--panel)}
+.speak .s{font-family:var(--mono);font-size:15px;color:#ffd0d0;margin-top:6px;line-height:1.4}
+.speak.idle .s{color:var(--faint);font-size:13px}
+.speak.hot{border-color:var(--red);box-shadow:0 0 22px rgba(255,77,79,.18)}
+#alerts{margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.stats{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.big>div{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:9px 10px}
+.big .k{font-family:var(--mono);font-size:20px;font-weight:600}
+.big .d{font-size:11.5px;color:var(--dim);margin-top:2px}
+table{width:100%;border-collapse:collapse;margin-top:10px;font-family:var(--mono);font-size:11px}
+td,th{padding:4px 4px;border-bottom:1px solid var(--line);text-align:left;color:var(--dim)} th{color:var(--faint);font-weight:500}
+td.g{color:var(--green)} td.a{color:var(--amber)} td.r{color:var(--red)}
+.note{font-size:11.5px;color:var(--dim);line-height:1.5;margin-top:12px}
+footer{border-top:1px solid var(--line);padding:12px 24px;color:var(--faint);font-size:11.5px;line-height:1.6}
+@media (max-width:1100px){main{grid-template-columns:1fr}aside,section{border-right:none;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>SENTINEL<span>-V</span></h1>
+    <p>Listens to tower and airside radio, keeps the runway picture, and speaks up when two clearances collide.</p>
+  </div>
+  <div class="badges">
+    <span class="badge">speech-to-text <b>Gnani Prisma v3.0</b></span>
+    <span class="badge">voices <b>Gnani Timbre v3.0 / v2.5</b></span>
+    <span class="badge">airports <b>VIDP · VABB · VAPO</b></span>
+  </div>
+</header>
+<main>
+  <aside>
+    <div class="label">Scenarios</div>
+    <div id="scens"></div>
+  </aside>
+  <section id="center">
+    <div class="top">
+      <div>
+        <h2 id="title"></h2>
+        <div class="what" id="what"></div>
+      </div>
+      <div class="controls">
+        <button class="ctl primary" id="play">▶ Play</button>
+        <button class="ctl" id="step">Step</button>
+        <button class="ctl" id="reset">Reset</button>
+        <span class="clock" id="clock">t = –</span>
+      </div>
+    </div>
+    <div class="runs" id="runs"></div>
+    <div class="field">
+      <div class="label" style="margin:2px 0 4px" id="fieldname"></div>
+      <svg id="svg" viewBox="0 0 760 210" role="img" aria-label="Runway picture"></svg>
+      <div class="legend">
+        <span><i style="background:var(--red)"></i>take-off / landing</span>
+        <span><i style="background:var(--blue)"></i>crossing</span>
+        <span><i style="background:var(--violet)"></i>line-up</span>
+        <span><i style="background:var(--faint)"></i>stopped</span>
+        <span><i style="background:var(--strip)"></i>free</span>
+      </div>
+    </div>
+    <div id="log"></div>
+  </section>
+  <section id="right">
+    <div class="label">Spoken alert</div>
+    <div class="speak idle" id="speak"><div class="label" style="margin:0">Sentinel-V voice</div><div class="s">quiet</div></div>
+    <div class="label" style="margin-top:16px">Alerts this run</div>
+    <div id="alerts"></div>
+    <div class="stats">
+      <div class="label">Measured over every run on this page</div>
+      <div class="big" id="big"></div>
+      <table id="tbl"></table>
+      <div class="note" id="note"></div>
+    </div>
+  </section>
+</main>
+<footer>
+  All voices are synthetic (Gnani Timbre); radio static and band-limiting are simulated. Transcripts are the ones saved
+  from the measured runs — nothing on this page is re-heard or edited. Known limits, measured: a clipped “Runway” or
+  “Crossing” at the start of a readback is often lost from the audio itself; a misheard callsign digit looks exactly like
+  a real pilot error (the alert asks to confirm); hold times are assumptions; ground-position incursions need a
+  surveillance feed, not radio. Decision support only — the controller decides.
+</footer>
+<script>
+const D = /*__DATA__*/null;
+const $ = s => document.querySelector(s);
+const ACOL = {TAKEOFF:"var(--red)", LAND:"var(--red)", CROSS:"var(--blue)", LINEUP:"var(--violet)", STOPPED:"var(--faint)"};
+const CH = {tower:"TOWER", pilot:"PILOT", airside:"VEHICLE"};
+let S = {scen:null, run:null, shown:-1, playing:false, timer:null, audio:null};
+
+const scenNames = [...Object.keys(D.meta), ...new Set(D.runs.map(r => r.scenario))]
+  .filter((n, i, a) => a.indexOf(n) === i && D.runs.some(r => r.scenario === n));   // real events first
+function runsOf(n){ return D.runs.filter(r => r.scenario === n); }
+function runLabel(r){ return r.cond === "clean" ? "clean" : `${r.cond} dB · noise ${r.seed}`; }
+function vclass(v){ return v.split(" ")[0].replace("-RED","").replace("OTHER","OTHER"); }
+function esc(s){ return String(s ?? "").replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+
+function drawScens(){
+  $("#scens").innerHTML = scenNames.map(n => {
+    const rs = runsOf(n), on = rs.filter(r => r.verdict === "ON TIME").length, m = D.meta[n] || {};
+    return `<button class="scen ${n===S.scen?'on':''}" data-n="${n}">
+      <div class="n">${n}<span class="v ${on===rs.length?'ON':on?'LATE':'MISSED'}">${on}/${rs.length}</span></div>
+      <div class="w">${esc(m.where||"")}</div></button>`;
+  }).join("");
+  document.querySelectorAll(".scen").forEach(b => b.onclick = () => pick(b.dataset.n));
+}
+
+function pick(n, ri){
+  stop();
+  S.scen = n;
+  const rs = runsOf(n);
+  S.run = rs[ri ?? Math.max(0, rs.findIndex(r => r.cond !== "clean"))] || rs[0];
+  S.shown = -1;
+  drawScens();
+  const m = D.meta[n] || {};
+  $("#title").textContent = n;
+  $("#what").textContent = m.what || "";
+  $("#runs").innerHTML = rs.map((r,i) => `<span class="chip ${r===S.run?'on':''}" data-i="${i}">${runLabel(r)} &nbsp;<span class="v ${vclass(r.verdict)}">${r.verdict}</span></span>`).join("");
+  document.querySelectorAll(".chip").forEach(c => c.onclick = () => pick(n, +c.dataset.i));
+  $("#fieldname").textContent = `${D.geo[m.airport]?.name || ""} (${m.airport}) — runway picture after each call`;
+  render();
+}
+
+function stripGeom(ap){
+  const g = D.geo[ap], strips = g.strips, out = {};
+  if (ap === "VABB"){
+    out[strips[0]] = {x1:70,y1:120,x2:690,y2:120};           // 09/27
+    out[strips[1]] = {x1:190,y1:195,x2:560,y2:22};           // 14/32 crosses it
+  } else {
+    strips.forEach((s,i) => { const y = strips.length===1 ? 105 : 30 + i*(150/(strips.length-1)); out[s] = {x1:70,y1:y,x2:690,y2:y}; });
+  }
+  return out;
+}
+
+function render(){
+  const r = S.run, ap = D.meta[r.scenario].airport, geo = stripGeom(ap);
+  const st = S.shown >= 0 ? r.steps[S.shown] : null;
+  const pic = st ? st.picture : [];
+  const hotRed = st && st.alerts.some(a => a.level === "RED" && /CONFLICT|BIRDS|MISMATCH|HOLD SHORT|INCURSION/.test(a.kind + a.text));
+  let svg = "";
+  for (const [name, p] of Object.entries(geo)){
+    const occ = pic.filter(o => o.strip === name);
+    const conflict = hotRed && occ.length && st.alerts.some(a => a.level === "RED" && a.text.includes(name));
+    const col = conflict ? "var(--red)" : occ.length ? (ACOL[occ[occ.length-1].action] || "var(--blue)") : "var(--strip)";
+    const [a,b] = name.split("/");
+    const ang = Math.atan2(p.y2-p.y1, p.x2-p.x1) * 180/Math.PI, len = Math.hypot(p.x2-p.x1, p.y2-p.y1);
+    svg += `<g transform="translate(${p.x1},${p.y1}) rotate(${ang})">
+      <rect x="0" y="-9" width="${len}" height="18" rx="3" fill="${col}" ${conflict ? 'stroke="#fff" stroke-width="2"' : ''}>${conflict ? '<animate attributeName="opacity" values="1;.35;1" dur=".8s" repeatCount="indefinite"/>' : ''}</rect>
+      ${[...Array(9)].map((_,k)=>`<rect x="${len*(k+1)/10-7}" y="-1" width="14" height="2" fill="#0b0f14" opacity=".55"/>`).join("")}
+      <text x="-12" y="4" text-anchor="end" fill="var(--dim)" font-family="IBM Plex Mono,monospace" font-size="12">${a}</text>
+      <text x="${len+12}" y="4" fill="var(--dim)" font-family="IBM Plex Mono,monospace" font-size="12">${b}</text>
+      ${occ.map((o,k)=>`<text x="${len*0.76}" y="${-15 - k*15}" text-anchor="middle" fill="var(--text)" font-family="IBM Plex Mono,monospace" font-size="12" font-weight="600">${esc(o.cs.startsWith("UNIDENTIFIED")?"unidentified":o.cs)} · ${o.action} ${o.rw}</text>`).join("")}
+    </g>`;
+  }
+  $("#svg").innerHTML = svg;
+
+  $("#log").innerHTML = r.steps.slice(0, S.shown + 1).map((s,i) => {
+    const worst = s.alerts.some(a=>a.level==="RED") ? "red" : s.alerts.some(a=>a.level==="AMBER") ? "amber" : "ok";
+    const extra = [s.heard2 ? `second listen: ${esc(s.heard2)}` : "", s.hinted ? "heard with hazard-word hint" : "",
+                   s.latency ? `heard in ${s.latency.toFixed(2)} s` : ""].filter(Boolean).join(" · ");
+    return `<div class="card ${worst} ${i===S.shown?'new':''} ${i===S.shown&&S.playing?'live':''}">
+      <div class="ch"><span>t+${s.t}s</span><span class="who">${CH[s.channel]}</span><span>${esc(s.speaker)}</span>
+        <span class="st ${s.status}">${s.status}</span></div>
+      <div class="heard">${esc(s.heard)}</div>
+      <div class="said"><b>SAID</b> ${esc(s.said)}</div>
+      ${extra ? `<div class="extra">${extra}</div>` : ""}
+      ${s.alerts.map(a => `<div class="al ${a.level}"><b>${a.level}</b>${esc(a.text)}</div>`).join("")}
+    </div>`;
+  }).join("");
+  const last = $("#log").lastElementChild; if (last && S.playing) last.scrollIntoView({block:"nearest", behavior:"smooth"});
+
+  const all = r.steps.slice(0, S.shown + 1).flatMap(s => s.alerts.filter(a => a.level !== "INFO").map(a => ({...a, t:s.t})));
+  $("#alerts").innerHTML = all.length ? all.reverse().map(a => `<div class="al ${a.level}"><b>t+${a.t}s</b>${esc(a.text)}</div>`).join("")
+    : `<div class="note" style="margin:0">none yet</div>`;
+  $("#clock").textContent = st ? `t = ${st.t} s` : "t = –";
+  $("#step").disabled = S.shown >= r.steps.length - 1;
+}
+
+function speak(text, hot){
+  $("#speak").className = "speak " + (text ? (hot ? "hot" : "") : "idle");
+  $("#speak .s").textContent = text || "quiet";
+}
+
+function playFile(src, done){
+  if (!src){ S.timer = setTimeout(done, 1800); return; }
+  const a = new Audio(src); S.audio = a;
+  a.onended = done; a.onerror = () => { S.timer = setTimeout(done, 1200); };
+  a.play().catch(() => { S.timer = setTimeout(done, 1500); });
+}
+
+function advance(withAudio){
+  const r = S.run;
+  if (S.shown >= r.steps.length - 1){ stop(); return; }
+  S.shown++;
+  const s = r.steps[S.shown];
+  speak("", false);
+  if (!withAudio){ render(); if (s.spoken) speak(s.spoken.says, true); return; }
+  // show the call while its audio plays; reveal the engine's verdict when the call ends
+  const keep = s.alerts; s.alerts = []; const keepSt = s.status; s.status = "…";
+  render();
+  playFile(s.audio, () => {
+    s.alerts = keep; s.status = keepSt; render();
+    const next = () => {
+      if (!S.playing) return;
+      const n = r.steps[S.shown + 1];
+      const gap = n ? Math.min(2.2, Math.max(0.8, (n.t - s.t) / 8)) : 0;
+      S.timer = setTimeout(() => S.playing && advance(true), gap * 1000);
+    };
+    if (s.spoken){ speak(s.spoken.says, true); playFile(s.spoken.file, next); } else next();
+  });
+}
+
+function play(){
+  if (S.shown >= S.run.steps.length - 1) S.shown = -1;
+  S.playing = true; $("#play").textContent = "❚❚ Pause"; advance(true);
+}
+function stop(){
+  S.playing = false; clearTimeout(S.timer); if (S.audio){ S.audio.pause(); S.audio = null; }
+  $("#play").textContent = "▶ Play";
+}
+$("#play").onclick = () => S.playing ? stop() : play();
+$("#step").onclick = () => { stop(); advance(false); };
+$("#reset").onclick = () => { stop(); S.shown = -1; speak("", false); render(); };
+
+(function stats(){
+  const t = D.stats, noisy = D.runs.filter(r => r.cond !== "clean");
+  const n10 = noisy.filter(r => r.verdict === "ON TIME").length;
+  $("#big").innerHTML = `
+    <div><div class="k">${t.on_time}/${t.runs}</div><div class="d">runs with every expected alert on time</div></div>
+    <div><div class="k">${t.late}</div><div class="d">runs where it came, but late</div></div>
+    <div><div class="k">${t.false_red}/${t.normal_runs}</div><div class="d">normal-traffic runs with a false RED</div></div>
+    <div><div class="k">${t.prisma_median ?? "–"} s</div><div class="d">median time for Prisma to hear a call</div></div>`;
+  const conds = [...new Set(Object.keys(t.table).map(k => k.split("|")[1]))];
+  $("#tbl").innerHTML = `<tr><th>scenario</th>${conds.map(c=>`<th>${c}</th>`).join("")}</tr>` +
+    scenNames.map(n => `<tr><td>${n}</td>${conds.map(c => {
+      const v = t.table[`${n}|${c}`] || {}, tot = Object.values(v).reduce((a,b)=>a+b,0), on = v["ON TIME"] || 0;
+      return `<td class="${!tot?'':on===tot?'g':on?'a':'r'}">${tot ? on + "/" + tot : "–"}</td>`; }).join("")}</tr>`).join("");
+  $("#note").textContent = `${noisy.length} runs at 10 dB radio noise (${n10} on time), each with a different noise recording. ` +
+    `“Late” = the alert came at the pilot's readback, the first moment the runway was heard.`;
+})();
+pick(scenNames.includes("DEL_2023") ? "DEL_2023" : scenNames[0]);
+</script>
+</body>
+</html>

@@ -3,7 +3,10 @@
 # Installed by:  sh tools/install_hooks.sh      (copies this file to .git/hooks/pre-commit)
 # Blocks: .env files, anything in my_voice/ (friends' recordings), audio files, and API-key-looking text.
 staged=$(git diff --cached --name-only --diff-filter=ACMR)
-bad=$(printf '%s\n' "$staged" | grep -E '(^|/)\.env($|\.)|(^|/)my_voice/|\.(wav|m4a|mp3|aac|ogg|flac)$')
+# Exception: web/public/audio/ holds the SITE's audio - synthetic only (Gnani Timbre voices + simulated radio),
+# written by export_web.py from audio_eval/scen/. Friends' recordings (my_voice/, .m4a) stay blocked everywhere.
+bad=$(printf '%s\n' "$staged" | grep -E '(^|/)\.env($|\.)|(^|/)my_voice/|\.(wav|m4a|mp3|aac|ogg|flac)$' \
+      | grep -vE '^web/public/audio/[A-Za-z0-9_]+\.(mp3|wav)$')
 if [ -n "$bad" ]; then
   echo "BLOCKED by Sentinel-V safety hook - these must never be committed:"
   printf '  %s\n' $bad

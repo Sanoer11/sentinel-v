@@ -1,0 +1,10 @@
+{
+  "name": "Sentinel-V",
+  "short_name": "Sentinel-V",
+  "description": "Runway-safety monitor for Indian ATC radio, built on Gnani Prisma and Timbre.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b10",
+  "theme_color": "#070b10",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

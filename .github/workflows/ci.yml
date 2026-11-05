@@ -1,0 +1,46 @@
+# CI for Sentinel-V. Runs on every push and pull request.
+#  - engine: the 141 Python tests of the parser, runway engine, pipeline and voice (fake Prisma/Timbre, no API key)
+#  - web:    lint, type-check, unit tests and a production build of the site in web/
+# Deployment is done by Vercel's GitHub integration (it builds web/ on every push to main and posts a preview
+# link on every pull request), so no deploy token is stored in this repository.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+      - run: pip install -r requirements-ci.txt
+      - run: python -m pytest -q test_client.py test_pipeline.py test_voice.py test_state.py test_scoring.py test_actions.py
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'

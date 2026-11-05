@@ -18,8 +18,10 @@ import time
 import numpy as np
 
 VOICE = ("Devansh", "timbre-v3.0", "en-IN")     # one fixed alert voice, different from all scenario speakers
-SPEED = 0.9            # 3 Nov listening check: speed 1.0 was "a tiny bit fast"; niner and fife judged clear
-SPEED = float(os.environ.get("SENTINEL_ALERT_SPEED", "1.0"))
+# 3 Nov listening check: speed 1.0 was "a tiny bit fast"; niner and fife judged clear at 0.9.
+# BUG found 5 Nov: the next line used to default to "1.0" and silently overrode the 0.9 - every alert since 3 Nov
+# was spoken at 1.0 (only audio_alerts/segments_x1 exists). Default is now 0.9; the env var can still override it.
+SPEED = float(os.environ.get("SENTINEL_ALERT_SPEED", "0.9"))
 SEG_DIR = f"audio_alerts/segments_x{SPEED:g}"      # one folder per speaking speed, so sets never mix
 SR = 16000
 

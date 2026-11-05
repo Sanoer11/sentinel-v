@@ -1,0 +1,36 @@
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/600.css';
+@import '@fontsource/ibm-plex-sans/700.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colours as RGB triplets so Tailwind can add opacity (bg-red/15). Dark is the default: a tower cab at night. */
+:root, [data-theme='dark'] {
+  --ink: 7 11 16; --panel: 15 22 32; --panel2: 11 17 25; --line: 31 42 54;
+  --text: 219 228 236; --dim: 127 141 155; --faint: 76 89 102;
+  --signal: 45 212 191; --red: 255 77 79; --amber: 255 176 32; --green: 54 201 138;
+  --blue: 74 168 255; --violet: 169 139 255; --strip: 42 54 68;
+  color-scheme: dark;
+}
+[data-theme='light'] {
+  --ink: 246 248 250; --panel: 255 255 255; --panel2: 238 242 246; --line: 214 222 230;
+  --text: 17 24 33; --dim: 82 96 110; --faint: 140 152 164;
+  --signal: 13 148 136; --red: 220 38 38; --amber: 202 120 4; --green: 22 150 96;
+  --blue: 29 112 214; --violet: 109 76 214; --strip: 196 206 216;
+  color-scheme: light;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { background: rgb(var(--ink)); color: rgb(var(--text)); transition: background-color .35s ease, color .35s ease; }
+* { transition-property: background-color, border-color; transition-duration: .35s; }
+:focus-visible { outline: 2px solid rgb(var(--signal)); outline-offset: 2px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+.label { @apply font-mono text-[10.5px] uppercase tracking-[0.14em] text-faint; }
+.card { @apply rounded-lg border border-line bg-panel; }

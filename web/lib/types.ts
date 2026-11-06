@@ -7,7 +7,7 @@ export type Channel = 'tower' | 'pilot' | 'airside';
 export type Action = 'TAKEOFF' | 'LAND' | 'CROSS' | 'LINEUP' | 'STOPPED';
 
 export interface Alert { level: Level; kind: string; text: string }
-export interface Occupant { strip: string; cs: string; action: Action; rw: string }
+export interface Occupant { strip: string; cs: string; action: Action; rw: string; maybe?: string }  // maybe: runway heard glued, a guess (A14)
 
 export interface Step {
   t: number;
@@ -23,6 +23,8 @@ export interface Step {
   spoken: { file: string | null; says: string } | null;
   alerts: Alert[];
   picture: Occupant[];   // who holds which runway after this call
+  read?: string | null;  // the callsign the engine settled on
+  notes?: string[];      // the engine's own notes on this call (e.g. matched by flight number)
 }
 
 export interface Run {

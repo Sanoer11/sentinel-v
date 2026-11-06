@@ -518,3 +518,35 @@ def test_conflict_with_an_old_landing_says_no_vacated_report_was_heard():
     r = e.call(160, "tower", "Akasa Air 1123, runway 29 left, cleared for takeoff.")
     red = [a for a in r["alerts"] if a["level"] == "RED"]
     assert red and "no 'runway vacated' heard from IGO5134" in red[0]["text"]
+
+
+# ---- A14 Fix U: a runway heard glued and never located is kept as a "maybe" runway ----
+
+def test_unlocated_glued_runway_gives_possible_conflict_amber():
+    # DEL_2023 10 dB noise recording 1 (exact transcripts): runway glued in the tower call AND lost in the readback.
+    # Before A14 the crossing looked safe (silent miss). Now: AMBER "possible", never RED (the runway is a guess).
+    e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
+    e.call(0, "tower", "ARF 725, runway 290, right. Cleared for takeoff.")
+    e.call(4, "pilot", "Taxiway 2, niner right, cleared for takeoff, Vistara 725.")
+    r = e.call(25, "tower", "Tara, 926, cross runway 29 right.")
+    poss = [a for a in r["alerts"] if a["kind"] == "RUNWAY_CONFLICT_POSSIBLE"]
+    assert poss and poss[0]["level"] == "AMBER" and "heard as '290R', could be 29R" in poss[0]["text"]
+    assert not reds(r["alerts"])
+
+
+def test_maybe_runway_never_hides_a_located_red():
+    # DEL_2023 10 dB noise recording 13: the readback DID locate 29R -> the maybe entry must go, the RED must stay
+    e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
+    e.call(0, "tower", "Air India 725, runway 290, right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Vistara 725.")
+    r = e.call(25, "tower", "Tara, 926, cross runway 2, 9 right.")
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "RED" for a in r["alerts"])
+    assert not any(a["kind"] == "RUNWAY_CONFLICT_POSSIBLE" for a in r["alerts"])
+
+
+def test_maybe_runway_needs_glued_digits():
+    # one runway digit heard ("runway 2"): could be anything - no maybe runway, no extra alarm
+    e = RunwayEngine("VIDP", {"VTI725", "VTI926"}, {"VTI725": "ground", "VTI926": "ground"})
+    e.call(0, "tower", "F 725, runway 2 line up and wait, cleared for takeoff.")
+    r = e.call(25, "tower", "Vistara 926, cross runway 29 right.")
+    assert not any(a["kind"] == "RUNWAY_CONFLICT_POSSIBLE" for a in r["alerts"])

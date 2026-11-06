@@ -38,7 +38,7 @@ npm run lint && npm run typecheck && npm test && npm run build
 ```
 
 ## CI/CD
-- `.github/workflows/ci.yml` runs on every push and pull request: the 141 Python engine tests, then lint,
+- `.github/workflows/ci.yml` runs on every push and pull request: the 144 Python engine tests, then lint,
   type-check, Jest tests and a production build of this site.
 - Vercel's GitHub integration deploys: every push to `main` goes live, every pull request gets a preview link
   in a comment. No deploy token is stored in the repository.

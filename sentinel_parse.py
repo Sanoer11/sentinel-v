@@ -47,6 +47,11 @@ FIXES = [
 ]
 PUNCT = set(",.।!?:;")
 
+# Experiment A14 (7 Nov), Fix T: "Vistara" heard as "Tara" - 24 times in the saved DEL_2023 runs, from 2 voices
+# (tower Avinash 20, pilot Harshad 4), and never anything else. Only when a number follows ("Tara, 926").
+# Off until exp_a14.py passes its rules (written in that file before the result).
+TARA_ALIAS = False
+
 # Decision switch (your call): True = a callsign with a look-alike from the same airline on
 # frequency (5134/5124, 2817/2871) is shown AMBER, never green. False = old behaviour.
 SIMILAR_CALLSIGN_CAUTION = True
@@ -60,6 +65,8 @@ EIGHT_AS_A = re.compile(r"\b(\d+)A\b")
 
 def normalize(text):
     t = EIGHT_AS_A.sub(lambda m: m.group(1) + "8", text)
+    if TARA_ALIAS:
+        t = re.sub(r"\btara\b(?=[\s,.]*\d)", "Vistara", t, flags=re.IGNORECASE)
     for pat, rep in FIXES:
         t = re.sub(pat, rep, t, flags=re.IGNORECASE)
     t = re.sub(r"(\d)([A-Za-zऀ-ॿ])", r"\1 \2", t)

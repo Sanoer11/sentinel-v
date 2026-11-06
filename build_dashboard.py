@@ -46,7 +46,7 @@ def radio_path(name, i, spk, cond, seed, folder="scen"):
 
 
 def snapshot(eng, t):
-    return [{"strip": s, "cs": o["cs"], "action": o["action"], "rw": o["rw"]}
+    return [{"strip": s, "cs": o["cs"], "action": o["action"], "rw": o["rw"], **({"maybe": o["maybe"]} if o.get("maybe") else {})}
             for s, occ in eng.occ.items() for o in occ if o.get("until", 1e9) > t]
 
 
@@ -88,6 +88,9 @@ def replay(run, voice_ok, tts, out=OUT, media=None):
         steps.append({"t": s["t"], "channel": s["channel"], "speaker": spk, "said": said, "heard": s["heard"],
                       "heard2": s["heard2"], "hinted": s.get("hinted", False), "status": rec["analysis"]["status"],
                       "latency": s.get("latency_s"), "audio": audio, "spoken": spoken,
+                      # what the engine made of the words: the callsign it settled on, and its own notes
+                      # ("Tara, 926" -> VTI926: airline word not heard, matched by the flight number)
+                      "read": rec["analysis"].get("callsign"), "notes": list(rec["analysis"].get("amber", [])),
                       "alerts": [{"level": a["level"], "kind": a["kind"], "text": a["text"]} for a in rec["alerts"]],
                       "picture": snapshot(eng, s["t"])})
     tail = eng.tick(run["steps"][-1]["t"] + 15)

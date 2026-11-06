@@ -11,6 +11,13 @@ const ALERT = {
   RED: 'bg-red/15 text-text [&_b]:text-red', AMBER: 'bg-amber/15 text-text [&_b]:text-amber', INFO: 'bg-blue/10 text-text [&_b]:text-blue',
 } as const;
 
+/** Why the engine's callsign differs from the words on screen ("Tara, 926" -> VTI926). Only for a callsign
+ *  found WITHOUT its airline word: Prisma's text is shown as heard, never rewritten. */
+function readNote(step: Step): string | null {
+  const n = (step.notes ?? []).find((x) => x.startsWith('callsign not in the usual airline+number form'));
+  return n ? 'airline word not heard; matched by the flight number' : null;
+}
+
 /** One radio call: what Prisma heard (big), what was really said (small), the verdict and its alerts. */
 function CallCard({ step, live, revealed }: { step: Step; live: boolean; revealed: boolean }) {
   const alerts = revealed ? step.alerts : [];
@@ -34,6 +41,13 @@ function CallCard({ step, live, revealed }: { step: Step; live: boolean; reveale
       <p className="mt-2 font-mono text-[14px] leading-relaxed"><span className="sr-only">Heard: </span>{step.heard}</p>
       <p className="mt-1 text-[12px] text-dim"><span className="mr-1 font-mono text-[10.5px] tracking-wider text-faint">SAID</span>{step.said}</p>
       {revealed && extra && <p className="mt-1 font-mono text-[11.5px] text-dim">{extra}</p>}
+      {revealed && step.read && readNote(step) && (
+        <p className="mt-1 font-mono text-[11.5px] text-dim">
+          <span className="mr-1.5 text-[10.5px] tracking-wider text-faint">READ AS</span>
+          <span className="text-text">{step.read}</span>
+          <span> · {readNote(step)}</span>
+        </p>
+      )}
       {alerts.map((a, i) => (
         <motion.p key={i} initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.06 * i }}
           className={`mt-2 rounded-md px-2.5 py-2 text-[12.5px] leading-snug ${ALERT[a.level]}`}>

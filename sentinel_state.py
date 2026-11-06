@@ -54,6 +54,12 @@ VACATE_STEM = False
 # A13 Part D (fresh voices): 1 of 18 tower clips had "runway 39" -> with it RED mismatch + conflict, without it no RED;
 # 0 worse -> stays ON.
 RW_BAD_LOCATE = True
+# Experiment A14 (7 Nov), Fix U: "runway 290, right, cleared for takeoff" - the runway was lost (glued digits) and
+# the readback lost it too ("Taxiway 2, niner right"), so the take-off never entered the picture and the later
+# crossing of 29R looked safe (DEL_2023 at 10 dB: 6 of 20 missed, all this way). The glued digits still say which
+# runways it COULD be (290 + right -> 29R). Those go into the picture as "maybe": any conflict with them is AMBER
+# "POSSIBLE RUNWAY CONFLICT", never RED. Off until exp_a14.py passes its rules.
+MAYBE_RUNWAY = True
 VACATE_RE = r"\bVACATED\b"
 VACATE_STEM_RE = r"\bVACAT(ED|E|ING)\b"
 READBACK_DUE, READBACK_WINDOW = 10, 30
@@ -145,7 +151,7 @@ class RunwayEngine:
                 continue
             self.occ[s] = [o for o in self.occ[s] if not (o["cs"] == cs and (actions is None or o["action"] in actions))]
 
-    def _check_conflict(self, t, cs, action, rw, cond, hypothetical=False, nums=None):
+    def _check_conflict(self, t, cs, action, rw, cond, hypothetical=False, nums=None, maybe=None):
         strip = strip_of(self.airport, rw)
         out = []
         for s in related_strips(self.airport, strip):
@@ -162,6 +168,15 @@ class RunwayEngine:
                     # If one needs an airborne aircraft and the other one on the ground (BOM_2024: LAND vs TAKEOFF),
                     # they CANNOT be the same aircraft, so the conflict is real now: it stays RED.
                     lvl = "AMBER"
+                heard_as = maybe or o.get("maybe")
+                if lvl and cs and heard_as:
+                    # one side of this conflict is only a "maybe" runway (its number was heard glued): AMBER, never RED
+                    who_maybe, rw_maybe = (cs, rw) if maybe else (o["cs"], o["rw"])
+                    out.append(self._alert(t, "AMBER", "RUNWAY_CONFLICT_POSSIBLE",
+                                           f"POSSIBLE RUNWAY CONFLICT on {strip}: {cs} {action} {rw} while {o['cs']} {o['action']} "
+                                           f"{o['rw']} - {who_maybe}'s runway was heard as '{heard_as}', could be {rw_maybe} - confirm",
+                                           (cs, o["cs"]), rw=rw))
+                    continue
                 if lvl and cs:
                     where = strip if s == strip else f"{strip} (crosses {s})"
                     pre = f"IF {cs} DOES WHAT IT READ BACK: " if hypothetical else ""
@@ -254,6 +269,22 @@ class RunwayEngine:
         # The readback's runway must be ONE digit away from it (29R vs 39) to locate the clearance.
         rw_bad = sorted({x["runway"].rstrip("LRC") for x in a["instructions"] if not x["valid"]}) \
             if rw_unknown and RW_BAD_LOCATE else []
+        if MAYBE_RUNWAY and rw_digits:
+            gm = re.search(r"\bRUNWAY\s+\d{3,}\s*(R|L|C|RIGHT|LEFT|CENTRE|CENTER)\b", a["normalized"].upper())
+            side = gm.group(1)[0] if gm else None
+            cands = sorted(r for r in AIRPORTS[self.airport]["runways"]
+                           if rw_digits.startswith(r.rstrip("LRC")) and (side is None or r.endswith(side)))
+            who = cs or f"UNIDENTIFIED (cleared at t={t:.0f}s)"
+            nums = None if cs else _heard_numbers(a["normalized"])
+            if 1 <= len(cands) <= 2:
+                for act in rw_unknown:
+                    if act not in OCCUPY:
+                        continue
+                    for rw in cands:
+                        out += self._check_conflict(t, who, act, rw, cond, nums=nums, maybe=f"{rw_digits}{side or ''}")
+                        self.occ.setdefault(strip_of(self.airport, rw), []).append(
+                            {"cs": who, "action": act, "rw": rw, "t": t, "until": t + HOLD_TIME[act],
+                             "nums": set(nums or ()), "maybe": f"{rw_digits}{side or ''}"})
         if not cs:
             # who it was for is not known, but SOMEONE was cleared onto that runway: it goes into the picture
             # as an unidentified aircraft (adding to the picture can only add alarms, never hide one).
@@ -504,6 +535,12 @@ class RunwayEngine:
             # a clearance located only by its readback (tower's runway or side lost) goes into the picture too:
             # the pilot will act on what he read back. Adding to the picture can only add alarms, never hide one.
             who_cs = p["cs"] or a["callsign"] or p.get("placeholder")
+            if located:
+                # the readback settled the runway: the "maybe" runways of this clearance are no longer needed
+                # (A14 first run: the maybe entry, renamed later, released the located one and turned a RED into AMBER)
+                gone = {p["cs"], p.get("placeholder"), a["callsign"]} - {None}
+                for st in self.occ:
+                    self.occ[st] = [o for o in self.occ[st] if not (o.get("maybe") and o["cs"] in gone)]
             for rw, act in located:
                 if act in OCCUPY and who_cs:
                     nums = (p.get("nums") or set()) | _heard_numbers(a["normalized"]) if _unknown(who_cs) else None

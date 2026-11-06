@@ -17,3 +17,4 @@ web/out/
 !web/public/audio/
 !web/public/audio/*.wav
 dashboard/
+film_vo/

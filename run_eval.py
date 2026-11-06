@@ -69,6 +69,8 @@ def human_files(items, folder):
     ids = {it["id"] for it in items}
     found, problems = [], []
     for f in sorted(glob.glob(os.path.join(folder, "*"))):
+        if os.path.isdir(f):                      # older test sets' recordings live in subfolders
+            continue
         m = re.match(r"([a-zA-Z]+)_([a-z]\d{3}[abv])\.(m4a|wav|mp3|aac|ogg)$", os.path.basename(f))
         if not m:
             problems.append(f"bad name (want name_id.m4a): {os.path.basename(f)}")

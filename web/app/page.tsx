@@ -42,7 +42,7 @@ export default function Page() {
         <Experiments />
         <Limits />
       </main>
-      <Footer generated={summary.data?.generated} git={summary.data?.git} />
+      <Footer generated={summary.data?.generated} />
     </>
   );
 }

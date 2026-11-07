@@ -1,9 +1,9 @@
 import { SITE } from '@/lib/site';
 
-export default function Footer({ generated, git }: { generated?: string; git?: string | null }) {
+export default function Footer({ generated }: { generated?: string }) {
   return (
     <footer className="mx-auto max-w-page px-4 py-10 text-[12.5px] text-dim sm:px-6">
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2">
         <div>
           <p className="label">Gnani models used</p>
           <ul className="mt-2 space-y-2 p-0">
@@ -11,14 +11,8 @@ export default function Footer({ generated, git }: { generated?: string; git?: s
           </ul>
         </div>
         <div>
-          <p className="label">Team</p>
-          <ul className="mt-2 space-y-2 p-0">
-            {SITE.team.map((t) => <li key={t.name} className="list-none"><b className="text-text">{t.name}</b> - {t.role}</li>)}
-          </ul>
-        </div>
-        <div>
           <p className="label">Build</p>
-          <p className="mt-2">Data exported {generated ?? '–'}{git ? <> from commit <code className="font-mono text-text">{git}</code></> : null}.</p>
+          <p className="mt-2">Results data exported {generated ?? '–'}.</p>
           {SITE.repoUrl && <p className="mt-2"><a className="text-signal underline-offset-2 hover:underline" href={SITE.repoUrl}>Source on GitHub</a></p>}
           {SITE.ciBadge && (
             // eslint-disable-next-line @next/next/no-img-element

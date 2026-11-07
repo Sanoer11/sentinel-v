@@ -52,6 +52,11 @@ PUNCT = set(",.।!?:;")
 # Off until exp_a14.py passes its rules (written in that file before the result).
 TARA_ALIAS = False
 
+# Experiment A16 (7 Nov), Fix R: runway side "right" heard as "arrive(d)" right after a runway number ("runway 29, arrived").
+# Practice data before the exam: 5 times, ONE voice only - not enough. The rule in exp_a16.py was written BEFORE the new
+# practice run with the exam's v2.5 voices (noise recordings 200-209). Off until it passes.
+ARRIVE_AS_RIGHT = False
+
 # Decision switch (your call): True = a callsign with a look-alike from the same airline on
 # frequency (5134/5124, 2817/2871) is shown AMBER, never green. False = old behaviour.
 SIMILAR_CALLSIGN_CAUTION = True
@@ -65,6 +70,8 @@ EIGHT_AS_A = re.compile(r"\b(\d+)A\b")
 
 def normalize(text):
     t = EIGHT_AS_A.sub(lambda m: m.group(1) + "8", text)
+    if ARRIVE_AS_RIGHT:
+        t = re.sub(r"\b(\d{1,2})\s*[,.]?\s*arriv(?:e|ed|es)\b", r"\1 right", t, flags=re.IGNORECASE)
     if TARA_ALIAS:
         t = re.sub(r"\btara\b(?=[\s,.]*\d)", "Vistara", t, flags=re.IGNORECASE)
     for pat, rep in FIXES:
@@ -110,6 +117,27 @@ def normalize(text):
 # Words after which a number is NEVER a flight number.
 NOT_CALLSIGN_BEFORE = {"RUNWAY", "WIND", "DEGREES", "HEADING", "SQUAWK", "LEVEL", "QNH",
                        "KNOTS", "FEET", "ALTITUDE", "FREQUENCY", "CONTACT", "GATE", "STAND", "BAY"}
+
+
+# Experiment A15 (7 Nov), Fix S: the airline word glued onto the flight number as digits ("15725" for "Vistara 725",
+# "36053" for "IFLY 6053", "37982" for "IFLY 3798"): a 5-6 digit number cannot be a flight number. If its LAST digits are
+# exactly ONE flight on frequency, take that flight - always AMBER ("confirm callsign"), never green, never a changed digit.
+# Seen 76 times in the practice runs, many voices. Off until exp_a15.py passes its rules (written there first).
+SUFFIX_CALLSIGN = True
+
+
+def suffix_callsign(up, expected_traffic):
+    toks = re.findall(r"[A-Z]+|\d+", up)
+    edge = set(range(min(3, len(toks)))) | set(range(max(0, len(toks) - 3), len(toks)))
+    flights = [f for f in expected_traffic if f[:3] in AIRLINES.values()]
+    hits = set()
+    for i in sorted(edge):
+        t = toks[i]
+        if t.isdigit() and 5 <= len(t) <= 6:
+            hits |= {(f, t) for f in flights if t.endswith(f[3:]) and 1 <= len(t) - len(f[3:]) <= 2}
+    if len({f for f, _ in hits}) == 1:
+        return next(iter(hits))
+    return None
 
 
 def anchor_callsign(up, expected_traffic):
@@ -257,9 +285,15 @@ def extract(text, airport, expected_traffic):
                 break
         else:
             hit = anchor_callsign(up, expected_traffic)
+            hit2 = None if hit or not SUFFIX_CALLSIGN else suffix_callsign(up, expected_traffic)
             if hit:
                 out["callsign"] = hit
                 out["amber"].append(f"callsign not in the usual airline+number form; number matches {hit} exactly")
+            elif hit2:
+                cs2, heard_num = hit2
+                out["callsign"] = cs2
+                out["amber"].append(f"flight number heard with extra digits in front ({heard_num}); "
+                                    f"its last digits match {cs2} exactly - confirm callsign")
             else:
                 problems.append("no callsign heard")
 

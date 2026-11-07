@@ -1,0 +1,52 @@
+{
+ "locked_scenarios": {
+  "date": "2026-11-07 04:21",
+  "git": "dedbb1d",
+  "result_file": "results/scenarios_locked_20261107_042137.json",
+  "voices": {
+   "tower": [
+    "Pranav",
+    "timbre-v2.5",
+    "en-IN"
+   ],
+   "p1": [
+    "Kaveri",
+    "timbre-v2.5",
+    "en-IN"
+   ],
+   "p2": [
+    "Shlok",
+    "timbre-v2.5",
+    "en-IN"
+   ],
+   "p3": [
+    "Devika",
+    "timbre-v2.5",
+    "en-IN"
+   ],
+   "veh_mr": [
+    "Ishaan",
+    "timbre-v2.5",
+    "mr-IN"
+   ],
+   "veh_hi": [
+    "Poorvi",
+    "timbre-v2.5",
+    "hi-en"
+   ]
+  },
+  "seeds": [
+   100,
+   101,
+   102,
+   103,
+   104
+  ]
+ },
+ "locked_113ea2f1": {
+  "date": "20261107_044121",
+  "git": "dedbb1d",
+  "parser": "6ce812ed911d",
+  "result_file": "results/locked_113ea2f1_20261107_044121.json"
+ }
+}

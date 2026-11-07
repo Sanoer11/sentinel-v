@@ -125,7 +125,12 @@ def main():
     ap.add_argument("--seed-from", type=int, default=0, help="first noise recording number (5 = never heard before)")
     ap.add_argument("--locked", action="store_true", help="THE EXAM: unseen voices, clean + 10 dB x 5 new noise, ONCE")
     ap.add_argument("--voice", action="store_true", help="speak RED alerts from the pre-recorded clips + time it")
+    ap.add_argument("--v25", action="store_true",
+                    help="PRACTICE run with the exam's Timbre v2.5 voices (used up by the locked exam on 7 Nov, so now "
+                         "allowed for development): 10 dB, noise recordings 200-209, never the exam's 100-104")
     a = ap.parse_args()
+    if a.v25:
+        a.cond, a.seed_from, a.seeds = "10", 200, 10
     locked = a.locked and not a.dry_run
     if locked:
         import run_eval
@@ -146,12 +151,14 @@ def main():
         if not a.yes and input("Continue? [y/N] ").strip().lower() != "y":
             return
     os.makedirs("audio_eval/scen", exist_ok=True)
+    os.makedirs("audio_eval/scen_v25", exist_ok=True)
     out = []
     for cond, seed in runs:
         print(f"\n################ condition: {cond}{f'  noise recording {seed}' if seed else ''} ################")
         for name, sc in SCENARIOS.items():
             r = run(name, sc, cond, a.dry_run, tts, stt, a.voice, seed,
-                    voices=LOCKED_VOICE if locked else None, folder="scen_locked" if locked else "scen")
+                    voices=LOCKED_VOICE if (locked or a.v25) else None,
+                    folder="scen_locked" if locked else "scen_v25" if a.v25 else "scen")
             out.append(r)
             print(f"\n=== {name} [{sc['airport']}] {r['verdict']} ===")
             for s in r["steps"]:
@@ -207,7 +214,8 @@ def main():
     eng = sorted(s["engine_ms"] for r in out for s in r["steps"])
     print(f"  Engine decision time per call: median {eng[len(eng) // 2]:.1f} ms, worst {eng[-1]:.1f} ms")
     os.makedirs("results", exist_ok=True)
-    path = f"results/scenarios_{'locked_' if locked else 'dry_' if a.dry_run else ''}{datetime.datetime.now():%Y%m%d_%H%M%S}.json"
+    tag = 'locked_' if locked else 'dry_' if a.dry_run else 'v25_' if a.v25 else ''
+    path = f"results/scenarios_{tag}{datetime.datetime.now():%Y%m%d_%H%M%S}.json"
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"Saved {path}")
     if locked:

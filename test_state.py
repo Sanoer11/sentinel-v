@@ -272,10 +272,23 @@ def test_unidentified_clearance_still_enters_the_picture_and_is_named_by_readbac
     e.call(0, "tower", "Air India 657, runway 27, cleared for takeoff.")
     e.call(4, "pilot", "Runway 27 cleared for takeoff, Air India 657.")
     r1 = e.call(40, "tower", "36053, runway 27, cleared to land.")
-    # LAND (airborne) vs TAKEOFF (on the ground) cannot be one aircraft: RED on time, even unidentified
-    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "RED" for a in r1["alerts"])
+    # LAND (airborne) vs TAKEOFF (on the ground) cannot be one aircraft: RED on time.
+    # Since A15 (Fix S) the glued "36053" already names IGO6053 at the tower call, so the RED names it at once.
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "RED" and "IGO6053" in a["text"] for a in r1["alerts"])
     r2 = e.call(44, "pilot", "Cleared to land, runway 27. IFLY, 6053.")
-    assert any(a["kind"] == "RUNWAY_CONFLICT" and "IGO6053" in a["text"] for a in reds(r2["alerts"]))
+    assert not reds(r2["alerts"])                       # the matching readback adds no second alarm
+    import sentinel_parse
+    sentinel_parse.SUFFIX_CALLSIGN = False              # the old path (unidentified, named by its readback) still works
+    try:
+        e = RunwayEngine("VABB", T, {"AIC657": "ground", "IGO6053": "air"})
+        e.call(0, "tower", "Air India 657, runway 27, cleared for takeoff.")
+        e.call(4, "pilot", "Runway 27 cleared for takeoff, Air India 657.")
+        r1 = e.call(40, "tower", "36053, runway 27, cleared to land.")
+        assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "RED" for a in r1["alerts"])
+        r2 = e.call(44, "pilot", "Cleared to land, runway 27. IFLY, 6053.")
+        assert any(a["kind"] == "RUNWAY_CONFLICT" and "IGO6053" in a["text"] for a in reds(r2["alerts"]))
+    finally:
+        sentinel_parse.SUFFIX_CALLSIGN = True
 
 
 def test_report_vacated_heard_wrong_still_frees_the_runway():
@@ -320,9 +333,19 @@ def test_clipped_crossing_readback_with_report_vacated_does_not_free_runway():
 def test_aircraft_named_only_by_readback_with_lookalike_is_flagged():
     T = {"IGO6053", "IGO6035", "AIC657"}
     e = RunwayEngine("VABB", T, {"IGO6053": "air", "IGO6035": "air"})
+    import sentinel_parse
+    sentinel_parse.SUFFIX_CALLSIGN = False              # tower callsign not recovered: named by the readback only
+    try:
+        e.call(0, "tower", "36053, runway 27, cleared to land.")
+        r = e.call(4, "pilot", "Cleared to land runway 27, IFLY 6035.")
+        assert any(a["kind"] == "NAMED_BY_READBACK_ONLY" for a in r["alerts"])
+    finally:
+        sentinel_parse.SUFFIX_CALLSIGN = True
+    # A15 on: "36053" names IGO6053 (AMBER, look-alike noted), so the look-alike answering is a RED callsign mismatch
+    e = RunwayEngine("VABB", T, {"IGO6053": "air", "IGO6035": "air"})
     e.call(0, "tower", "36053, runway 27, cleared to land.")
     r = e.call(4, "pilot", "Cleared to land runway 27, IFLY 6035.")
-    assert any(a["kind"] == "NAMED_BY_READBACK_ONLY" for a in r["alerts"])
+    assert any(a["level"] == "RED" and "CALLSIGN MISMATCH" in a["text"] for a in r["alerts"])
 
 
 def test_readback_to_a_misunderstood_clearance_is_paired_but_never_matched():
@@ -550,3 +573,20 @@ def test_maybe_runway_needs_glued_digits():
     e.call(0, "tower", "F 725, runway 2 line up and wait, cleared for takeoff.")
     r = e.call(25, "tower", "Vistara 926, cross runway 29 right.")
     assert not any(a["kind"] == "RUNWAY_CONFLICT_POSSIBLE" for a in r["alerts"])
+
+
+# ---- A15 Fix S: airline word glued onto the flight number as digits ----
+
+def test_extra_leading_digits_give_the_flight_as_amber():
+    from sentinel_parse import extract
+    r = extract("36053, runway 27, cleared to land.", "VABB", {"IGO6053", "AIC657"})
+    assert r["callsign"] == "IGO6053" and any("extra digits in front (36053)" in x for x in r["amber"])
+    r = extract("15725, runway 2, 9er right, cleared for takeoff.", "VIDP", {"VTI725", "VTI926"})
+    assert r["callsign"] == "VTI725"
+
+
+def test_extra_digits_matching_two_flights_give_nothing():
+    from sentinel_parse import extract
+    # 35134 ends in 5134 AND in 134 -> two flights could fit: no callsign, never a guess
+    r = extract("35134, hold short, runway 29 right.", "VIDP", {"IGO5134", "AIC134"})
+    assert r["callsign"] is None

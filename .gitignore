@@ -18,3 +18,4 @@ web/out/
 !web/public/audio/*.wav
 dashboard/
 film_vo/
+.DS_Store

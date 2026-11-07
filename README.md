@@ -3,11 +3,20 @@
 **Hears the tower. Watches the runway. Speaks before two clearances collide.**
 
 [![CI](https://github.com/Sanoer11/sentinel-v/actions/workflows/ci.yml/badge.svg)](https://github.com/Sanoer11/sentinel-v/actions/workflows/ci.yml)
-**Live:** https://sentinel-v-one.vercel.app - replay every measured run in a browser, nothing to install.
+
+| | |
+|---|---|
+| **Live site** | https://sentinel-v-one.vercel.app — replay every measured run in the browser, nothing to install |
+| **2-minute demo** | https://lnkd.in/p/ddndXZeH |
+| **One-page pitch** | [PITCH.md](PITCH.md) |
+| **Gnani models** | Prisma v3.0 (speech-to-text) · Timbre v3.0 / v2.5 (text-to-speech) |
 
 Sentinel-V listens to Indian ATC and airside radio - English tower and pilot calls, Hindi, Hinglish and Marathi vehicle
 calls - at Delhi (VIDP), Mumbai (VABB) and Pune (VAPO). It keeps track of who holds each runway, checks every
 readback against the clearance, and **says the alert out loud** when two clearances collide or a readback is wrong.
+
+**At a glance (all measured):** 0 of 90 wrong readbacks missed in a locked exam on unseen voices · 147 of 160 noisy-radio
+scenarios caught on time · Prisma hears a call in 0.49 s (median) · spoken alert ready within 5 ms after that.
 
 Built for Gnani AI's Great Indian AI Internship Challenge. Research prototype on synthetic voices - **not for
 operational use**.
@@ -55,6 +64,9 @@ belongs to.
 | Prisma time per call (median) | 0.49 s | 0.46 s |
 | Spoken alert ready after the call ends (median) | - | 0.48 s (engine 0.1 ms + voice join ~3 ms) |
 
+<details>
+<summary><b>Full test notes: what the locked exam showed, and the fixes made after it (A17)</b></summary>
+
 **What the locked exam showed.** With an unseen tower voice, Prisma often turned "two niner right" into "29, arrived"
 or "290", and the airline word into digits ("35134" for "IFLY 5134"). The engine then says "confirm" (AMBER) instead
 of RED - so Delhi 2023 and hold-short-as-crossing were caught on time in 0 of 5 noisy runs each, although wrong
@@ -87,6 +99,8 @@ stranger taking a clearance looks exactly the same, so turning it AMBER would hi
 A16 ("29, arrived" = 29R) failed its rule: only 3 calls, one voice. Off.
 The held-out check for these fixes is new human audio: `python run_scenarios.py --human` (own-voice recordings,
 run once on committed code, new noise 300-304).
+
+</details>
 
 ## Limits
 - Radio only: no radar or surveillance, so an aircraft that moves without a radio call is invisible.
@@ -124,5 +138,4 @@ All audio is synthetic (Gnani Timbre) or synthetic noise; no real ATC recordings
 incidents are re-voiced from public reports. API keys live only in `.env`; a pre-commit hook blocks keys and audio.
 
 ## Team
-**Sanoer Soni** (B.Tech ECE, AI/ML, MIT-WPU Pune) - everything: speech pipeline, runway engine, readback check,
-experiments, alert voice, site and film.
+**Sanoer Soni** (B.Tech ECE, AI/ML, MIT World Peace University, Pune) · **Rudra Porwal**

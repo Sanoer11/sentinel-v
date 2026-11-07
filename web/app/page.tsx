@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Experiments from '@/components/Experiments';
 import Footer from '@/components/Footer';
+import GnaniModels from '@/components/GnaniModels';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import Limits from '@/components/Limits';
@@ -35,9 +36,10 @@ export default function Page() {
         )}
         <Hero summary={summary.data} onReplay={openReplay} />
         <Replay summary={summary.data} scenario={scenario} setScenario={setScenario} />
+        <GnaniModels summary={summary.data} />
         <Results summary={summary.data} onPick={openReplay} />
-        <Experiments />
         <HowItWorks />
+        <Experiments />
         <Limits />
       </main>
       <Footer generated={summary.data?.generated} git={summary.data?.git} />

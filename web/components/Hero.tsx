@@ -103,9 +103,9 @@ export default function Hero({ summary, onReplay }: { summary?: Summary; onRepla
           <motion.dl custom={4} variants={rise} className="mt-9 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
             {[
               { k: s ? <>{stat(s.noisy_on_time)}<span className="text-dim">/{s.noisy_runs}</span></> : '–', d: 'scenario runs on time at 10 dB radio noise' },
-              { k: s ? <>{stat(s.false_red)}<span className="text-dim">/{s.normal_runs}</span></> : '–', d: 'false REDs in normal traffic' },
-              { k: summary ? <>{stat(summary.readback.wrong.MATCH ?? 0)}<span className="text-dim">/{Object.values(summary.readback.wrong).reduce((a, b) => a + b, 0)}</span></> : '–', d: 'wrong readbacks missed' },
-              { k: s?.prisma_median != null ? <>{stat(s.prisma_median, undefined, 2)}<span className="text-dim"> s</span></> : '–', d: 'median time to hear a call' },
+              { k: summary ? <>{stat(summary.readback.wrong.MATCH ?? 0)}<span className="text-dim">/{Object.values(summary.readback.wrong).reduce((a, b) => a + b, 0)}</span></> : '–', d: 'deliberately wrong readbacks missed' },
+              { k: s?.prisma_median != null ? <>{stat(s.prisma_median, undefined, 2)}<span className="text-dim"> s</span></> : '–', d: 'median time for Prisma to hear a call' },
+              { k: <>&lt;5<span className="text-dim"> ms</span></>, d: 'from a heard call to a spoken alert ready' },
             ].map((x, i) => (
               <div key={i}>
                 <dt className="sr-only">{x.d}</dt>

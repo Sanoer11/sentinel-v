@@ -5,9 +5,10 @@ import ThemeToggle from './ThemeToggle';
 
 const LINKS = [
   { id: 'replay', label: 'Replay' },
+  { id: 'gnani', label: 'Gnani models' },
   { id: 'results', label: 'Results' },
-  { id: 'experiments', label: 'Experiments' },
   { id: 'how', label: 'How it works' },
+  { id: 'experiments', label: 'Experiments' },
   { id: 'limits', label: 'Limits' },
 ];
 

@@ -13,7 +13,7 @@ What it shows, per scenario and per run (clean / 10 dB noise recording n):
 Nothing here is re-heard: the transcripts are the saved ones, so the page shows exactly what the runs measured.
 Alert voices are joined from the cached phrase clips (sentinel_voice.prepare records any missing ones: a few TTS).
 """
-import os
+import os, tempfile
 import sys
 import json
 import shutil
@@ -78,10 +78,14 @@ def replay(run, voice_ok, tts, out=OUT, media=None):
             if al:
                 phr = sentinel_voice.phrases(al)
                 try:
-                    tmp = f"{out}/audio/_alert_tmp.wav"
+                    # temp file in the system temp folder: never inside the site, and a failed delete can't drop the alert
+                    tmp = os.path.join(tempfile.gettempdir(), "sentinel_alert_tmp.wav")
                     sentinel_voice.assemble(phr, tmp)
-                    path = media(tmp, f"audio/{tag}_{i}_alert", out)     # always a different file than tmp
-                    os.remove(tmp)
+                    path = media(tmp, f"audio/{tag}_{i}_alert", out)
+                    try:
+                        os.remove(tmp)
+                    except OSError:
+                        pass
                     spoken = {"file": path, "says": sentinel_voice.sentence(phr)}
                 except Exception as e:                       # a missing clip must not break the page
                     spoken = {"file": None, "says": sentinel_voice.sentence(phr), "error": str(e)[:80]}

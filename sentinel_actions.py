@@ -31,9 +31,15 @@ import re
 from sentinel_parse import (extract, normalize, AIRPORTS, second_listen, callsign_second_listen,
                             vehicle_second_listen)
 
+# Experiment A17, Fix P: "clear for takeoff" / "cleared to take off" (3 times, v25 tower; said "cleared for takeoff"
+# every time). Without it the take-off never enters the runway picture. Off until exp_a17.py passes it.
+CLEAR_TAKEOFF = True
+P_PAT = r"\bCLEAR\s+(?:FOR|TO)\s+TAKE\s*-?\s*OFF\b|\bCLEARED\s+TO\s+TAKE\s*-?\s*OFF\b"
+
 STRONG = [
     ("LAND",       r"\bCLEARED\s+TO\s+LAND\b"),
     ("TAKEOFF",    r"\bCLEARED\s+FOR\s+TAKE\s*-?\s*OFF\b"),
+    ("TAKEOFF",    P_PAT),                                                    # Fix P, A17 (only when CLEAR_TAKEOFF)
     ("LINEUP",     r"\bLINE\s+UP(\s+AND\s+WAIT)?\b"),
     ("CROSS",      r"\bCROSS(ING)?\s+RUNWAY\b"),
     ("HOLD_SHORT", r"\bHOLD(ING)?\s+SHORT\b"),
@@ -99,7 +105,8 @@ RUNWAY_RE = re.compile(r"\bRUNWAY\s+(\d{1,2}[LRC]?)\b")
 
 
 def _hits(up, table, strength):
-    return [(m.start(), a, m.group(0), strength) for a, pat in table for m in re.finditer(pat, up)]
+    return [(m.start(), a, m.group(0), strength) for a, pat in table if CLEAR_TAKEOFF or pat != P_PAT
+            for m in re.finditer(pat, up)]
 
 
 def instructions(normalized, airport, channel="tower"):

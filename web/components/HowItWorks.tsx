@@ -6,7 +6,7 @@ const STEPS = [
   { k: '02', t: 'Gnani Prisma v3.0', d: 'Transcribe every call. A glued number ("290", "36053") gets a second, verbatim listen of the same audio. A vehicle call nobody understood gets one hazard-word hint (पक्षी, birds, FOD) - it may add the bird word, never remove the vehicle.' },
   { k: '03', t: 'Parser', d: 'Callsign, runway and instruction from messy text: "niner", "tree", "fife", Devanagari digits, "29, right" with Prisma\'s comma. Nothing it is unsure of is shown as green.' },
   { k: '04', t: 'Runway engine', d: 'Keeps who holds each runway (Delhi\'s four, Mumbai\'s two crossing runways, Pune). Checks every readback against its clearance and every new clearance against the picture.' },
-  { k: '05', t: 'Gnani Timbre voice', d: 'One alert per call, the most dangerous one: "Runway conflict, two niner right, Vistara niner two six". Phrases are pre-recorded, so the alert is ready ~5 ms after the decision.' },
+  { k: '05', t: 'Gnani Timbre voice', d: 'One alert per call, the most dangerous one: "Runway conflict, two niner right, Vistara niner two six". Phrases are pre-recorded, so the alert is ready within 5 ms of the decision.' },
 ];
 
 export default function HowItWorks() {

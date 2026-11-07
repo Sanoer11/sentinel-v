@@ -13,7 +13,14 @@ RULES - Fix R passes only if ALL hold, on all practice data together:
   R4 at least 8 calls from at least 2 voices lose a flag (FLAGGED -> PROBABLE/CONFIRMED, or one AMBER fewer)
 Also reported (not a rule): how the v25 practice runs score with A14 + A15, before and after Fix R.
 Run: python exp_a16.py
+
+RESULT (7 Nov 2026, v25 practice file results/scenarios_v25_20261107_125432.json + all earlier practice runs, 248 runs):
+  FAIL on R4. worse runs 0, new false RED 0, wrong readbacks missed 0 -> 0, correct shown RED 15 -> 15,
+  but only 3 calls lost a flag, all from one voice (needs 8 from 2+). The new voices rarely said "arrived".
+  ARRIVE_AS_RIGHT stays False. v25 practice runs (A14 + A15 on): PASS 62/80, LATE 1, FAIL 17 - same with Fix R.
+  Loader fix before judging (no rule change): base.runs() only read scenarios_2026*.json, so v25 files were added.
 """
+import glob, json
 from collections import Counter
 import sentinel_parse, sentinel_state
 import exp_a14 as base
@@ -27,8 +34,15 @@ def setfix(r):
     sentinel_state.MAYBE_RUNWAY = True
 
 
+def v25_runs():
+    out = []
+    for f in sorted(glob.glob("results/scenarios_v25_*.json")):
+        out += [r for r in json.load(open(f, encoding="utf-8")) if r["cond"] != "text"]
+    return out
+
+
 def main():
-    R = {(r["scenario"], r["cond"], r.get("seed", 0)): r for r in base.runs()}
+    R = {(r["scenario"], r["cond"], r.get("seed", 0)): r for r in base.runs() + v25_runs()}
     v25 = [k for k in R if 200 <= k[2] <= 209]
     print(f"practice runs {len(R)} (v25 voices, noise 200-209: {len(v25)})")
     if not v25:

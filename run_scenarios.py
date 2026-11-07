@@ -19,6 +19,7 @@ Latency: wall time of each Prisma call is logged (used in Step 3).
 """
 import os
 import sys
+import glob
 import json
 import time
 import hashlib
@@ -51,6 +52,36 @@ LOCKED_VOICE = {
 }
 LOCKED_SEEDS = range(100, 105)          # noise recordings never used before
 
+# OWN-VOICE TEST (A17 held-out check): the 33 scenario lines read by a real person, recorded on a phone/laptop,
+# my_voice/scen/<SCENARIO>_<step>.m4a (or .wav/.mp3). Never uploaded or published (my_voice/ is gitignored).
+# Run once on committed code: clean + 10 dB with noise recordings 300-304, never used before.
+HUMAN_DIR, HUMAN_SEEDS = "my_voice/scen", range(300, 305)
+
+
+def human_script():
+    os.makedirs(HUMAN_DIR, exist_ok=True)
+    lines = []
+    for name, sc in SCENARIOS.items():
+        for i, (t, ch, spk, said) in enumerate(sc["steps"]):
+            lines.append(f"{name}_{i}.m4a   [{ch}, {spk}]   {said}")
+    open(f"{HUMAN_DIR}/RECORD_THESE.txt", "w", encoding="utf-8").write("\n".join(lines) + "\n")
+    print("\n".join(lines))
+    print(f"\n{len(lines)} lines -> {HUMAN_DIR}/RECORD_THESE.txt")
+
+
+def human_clip(name, i, spk, dest):
+    """Your recording of this line, as 16 kHz mono WAV (ffmpeg, or macOS afconvert)."""
+    import shutil, subprocess
+    src = next((f"{HUMAN_DIR}/{name}_{i}.{e}" for e in ("m4a", "wav", "mp3") if os.path.exists(f"{HUMAN_DIR}/{name}_{i}.{e}")), None)
+    if src is None:
+        raise SystemExit(f"missing recording: {HUMAN_DIR}/{name}_{i}.m4a  (run  python run_scenarios.py --human-script)")
+    if not os.path.exists(dest):
+        if shutil.which("ffmpeg"):
+            subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", src, "-ac", "1", "-ar", "16000", dest], check=True)
+        else:
+            subprocess.run(["afconvert", "-f", "WAVE", "-d", "LEI16@16000", "-c", "1", src, dest], check=True)
+    return True
+
 
 def run(name, sc, cond, dry, tts=None, stt=None, voice=False, seed=0, voices=None, folder="scen"):
     import soundfile as sf
@@ -64,10 +95,13 @@ def run(name, sc, cond, dry, tts=None, stt=None, voice=False, seed=0, voices=Non
         if dry:
             text = said
         else:
-            v = (voices or VOICE)[spk]
             clean = f"audio_eval/{folder}/{name}_{i}_{spk}.wav"
-            if not tts(said, v[0], v[1], v[2], clean):
-                raise SystemExit(f"TTS failed for {name} step {i}")
+            if folder == "scen_human":
+                human_clip(name, i, spk, clean)
+            else:
+                v = (voices or VOICE)[spk]
+                if not tts(said, v[0], v[1], v[2], clean):
+                    raise SystemExit(f"TTS failed for {name} step {i}")
             path = clean
             if cond != "clean":
                 path = noisy_path(clean, cond, seed)
@@ -128,7 +162,24 @@ def main():
     ap.add_argument("--v25", action="store_true",
                     help="PRACTICE run with the exam's Timbre v2.5 voices (used up by the locked exam on 7 Nov, so now "
                          "allowed for development): 10 dB, noise recordings 200-209, never the exam's 100-104")
+    ap.add_argument("--human-script", action="store_true", help="write the 33 lines to record (my_voice/scen/RECORD_THESE.txt)")
+    ap.add_argument("--human", action="store_true",
+                    help="OWN-VOICE TEST, once, on committed code: your recordings, clean + 10 dB x noise 300-304")
     a = ap.parse_args()
+    if a.human_script:
+        return human_script()
+    if a.human:
+        import run_eval
+        commit, dirty = run_eval.git_state()
+        if commit is None or dirty:
+            raise SystemExit("STOP: the own-voice test needs committed code. Commit first (git status must be clean).")
+        if glob.glob("results/scenarios_human_*.json"):
+            raise SystemExit("STOP: the own-voice test was already run: " + glob.glob("results/scenarios_human_*.json")[0])
+        missing = [f"{n}_{i}" for n, sc in SCENARIOS.items() for i in range(len(sc["steps"]))
+                   if not any(os.path.exists(f"{HUMAN_DIR}/{n}_{i}.{e}") for e in ("m4a", "wav", "mp3"))]
+        if missing:
+            raise SystemExit(f"{len(missing)} recordings missing, e.g. {missing[:5]} (see {HUMAN_DIR}/RECORD_THESE.txt)")
+        a.cond, a.seed_from, a.seeds = "clean,10", HUMAN_SEEDS.start, len(HUMAN_SEEDS)
     if a.v25:
         a.cond, a.seed_from, a.seeds = "10", 200, 10
     locked = a.locked and not a.dry_run
@@ -152,13 +203,14 @@ def main():
             return
     os.makedirs("audio_eval/scen", exist_ok=True)
     os.makedirs("audio_eval/scen_v25", exist_ok=True)
+    os.makedirs("audio_eval/scen_human", exist_ok=True)
     out = []
     for cond, seed in runs:
         print(f"\n################ condition: {cond}{f'  noise recording {seed}' if seed else ''} ################")
         for name, sc in SCENARIOS.items():
             r = run(name, sc, cond, a.dry_run, tts, stt, a.voice, seed,
                     voices=LOCKED_VOICE if (locked or a.v25) else None,
-                    folder="scen_locked" if locked else "scen_v25" if a.v25 else "scen")
+                    folder="scen_locked" if locked else "scen_human" if a.human else "scen_v25" if a.v25 else "scen")
             out.append(r)
             print(f"\n=== {name} [{sc['airport']}] {r['verdict']} ===")
             for s in r["steps"]:
@@ -214,7 +266,7 @@ def main():
     eng = sorted(s["engine_ms"] for r in out for s in r["steps"])
     print(f"  Engine decision time per call: median {eng[len(eng) // 2]:.1f} ms, worst {eng[-1]:.1f} ms")
     os.makedirs("results", exist_ok=True)
-    tag = 'locked_' if locked else 'dry_' if a.dry_run else 'v25_' if a.v25 else ''
+    tag = 'locked_' if locked else 'dry_' if a.dry_run else 'human_' if a.human else 'v25_' if a.v25 else ''
     path = f"results/scenarios_{tag}{datetime.datetime.now():%Y%m%d_%H%M%S}.json"
     json.dump(out, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"Saved {path}")

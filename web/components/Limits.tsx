@@ -2,21 +2,19 @@
 import { motion } from 'framer-motion';
 
 const LIMITS = [
-  { t: 'A clipped "Runway" is often gone from the audio', d: 'In 15 of 24 noisy readbacks it became a digit glued to the number ("227" for runway 27). Filling it in from the tower\'s call would hide a real wrong readback, so it stays AMBER: "runway not read back clearly".' },
-  { t: '"Crossing" is lost in most noisy readbacks', d: '8 of 12 noisy clips (7 heard as "I think runway…"). A clipped "Holding" sounds the same, so no guess is made. A hold-short that is not confirmed on a busy runway is still RED.' },
-  { t: 'A misheard callsign digit looks like a real pilot error', d: 'Prisma gives no confidence score, and a second listen mostly hears the same digits (A6). The alert ends with "confirm callsign" - the controller asks for a say-again, as ICAO requires anyway.' },
-  { t: 'Synthetic voices, simulated radio', d: 'All speech is Gnani Timbre; the radio noise is simulated. Real friends\' recordings and a one-time locked exam on unseen voices are the next tests.' },
-  { t: 'Hold times are assumptions', d: 'How long a landing or crossing "holds" a runway is a fixed number per action, not ATC data. A missing "runway vacated" keeps the runway busy - the RED says so.' },
-  { t: 'Radio cannot see the ground', d: 'An aircraft that enters a runway without any call (an incursion with no radio) needs a surveillance feed. The engine has the slot for one; there is no data source here.' },
+  { t: 'Radio only', d: 'It hears what is said on frequency. An aircraft that moves without any call needs a surveillance feed; the engine has the slot for one, there is no data source here.' },
+  { t: 'Synthetic voices, simulated radio', d: 'All speech is Gnani Timbre through a simulated VHF radio, by design: no real ATC recordings. The next test is human voices (run_scenarios.py --human).' },
+  { t: 'A misheard callsign digit is treated as real', d: 'It cannot be told apart from a stranger taking a clearance, so it stays RED "confirm callsign" - 2 of 20 normal Delhi runs at 10 dB, 15 of 285 correct readbacks.' },
+  { t: 'Clipped words are never guessed', d: 'When push-to-talk cuts "Runway" or "Crossing", the call stays AMBER instead of being filled in. A hold-short that is not confirmed on a busy runway is still RED.' },
 ];
 
 export default function Limits() {
   return (
     <section id="limits" aria-labelledby="limits-h" className="border-b border-line">
       <div className="mx-auto max-w-page px-4 py-14 sm:px-6">
-        <p className="label">Limits · measured, stated plainly</p>
-        <h2 id="limits-h" className="mt-2 text-3xl font-semibold tracking-tight">What it cannot do (yet)</h2>
-        <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <p className="label">Scope · stated plainly</p>
+        <h2 id="limits-h" className="mt-2 text-3xl font-semibold tracking-tight">Where it stops</h2>
+        <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
           {LIMITS.map((l, i) => (
             <motion.div key={l.t} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.06 }} className="card p-4">

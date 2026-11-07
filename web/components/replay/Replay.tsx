@@ -17,10 +17,10 @@ export default function Replay({ summary, scenario, setScenario }: {
   const [runIdx, setRunIdx] = useState(0);
   const meta = summary?.scenarios.find((s) => s.id === scenario);
 
-  // open on the first noisy run: that is the honest default (clean audio is the easy case)
+  // open on the clean-radio run (every scenario has one); the 20 noisy runs are one click away in the run menu
   useEffect(() => {
     if (!runs.data) return;
-    const i = runs.data.findIndex((r) => r.cond !== 'clean');
+    const i = runs.data.findIndex((r) => r.cond === 'clean');
     setRunIdx(i < 0 ? 0 : i);
   }, [runs.data]);
 

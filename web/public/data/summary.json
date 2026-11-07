@@ -1,10 +1,10 @@
 {
  "generated": "07 Nov 2026",
- "git": "467044a",
+ "git": "03de00d",
  "stats": {
   "noisy_runs": 160,
-  "noisy_on_time": 137,
-  "noisy_late": 6,
+  "noisy_on_time": 147,
+  "noisy_late": 0,
   "noise_samples": 20,
   "normal_runs": 20,
   "false_red": 2,
@@ -711,12 +711,12 @@
  "readback": {
   "wrong": {
    "MISMATCH": 50,
-   "INCOMPLETE": 23,
-   "NO_CLEARANCE": 2
+   "INCOMPLETE": 24,
+   "NO_CLEARANCE": 1
   },
   "correct": {
-   "MATCH": 179,
-   "INCOMPLETE": 88,
+   "MATCH": 181,
+   "INCOMPLETE": 86,
    "MISMATCH": 15,
    "NO_CLEARANCE": 3
   }
@@ -734,9 +734,8 @@
      "ON TIME": 1
     },
     "noisy": {
-     "ON TIME": 8,
-     "MISSED": 6,
-     "LATE": 6
+     "ON TIME": 18,
+     "MISSED": 2
     }
    }
   },

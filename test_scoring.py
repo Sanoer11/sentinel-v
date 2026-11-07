@@ -154,7 +154,8 @@ def test_second_listen_rescues_glued_runway_as_amber():
     # real A2 transcripts (Harshad, radio)
     o, r = judge("Air fly 5134, cross runway 290, right report vacated.", "VIDP", DEL, "29R", "IGO5134",
                  second_text="Air fly five one three four, cross runway two niner, right report vacated.")
-    assert o == "AMBER" and r["runway"] == "29R" and "second listen" in r["amber"][-1]
+    # since A17 (Fix G) listen 1 alone gives 29R (side heard); the second listen agrees, so it stands - still AMBER
+    assert o == "AMBER" and r["runway"] == "29R" and any("second listen" in x or "heard as 290R" in x for x in r["amber"])
 
 
 def test_second_listen_never_changes_digits():

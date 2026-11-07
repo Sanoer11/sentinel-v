@@ -1,6 +1,6 @@
 // Every experiment run on Sentinel-V, with its rule written down BEFORE the result was seen.
 // Failed ideas are listed on purpose: a fix that was measured and rejected is as much a result as one that shipped.
-// Numbers are copied from each experiment's printed output (exp_a1.py ... exp_a13.py in the repo).
+// Numbers are copied from each experiment's printed output (exp_a1.py ... exp_a17.py in the repo).
 
 export type ExpVerdict = 'PASS' | 'FAIL' | 'FINDING' | 'LIMIT' | 'NARROWED';
 
@@ -112,6 +112,40 @@ export const EXPERIMENTS: Experiment[] = [
       { fix: '"vacate it" = vacated', rule: 'In 2+ voices, fewer false REDs, never more.', result: '0 voices. 3 of 18 "Runway vacated" were lost completely.', verdict: 'FAIL' },
       { fix: 'Misheard runway digit ("39" for 29)', rule: 'Stays on unless it makes anything worse.', result: '1 fresh case helped, 0 worse. Stays live.', verdict: 'PASS' },
       { fix: '"Crossing" clipped', rule: 'Report only - a clipped "Holding" sounds the same.', result: 'Lost in 8 of 12 noisy clips (7 as "I think runway..."). Still RED via "hold short not confirmed".', verdict: 'LIMIT' },
+    ],
+  },
+{
+    id: 'A14', date: '7 Nov', data: 'Every saved practice run (168) and readback transcript',
+    question: 'Delhi 2023 at 10 dB: a take-off runway heard glued ("290, right") and lost in the readback never entered the runway picture, so the crossing looked safe.',
+    parts: [
+      { fix: 'Fix U (glued runway kept as a "maybe")', rule: 'Wrong readbacks missed stays 0, no new false RED, 0 runs worse, silent misses go down.', result: '4 of 6 silent Delhi misses became AMBER "possible runway conflict" at the right call; 0 worse. Live.', verdict: 'PASS' },
+      { fix: 'Fix T ("Tara" = Vistara)', rule: 'Same rules.', result: '17 flags fewer, but 2 new false REDs. Off.', verdict: 'FAIL' },
+    ],
+  },
+  {
+    id: 'A15', date: '7 Nov', data: 'Every saved practice run and readback transcript',
+    question: 'The airline word turned into digits in front of the flight number ("36053" for IFLY 6053).',
+    parts: [
+      { fix: 'Fix S (last digits = exactly one flight on frequency)', rule: '0 wrong readbacks missed, 0 runs worse, fewer flags.', result: '20 flags fewer, 0 worse. Always AMBER "confirm callsign". Live.', verdict: 'PASS' },
+    ],
+  },
+  {
+    id: 'A16', date: '7 Nov', data: '80 new practice runs with the exam voices (new noise 200-209) + all earlier practice',
+    question: '"two niner right" heard as "29, arrived" by the exam\'s tower voice.',
+    parts: [
+      { fix: 'Fix R ("arrived" after a runway = right)', rule: '8+ calls from 2+ voices lose a flag, nothing worse.', result: 'Only 3 calls, one voice: the new voices rarely said "arrived". Off.', verdict: 'FAIL' },
+    ],
+  },
+  {
+    id: 'A17', date: '7 Nov', data: '248 practice runs (168 + 80 new) and 864 saved lines',
+    question: 'Each remaining miss traced to one exact cause, counted on every saved transcript before any code.',
+    parts: [
+      { fix: 'Fix G ("runway 290, right" = 29R)', rule: '0 wrong readbacks missed, no new false RED, 0 runs worse, 1+ better.', result: 'First two digits right 61 of 61, side right 48 of 48. 13 runs better, 0 worse, 0 lines shown wrong. Steps back if the second listen disagrees. Live.', verdict: 'PASS' },
+      { fix: 'Fix N ("Tara 9026" = VTI926)', rule: 'Same rules.', result: '"niner" written 90 inside a flight number, 10 of 10. 1 run better, 0 worse. Always AMBER. Live.', verdict: 'PASS' },
+      { fix: 'Fix K (crossing a runway someone is taking off from)', rule: 'Same rules.', result: 'An aircraft cannot cross the runway it is departing from, so an unidentified crossing stays RED. 2 better, 0 worse. Live.', verdict: 'PASS' },
+      { fix: 'Fix P ("clear for takeoff", "cleared to take off")', rule: 'Same rules.', result: 'The take-off was missing from the picture. 1 better, 0 worse. Live.', verdict: 'PASS' },
+      { fix: 'Fix X (callsign lost, instruction trusted)', rule: 'Same rules.', result: 'Correct readbacks shown RED 15 -> 17: when the callsign is lost, the instruction is often garbled too. Off.', verdict: 'FAIL' },
+      { fix: 'All four together', rule: 'Same rules.', result: 'Practice 10 dB on time 137 -> 147 of 160; exam voices 62 -> 70 of 80 (Delhi 2023 4 -> 9 of 10); false RED unchanged. Designed on this data, so not a held-out score.', verdict: 'PASS' },
     ],
   },
 ];

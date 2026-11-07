@@ -425,11 +425,21 @@ def test_runway_lost_in_tower_call_is_located_by_the_readback():
     # DEL_2023 10 dB noise recordings 1 and 2 (4 Nov), exact transcripts: tower runway glued (290), pilot's
     # "Runway" heard as "Taxiway" -> before: no conflict when VTI926 was cleared to cross 29R
     import sentinel_actions
+    import sentinel_parse
     sentinel_actions.TAXIWAY_AS_RUNWAY = True          # needed for this pilot transcript; OFF by default (A12 T1)
+    sentinel_parse.GLUE_RUNWAY_SIDE = False            # this path still serves glue with NO side heard ("2900")
     try:
         _located_case()
     finally:
         sentinel_actions.TAXIWAY_AS_RUNWAY = False
+        sentinel_parse.GLUE_RUNWAY_SIDE = True
+    # A17 Fix G: the side was heard, so the tower call itself gives 29R and the crossing is RED at once
+    for t0 in ("ARF 725, runway 290, right. Cleared for takeoff.", "775, runway 290, right. Cleared for takeoff."):
+        e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
+        e.call(0, "tower", t0)
+        e.call(4, "pilot", "Taxiway 2, niner right, cleared for takeoff, Vistara 725.")
+        r = e.call(25, "tower", "Tara, 926, cross runway 29 right.")
+        assert any(a["level"] == "RED" and a["kind"] == "RUNWAY_CONFLICT" for a in r["alerts"])
 
 
 def _located_case():
@@ -498,9 +508,10 @@ def test_unidentified_crossing_whose_number_cannot_be_the_departure_is_red():
     e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
     e.call(0, "tower", "First 725, runway 2, 9er right, cleared for takeoff.")
     e.call(4, "pilot", "One way, 29er right, cleared for takeoff. Vistara 725.")
-    e.call(25, "tower", "Tara, 9826, cross runway 298, right?")
+    r1 = e.call(25, "tower", "Tara, 9826, cross runway 298, right?")
     r = e.call(29, "pilot", "Crossing runway 29 right, Vistara 9 Tuesday.")
-    assert any(a["level"] == "RED" and a["kind"] == "RUNWAY_CONFLICT" for a in r["alerts"])
+    # since A17 Fix G ("298, right" -> 29R) the RED comes at the tower call itself; before, at the readback
+    assert any(a["level"] == "RED" and a["kind"] == "RUNWAY_CONFLICT" for a in r1["alerts"] + r["alerts"])
 
 
 def test_unidentified_that_could_be_the_same_aircraft_stays_amber():
@@ -548,13 +559,20 @@ def test_conflict_with_an_old_landing_says_no_vacated_report_was_heard():
 def test_unlocated_glued_runway_gives_possible_conflict_amber():
     # DEL_2023 10 dB noise recording 1 (exact transcripts): runway glued in the tower call AND lost in the readback.
     # Before A14 the crossing looked safe (silent miss). Now: AMBER "possible", never RED (the runway is a guess).
-    e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
-    e.call(0, "tower", "ARF 725, runway 290, right. Cleared for takeoff.")
-    e.call(4, "pilot", "Taxiway 2, niner right, cleared for takeoff, Vistara 725.")
-    r = e.call(25, "tower", "Tara, 926, cross runway 29 right.")
-    poss = [a for a in r["alerts"] if a["kind"] == "RUNWAY_CONFLICT_POSSIBLE"]
-    assert poss and poss[0]["level"] == "AMBER" and "heard as '290R', could be 29R" in poss[0]["text"]
-    assert not reds(r["alerts"])
+    # Since A17 Fix G a glued runway WITH its side heard is read at once (RED test above); the "maybe" path still
+    # serves glue with no side or no unique runway. Tested here with G off, on the exact transcripts.
+    import sentinel_parse
+    sentinel_parse.GLUE_RUNWAY_SIDE = False
+    try:
+        e = RunwayEngine("VIDP", {"VTI725", "VTI926", "AIC2817"}, {"VTI725": "ground", "VTI926": "ground"})
+        e.call(0, "tower", "ARF 725, runway 290, right. Cleared for takeoff.")
+        e.call(4, "pilot", "Taxiway 2, niner right, cleared for takeoff, Vistara 725.")
+        r = e.call(25, "tower", "Tara, 926, cross runway 29 right.")
+        poss = [a for a in r["alerts"] if a["kind"] == "RUNWAY_CONFLICT_POSSIBLE"]
+        assert poss and poss[0]["level"] == "AMBER" and "heard as '290R', could be 29R" in poss[0]["text"]
+        assert not reds(r["alerts"])
+    finally:
+        sentinel_parse.GLUE_RUNWAY_SIDE = True
 
 
 def test_maybe_runway_never_hides_a_located_red():
@@ -590,3 +608,57 @@ def test_extra_digits_matching_two_flights_give_nothing():
     # 35134 ends in 5134 AND in 134 -> two flights could fit: no callsign, never a guess
     r = extract("35134, hold short, runway 29 right.", "VIDP", {"IGO5134", "AIC134"})
     assert r["callsign"] is None
+
+
+# ---- A17: niner glue in runway (G) and flight numbers (N), take-off then crossing (K), "clear for takeoff" (P) ----
+
+def test_glued_runway_with_side_reads_as_that_runway_amber():
+    from sentinel_parse import extract
+    r = extract("Tata 725, runway 290, right, cleared for takeoff.", "VIDP", {"VTI725", "VTI926"})
+    assert r["runway"] == "29R" and any("heard as 290R" in x for x in r["amber"])
+    r = extract("Air India 2817, runway 2900, cleared for takeoff.", "VIDP", {"AIC2817"})
+    assert r["runway"] is None                          # no side heard: 29L or 29R, never a guess
+    r = extract("Air India 657, runway 270, cleared for takeoff.", "VABB", {"AIC657"})
+    assert r["runway"] is None                          # only after "niner" (X9 + extra digits)
+
+
+def test_niner_glue_inside_flight_number_amber():
+    from sentinel_parse import extract
+    r = extract("Crossing runway 29 right with Tara 9026.", "VIDP", {"VTI725", "VTI926"})
+    assert r["callsign"] == "VTI926" and any("heard as 9026" in x for x in r["amber"])
+    r = extract("Crossing runway 29 right, 9026.", "VIDP", {"VTI926", "IGO926"})
+    assert r["callsign"] is None                        # two flights fit: nothing
+
+
+def test_unidentified_crossing_of_takeoff_runway_is_red():
+    T = {"VTI725", "VTI926"}
+    e = RunwayEngine("VIDP", T, {"VTI725": "ground", "VTI926": "ground"})
+    e.call(0, "tower", "Vistara 725, runway 29 right, cleared for takeoff.")
+    e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Vistara 725.")
+    r = e.call(25, "tower", "We start on number 26, cross runway 29 right.")
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "RED" for a in r["alerts"])
+    import sentinel_state
+    sentinel_state.TAKEOFF_THEN_CROSS = False
+    try:
+        e = RunwayEngine("VIDP", T, {"VTI725": "ground", "VTI926": "ground"})
+        e.call(0, "tower", "Vistara 725, runway 29 right, cleared for takeoff.")
+        e.call(4, "pilot", "Runway 29 right, cleared for takeoff, Vistara 725.")
+        r = e.call(25, "tower", "We start on number 26, cross runway 29 right.")
+        assert not any(a["level"] == "RED" for a in r["alerts"])
+    finally:
+        sentinel_state.TAKEOFF_THEN_CROSS = True
+
+
+def test_crossing_then_takeoff_can_be_one_aircraft():
+    e = RunwayEngine("VIDP", {"VTI725"}, {"VTI725": "ground"})
+    e.call(0, "tower", "Vistara 725, cross runway 29 right.")
+    e.call(4, "pilot", "Crossing runway 29 right, Vistara 725.")
+    r = e.call(40, "tower", "Runway 29 right, cleared for takeoff.")
+    assert not any(a["level"] == "RED" for a in r["alerts"])
+
+
+def test_clear_for_takeoff_enters_the_picture():
+    e = RunwayEngine("VABB", {"AIC657", "IGO6053"}, {"AIC657": "ground", "IGO6053": "air"})
+    e.call(0, "tower", "Air India 657, runway 27, cleared to take off.")
+    r = e.call(40, "tower", "IFLY 6053, runway 27, cleared to land.")
+    assert any(a["kind"] == "RUNWAY_CONFLICT" and a["level"] == "RED" for a in r["alerts"])

@@ -60,6 +60,17 @@ RW_BAD_LOCATE = True
 # runways it COULD be (290 + right -> 29R). Those go into the picture as "maybe": any conflict with them is AMBER
 # "POSSIBLE RUNWAY CONFLICT", never RED. Off until exp_a14.py passes its rules.
 MAYBE_RUNWAY = True
+# Experiment A17, Fix K: an unidentified CROSS of a runway that already has a TAKE-OFF clearance cannot be that
+# aircraft cleared twice (it cannot cross the runway it is departing from), so the conflict stays RED (DEL_2023:
+# "We start on number 26, cross runway 29 right" with the callsign lost). Only that order: crossing first and a
+# take-off later CAN be one aircraft (crossed to reach the departure end). Off until exp_a17.py passes it.
+TAKEOFF_THEN_CROSS = True
+# Experiment A17, Fix X: tower callsign lost, instruction and runway heard ("351P4, hold short, runway 29 right").
+# A readback "crossing runway 29 right, IFLY 5134" differs in the INSTRUCTION, which was heard clearly: RED, and
+# "if it does what it read back" is checked under the readback's callsign.
+# RESULT: FAIL (2 correct readbacks became RED: when the callsign is lost, Prisma often garbled the
+# instruction too - "cleared to land" heard as "cleared for takeoff"). Kept off.
+CALLSIGN_ONLY_UNCLEAR = False
 VACATE_RE = r"\bVACATED\b"
 VACATE_STEM_RE = r"\bVACAT(ED|E|ING)\b"
 READBACK_DUE, READBACK_WINDOW = 10, 30
@@ -162,6 +173,8 @@ class RunwayEngine:
                 maybe_same = (_unknown(cs) and _could_be(nums, o["cs"])) or (_unknown(o["cs"]) and _could_be(o.get("nums"), cs))
                 if (_unknown(cs) and _unknown(o["cs"])) or (not EXCLUDE_BY_NUMBER and (_unknown(cs) or _unknown(o["cs"]))):
                     maybe_same = True
+                if TAKEOFF_THEN_CROSS and o["action"] == "TAKEOFF" and action == "CROSS" and not hypothetical:
+                    maybe_same = False                  # departing from it and crossing it: two aircraft
                 if lvl and maybe_same and _same_phase(action, o["action"]):
                     # who it is is not known, and both clearances fit ONE aircraft (e.g. two take-off clearances):
                     # it may be the same aircraft cleared twice -> possible conflict, upgraded once identified.
@@ -296,6 +309,7 @@ class RunwayEngine:
                     self._occupy(t, ph, act, rw, nums=_heard_numbers(a["normalized"]))
             if ins or a["call_actions"] or rw_unknown:
                 self.pending.append({"t": t, "cs": None, "placeholder": ph, "ins": ins, "rw_unknown": rw_unknown,
+                                     "callsign_only": bool(ins) and all("callsign" in pr for pr in a["problems"]),
                                      "nums": _heard_numbers(a["normalized"]),
                                      "rw_digits": rw_digits,
                                      "call_actions": list(a["call_actions"]), "cond": cond,
@@ -498,7 +512,8 @@ class RunwayEngine:
         # HOLD_AS_CROSS at 10 dB (4 Nov, 2 of 5 noise recordings): tower "hold short runway 29 as well" (side
         # lost), readback "crossing runway 29 right" -> was only AMBER "tower call unclear". The unclear part
         # (side) is settled by the readback and has nothing to do with HOLD SHORT vs CROSSING: that stays RED.
-        clear_enough = ((p.get("side_only") and side_settled) or (p.get("runway_only") and rw_settled)) \
+        clear_enough = ((p.get("side_only") and side_settled) or (p.get("runway_only") and rw_settled)
+                        or (CALLSIGN_ONLY_UNCLEAR and p.get("callsign_only") and a["callsign"])) \
             and all(w.startswith("INSTRUCTION MISMATCH") for w in wrong)
         if wrong and p["unclear"] and not clear_enough:
             # the reference itself was not heard cleanly: say so, don't claim a pilot error
@@ -513,7 +528,8 @@ class RunwayEngine:
             # what if the pilot does what he read back?
             for x in a["instructions"]:
                 if x["valid"] and x["action"] in OCCUPY and (x["runway"], x["action"]) not in p["ins"]:
-                    out += self._check_conflict(t, p["cs"], x["action"], x["runway"], False, hypothetical=True)
+                    out += self._check_conflict(t, p["cs"] or (a["callsign"] if CALLSIGN_ONLY_UNCLEAR else None),
+                                                x["action"], x["runway"], False, hypothetical=True)
         elif missing:
             urgent = any(c in m for m in missing for c in ("STOP", "GO_AROUND"))
             # A HOLD SHORT that is not confirmed, on a runway someone else is using right now, is the classic

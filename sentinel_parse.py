@@ -54,7 +54,8 @@ TARA_ALIAS = False
 
 # Experiment A16 (7 Nov), Fix R: runway side "right" heard as "arrive(d)" right after a runway number ("runway 29, arrived").
 # Practice data before the exam: 5 times, ONE voice only - not enough. The rule in exp_a16.py was written BEFORE the new
-# practice run with the exam's v2.5 voices (noise recordings 200-209). Off until it passes.
+# practice run with the exam's v2.5 voices (noise recordings 200-209).
+# RESULT: FAIL (only 3 calls lost a flag, one voice; needs 8 from 2+). The new voices rarely said "arrived". Kept off.
 ARRIVE_AS_RIGHT = False
 
 # Decision switch (your call): True = a callsign with a look-alike from the same airline on
@@ -124,6 +125,35 @@ NOT_CALLSIGN_BEFORE = {"RUNWAY", "WIND", "DEGREES", "HEADING", "SQUAWK", "LEVEL"
 # exactly ONE flight on frequency, take that flight - always AMBER ("confirm callsign"), never green, never a changed digit.
 # Seen 76 times in the practice runs, many voices. Off until exp_a15.py passes its rules (written there first).
 SUFFIX_CALLSIGN = True
+
+
+# Experiment A17 (7 Nov), Fix G: a runway number glued after "niner" with the SIDE heard ("runway 290, right",
+# "298R", "2900R"): in all saved practice transcripts the first two digits were right 61 of 61 and the side 48 of 48.
+# Only "X9 + 1-2 extra digits + side", only if X9+side exists here. Always AMBER, the heard form is shown.
+GLUE_RUNWAY_SIDE = True
+GLUE_RE = re.compile(r"\b(runway\s+)(\d9)(\d{1,2})([LRC])\b", re.IGNORECASE)
+
+# Experiment A17, Fix N: "niner" written 90 INSIDE a 4-5 digit flight number ("Tara 9026" for "Vistara niner two six",
+# 10 of 10 in the saved transcripts). Only that form: 4 digits, ONE "0" dropped right after a "9" (5-digit glue and
+# 98/99 stay with A3's second listen: "98714" can really be "nine eight seven one four"). It must give exactly ONE
+# flight on frequency, the raw number none - always AMBER ("confirm callsign"), never green.
+NINER0_CALLSIGN = True
+
+
+def niner0_callsign(up, expected_traffic):
+    toks = re.findall(r"[A-Z]+|\d+", up)
+    edge = set(range(min(3, len(toks)))) | set(range(max(0, len(toks) - 3), len(toks)))
+    flights = [f for f in expected_traffic if f[:3] in AIRLINES.values()]
+    nums = {f[3:] for f in flights}
+    hits = set()
+    for i in sorted(edge):
+        t = toks[i]
+        if t.isdigit() and len(t) == 4 and t not in nums and not (i > 0 and toks[i - 1] in NOT_CALLSIGN_BEFORE):
+            ok = {t[:j + 1] + t[j + 2:] for j in range(len(t) - 1) if t[j] == "9" and t[j + 1] == "0"}
+            hits |= {(f, t) for f in flights if f[3:] in ok}
+    if len({f for f, _ in hits}) == 1:
+        return next(iter(hits))
+    return None
 
 
 def suffix_callsign(up, expected_traffic):
@@ -211,15 +241,22 @@ def similar_on_frequency(cs, expected_traffic):
     return sorted(t for t in expected_traffic if t != cs and t[:3] == code and confusable(num, t[3:]))
 
 
-def extract(text, airport, expected_traffic):
+def extract(text, airport, expected_traffic, glue=True):
     """
     expected_traffic: callsigns known to be on frequency (from schedule/ADS-B), e.g. {"IGO6053"}
     Returns dict with runway, callsign and a list of problems.
     """
     norm = normalize(text)
+    glue_note = None
+    if GLUE_RUNWAY_SIDE and glue:
+        g = GLUE_RE.search(norm)
+        if g and f"{g.group(2)}{g.group(4).upper()}" in AIRPORTS[airport]["runways"]:
+            glue_note = (f"runway heard as {g.group(2)}{g.group(3)}{g.group(4).upper()} ('niner' glued); "
+                         f"read as {g.group(2)}{g.group(4).upper()} - confirm")
+            norm = norm[:g.start()] + g.group(1) + g.group(2) + g.group(4).upper() + norm[g.end():]
     up = norm.upper()
-    problems, out = [], {"normalized": norm, "runway": None, "callsign": None,
-                         "corrected": False, "suggestion": None, "amber": []}
+    problems, out = [], {"normalized": norm, "runway": None, "callsign": None, "raw": text,
+                         "corrected": False, "suggestion": None, "amber": [glue_note] if glue_note else []}
 
     m = re.search(r"RUNWAY\s+(\d{1,2}[LRC]?)\b", up)
     if not m:
@@ -286,7 +323,12 @@ def extract(text, airport, expected_traffic):
         else:
             hit = anchor_callsign(up, expected_traffic)
             hit2 = None if hit or not SUFFIX_CALLSIGN else suffix_callsign(up, expected_traffic)
-            if hit:
+            hit3 = None if hit or hit2 or not NINER0_CALLSIGN else niner0_callsign(up, expected_traffic)
+            if hit3:
+                out["callsign"] = hit3[0]
+                out["amber"].append(f"flight number heard as {hit3[1]} ('niner' glued); undone it matches "
+                                    f"{hit3[0]} exactly - confirm callsign")
+            elif hit:
                 out["callsign"] = hit
                 out["amber"].append(f"callsign not in the usual airline+number form; number matches {hit} exactly")
             elif hit2:
@@ -342,6 +384,13 @@ def needs_second_listen(r):
 
 
 def second_listen(r1, second_text, airport, expected_traffic):
+    if any(x.startswith("runway heard as") for x in r1["amber"]) and r1.get("raw") is not None:
+        # Fix G (A17) read a glued runway from listen 1. If the second listen of the same audio names ANOTHER runway
+        # or ANOTHER callsign, the audio is in doubt: undo G, and the rules below decide (they FLAG on disagreement).
+        r2 = extract(second_text, airport, expected_traffic, glue=False)
+        if (r2["runway"] and r2["runway"] != r1["runway"]) or \
+                (r2["callsign"] and r1["callsign"] and r2["callsign"] != r1["callsign"]):
+            r1 = extract(r1["raw"], airport, expected_traffic, glue=False)
     if not needs_second_listen(r1):
         return r1
     glued_digits, glued_side = re.search(r"RUNWAY\s+(\d{3,})([LRC]?)\b", r1["normalized"].upper()).groups()

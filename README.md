@@ -44,10 +44,10 @@ STOP, Marathi bird chaser, Hinglish Follow Me, normal Delhi traffic), spoken by 
 radio, heard by Prisma, judged by the engine. A run is "on time" only if every expected alert comes at the call it
 belongs to.
 
-| | Practice set (tuned on) | **Locked exam** (run once, `freeze-v3`, unseen voices + noise) |
+| | Practice set (tuned on, current engine) | **Locked exam** (run once, `freeze-v3`, unseen voices + noise) |
 |---|---|---|
 | Scenarios, clean audio | 8 / 8 on time | **7 / 8** |
-| Scenarios, 10 dB radio noise | 137 / 160 on time (20 noise recordings) | **27 / 40** (5 new noise recordings) |
+| Scenarios, 10 dB radio noise | 147 / 160 on time (20 noise recordings) | **27 / 40** (5 new noise recordings) |
 | False RED in normal traffic, 10 dB | 2 / 20 | **1 / 5** |
 | Deliberately wrong readbacks missed | **0 / 75** | **0 / 90** |
 | Correct readbacks shown RED | 15 / 285 | 13 / 300 |
@@ -61,20 +61,42 @@ of RED - so Delhi 2023 and hold-short-as-crossing were caught on time in 0 of 5 
 readbacks were still never passed as correct (0 / 90). The engine was partly tuned to the practice voices; this is the
 honest number: the locked figures are for `freeze-v3` and stay as they are.
 
-**After the exam** (not in the locked numbers, judged only on practice data, never on the exam's transcripts):
-A15 reads a flight number with the airline word glued on as digits ("36053" -> IFLY 6053) as that flight, AMBER
-"confirm callsign" (pass: 20 flags fewer, 0 runs worse, wrong readbacks missed still 0). The exam's voices are now used
-up, so they may be used for practice: a new practice run with them (new noise recordings 200-209) tests the next fix.
+**After the exam** (not in the locked numbers; judged only on practice data, never on the exam's transcripts).
+The exam's voices are used up, so they were used for one more practice run (10 dB, new noise recordings 200-209).
+Every remaining miss was traced to one exact cause and counted on all saved transcripts before any code (A17):
+
+| Cause (evidence) | Fix | Result |
+|---|---|---|
+| "two niner right" heard as "runway 290, right" (first two digits right 61/61, side right 48/48) | read as 29R, AMBER; steps back if the second listen disagrees | 13 runs better |
+| "Vistara niner two six" heard as "Tara 9026" (10/10) | undo the "niner" 0 if exactly one flight fits, AMBER | 1 better |
+| crossing call with the callsign lost was AMBER "maybe the same aircraft" | an aircraft cannot cross the runway it is taking off from: RED | 2 better |
+| "clear for takeoff" / "cleared to take off" not read as a take-off | both read as TAKEOFF | 1 better |
+| tower callsign lost: trust the instruction anyway (Fix X) | - | **failed** (2 correct readbacks turned RED), off |
+
+| Practice data (designed on it, so not a held-out score) | before A17 | after A17 |
+|---|---|---|
+| Exam voices, new noise: scenarios on time | 62 / 80 | **70 / 80** |
+| Delhi 2023 with those voices | 4 / 10 | **9 / 10** |
+| Earlier practice, 10 dB | 137 / 160 | **147 / 160** |
+| Wrong readbacks missed | 0 | 0 |
+| False RED in normal traffic | 2 / 10 and 2 / 20 | unchanged |
+| Single lines shown fine but wrong (864 saved lines) | 0 | 0 |
+
+Kept on purpose: a pilot callsign with a misheard digit that is on no flight ("Akasa Air 113") stays RED. A real
+stranger taking a clearance looks exactly the same, so turning it AMBER would hide real errors.
+A16 ("29, arrived" = 29R) failed its rule: only 3 calls, one voice. Off.
+The held-out check for these fixes is new human audio: `python run_scenarios.py --human` (own-voice recordings,
+run once on committed code, new noise 300-304).
 
 ## Limits
 - Radio only: no radar or surveillance, so an aircraft that moves without a radio call is invisible.
 - Synthetic voices (Gnani Timbre) through a simulated radio; not yet tested on live ATC audio.
 - Hold times are assumptions; "runway vacated" can be misheard, which keeps a runway busy (one of the 2 practice false REDs).
-- Misheard callsign digits cannot be told apart from a real pilot error, so they come out as "confirm callsign".
+- A misheard callsign digit cannot be told apart from a real pilot error, so it comes out RED "confirm callsign" (the 2 practice false REDs at 10 dB with the exam voices).
 - Every miss is listed with its reason on the site (Results and Limits).
 
 ## How it was built: experiments with rules written first
-Each fix (A1-A14) had its pass/fail rule written in its `exp_a*.py` file **before** the result, was judged on saved
+Each fix (A1-A17) had its pass/fail rule written in its `exp_a*.py` file **before** the result, was judged on saved
 transcripts and fresh noise, and stayed off if it failed. Examples: A15 (above); A14 kept a runway heard glued ("290, right") as a
 *maybe* 29R and turned 4 of 6 silent Delhi misses into AMBER "possible runway conflict" (pass); reading "Tara" as
 "Vistara" removed 17 flags but caused 2 false REDs (fail, kept off). All of them are on the site under Experiments.

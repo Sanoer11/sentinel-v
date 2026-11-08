@@ -1,0 +1,5 @@
+# Everything for live runs (scenarios, test sets, site export). Python 3.10-3.12; CI uses 3.11.
+# The tests alone need only requirements-ci.txt.
+-r requirements-ci.txt
+scipy==1.13.1
+python-dotenv==1.0.1

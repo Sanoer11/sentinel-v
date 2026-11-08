@@ -1,5 +1,5 @@
 # CI for Sentinel-V. Runs on every push and pull request.
-#  - engine: the 141 Python tests of the parser, runway engine, pipeline and voice (fake Prisma/Timbre, no API key)
+#  - engine: the 151 Python tests of the parser, runway engine, pipeline and voice (fake Prisma/Timbre, no API key)
 #  - web:    lint, type-check, unit tests and a production build of the site in web/
 # Deployment is done by Vercel's GitHub integration (it builds web/ on every push to main and posts a preview
 # link on every pull request), so no deploy token is stored in this repository.

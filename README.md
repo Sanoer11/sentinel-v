@@ -60,7 +60,7 @@ belongs to.
 | False RED in normal traffic, 10 dB | 2 / 20 | **1 / 5** |
 | Deliberately wrong readbacks missed | **0 / 75** | **0 / 90** |
 | Correct readbacks shown RED | 15 / 285 | 13 / 300 |
-| Single lines shown as fine or probable but not what was said | - | **3 / 930** (all at 5 or 0 dB; 0 at clean, 20 and 10 dB) |
+| Single lines shown as fine or probable but not what was said | 0 / 864 (saved lines) | **3 / 930** (all at 5 or 0 dB; 0 at clean, 20 and 10 dB) |
 | Prisma time per call (median) | 0.49 s | 0.46 s |
 | Spoken alert ready after the call ends (median) | - | 0.48 s (engine 0.1 ms + voice join ~3 ms) |
 
@@ -120,8 +120,10 @@ transcripts and fresh noise, and stayed off if it failed. Examples: A15 (above);
 pip install -r requirements-ci.txt
 python -m pytest -q tests
 ```
-The tests need no API key (they use a fake Prisma/Timbre). For live runs put `GNANI_API_KEY=...` in `.env` (never
-committed), then `python scripts/run_scenarios.py --cond clean` or `python scripts/run_eval.py testsets/dev.json`.
+The tests need no API key (they use a fake Prisma/Timbre). For live runs: `pip install -r requirements.txt` (adds
+scipy for the simulated radio and python-dotenv to read `.env`; Python 3.10-3.12), put `GNANI_API_KEY=...` in
+`.env` (never committed), then `python scripts/run_scenarios.py --cond clean` or
+`python scripts/run_eval.py testsets/dev.json`. ffmpeg is used for the site's mp3 export and own-voice recordings.
 The site: `cd web && npm ci && npm run dev` (data is exported by `python scripts/export_web.py`).
 
 | Path | What |

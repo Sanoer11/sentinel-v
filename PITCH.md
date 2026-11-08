@@ -37,7 +37,7 @@ It adds a safety net without new hardware: one radio feed in, one spoken warning
 deterministic rules, Gnani voice out) fits any voice-driven safety workflow: airside vehicles, ports, rail yards.
 
 ## Next
-Human-voice testing (built in: `run_scenarios.py --human`), a surveillance feed so silent movements are seen too, and
+Human-voice testing (built in: `scripts/run_scenarios.py --human`), a surveillance feed so silent movements are seen too, and
 more airports.
 
 **Team:** Sanoer Soni (MIT World Peace University, Pune) · Rudra Porwal. All audio is synthetic; no real ATC recordings

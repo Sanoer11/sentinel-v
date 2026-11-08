@@ -97,7 +97,7 @@ Every remaining miss was traced to one exact cause and counted on all saved tran
 Kept on purpose: a pilot callsign with a misheard digit that is on no flight ("Akasa Air 113") stays RED. A real
 stranger taking a clearance looks exactly the same, so turning it AMBER would hide real errors.
 A16 ("29, arrived" = 29R) failed its rule: only 3 calls, one voice. Off.
-The held-out check for these fixes is new human audio: `python run_scenarios.py --human` (own-voice recordings,
+The held-out check for these fixes is new human audio: `python scripts/run_scenarios.py --human` (own-voice recordings,
 run once on committed code, new noise 300-304).
 
 </details>
@@ -110,7 +110,7 @@ run once on committed code, new noise 300-304).
 - Every miss is listed with its reason on the site (Results and Limits).
 
 ## How it was built: experiments with rules written first
-Each fix (A1-A17) had its pass/fail rule written in its `exp_a*.py` file **before** the result, was judged on saved
+Each fix (A1-A17) had its pass/fail rule written in its `experiments/exp_a*.py` file **before** the result, was judged on saved
 transcripts and fresh noise, and stayed off if it failed. Examples: A15 (above); A14 kept a runway heard glued ("290, right") as a
 *maybe* 29R and turned 4 of 6 silent Delhi misses into AMBER "possible runway conflict" (pass); reading "Tara" as
 "Vistara" removed 17 flags but caused 2 false REDs (fail, kept off). All of them are on the site under Experiments.
@@ -118,20 +118,25 @@ transcripts and fresh noise, and stayed off if it failed. Examples: A15 (above);
 ## Run it
 ```
 pip install -r requirements-ci.txt
-python -m pytest -q test_state.py test_actions.py test_scoring.py test_client.py test_pipeline.py test_voice.py
+python -m pytest -q tests
 ```
 The tests need no API key (they use a fake Prisma/Timbre). For live runs put `GNANI_API_KEY=...` in `.env` (never
-committed), then `python run_scenarios.py --cond clean` or `python run_eval.py testsets/dev.json`.
-The site: `cd web && npm ci && npm run dev` (data is exported by `python export_web.py`).
+committed), then `python scripts/run_scenarios.py --cond clean` or `python scripts/run_eval.py testsets/dev.json`.
+The site: `cd web && npm ci && npm run dev` (data is exported by `python scripts/export_web.py`).
 
 | Path | What |
 |---|---|
 | `sentinel_parse.py`, `sentinel_actions.py`, `sentinel_state.py` | the engine: parsing, instructions, runway state + readback check |
 | `sentinel_pipeline.py`, `gnani_client.py` | Prisma listens, Timbre, retries |
 | `sentinel_voice.py` | spoken alerts |
-| `scenarios.py`, `run_scenarios.py`, `make_testset.py`, `run_eval.py` | scenarios, test sets, the locked exam |
-| `exp_a*.py` | every experiment, with its rule |
+| `scenarios.py`, `scoring.py`, `radio_sim.py` | the 8 scenarios, scoring, the simulated VHF radio |
+| `scripts/` | run the scenarios, the test sets and the locked exam; export the site data |
+| `experiments/` | every experiment (A1-A17), with its rule written first |
+| `tests/` | the engine tests (fake Prisma/Timbre, no API key) |
+| `results/`, `testsets/` | every saved run, the test sets and the exam ledger |
+| `early/` | the first three days: Prisma and radio probes |
 | `web/` | the public site (Next.js), deployed on Vercel |
+| `tools/` | film narration, safety hook |
 
 ## Data and safety
 All audio is synthetic (Gnani Timbre) or synthetic noise; no real ATC recordings are used or published. The real

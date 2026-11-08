@@ -23,7 +23,7 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-ci.txt
       - run: pip install -r requirements-ci.txt
-      - run: python -m pytest -q test_client.py test_pipeline.py test_voice.py test_state.py test_scoring.py test_actions.py
+      - run: python -m pytest -q tests
 
   web:
     runs-on: ubuntu-latest

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const LIMITS = [
   { t: 'Radio only', d: 'It hears what is said on frequency. An aircraft that moves without any call needs a surveillance feed; the engine has the slot for one, there is no data source here.' },
-  { t: 'Synthetic voices, simulated radio', d: 'All speech is Gnani Timbre through a simulated VHF radio, by design: no real ATC recordings. The next test is human voices (run_scenarios.py --human).' },
+  { t: 'Synthetic voices, simulated radio', d: 'All speech is Gnani Timbre through a simulated VHF radio, by design: no real ATC recordings. The next test is human voices (scripts/run_scenarios.py --human).' },
   { t: 'A misheard callsign digit is treated as real', d: 'It cannot be told apart from a stranger taking a clearance, so it stays RED "confirm callsign" - 2 of 20 normal Delhi runs at 10 dB, 15 of 285 correct readbacks.' },
   { t: 'Clipped words are never guessed', d: 'When push-to-talk cuts "Runway" or "Crossing", the call stays AMBER instead of being filled in. A hold-short that is not confirmed on a busy runway is still RED.' },
 ];

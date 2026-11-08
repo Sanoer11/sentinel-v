@@ -5,4 +5,4 @@ for line in 'web/node_modules/' 'web/.next/' 'web/out/' '!web/public/audio/' '!w
   grep -qxF "$line" .gitignore || echo "$line" >> .gitignore
 done
 sh tools/install_hooks.sh
-echo "Done. Next: python export_web.py"
+echo "Done. Next: python scripts/export_web.py"

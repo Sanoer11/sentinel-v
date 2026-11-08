@@ -8,7 +8,7 @@ alert), the measured results, every experiment with its rule, and the limits.
 | | |
 |---|---|
 | Stack | Next.js 14 (static export) · TypeScript · Tailwind · Framer Motion · Recharts · TanStack Query |
-| Data | `public/data/*.json` + `public/audio/*.mp3`, written by `python export_web.py` from the saved runs |
+| Data | `public/data/*.json` + `public/audio/*.mp3`, written by `python scripts/export_web.py` from the saved runs |
 | Server | none. The site never calls Gnani Prisma or Timbre and holds no API key |
 | Audio | synthetic only: Gnani Timbre voices through a simulated VHF radio |
 
@@ -23,7 +23,7 @@ alert), the measured results, every experiment with its rule, and the limits.
 
 ## Update the data
 ```
-python export_web.py            # from the repo root, on the machine with the results + API key
+python scripts/export_web.py            # from the repo root, on the machine with the results + API key
 cd web && npm run build         # optional local check
 git add web/public && git commit -m "Site data" && git push
 ```

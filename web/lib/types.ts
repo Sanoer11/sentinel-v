@@ -1,4 +1,4 @@
-// Shapes of the files that export_web.py writes into public/data/. Kept in one place so the Python side and
+// Shapes of the files that scripts/export_web.py writes into public/data/. Kept in one place so the Python side and
 // the site cannot drift apart silently: if a field changes, `npm run typecheck` fails in CI.
 
 export type Level = 'RED' | 'AMBER' | 'INFO';

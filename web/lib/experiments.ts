@@ -1,6 +1,6 @@
 // Every experiment run on Sentinel-V, with its rule written down BEFORE the result was seen.
 // Failed ideas are listed on purpose: a fix that was measured and rejected is as much a result as one that shipped.
-// Numbers are copied from each experiment's printed output (exp_a1.py ... exp_a17.py in the repo).
+// Numbers are copied from each experiment's printed output (experiments/exp_a1.py ... experiments/exp_a17.py in the repo).
 
 export type ExpVerdict = 'PASS' | 'FAIL' | 'FINDING' | 'LIMIT' | 'NARROWED';
 

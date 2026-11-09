@@ -12,7 +12,7 @@ export default function GnaniModels({ summary }: { summary?: Summary }) {
   const prisma = [
     { t: 'Every call, three languages', d: 'Tower and pilot calls in Indian English (en-IN). Airside vehicle calls in one request with hi-IN, en-IN and mr-IN, so Hindi, Hinglish and Marathi are heard by the same listen.' },
     { t: 'Told it is listening to ATC', d: 'Each request carries ATC keyterms ("niner", "tree", "fife", "hold short", "cross runway", the airlines on frequency) and a topic line: an Indian airport tower frequency.' },
-    { t: 'Two formats, used together', d: 'Transcribe gives digits the engine can check. When a number comes out glued ("290", "36053"), a verbatim listen of the same audio - already started in parallel - spells out what was said.' },
+    { t: 'Two formats, used together', d: 'Transcribe gives digits the engine can check. When a number comes out glued ("290", "36053"), a second, verbatim listen of the same audio spells out what was said.' },
     { t: 'A hazard-word listen', d: 'A vehicle call nobody understood gets one more listen with hazard vocabulary (पक्षी, birds, FOD). It may add the bird report; it may never change which vehicle spoke.' },
   ];
   const timbre = [

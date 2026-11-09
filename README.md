@@ -87,7 +87,7 @@ guess: the same words always give the same verdict.
 
 | Model | What it does here |
 |---|---|
-| **Gnani&nbsp;Prisma&nbsp;v3.0**<br><sub>speech-to-text</sub> | Every radio call. Tower and pilots in Indian English; Hindi, Hinglish and Marathi vehicle calls in one request. ATC keyterms ("niner", "tree", "hold short") and a topic line ride along. When a runway or flight number comes out glued ("290" for "two niner"), a `verbatim` second listen, already started in parallel, spells it out. Unclear vehicle calls get one hazard-word listen (पक्षी, birds, FOD). |
+| **Gnani&nbsp;Prisma&nbsp;v3.0**<br><sub>speech-to-text</sub> | Every radio call. Tower and pilots in Indian English; Hindi, Hinglish and Marathi vehicle calls in one request. ATC keyterms ("niner", "tree", "hold short") and a topic line ride along. When a runway or flight number comes out glued ("290" for "two niner"), a `verbatim` second listen of the same audio spells it out. Unclear vehicle calls get one hazard-word listen (पक्षी, birds, FOD). |
 | **Gnani&nbsp;Timbre&nbsp;v3.0**<br><sub>text-to-speech</sub> | The alert voice (Devansh): phrase clips recorded ahead and joined in about 3 ms. The practice-set tower and pilot voices, and the film's narration (Shubham). |
 | **Gnani&nbsp;Timbre&nbsp;v2.5**<br><sub>text-to-speech</sub> | The practice-set vehicle voices (Marathi, Hinglish), and the voices held back, unheard, for the one-time locked exam (Pranav, Kaveri, Shlok, Devika, Ishaan). |
 

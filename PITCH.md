@@ -1,8 +1,9 @@
 # Sentinel-V — one-page pitch
 
-**A second pair of ears for the control tower.** Built on Gnani Prisma and Gnani Timbre.
+**A second pair of ears for the control tower.** For tower controllers: it warns, the controller decides.
+Built on Gnani Prisma and Gnani Timbre.
 
-**Live:** https://sentinel-v-one.vercel.app · **2-minute demo:** https://lnkd.in/p/ddndXZeH · **Code:** https://github.com/Sanoer11/sentinel-v
+**Live:** https://sentinel-v-one.vercel.app · **Demo video (3 min):** https://drive.google.com/file/d/1cs33RWkTip79Yo0wmzfe7f04-aPNpzzo/view · **Short film:** https://lnkd.in/p/ddndXZeH · **Code:** https://github.com/Sanoer11/sentinel-v
 
 ## The problem
 Runway safety in India still runs on voice. On 23 August 2023 at Delhi, one Vistara aircraft was cleared to cross
@@ -38,7 +39,9 @@ deterministic rules, Gnani voice out) fits any voice-driven safety workflow: air
 
 ## Next
 Human-voice testing (built in: `scripts/run_scenarios.py --human`), a surveillance feed so silent movements are seen too, and
-more airports.
+more airports. Gnani Evon could write a plain-language summary of each alert for the shift log; it stays out of the
+safety decision.
 
-**Team:** Sanoer Soni (MIT World Peace University, Pune) · Rudra Porwal. All audio is synthetic; no real ATC recordings
+**Team:** Sanoer Soni (MIT World Peace University, Pune): speech pipeline, runway engine, experiments, site ·
+Rudra Porwal: security runs, research. All audio is synthetic; no real ATC recordings
 are used. Research prototype, not for operational use.

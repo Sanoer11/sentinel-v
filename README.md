@@ -15,6 +15,8 @@
 <p align="center">
   <a href="https://sentinel-v-one.vercel.app"><b>Try&nbsp;it&nbsp;live&nbsp;›</b></a>
   &nbsp;&nbsp;&nbsp;
+  <a href="https://drive.google.com/file/d/1cs33RWkTip79Yo0wmzfe7f04-aPNpzzo/view"><b>Watch&nbsp;the&nbsp;demo&nbsp;›</b></a>
+  &nbsp;&nbsp;&nbsp;
   <a href="https://lnkd.in/p/ddndXZeH"><b>Watch&nbsp;the&nbsp;film&nbsp;›</b></a>
   &nbsp;&nbsp;&nbsp;
   <a href="PITCH.md"><b>Read&nbsp;the&nbsp;pitch&nbsp;›</b></a>

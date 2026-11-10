@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
 import Limits from '@/components/Limits';
 import Nav from '@/components/Nav';
+import TowerConsole from '@/components/console/TowerConsole';
 import Replay from '@/components/replay/Replay';
 import Results from '@/components/results/Results';
 import { useSummary } from '@/lib/data';
@@ -36,6 +37,7 @@ export default function Page() {
         )}
         <Hero summary={summary.data} onReplay={openReplay} />
         <Replay summary={summary.data} scenario={scenario} setScenario={setScenario} />
+        <TowerConsole summary={summary.data} />
         <GnaniModels summary={summary.data} />
         <Results summary={summary.data} onPick={openReplay} />
         <HowItWorks />

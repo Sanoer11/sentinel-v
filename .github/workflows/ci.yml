@@ -24,6 +24,8 @@ jobs:
           cache-dependency-path: requirements-ci.txt
       - run: pip install -r requirements-ci.txt
       - run: python -m pytest -q tests
+      - name: Tower console runs the same engine files
+        run: for f in sentinel_parse sentinel_actions sentinel_state sentinel_voice; do cmp $f.py web/public/engine/$f.py; done
 
   web:
     runs-on: ubuntu-latest

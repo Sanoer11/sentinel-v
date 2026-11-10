@@ -7,9 +7,9 @@ alert), the measured results, every experiment with its rule, and the limits.
 
 | | |
 |---|---|
-| Stack | Next.js 14 (static export) · TypeScript · Tailwind · Framer Motion · Recharts · TanStack Query |
+| Stack | Next.js 14 (pre-rendered pages + two server endpoints) · TypeScript · Tailwind · Framer Motion · Recharts · TanStack Query |
 | Data | `public/data/*.json` + `public/audio/*.mp3`, written by `python scripts/export_web.py` from the saved runs |
-| Server | none. The site never calls Gnani Prisma or Timbre and holds no API key |
+| Server | two endpoints for the tower console: `app/api/tts` (Gnani Timbre speaks a typed call) and `app/api/stt` (Gnani Prisma hears a spoken call). The key is a server environment variable (`GNANI_API_KEY` on Vercel, `web/.env.local` locally, git-ignored); the browser never sees it. Limits: 160 characters, 20 voice / 15 listen calls per visitor per 10 min, a daily cap (`GNANI_DAILY_CAP`, default 400) |
 | Audio | synthetic only: Gnani Timbre voices through a simulated VHF radio |
 
 ## Sections

@@ -5,6 +5,7 @@ import ThemeToggle from './ThemeToggle';
 
 const LINKS = [
   { id: 'replay', label: 'Replay' },
+  { id: 'console', label: 'Tower console' },
   { id: 'gnani', label: 'Gnani models' },
   { id: 'results', label: 'Results' },
   { id: 'how', label: 'How it works' },

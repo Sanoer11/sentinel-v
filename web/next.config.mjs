@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-// Static export: the whole site is plain files. No server, no API route, no API key anywhere in the site.
+// Every page is still pre-rendered static HTML. The only server code is the tower console's two Gnani endpoints
+// (app/api/tts, app/api/stt): they hold the API key on the server (env GNANI_API_KEY) and the browser never sees it.
 const nextConfig = {
-  output: 'export',
   images: { unoptimized: true },
   trailingSlash: true,
   reactStrictMode: true,

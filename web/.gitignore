@@ -3,3 +3,6 @@ node_modules/
 out/
 next-env.d.ts
 *.tsbuildinfo
+
+# local secrets (GNANI_API_KEY for the console endpoints) - never commit
+.env*

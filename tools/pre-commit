@@ -6,7 +6,7 @@ staged=$(git diff --cached --name-only --diff-filter=ACMR)
 # Exception: web/public/audio/ holds the SITE's audio - synthetic only (Gnani Timbre voices + simulated radio),
 # written by scripts/export_web.py from audio_eval/scen/. Friends' recordings (my_voice/, .m4a) stay blocked everywhere.
 bad=$(printf '%s\n' "$staged" | grep -E '(^|/)\.env($|\.)|(^|/)my_voice/|\.(wav|m4a|mp3|aac|ogg|flac)$' \
-      | grep -vE '^web/public/audio/[A-Za-z0-9_]+\.(mp3|wav)$')
+      | grep -vE '^web/public/audio/[A-Za-z0-9_]+\.(mp3|wav)$|^web/public/audio/voice/[a-z0-9-]+\.mp3$')
 if [ -n "$bad" ]; then
   echo "BLOCKED by Sentinel-V safety hook - these must never be committed:"
   printf '  %s\n' $bad

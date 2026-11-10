@@ -27,8 +27,9 @@ export default function HowItWorks() {
           ))}
         </ol>
         <p className="mt-6 max-w-3xl text-[13px] text-dim">
-          This site is plain static files. It never calls Prisma or Timbre and holds no API key: every transcript and every
-          audio clip on it was produced by the measured runs and saved, then replayed here exactly as recorded.
+          Every transcript and audio clip in the replay and results was produced by the measured runs and saved, then replayed
+          here exactly as recorded. Only the tower console calls Prisma and Timbre live, through the site&apos;s own server, which
+          holds the API key; the browser never sees it.
         </p>
       </div>
     </section>

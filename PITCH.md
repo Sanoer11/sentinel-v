@@ -1,7 +1,7 @@
 # Sentinel-V — one-page pitch
 
 **A second pair of ears for the control tower.** For tower controllers: it warns, the controller decides.
-[Live site](https://sentinel-v-one.vercel.app) · [Demo video (3 min)](https://drive.google.com/file/d/1cs33RWkTip79Yo0wmzfe7f04-aPNpzzo/view) · [Short film](https://lnkd.in/p/ddndXZeH) · [Code](https://github.com/Sanoer11/sentinel-v)
+[Live site](https://sentinel-v-one.vercel.app) · [Demo video (3 min)](https://drive.google.com/file/d/1O7jVn8HPQsFjpHMvhrUyR6kl1Y9PoPkd/view) · [Short film](https://lnkd.in/p/ddndXZeH) · [Code](https://github.com/Sanoer11/sentinel-v)
 
 ## The problem
 Runway safety in India still runs on voice. On 23 August 2023 at Delhi, one Vistara aircraft was cleared to cross

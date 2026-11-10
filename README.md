@@ -59,7 +59,7 @@ runway, checks every readback against its clearance, and says the warning out lo
 *"Runway conflict, two niner right, Vistara niner two six."* When a word was not heard clearly, it asks the controller
 to confirm instead of guessing.
 
-<sub><b>Terms.</b> A <i>readback</i> is the pilot repeating the instruction back. <i>29R</i> is runway 29 right; <i>hold short</i> means stop before the runway. <b>RED</b>: a sure conflict or a wrong readback, spoken at once. <b>AMBER</b>: a word was not clear, so the controller is asked to confirm.</sub>
+<sub><b>Terms.</b> A <i>readback</i> is the pilot repeating the instruction back. <i>29R</i> is runway 29 right; <i>hold short</i> means stop before the runway. <b>RED</b>: a sure conflict or a wrong readback, spoken at once. <b>AMBER</b>: something to check, such as a word that was not clear or a missing readback; it stays on screen for the controller to confirm.</sub>
 
 <br>
 
@@ -74,8 +74,8 @@ to confirm instead of guessing.
 
 <p align="center"><sub>The Delhi 2023 scenario, re-voiced by Gnani Timbre and played through a simulated VHF radio. Big text is what
 Gnani Prisma heard; small text is what was said. The crossing clearance raises a RED runway conflict while the take-off
-still holds 29R. (The replay clears the take-off first; in the real event the crossing came first. The engine catches
-both orders.)</sub></p>
+still holds 29R. (The replay clears the take-off first; in the reports the two clearances came at about the same time. The engine
+catches both orders.)</sub></p>
 
 <br>
 
@@ -108,7 +108,7 @@ guess: the same words always give the same verdict.
 | Model | What it does here |
 |---|---|
 | **Gnani&nbsp;Prisma&nbsp;v3.0**<br><sub>speech-to-text</sub> | Every radio call. Tower and pilots in Indian English; Hindi, Hinglish and Marathi vehicle calls in one request. ATC keyterms ("niner", "tree", "hold short") and a topic line ride along. When a runway or flight number comes out glued ("290" for "two niner"), a `verbatim` second listen of the same audio spells it out. Unclear vehicle calls get one hazard-word listen (पक्षी, birds, FOD). |
-| **Gnani&nbsp;Timbre&nbsp;v3.0**<br><sub>text-to-speech</sub> | The alert voice (Devansh): phrase clips recorded ahead and joined in about 3 ms. The practice-set tower and pilot voices, and the film's narration (Shubham). |
+| **Gnani&nbsp;Timbre&nbsp;v3.0**<br><sub>text-to-speech</sub> | The alert voice (Devansh): phrase clips recorded ahead and joined in about 3 ms. The practice-set tower and pilot voices, the tower console's live voice for typed calls, and the film's narration (Shubham). |
 | **Gnani&nbsp;Timbre&nbsp;v2.5**<br><sub>text-to-speech</sub> | The practice-set vehicle voices (Marathi, Hinglish), and the voices held back, unheard, for the one-time locked exam (Pranav, Kaveri, Shlok, Devika, Ishaan). |
 
 No other speech or language model is used. The runway engine is plain Python, standard library only.
@@ -128,7 +128,7 @@ must raise lands at the call it belongs to.
   </picture>
 </p>
 
-| | Practice set<br><sub>tuned on, current engine</sub> | **Locked exam**<br><sub>run once, `freeze-v3`, unseen voices, new noise</sub> |
+| | Practice set<br><sub>tuned on, current engine</sub> | **Locked exam**<br><sub>run once, `freeze-v3`, unseen voices*, new noise</sub> |
 |---|---|---|
 | Scenarios, clean audio | 8 / 8 on time | **7 / 8** |
 | Scenarios, 10 dB radio noise | 147 / 160 on time (20 noise recordings) | **27 / 40** (5 new noise recordings) |
@@ -138,6 +138,9 @@ must raise lands at the call it belongs to.
 | Single lines shown as fine or probable but not what was said | 0 / 864 (saved lines) | **3 / 930** (all at 5 or 0 dB; 0 at clean, 20 and 10 dB) |
 | Prisma time per call (median) | 0.49 s | 0.46 s |
 | Spoken alert ready after the call ends (median) | - | 0.48 s (engine 0.1 ms + voice join ~3 ms) |
+
+<sub>* Tower, pilot and Marathi vehicle voices were never heard before the exam. The Hinglish vehicle kept Poorvi,
+the only Hinglish Timbre voice.</sub>
 
 <br>
 
@@ -209,8 +212,8 @@ run once on committed code, new noise 300-304).
    (09/27 and 14/32).
 4. **Check.** Every readback against its clearance: wrong runway, wrong instruction, wrong or look-alike callsign
    (IFLY 5134 vs 5124), missing STOP or hold-short confirmation. Every new clearance against the picture.
-5. **Speak.** One alert per call, the most dangerous one, in a fixed Gnani Timbre voice. RED when it is sure; AMBER
-   "confirm" when a word was not heard clearly.
+5. **Speak.** One alert per call, the most dangerous one. RED, when it is sure, is spoken at once in a fixed Gnani
+   Timbre voice; AMBER "confirm", when a word was not heard clearly, stays on screen.
 
 <br>
 

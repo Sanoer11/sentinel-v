@@ -15,9 +15,9 @@
 <p align="center">
   <a href="https://sentinel-v-one.vercel.app"><b>Try&nbsp;it&nbsp;live&nbsp;›</b></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://drive.google.com/file/d/1O7jVn8HPQsFjpHMvhrUyR6kl1Y9PoPkd/view"><b>Watch&nbsp;the&nbsp;demo&nbsp;›</b></a>
+  <a href="https://drive.google.com/file/d/1O7jVn8HPQsFjpHMvhrUyR6kl1Y9PoPkd/view"><b>Watch&nbsp;the&nbsp;demo&nbsp;(3&nbsp;min)&nbsp;›</b></a>
   &nbsp;&nbsp;&nbsp;
-  <a href="https://lnkd.in/p/ddndXZeH"><b>Watch&nbsp;the&nbsp;film&nbsp;›</b></a>
+  <a href="https://lnkd.in/p/ddndXZeH"><b>Watch&nbsp;the&nbsp;film&nbsp;(2&nbsp;min)&nbsp;›</b></a>
   &nbsp;&nbsp;&nbsp;
   <a href="PITCH.md"><b>Read&nbsp;the&nbsp;pitch&nbsp;›</b></a>
 </p>
@@ -28,6 +28,8 @@
 
 <p align="center"><sub>Built on <b>Gnani Prisma v3.0</b> and <b>Gnani Timbre</b> · Delhi, Mumbai, Pune · English, Hindi, Hinglish, Marathi<br>Research prototype on synthetic voices. Decision support only, not for operational use.</sub></p>
 
+<p align="center"><sub><b>Quickest look:</b> open the live site, go to <b>Tower console</b>, press <b>Start the console</b>, then <b>▶ Example</b>. Or type a call and press Send.</sub></p>
+
 <br>
 
 <table>
@@ -37,7 +39,7 @@
   </tr>
   <tr>
     <td align="center" valign="top" width="50%"><h2>0.49&nbsp;s</h2>median time for Gnani Prisma to hear a call,<br>over 693 calls</td>
-    <td align="center" valign="top" width="50%"><h2>&lt;&nbsp;5&nbsp;ms</h2>from a heard call to a spoken alert,<br>ready to play</td>
+    <td align="center" valign="top" width="50%"><h2>&lt;&nbsp;5&nbsp;ms</h2>from Prisma's text to a spoken alert<br>ready to play</td>
   </tr>
 </table>
 
@@ -56,6 +58,8 @@ Both instructions were spoken on the radio. Nothing was listening for the clash.
 runway, checks every readback against its clearance, and says the warning out loud:
 *"Runway conflict, two niner right, Vistara niner two six."* When a word was not heard clearly, it asks the controller
 to confirm instead of guessing.
+
+<sub><b>Terms.</b> A <i>readback</i> is the pilot repeating the instruction back. <i>29R</i> is runway 29 right; <i>hold short</i> means stop before the runway. <b>RED</b>: a sure conflict or a wrong readback, spoken at once. <b>AMBER</b>: a word was not clear, so the controller is asked to confirm.</sub>
 
 <br>
 

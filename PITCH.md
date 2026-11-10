@@ -18,14 +18,14 @@ warning out.
 - **Gnani Prisma v3.0** (speech-to-text) hears every call: Indian English for tower and pilots; Hindi, Marathi and
   Hinglish in one request for vehicles, with ATC keyterms. A second verbatim listen spells out glued numbers
   ("290" for "two niner"). Median 0.49 s per call.
-- **Gnani Timbre v3.0 / v2.5** (text-to-speech) speaks the alert, ready within 5 ms of the decision. It also voiced
-  the test bench: 20+ voices in 4 languages.
+- **Gnani Timbre** (text-to-speech): v3.0 speaks the alert, ready within 5 ms of the decision, and the tower console's
+  typed calls. v3.0 and v2.5 also voiced the test bench: about 20 voices in 4 languages.
 - Between them sits a rule-based runway engine: the same words always give the same verdict.
 
 ## Results (all measured)
 - **0 of 90** deliberately wrong readbacks missed in a locked exam on unheard voices (frozen code, run once).
-- **147 of 160** noisy-radio test scenarios caught on time (10 dB noise).
-- **0 of 558** calls shown as correct when they were not (locked exam).
+- **147 of 160** noisy-radio scenario runs caught on time (practice set, 10 dB noise; locked exam: 27 of 40).
+- **0 of 558** calls shown as correct when they were not (locked exam, clean audio to 10 dB).
 - **17 experiments**, each rule written before its result; failed ideas are published too.
 
 **Next:** human-voice testing, a surveillance feed for silent movements, more airports, and Gnani Evon for

@@ -78,10 +78,10 @@ both orders.)</sub></p>
 ## Type a call. Watch the runways.
 
 <p align="center">
-  <img src="docs/console-dark.png" alt="Tower console: typed radio calls, the runway board with who holds each runway and for how long, a RED runway conflict waiting to be acknowledged, and the shift log download" width="100%">
+  <img src="docs/console-dark.png" alt="Tower console: radio calls typed, spoken into the mic or played from recorded radio, the runway board with who holds each runway and for how long, a RED runway conflict waiting to be acknowledged, and the shift log download" width="100%">
 </p>
 
-<p align="center"><sub>The tower console on the site: what a controller would keep open. Calls are typed in, the same
+<p align="center"><sub>The tower console on the site: what a controller would keep open. Calls come in typed, spoken or as recorded radio, the same
 parser and runway engine run inside the browser, the board shows who holds each runway and for how long, alerts wait
 to be acknowledged, RED alerts are spoken with the recorded Gnani Timbre phrase clips, and the shift log downloads as a
 CSV. A typed call is spoken live by Gnani Timbre before it is checked, a spoken call (mic) is heard live by Gnani Prisma,
@@ -227,7 +227,7 @@ seen, was judged on saved transcripts and fresh noise, and stayed off if it fail
 - **Synthetic voices.** All speech is Gnani Timbre through a simulated radio, by design; it has not yet met live ATC audio.
 - **Hold times are assumptions.** A misheard "runway vacated" keeps a runway busy (one of the 2 practice false REDs).
 - **A misheard callsign digit looks like a real pilot error,** so it comes out RED "confirm callsign" on purpose.
-- **The tower console takes typed calls.** It runs the real parser and engine in the browser, but it is not connected to a radio feed.
+- **The tower console is not on a live radio feed.** Calls are typed, spoken into the mic, or played from the recorded examples; the parser and engine are the real ones.
 
 <br>
 
